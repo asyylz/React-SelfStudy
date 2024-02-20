@@ -1,4 +1,3 @@
-import './TabButton.css'
 
 export default function TabButton({children, onSelect}) {
 

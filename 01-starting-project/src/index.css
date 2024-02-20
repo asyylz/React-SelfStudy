@@ -19,7 +19,6 @@ html {
   min-height: 80rem;
 }
 
-
 main {
   width: 90%;
   max-width: 50rem;
@@ -106,7 +105,6 @@ main h2 {
   background-color: #7925d3;
   color: #ebe7ef;
 }
-
 
 #tab-content {
   padding: 1rem;
