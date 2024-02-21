@@ -48,6 +48,11 @@ Each project directory within the projects folder may contain the following file
 
 **Other** relevant files and directories as required by the project.
 
+# Outcomes
+|Project No|OutCome|
+|---------|------|
+|**01**|<img src="https://github.com/asyylz/React-SelfStudy/blob/28548769f47460df1efee60746b7f4d4af1c71fa/01-starting-project/01-outcome.jpg" width="600" height="400">|
+
 # Contributing
 Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
