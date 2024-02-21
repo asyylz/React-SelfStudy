@@ -1,3 +1,4 @@
+# README
 # React-SelfStudy
 Welcome to the React-SelfStudy Repo! **The React-SelfStudy** repository contains multiple projects and resources related to self-studying React. This repo serves as a demonstration of fundamental React concepts and features, including components, props, state management, conditional rendering, and event handling.
 
