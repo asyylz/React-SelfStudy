@@ -16,11 +16,11 @@ Copy Code
 ```ruby
 git clone https://github.com/asyylz/React-SelfStudy.git
 ```
-**2-** Navigate to the project directory:
+**2-** Navigate to the project directory you choose:
 
 Copy code
 ```ruby
-cd React-SelfStudy
+cd React-SelfStudy/...
 ```
 **3-** Install project dependencies using npm:
 
