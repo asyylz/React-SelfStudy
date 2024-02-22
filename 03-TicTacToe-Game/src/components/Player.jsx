@@ -7,7 +7,7 @@ console.log(initialName)
   function handleEditClick() {
     setIsEditing((editing) => !editing);
   }
-  function handleChange(event) {
+  function handleChange(event) { 
     console.log(event)
     setPlayerName(event.target.value);
   }
@@ -30,3 +30,5 @@ console.log(initialName)
     </li>
   );
 }
+
+
