@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
 const App = () => {
-  const [advice, setAdvice] = useState();
+  const [advice, setAdvice] = useState(""); // State to store the fetched advice
 
+  // Define fetchAdvice function inside the App component
   const fetchAdvice = async () => {
     try {
       const response = await axios.get("https://api.adviceslip.com/advice");
       const { advice } = response.data.slip;
       console.log("Data fetched:", advice);
-      return advice;
+      setAdvice(advice); // Update the advice state with the fetched advice
     } catch (error) {
       console.error("Error fetching data:", error);
-      return null;
     }
   };
 
+  
+  useEffect(() => {
+    fetchAdvice();
+  }, []); // Empty dependency array means it only runs once when component mounts
+
   const handleButtonClick = async () => {
-    try {
-      const newAdvice = await fetchAdvice();
-      setAdvice(newAdvice);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    fetchAdvice(); // Call the fetchAdvice function when the button is clicked
   };
 
   return (
