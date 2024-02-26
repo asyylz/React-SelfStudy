@@ -1,4 +1,3 @@
-# README
 # React-SelfStudy
 Welcome to the React-SelfStudy Repo! **The React-SelfStudy** repository contains multiple projects and resources related to self-studying React. This repo serves as a demonstration of fundamental React concepts and features, including components, props, state management, conditional rendering, and event handling.
 
@@ -52,6 +51,9 @@ Each project directory within the projects folder may contain the following file
 |Project No|OutCome|
 |---------|------|
 |**01**|<img src="https://github.com/asyylz/React-SelfStudy/blob/28548769f47460df1efee60746b7f4d4af1c71fa/01-starting-project/01-outcome.jpg" width="600" height="400">|
+|**02**|<img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg" width="600" height="400">|
+
+
 
 # Contributing
 Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
