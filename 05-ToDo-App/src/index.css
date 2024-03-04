@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 900px;
+}
+
+.wrapper-container {
+    margin: 1rem auto 1rem auto;
+    width: 80%;
+    height: 80%;
+}
+
+.tabs-container {
+    background-color: aqua;
+}
+
+.btnAdd {
+    margin-left: 20px;
+    height: 2.5rem;
+
+}

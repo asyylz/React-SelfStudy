@@ -1,20 +1,31 @@
-import { useState, useEffect} from 'react';
-export default function useLocalStorage(key, defaultValue) {
-    console.log(defaultValue)
+import { useState, useEffect } from "react";
+
+function useLocalStorage(weekDataKey, defaultValue) {
+  // Ensure that weekDataKey is a string
+  if (typeof weekDataKey !== 'string') {
+    throw new Error('The weekDataKey parameter must be a string.');
+  }
+
   const [value, setValue] = useState(() => {
-    let currentValue;
     try {
-      currentValue = JSON.parse(
-        localStorage.getItem(key) || String(defaultValue)
-      );
+      const storedValue = localStorage.getItem(weekDataKey);
+  
+      return storedValue ? JSON.parse(storedValue) : defaultValue;
     } catch (error) {
-      console.log(error);
-      currentValue = defaultValue;
+      console.error("Error retrieving value from local storage:", error);
+      return defaultValue;
     }
-    return currentValue;
   });
+
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
+    try {
+      localStorage.setItem(weekDataKey, JSON.stringify(value));
+    } catch (error) {
+      console.error("Error setting value in local storage:", error);
+    }
+  }, [weekDataKey, value]);
+
   return [value, setValue];
 }
+
+export default useLocalStorage;

@@ -6,3 +6,5 @@ dist-ssr
 vite.config.js
 .eslintrc
 .gitignore
+package.json
+package-lock.json
