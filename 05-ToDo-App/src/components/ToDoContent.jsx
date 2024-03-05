@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import useLocalStorage from "./useLocalStorage";
 
 export default function TodoContent({ weekData, setWeekData, selectedDay }) {
+  console.log(weekData);
   // Using useLocalStorage hook to manage weekData in local storage
-  const [storedWeekData, setStoredWeekData] = useLocalStorage(
-    "weekData",
-    weekData
-  );
+  // const [storedWeekData, setStoredWeekData] = useLocalStorage(
+  //   "weekData",
+  //   weekData
+  // );
   const [inputValue, setInputValue] = useState("");
 
   function handleToDoContent() {
@@ -27,7 +28,7 @@ export default function TodoContent({ weekData, setWeekData, selectedDay }) {
       }
       return day;
     });
-    setStoredWeekData(updatedWeekData);
+    //setStoredWeekData(updatedWeekData);
     // Update the weekData state using the setter function
     setWeekData(updatedWeekData);
     // Clear the input value after adding the todo
@@ -35,7 +36,7 @@ export default function TodoContent({ weekData, setWeekData, selectedDay }) {
   }
   return (
     <section className="content">
-      {storedWeekData.map((day, i) => (
+      {weekData.map((day, i) => (
         <div className="item" id={`content-${i + 1}`} key={i}>
           <input
             onChange={(e) => setInputValue(e.target.value)}
@@ -45,18 +46,18 @@ export default function TodoContent({ weekData, setWeekData, selectedDay }) {
             value={inputValue}
             id="content-input"
           />
-          <button onClick={handleToDoContent} className="btnAdd">
+          <button onClick={handleToDoContent} role="button" className="btnAdd">
             Add ToDo
           </button>
           <div className="todo-wrapper-container">
             {day.date === selectedDay && (
               <div>
-                <p>
-                  {day.todos &&
-                    day.todos.map((todo, j) => (
-                      <li key={j}>{todo.description}</li>
-                    ))}
-                </p>
+                {day.todos &&
+                  day.todos.map((todo, j) => (
+                    <p key={j}>
+                      {j + 1}--{todo.description}
+                    </p>
+                  ))}
               </div>
             )}
           </div>
