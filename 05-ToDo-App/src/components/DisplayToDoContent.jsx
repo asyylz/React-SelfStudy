@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RiDeleteBinLine } from "react-icons/ri";
+import { RiDeleteBinLine, RiEdit2Line } from "react-icons/ri";
 
 export default function DisplayToDoContent({
   storedWeekData,
@@ -60,6 +60,7 @@ export default function DisplayToDoContent({
     console.log(updatedWeekData);
     setStoredWeekData(updatedWeekData);
   }
+
   return (
     <section className="content">
       {storedWeekData.map((day, i) => (
@@ -100,10 +101,15 @@ export default function DisplayToDoContent({
                           <div className="checkmark"></div>
                         </label>
                       </div>
-
                       <p key={j} className={todo.isDone ? "done" : ""}>
                         {j + 1}--{todo.description}
                       </p>
+                      {/* <RiEdit2Line
+                        size={50}
+                        style={{ cursor: "pointer" }}
+                        color="#ff7300"
+                        onClick={() => handleEditTodoDescription(todo.id)}
+                      /> */}
                       <RiDeleteBinLine
                         size={50}
                         style={{ cursor: "pointer" }}
