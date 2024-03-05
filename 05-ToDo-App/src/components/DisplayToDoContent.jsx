@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export default function DisplayToDoContent({
   storedWeekData,
@@ -16,7 +17,7 @@ export default function DisplayToDoContent({
         const todoIdCounter = day.todos ? day.todos.length + 1 : 1;
         const updatedTodos = [
           ...(day.todos || []),
-          { id: todoIdCounter, description: input },
+          { id: todoIdCounter, description: input, isDone: false },
         ];
         return { ...day, todos: updatedTodos };
       }
@@ -27,6 +28,38 @@ export default function DisplayToDoContent({
     setInput("");
   }
 
+  function handleDeleteBtn(todoId) {
+    console.log("delete");
+    const updatedWeekData = storedWeekData.map((day) => {
+      if (day.date === selectedDay) {
+        const updatedTodos = day.todos.filter((todo) => todo.id !== todoId);
+        return { ...day, todos: updatedTodos };
+      }
+      return day;
+    });
+    console.log(updatedWeekData);
+    setStoredWeekData(updatedWeekData);
+  }
+
+  function handleIsDoneBtn(todoId) {
+    const updatedWeekData = storedWeekData.map((day) => {
+      if (day.date === selectedDay) {
+        const updatedTodos = day.todos.map((todo) => {
+          if (todo.id === todoId) {
+            return {
+              ...todo,
+              isDone: !todo.isDone,
+            };
+          }
+          return todo;
+        });
+        return { ...day, todos: updatedTodos };
+      }
+      return day;
+    });
+    console.log(updatedWeekData);
+    setStoredWeekData(updatedWeekData);
+  }
   return (
     <section className="content">
       {storedWeekData.map((day, i) => (
@@ -46,14 +79,38 @@ export default function DisplayToDoContent({
           <button onClick={handleAddBtn} role="button" className="btnAdd">
             Add ToDo
           </button>
-          <div className="todo-wrapper-container">
+          <div className="todo-wrapper-container" style={{ marginTop: "1rem" }}>
             {day.date === selectedDay && (
               <div>
                 {day.todos &&
                   day.todos.map((todo, j) => (
-                    <p key={j}>
-                      {j + 1}--{todo.description}
-                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div className="checkbox-wrapper-57">
+                        <label className="container">
+                          <input
+                            type="checkbox"
+                            onClick={() => handleIsDoneBtn(todo.id)}
+                          />
+                          <div className="checkmark"></div>
+                        </label>
+                      </div>
+
+                      <p key={j} className={todo.isDone ? "done" : ""}>
+                        {j + 1}--{todo.description}
+                      </p>
+                      <RiDeleteBinLine
+                        size={50}
+                        style={{ cursor: "pointer" }}
+                        color="#ff7300"
+                        onClick={() => handleDeleteBtn(todo.id)}
+                      />
+                    </div>
                   ))}
               </div>
             )}
