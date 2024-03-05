@@ -30,7 +30,11 @@ export default function DisplayToDoContent({
   return (
     <section className="content">
       {storedWeekData.map((day, i) => (
-        <div className="item" id={`content-${i + 1}`} key={i}>
+        <div
+          className={day.date === selectedDay ? "item checked" : "item"}
+          id={`content-${i + 1}`}
+          key={i}
+        >
           <input
             onChange={(e) => setInput(e.target.value)}
             type="text"
