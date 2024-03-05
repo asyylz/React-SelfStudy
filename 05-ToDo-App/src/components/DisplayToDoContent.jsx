@@ -97,6 +97,7 @@ export default function DisplayToDoContent({
                           <input
                             type="checkbox"
                             onClick={() => handleIsDoneBtn(todo.id)}
+                            checked={todo.isDone}
                           />
                           <div className="checkmark"></div>
                         </label>

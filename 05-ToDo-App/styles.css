@@ -6,7 +6,7 @@ body {
     margin: 0;
     height: 100%;
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+   
 }
 
 .title {
@@ -39,10 +39,10 @@ body {
 }
 
 .wrapper .line {
-    width: 80%;
+    width: 90%;
     margin: 25px auto 0 auto;
-    height: 1px;
-    background-color: #c3d2e3;
+    height: 2px;
+    background-color: #ff7300;
 }
 
 .container {
@@ -213,17 +213,6 @@ body {
 #tab-3:checked+label {
     color: #525252;
 }
-
-/* #tab-1:checked~section #content-1,
-#tab-2:checked~section #content-2,
-#tab-3:checked~section #content-3,
-#tab-4:checked~section #content-4,
-#tab-5:checked~section #content-5,
-#tab-6:checked~section #content-6,
-#tab-7:checked~section #content-7 {
-    opacity: 1;
-    visibility: visible;
-} */
 
 .item.checked {
     opacity: 1;
