@@ -7,7 +7,6 @@ export default function TodoContent({ weekData, setWeekData, selectedDay }) {
     "weekData",
     weekData
   );
-
   const [inputValue, setInputValue] = useState("");
 
   function handleToDoContent() {
@@ -35,35 +34,65 @@ export default function TodoContent({ weekData, setWeekData, selectedDay }) {
     setInputValue("");
   }
   return (
-    <div className="content-container">
-      <input
-        onChange={(e) => setInputValue(e.target.value)}
-        type="text"
-        name="todo-content"
-        placeholder="Enter your todo here..."
-        value={inputValue}
-      />
-      <button onClick={handleToDoContent} className="btnAdd">
-        Add ToDo
-      </button>
-      <div className="todo-wrapper-container">
-        {/* Render todos for the selected day */}
-        {storedWeekData.map((day, i) => {
-          if (day.date === selectedDay) {
-            return (
-              <div key={i}>
-                <ul>
+    <section className="content">
+      {storedWeekData.map((day, i) => (
+        <div className="item" id={`content-${i + 1}`} key={i}>
+          <input
+            onChange={(e) => setInputValue(e.target.value)}
+            type="text"
+            name="todo-content"
+            placeholder="Enter your todo here..."
+            value={inputValue}
+            id="content-input"
+          />
+          <button onClick={handleToDoContent} className="btnAdd">
+            Add ToDo
+          </button>
+          <div className="todo-wrapper-container">
+            {day.date === selectedDay && (
+              <div>
+                <p>
                   {day.todos &&
                     day.todos.map((todo, j) => (
                       <li key={j}>{todo.description}</li>
                     ))}
-                </ul>
+                </p>
               </div>
-            );
-          }
-          return null; // Render nothing if it's not the selected day
-        })}
-      </div>
-    </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    // <div className="content-container">
+    //   <input
+    //     onChange={(e) => setInputValue(e.target.value)}
+    //     type="text"
+    //     name="todo-content"
+    //     placeholder="Enter your todo here..."
+    //     value={inputValue}
+    //   />
+    //   <button onClick={handleToDoContent} className="btnAdd">
+    //     Add ToDo
+    //   </button>
+    //   <div className="todo-wrapper-container">
+    //     {/* Render todos for the selected day */}
+    //     {storedWeekData.map((day, i) => {
+    //       if (day.date === selectedDay) {
+    //         return (
+    //           <div key={i}>
+    //             <ul>
+    //               {day.todos &&
+    //                 day.todos.map((todo, j) => (
+    //                   <li key={j}>{todo.description}</li>
+    //                 ))}
+    //             </ul>
+    //           </div>
+    //         );
+    //       }
+    //       return null; // Render nothing if it's not the selected day
+    //     })}
+    //   </div>
+    // </div>
   );
 }

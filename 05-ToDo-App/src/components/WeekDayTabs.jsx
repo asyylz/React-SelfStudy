@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 export default function WeekDayTabs() {
   //const [weekLocal, setWeekLocal] = useLocalStorage("weekInfo", []);
   const [weekData, setWeekData] = useState([]);
+  const [selectedDate, setSelectedDate] = useState("");
 
   useEffect(() => {
     // Get the current date
@@ -34,27 +35,61 @@ export default function WeekDayTabs() {
     setWeekData(week);
   }, []); // Run only once on component mount
 
+  const handleTabSelect = (date) => {
+    setSelectedDate(date);
+  };
+
   return (
-    <Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="tabs-container mb-4"
-      justify
-    >
+    <div className="card tabs">
       {weekData.map((day, index) => (
-        <Tab
-          key={index}
-          eventKey={day.date}
-          title={day.date}
-          style={{ backgroundColor: day.current ? "red" : "white" }}
-        >
-          <TodoContent
-            weekData={weekData}
-            setWeekData={setWeekData}
-            selectedDay={day.date}
+        <>
+          <input
+            id={`tab-${index + 1}`}
+            type="radio"
+            className="tab tab-selector"
+            checked={day.date === selectedDate ? "checked" : ""}
+            name="tab"
+            onChange={() => handleTabSelect(day.date)}
           />
-        </Tab>
+          <label
+            htmlFor={`tab-${index + 1}`}
+            className="tab tab-primary"
+            onSelect={() => handleTabSelect(day.date)}
+          >
+            {day.date}
+          </label>
+        </>
       ))}
-    </Tabs>
+      <div className="tabsShadow"></div>
+      <div className="glider"></div>
+      <TodoContent
+        weekData={weekData}
+        setWeekData={setWeekData}
+        selectedDay={selectedDate}
+      />
+    </div>
   );
+
+  // <Tabs
+  //   defaultActiveKey="profile"
+  //   id="justify-tab-example"
+  //   className="tabs-container mb-4"
+  //   justify
+  //   onSelect={handleTabSelect}
+  // >
+  //   {weekData.map((day, index) => (
+  //     <Tab
+  //       key={index}
+  //       eventKey={day.date}
+  //       title={day.date}
+  //       style={{ backgroundColor: day.current ? "red" : "white" }}
+  //     >
+  //       <TodoContent
+  //         weekData={weekData}
+  //         setWeekData={setWeekData}
+  //         selectedDay={selectedDate}
+  //       />
+  //     </Tab>
+  //   ))}
+  // </Tabs>
 }
