@@ -1,8 +1,9 @@
-import WeekDayTabs from "./components/WeekDayTabs";
+import Home from "./components/pages/Home";
 import "./App.css";
 
 function App() {
-  return <WeekDayTabs />;
+
+  return <Home />;
 }
 
 export default App;

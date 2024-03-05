@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 
 function useLocalStorage(weekDataKey, defaultValue) {
-
   // Ensure that weekDataKey is a string
-  if (typeof weekDataKey !== 'string') {
-    throw new Error('The weekDataKey parameter must be a string.');
+  if (typeof weekDataKey !== "string") {
+    throw new Error("The weekDataKey parameter must be a string.");
   }
 
   const [value, setValue] = useState(() => {
     try {
       const storedValue = localStorage.getItem(weekDataKey);
-  
+
       return storedValue ? JSON.parse(storedValue) : defaultValue;
     } catch (error) {
       console.error("Error retrieving value from local storage:", error);
- 
+
       return defaultValue;
     }
   });
