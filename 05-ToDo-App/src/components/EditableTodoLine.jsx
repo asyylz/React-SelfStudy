@@ -67,7 +67,6 @@ export default function EditableTodoLine({
             type="checkbox"
             onChange={() => handleIsDoneBtn(todo.id)}
             checked={todo.isDone}
-            onKeyDown={(e) => e.key === "Enter" && setEditingTodoId(null)}
           />
           <div className="checkmark"></div>
         </label>
@@ -79,6 +78,12 @@ export default function EditableTodoLine({
           value={todo.description}
           onChange={(e) => handleEditTodoDescription(todo.id, e.target.value)}
           onBlur={() => setEditingTodoId(null)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleEditTodoDescription();
+              setEditingTodoId(null);
+            }
+          }}
         />
       ) : (
         <p className={todo.isDone ? "done" : ""}>
