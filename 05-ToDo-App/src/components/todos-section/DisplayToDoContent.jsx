@@ -42,6 +42,7 @@ export default function DisplayToDoContent({
           id={`content-${i + 1}`}
           key={i}
         >
+        <>
           <input
             onChange={(e) => setInput(e.target.value)}
             type="text"
@@ -54,6 +55,7 @@ export default function DisplayToDoContent({
           <button onClick={handleAddBtn} role="button" className="btnAdd">
             Add ToDo
           </button>
+          </>
           <div className="todo-wrapper-container" style={{ marginTop: "1rem" }}>
             {day.date === selectedDay && (
               <div>

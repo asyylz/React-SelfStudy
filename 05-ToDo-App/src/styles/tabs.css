@@ -6,13 +6,49 @@
 }
 
 .tabs {
-    text-align: center;
+    /* text-align: center; */
     /* position: relative; */
-    font-size: 4rem;
-    margin: 0 10px 0 10px;
-    
+    /* margin: 0 10px 0 10px; */
+}
+/* div.card.tabs {
+    height: 110px;
+} */
+
+label.tab {
+    border-radius: 6pt 6pt 6pt 6pt;
+    height: 60%;
+    align-items: center;
 }
 
+
+
+@media (min-width:1181px) {
+    .tabs input+label {
+        font-size: 1rem;
+        margin: 12px;
+    }
+    div.card.tabs {
+        height: 110px;
+    }
+}
+
+@media (max-width:1180px) {
+    .tabs input+label {
+        font-size: 0.9rem;
+        margin: 12px;
+    }
+    div.card.tabs {
+        height: 110px; 
+    }
+}
+
+@media (min-width:801px)and (max-width:1179px) {
+    .tabs input+label {
+        margin: 8px 0 0 0;
+       
+        
+    }
+}
 
 .tabs .tabsShadow {
     width: 100%;
@@ -27,10 +63,7 @@
 }
 
 .tabs input+label {
-    margin: 12px;
-    width: 10%;
-    min-width: 10%;
-    max-width: 10%;
+    width: 50%;
     transition: all 0.3s;
     text-align: center;
     border: none;
@@ -45,14 +78,13 @@
     box-shadow: 1px 1px 2px 1px #231f20;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 1.1rem;
     background: #26292c;
-    margin-bottom: 0.5px;
+    /* margin-bottom: 0.5px; */
     border-radius: 7px 7px 0 0 !important;
     border-top: 1px solid #3b3d3f;
     letter-spacing: 0.1666666667em !important;
     font-family: "antique-olive" !important;
-    background: hsl(232deg 6% 17%);
+    /* background: hsl(232deg 6% 17%); */
     cursor: pointer;
 }
 
@@ -60,9 +92,7 @@
     color: #777;
 }
 
-label.tab{
-    border-radius: 6pt 6pt 6pt 6pt;
-}
+
 
 
 #tab-1:checked+label,
