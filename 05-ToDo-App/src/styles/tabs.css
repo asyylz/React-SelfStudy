@@ -13,9 +13,6 @@
     
 }
 
-.tabs input+label:hover {
-    color: #777;
-}
 
 .tabs .tabsShadow {
     width: 100%;
@@ -57,7 +54,10 @@
     font-family: "antique-olive" !important;
     background: hsl(232deg 6% 17%);
     cursor: pointer;
-    
+}
+
+.tabs input+label:hover {
+    color: #777;
 }
 
 label.tab{
