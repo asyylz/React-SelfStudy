@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DisplayToDoContent from "../DisplayToDoContent";
+import DisplayToDoContent from "../todos-section/DisplayToDoContent";
 export default function WeekDisplay({
   weekData,
   storedWeekData,

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import EditableTodoLine from "./EditableTodoLine";
+import IsDoneCheckBox from "./IsDoneCheckbox";
 
 export default function DisplayToDoContent({
   storedWeekData,
   setStoredWeekData,
   selectedDay,
 }) {
-
   const [input, setInput] = useState("");
 
   function handleAddBtn() {
@@ -61,6 +61,12 @@ export default function DisplayToDoContent({
                         justifyContent: "center",
                       }}
                     >
+                      <IsDoneCheckBox
+                        todo={todo}
+                        storedWeekData={storedWeekData}
+                        setStoredWeekData={setStoredWeekData}
+                        selectedDay={selectedDay}
+                      />
                       <EditableTodoLine
                         todo={todo}
                         j={j}
