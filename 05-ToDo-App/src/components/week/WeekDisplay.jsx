@@ -22,7 +22,6 @@ export default function WeekDisplay({
             className="tab tab-selector"
             name="tab"
             onChange={() => handleTabSelect(day.date)}
-         
           />
           <label
             htmlFor={`tab-${index + 1}`}

@@ -8,8 +8,7 @@ export default function DisplayToDoContent({
   selectedDay,
 }) {
   const [input, setInput] = useState("");
-  const [editingTodoId, setEditingTodoId] = useState(null);
-  //const [isEditing, setIsEditing] = useState(false);
+  //const [editingTodoId, setEditingTodoId] = useState(null);
 
   function handleAddBtn() {
     if (!input || input.trim() === "") {
@@ -26,43 +25,43 @@ export default function DisplayToDoContent({
       }
       return day;
     });
-    console.log(updatedWeekData);
+   
     setStoredWeekData(updatedWeekData);
     setInput("");
   }
 
-  function handleDeleteBtn(todoId) {
-    console.log("delete");
-    const updatedWeekData = storedWeekData.map((day) => {
-      if (day.date === selectedDay) {
-        const updatedTodos = day.todos.filter((todo) => todo.id !== todoId);
-        return { ...day, todos: updatedTodos };
-      }
-      return day;
-    });
-    console.log(updatedWeekData);
-    setStoredWeekData(updatedWeekData);
-  }
+  // function handleDeleteBtn(todoId) {
+  //   console.log("delete");
+  //   const updatedWeekData = storedWeekData.map((day) => {
+  //     if (day.date === selectedDay) {
+  //       const updatedTodos = day.todos.filter((todo) => todo.id !== todoId);
+  //       return { ...day, todos: updatedTodos };
+  //     }
+  //     return day;
+  //   });
+  //   console.log(updatedWeekData);
+  //   setStoredWeekData(updatedWeekData);
+  // }
 
-  function handleIsDoneBtn(todoId) {
-    const updatedWeekData = storedWeekData.map((day) => {
-      if (day.date === selectedDay) {
-        const updatedTodos = day.todos.map((todo) => {
-          if (todo.id === todoId) {
-            return {
-              ...todo,
-              isDone: !todo.isDone,
-            };
-          }
-          return todo;
-        });
-        return { ...day, todos: updatedTodos };
-      }
-      return day;
-    });
-    console.log(updatedWeekData);
-    setStoredWeekData(updatedWeekData);
-  }
+  // function handleIsDoneBtn(todoId) {
+  //   const updatedWeekData = storedWeekData.map((day) => {
+  //     if (day.date === selectedDay) {
+  //       const updatedTodos = day.todos.map((todo) => {
+  //         if (todo.id === todoId) {
+  //           return {
+  //             ...todo,
+  //             isDone: !todo.isDone,
+  //           };
+  //         }
+  //         return todo;
+  //       });
+  //       return { ...day, todos: updatedTodos };
+  //     }
+  //     return day;
+  //   });
+  //   console.log(updatedWeekData);
+  //   setStoredWeekData(updatedWeekData);
+  // }
 
   return (
     <section className="content">
@@ -79,6 +78,7 @@ export default function DisplayToDoContent({
             placeholder="Enter your todo here..."
             value={input}
             id="content-input"
+            onKeyDown={(e)=> e.key === "Enter" && handleAddBtn()}
           />
           <button onClick={handleAddBtn} role="button" className="btnAdd">
             Add ToDo
@@ -95,7 +95,7 @@ export default function DisplayToDoContent({
                         justifyContent: "center",
                       }}
                     >
-                      <div className="checkbox-wrapper-57">
+                      {/* <div className="checkbox-wrapper-57">
                         <label className="container">
                           <input
                             type="checkbox"
@@ -104,18 +104,18 @@ export default function DisplayToDoContent({
                           />
                           <div className="checkmark"></div>
                         </label>
-                      </div>
+                      </div> */}
                       <EditableTodoInput
                         todo={todo}
-                        editingTodoId={editingTodoId}
-                        setEditingTodoId={setEditingTodoId}
+                        // editingTodoId={editingTodoId}
+                        // setEditingTodoId={setEditingTodoId}
                         j={j}
                         storedWeekData={storedWeekData}
                         setStoredWeekData={setStoredWeekData}
                         selectedDay={selectedDay}
                       />
 
-                      <RiEdit2Line
+                      {/* <RiEdit2Line
                         size={50}
                         style={{ cursor: "pointer" }}
                         //color="#ff7300"
@@ -127,7 +127,7 @@ export default function DisplayToDoContent({
                         style={{ cursor: "pointer" }}
                         color="#ff7300"
                         onClick={() => handleDeleteBtn(todo.id)}
-                      />
+                      /> */}
                     </div>
                   ))}
               </div>
