@@ -7,12 +7,48 @@
 
 div.card.tabs {
     height: 110px;
+   
 }
 
 label.tab {
-    border-radius: 6pt 6pt 6pt 6pt;
+  
     height: 60%;
     align-items: center;
+}
+
+.tabs input+label {
+    width: 50%;
+    transition: all 0.3s;
+    text-align: center;
+    border: none;
+    color: #e7e9f5;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    vertical-align: top;
+    justify-content: flex-start;
+    background: #333;
+    text-transform: uppercase;
+    font-weight: 300;
+    background: #26292c;
+    border-radius: 7px 7px 7px 7px !important;
+    letter-spacing: 0.1666666667em !important;
+    font-family: "antique-olive" !important;
+    cursor: pointer;
+}
+
+.tabs input+label:hover {
+    color: #777;
+}
+
+#tab-1:checked+label,
+#tab-2:checked+label,
+#tab-3:checked+label,
+#tab-4:checked+label,
+#tab-5:checked+label,
+#tab-6:checked+label,
+#tab-7:checked+label {
+    color: #ffadfa;
+    color: #ffaa75;
 }
 
 @media (min-width:1181px) {
@@ -57,43 +93,4 @@ label.tab {
     .card.tabs div {
         margin-right: 0 !important;
     }
-}
-
-.tabs input+label {
-    width: 50%;
-    transition: all 0.3s;
-    text-align: center;
-    border: none;
-    border-bottom: 0.5pt solid #1d1e22;
-    color: #e7e9f5;
-    display: inline-flex;
-    -webkit-box-pack: center;
-    /* padding: 5pt 10pt;  */
-    vertical-align: top;
-    justify-content: flex-start;
-    background: #333;
-    box-shadow: 1px 1px 2px 1px #231f20;
-    text-transform: uppercase;
-    font-weight: 300;
-    background: #26292c;
-    border-radius: 7px 7px 0 0 !important;
-    border-top: 1px solid #3b3d3f;
-    letter-spacing: 0.1666666667em !important;
-    font-family: "antique-olive" !important;
-    cursor: pointer;
-}
-
-.tabs input+label:hover {
-    color: #777;
-}
-
-#tab-1:checked+label,
-#tab-2:checked+label,
-#tab-3:checked+label,
-#tab-4:checked+label,
-#tab-5:checked+label,
-#tab-6:checked+label,
-#tab-7:checked+label {
-    color: #ffadfa;
-    color: #ffaa75;
 }
