@@ -1,7 +1,7 @@
 .devider {
+    align-items: center;
     height: 1px;
-    width: 96%;
+    width: 90%;
     position: absolute;
-    left: 0;
-    top: 120px;
+    top: 110px;
 }

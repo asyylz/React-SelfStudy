@@ -15,6 +15,7 @@ export default function WeekDisplay({
 
   return (
     <>
+
       <div className="card tabs">
         {storedWeekData.map((day, index) => (
           <div style={{marginRight:"15px"}}>
@@ -41,11 +42,10 @@ export default function WeekDisplay({
               {day.date}
               
             </label>
-            <div className="devider btnAdd"></div>
           </div>
+          
         ))}
-   
-     
+        
       </div>
       <DisplayToDoContent
         setStoredWeekData={setStoredWeekData}
