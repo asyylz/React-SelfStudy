@@ -95,7 +95,9 @@ export default function EditableTodoLine({
         style={{ cursor: "pointer" }}
         //color="#ff7300"
         color={editingTodoId ? "red" : "#ff7300"}
-        onClick={() => setEditingTodoId(todo.id)}
+        onClick={() =>
+          editingTodoId ? setEditingTodoId(null) : setEditingTodoId(todo.id)
+        }
       />
       <RiDeleteBinLine
         size={50}
