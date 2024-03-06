@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/ovt6ynt.css");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Spectral:wght@200;300;400;500;600;700;800&display=swap");
 
+@import url(./src/styles/doneCheckbox.css);
+
 body {
     padding: 0;
     margin: 0;
@@ -266,67 +268,6 @@ body {
 
 .content p.done {
     text-decoration: line-through;
-}
-
-.checkbox-wrapper-57 input[type="checkbox"] {
-    visibility: hidden;
-    display: none;
-}
-
-.checkbox-wrapper-57 *,
-.checkbox-wrapper-57 ::after,
-.checkbox-wrapper-57 ::before {
-    box-sizing: border-box;
-}
-
-.checkbox-wrapper-57 .container {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    font-size: 25px;
-    user-select: none;
-}
-
-/* Create a custom checkbox */
-.checkbox-wrapper-57 .checkmark {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 1.3em;
-    width: 1.3em;
-    background: black;
-    border-radius: 50px;
-    transition: all 0.7s;
-    --spread: 20px;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-wrapper-57 .container input:checked~.checkmark {
-    background: black;
-    box-shadow: -10px -10px var(--spread) 0px #5B51D8, 0 -10px var(--spread) 0px #833AB4, 10px -10px var(--spread) 0px #E1306C, 10px 0 var(--spread) 0px #FD1D1D, 10px 10px var(--spread) 0px #F77737, 0 10px var(--spread) 0px #FCAF45, -10px 10px var(--spread) 0px #FFDC80;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkbox-wrapper-57 .checkmark::after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-wrapper-57 .container input:checked~.checkmark::after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-wrapper-57 .container .checkmark::after {
-    left: 0.5em;
-    top: 0.34em;
-    width: 0.25em;
-    height: 0.5em;
-    border: solid #f0f0f0;
-    border-width: 0 0.15em 0.15em 0;
-    transform: rotate(45deg);
 }
 
 label.tab.tab-primary {

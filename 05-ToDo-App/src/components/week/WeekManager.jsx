@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import WeekDisplay from "./WeekDisplay";
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorage from "../useLocalStorage";
 
 export default function WeekManager({ weekData }) {
   //Using useLocalStorage hook to manage weekData in local storage
