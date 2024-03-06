@@ -1,4 +1,5 @@
 import { useState } from "react";
+import EditableTodoInput from "./EditableTodoInput";
 import { RiDeleteBinLine, RiEdit2Line } from "react-icons/ri";
 
 export default function DisplayToDoContent({
@@ -7,7 +8,8 @@ export default function DisplayToDoContent({
   selectedDay,
 }) {
   const [input, setInput] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
+  const [editingTodoId, setEditingTodoId] = useState(null);
+  //const [isEditing, setIsEditing] = useState(false);
 
   function handleAddBtn() {
     if (!input || input.trim() === "") {
@@ -61,9 +63,25 @@ export default function DisplayToDoContent({
     console.log(updatedWeekData);
     setStoredWeekData(updatedWeekData);
   }
-  function handleInputChange(e) {
-    setInput(e.target.value);
-  }
+  
+//   function handleEditTodoDescription(todoId, newValue) {
+//     const updatedWeekData = storedWeekData.map((day) => {
+//       if (day.date === selectedDay) {
+//         const updatedTodos = day.todos.map((todo) => {
+//           if (todo.id === todoId) {
+//             return {
+//               ...todo,
+//               description: newValue,
+//             };
+//           }
+//           return todo;
+//         });
+//         return { ...day, todos: updatedTodos };
+//       }
+//       return day;
+//     });
+//     setStoredWeekData(updatedWeekData);
+// }
 
   return (
     <section className="content">
@@ -106,28 +124,34 @@ export default function DisplayToDoContent({
                           <div className="checkmark"></div>
                         </label>
                       </div>
-                      {isEditing ? (
-                        <>
-                          <input
-                            id="edit-input"
-                            value={`${j + 1}--${todo.description}`}
-                            onChange={(e) => handleInputChange(e)}
-                          />
-                          {/* Edit icon is not rendered while editing */}
-                        </>
+                      <EditableTodoInput todo={todo} editingTodoId={editingTodoId} setEditingTodoId={setEditingTodoId}
+                        j={j}
+                      />
+
+
+                      {/* {editingTodoId === todo.id ? (
+                        <input
+                          //id={`edit-input-${todo.id}`}
+                          id="edit-input"
+                          value={todo.description}
+                          onChange={(e) =>
+                            handleEditTodoDescription(todo.id, e.target.value)
+                          }
+                          onBlur={() => setEditingTodoId(null)}
+                        />
                       ) : (
-                        <>
-                          <p key={j} className={todo.isDone ? "done" : ""}>
-                            {j + 1}--{todo.description}
-                          </p>
-                        </>
-                      )}
+                        <p className={todo.isDone ? "done" : ""}>
+                          {j + 1}--{todo.description}
+                        </p>
+                      )} */}
                       {/* Render edit and delete icons when not editing */}
+
                       <RiEdit2Line
                         size={50}
                         style={{ cursor: "pointer" }}
-                        color="#ff7300"
-                        onClick={() => setIsEditing(!isEditing)}
+                        //color="#ff7300"
+                        color={editingTodoId ? "red" : "#ff7300"}
+                        onClick={() => setEditingTodoId(todo.id)}
                       />
                       <RiDeleteBinLine
                         size={50}
