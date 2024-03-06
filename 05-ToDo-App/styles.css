@@ -7,7 +7,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: "Roboto", sans-serif;
-   
+
 }
 
 .title {
@@ -74,20 +74,6 @@ body {
     background: hsl(232deg 18% 8%);
 }
 
-.tabs {
-    text-align: center;
-    position: relative;
-    font-size: 4rem;
-    margin: 0 10px 0 10px;
-}
-
-.tabs input {
-    position: absolute;
-    opacity: 0;
-    margin: 0;
-    padding: 0;
-}
-
 #content-input {
     appearance: none;
     border: none;
@@ -103,7 +89,6 @@ body {
     margin-right: 6rem;
     font-size: 1.7rem;
 }
-
 
 .btnAdd {
     width: 200px;
@@ -174,6 +159,27 @@ body {
     border-radius: 10px;
 }
 
+.tabs {
+    text-align: center;
+    /* position: relative; */
+    font-size: 4rem;
+    margin: 0 10px 0 10px;
+}
+
+.tabs input {
+    position: relative;
+    opacity: 0;
+    margin: auto;
+    padding: 0;
+}
+
+/* .tabs input {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+} */
+
 .tabs input+label:hover {
     color: #777;
 }
@@ -189,38 +195,6 @@ body {
     top: 0;
     pointer-events: none;
 }
-
-.content .item {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    position: absolute;
-    padding: 10px 20px;
-}
-
-#tab-1:checked~.glider {
-    left: 10%;
-}
-
-#tab-2:checked+label {
-    color: #51a14c;
-}
-
-#tab-2:checked~.glider {
-    background: linear-gradient(90deg, #51a14c 0%, #10c33e 100%);
-    box-shadow: 0px 0px 8px 0px rgba(47, 187, 12, 0.62);
-}
-
-#tab-3:checked+label {
-    color: #525252;
-}
-
-.item.checked {
-    opacity: 1;
-    visibility: visible;
-}
-
-
 
 .tabs input+label {
     margin: 12px;
@@ -252,17 +226,31 @@ body {
     cursor: pointer;
 }
 
+.content .item {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    position: absolute;
+    padding: 10px 20px;
+}
+
+.item.checked {
+    opacity: 1;
+    visibility: visible;
+}
+
 .content {
     margin: 0px auto;
     text-align: left;
     line-height: 20px;
     height: 700px;
     border-radius: 5px;
-    box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%);
+    border: 2px solid #A100FA;
+    /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
     display: block;
     padding: 1.25rem;
     z-index: 2;
-    border-top: 1px solid #3b3d3f;
+    /* border-top: 1px solid #3b3d3f; */
     background: hsl(232deg 16% 15%);
     position: relative;
 }
@@ -277,10 +265,11 @@ body {
     transition: 300ms ease-in-out;
     font-size: 1.5rem;
     font-weight: 300;
-    margin:0.5rem 0.5rem 0.5rem 2rem;
+    margin: 0.5rem 0.5rem 0.5rem 2rem;
     flex: 90%;
 }
-.content p.done{
+
+.content p.done {
     text-decoration: line-through;
 }
 
@@ -345,13 +334,6 @@ body {
     transform: rotate(45deg);
 }
 
-.tabs input {
-    position: relative;
-    opacity: 0;
-    margin: auto;
-    padding: 0;
-}
-
 label.tab.tab-primary {
     border-radius: 6pt 0 0 6pt;
 }
@@ -361,95 +343,64 @@ label.tab.tab-warning {
 }
 
 #tab-1:checked+label,
-#tab-5:checked+label {
-    color: deepskyblue;
-}
-
+#tab-2:checked+label,
 #tab-3:checked+label,
-#tab-6:checked+label {
+#tab-4:checked+label,
+#tab-5:checked+label,
+#tab-6:checked+label,
+#tab-7:checked+label {
     color: #ffadfa;
     color: #ffaa75;
 }
 
-#tab-4:checked+label,
-#tab-7:checked+label {
-    color: #ffadfa;
+
+.glider {
+    width: 12%;
+    min-width: 10%;
+    padding: 0px 13px;
+    height: 10px;
+    border-radius: 0 0 1px 1px;
+    position: absolute;
+    background-color: #A100FA;
+    /* background: linear-gradient(90deg, #b9326f 0%, #ff5ddc 100%); */
+    /* box-shadow: 0px 0px 8px 0px rgba(231, 13, 93, 0.57); */
+    transition: all 0.3s;
+    top: 68px;
+    z-index: 2;
+    left: 2%;
+
+}
+
+label.tab {
+    position: relative;
 }
 
 #tab-1:checked~.glider {
-    left: 2.7%;
+    left: 1.1%;
+
 }
 
 #tab-2:checked~.glider {
-    left: 16.7%;
+    left: 15.4%;
+
 }
 
 #tab-3:checked~.glider {
-    background: linear-gradient(90deg,
-            #faffcc 0%,
-            #f5eea3 10%,
-            #ffe48a 40%,
-            #ffb54d 65%,
-            #ff974d 85%,
-            #ff8052 100%);
-    left: 30.7%;
-    box-shadow: 0px 0px 8px 0px hsl(17.72deg 100% 70% / 70%);
+    left: 29.5%;
 }
 
 #tab-4:checked~.glider {
-    background: linear-gradient(90deg, #b9326f 0%, #ff5ddc 100%);
-    box-shadow: 0px 0px 8px 0px rgba(231, 13, 93, 0.57);
-    left: 44.7% !important;
+    left: 43.6%;
 }
 
 #tab-5:checked~.glider {
-    left: 58.58%
+    left: 57.7%;
 }
 
 #tab-6:checked~.glider {
-    background: linear-gradient(90deg,
-            #faffcc 0%,
-            #f5eea3 10%,
-            #ffe48a 40%,
-            #ffb54d 65%,
-            #ff974d 85%,
-            #ff8052 100%);
-    box-shadow: 0px 0px 8px 0px hsl(17.72deg 100% 70% / 70%);
-    left: 72.5%
+    left: 71.8%;
 }
 
 #tab-7:checked~.glider {
-    background: linear-gradient(90deg, #b9326f 0%, #ff5ddc 100%);
-    box-shadow: 0px 0px 8px 0px rgba(231, 13, 93, 0.57);
-    left: 86.5%
-}
-
-.glider {
-    width: 10%;
-    min-width: 10%;
-    padding: 0px 13px;
-    height: 4.5px;
-    border-radius: 0 0 1px 1px;
-    position: absolute;
-    box-shadow: 0px 0px 8px 0px hsl(262deg 100% 70% / 70%);
-    background: linear-gradient(113deg,
-            hsl(260deg 100% 64%) 0%,
-            hsl(190deg 100% 55%) 100%);
-    transition: all 0.3s;
-    top: 65px;
-    z-index: 2;
-    left: 2.7%;
-}
-
-span.numit {
-    font-size: 12pt;
-    font-family: "muli";
-    font-weight: 600;
-    text-shadow: 0.5px 0.5px 0.5px #e7e9f5;
-    color: #0e101a;
-    margin-right: 2px;
-    margin-left: -2px;
-    padding: 0;
-    color: aliceblue;
-    text-shadow: 0.5pt 0.5pt 0.5pt #2d3748;
+    left: 86%;
 }
