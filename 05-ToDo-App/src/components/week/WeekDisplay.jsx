@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DisplayToDoContent from "../todos-section/DisplayToDoContent";
-import "../../styles/glider.css";
+import "../../styles/devider.css";
 
 export default function WeekDisplay({
   weekData,
@@ -27,7 +27,7 @@ export default function WeekDisplay({
             />
             <label
               htmlFor={`tab-${index + 1}`}
-              className="tab"
+              className={selectedDate===day.date ? "tab btnAdd":"tab"}
               onSelect={() => handleTabSelect(day.date)}
               style={{
                 border:
@@ -41,10 +41,10 @@ export default function WeekDisplay({
               {day.date}
               
             </label>
-            <div className="glider"></div>
+            <div className="devider btnAdd"></div>
           </div>
         ))}
-        <div className="tabsShadow"></div>
+   
      
       </div>
       <DisplayToDoContent

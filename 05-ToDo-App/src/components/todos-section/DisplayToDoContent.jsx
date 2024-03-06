@@ -7,6 +7,7 @@ import "../../styles/content.css"
 import "../../styles/tabs.css"
 import "../../styles/container.css"
 
+
 export default function DisplayToDoContent({
   storedWeekData,
   setStoredWeekData,
@@ -35,6 +36,7 @@ export default function DisplayToDoContent({
   }
 
   return (
+    
     <section className="content">
       {storedWeekData.map((day, i) => (
         <div
