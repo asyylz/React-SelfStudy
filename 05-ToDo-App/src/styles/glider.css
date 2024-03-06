@@ -3,15 +3,13 @@
     min-width: 10%;
     padding: 0px 13px;
     height: 20px;
-    border-radius: 0 0 1px 1px;
+    border-radius: 5px 5px 0 0;
     position: absolute;
     background-color: #A100FA;
-    /* background: linear-gradient(90deg, #b9326f 0%, #ff5ddc 100%); */
-    /* box-shadow: 0px 0px 8px 0px rgba(231, 13, 93, 0.57); */
     transition: all 0.3s;
     top: 68px;
     z-index: 2;
-    left: 2%;
+    left: 1.1%;
 
 }
 

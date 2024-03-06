@@ -7,6 +7,7 @@ export default function DisplayToDoContent({
   selectedDay,
 }) {
   const [input, setInput] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
 
   function handleAddBtn() {
     if (!input || input.trim() === "") {
@@ -60,6 +61,9 @@ export default function DisplayToDoContent({
     console.log(updatedWeekData);
     setStoredWeekData(updatedWeekData);
   }
+  function handleInputChange(e) {
+    setInput(e.target.value);
+  }
 
   return (
     <section className="content">
@@ -102,16 +106,29 @@ export default function DisplayToDoContent({
                           <div className="checkmark"></div>
                         </label>
                       </div>
-                      
-                      <p key={j} className={todo.isDone ? "done" : ""}>
-                        {j + 1}--{todo.description}
-                      </p>
-                      {/* <RiEdit2Line
+                      {isEditing ? (
+                        <>
+                          <input
+                            id="edit-input"
+                            value={`${j + 1}--${todo.description}`}
+                            onChange={(e) => handleInputChange(e)}
+                          />
+                          {/* Edit icon is not rendered while editing */}
+                        </>
+                      ) : (
+                        <>
+                          <p key={j} className={todo.isDone ? "done" : ""}>
+                            {j + 1}--{todo.description}
+                          </p>
+                        </>
+                      )}
+                      {/* Render edit and delete icons when not editing */}
+                      <RiEdit2Line
                         size={50}
                         style={{ cursor: "pointer" }}
                         color="#ff7300"
-                        onClick={() => handleEditTodoDescription(todo.id)}
-                      /> */}
+                        onClick={() => setIsEditing(!isEditing)}
+                      />
                       <RiDeleteBinLine
                         size={50}
                         style={{ cursor: "pointer" }}
