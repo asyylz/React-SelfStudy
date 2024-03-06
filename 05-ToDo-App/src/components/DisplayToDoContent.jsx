@@ -63,25 +63,6 @@ export default function DisplayToDoContent({
     console.log(updatedWeekData);
     setStoredWeekData(updatedWeekData);
   }
-  
-//   function handleEditTodoDescription(todoId, newValue) {
-//     const updatedWeekData = storedWeekData.map((day) => {
-//       if (day.date === selectedDay) {
-//         const updatedTodos = day.todos.map((todo) => {
-//           if (todo.id === todoId) {
-//             return {
-//               ...todo,
-//               description: newValue,
-//             };
-//           }
-//           return todo;
-//         });
-//         return { ...day, todos: updatedTodos };
-//       }
-//       return day;
-//     });
-//     setStoredWeekData(updatedWeekData);
-// }
 
   return (
     <section className="content">
@@ -124,27 +105,15 @@ export default function DisplayToDoContent({
                           <div className="checkmark"></div>
                         </label>
                       </div>
-                      <EditableTodoInput todo={todo} editingTodoId={editingTodoId} setEditingTodoId={setEditingTodoId}
+                      <EditableTodoInput
+                        todo={todo}
+                        editingTodoId={editingTodoId}
+                        setEditingTodoId={setEditingTodoId}
                         j={j}
+                        storedWeekData={storedWeekData}
+                        setStoredWeekData={setStoredWeekData}
+                        selectedDay={selectedDay}
                       />
-
-
-                      {/* {editingTodoId === todo.id ? (
-                        <input
-                          //id={`edit-input-${todo.id}`}
-                          id="edit-input"
-                          value={todo.description}
-                          onChange={(e) =>
-                            handleEditTodoDescription(todo.id, e.target.value)
-                          }
-                          onBlur={() => setEditingTodoId(null)}
-                        />
-                      ) : (
-                        <p className={todo.isDone ? "done" : ""}>
-                          {j + 1}--{todo.description}
-                        </p>
-                      )} */}
-                      {/* Render edit and delete icons when not editing */}
 
                       <RiEdit2Line
                         size={50}

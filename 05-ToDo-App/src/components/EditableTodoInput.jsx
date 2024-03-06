@@ -1,8 +1,14 @@
-
-export default function EditableTodoInput({ editingTodoId, todo,setEditingTodoId,j }) {
-  //const [editingTodoId, setEditingTodoId] = useState(null);
+export default function EditableTodoInput({
+  editingTodoId,
+  todo,
+  setEditingTodoId,
+  j,
+  storedWeekData,
+  setStoredWeekData,
+  selectedDay,
+}) {
   //const [isEditing, setIsEditing] = useState(false);
-console.log(todo)
+
   function handleEditTodoDescription(todoId, newValue) {
     const updatedWeekData = storedWeekData.map((day) => {
       if (day.date === selectedDay) {
