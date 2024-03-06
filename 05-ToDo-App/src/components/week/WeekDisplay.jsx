@@ -5,11 +5,10 @@ export default function WeekDisplay({
   storedWeekData,
   setStoredWeekData,
 }) {
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(storedWeekData[0].date);
 
-  function handleTabSelect(selectedDay, index) {
-    if (index === 0) {
-    }
+  function handleTabSelect(selectedDay) {
+ 
     setSelectedDate(selectedDay);
   }
 
@@ -23,11 +22,12 @@ export default function WeekDisplay({
             className="tab tab-selector"
             name="tab"
             onChange={() => handleTabSelect(day.date)}
+         
           />
           <label
             htmlFor={`tab-${index + 1}`}
-            className="tab tab-primary"
-            onSelect={() => handleTabSelect(day.date, index)}
+            className="tab"
+            onSelect={() => handleTabSelect(day.date)}
             style={{
               border:
                 day.status === "current"

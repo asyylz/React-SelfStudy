@@ -96,12 +96,13 @@ export default function DisplayToDoContent({
                         <label className="container">
                           <input
                             type="checkbox"
-                            onClick={() => handleIsDoneBtn(todo.id)}
+                            onChange={() => handleIsDoneBtn(todo.id)}
                             checked={todo.isDone}
                           />
                           <div className="checkmark"></div>
                         </label>
                       </div>
+                      
                       <p key={j} className={todo.isDone ? "done" : ""}>
                         {j + 1}--{todo.description}
                       </p>
