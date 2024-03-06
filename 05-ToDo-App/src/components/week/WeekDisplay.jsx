@@ -39,11 +39,13 @@ export default function WeekDisplay({
               }}
             >
               {day.date}
+              
             </label>
+            <div className="glider"></div>
           </div>
         ))}
         <div className="tabsShadow"></div>
-        <div className="glider"></div>
+     
       </div>
       <DisplayToDoContent
         setStoredWeekData={setStoredWeekData}

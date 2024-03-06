@@ -5,14 +5,9 @@
     padding: 0;
 }
 
-.tabs {
-    /* text-align: center; */
-    /* position: relative; */
-    /* margin: 0 10px 0 10px; */
-}
-/* div.card.tabs {
+div.card.tabs {
     height: 110px;
-} */
+}
 
 label.tab {
     border-radius: 6pt 6pt 6pt 6pt;
@@ -20,33 +15,47 @@ label.tab {
     align-items: center;
 }
 
-
-
 @media (min-width:1181px) {
     .tabs input+label {
         font-size: 1rem;
         margin: 12px;
+        padding: 5pt 10pt;
     }
-    div.card.tabs {
-        height: 110px;
-    }
+
 }
 
 @media (max-width:1180px) {
     .tabs input+label {
         font-size: 0.9rem;
         margin: 12px;
+        padding: 5pt 10pt;
     }
-    div.card.tabs {
-        height: 110px; 
-    }
+
 }
 
 @media (min-width:801px)and (max-width:1179px) {
     .tabs input+label {
         margin: 8px 0 0 0;
-       
-        
+        font-size: 0.9rem;
+        padding: 5pt 10pt;
+    }
+
+}
+
+@media only screen and (max-width:800px) {
+    div.card.tabs {
+        display: flex;
+    }
+
+    .tabs input+label {
+        font-size: 0.8rem;
+        padding: 0pt;
+        width: 75% !important;
+        margin: 20px 0 0 0;
+    }
+
+    .card.tabs div {
+        margin-right: 0 !important;
     }
 }
 
@@ -71,7 +80,7 @@ label.tab {
     color: #e7e9f5;
     display: inline-flex;
     -webkit-box-pack: center;
-    padding: 5pt 10pt;
+    /* padding: 5pt 10pt;  */
     vertical-align: top;
     justify-content: flex-start;
     background: #333;
@@ -79,21 +88,16 @@ label.tab {
     text-transform: uppercase;
     font-weight: 300;
     background: #26292c;
-    /* margin-bottom: 0.5px; */
     border-radius: 7px 7px 0 0 !important;
     border-top: 1px solid #3b3d3f;
     letter-spacing: 0.1666666667em !important;
     font-family: "antique-olive" !important;
-    /* background: hsl(232deg 6% 17%); */
     cursor: pointer;
 }
 
 .tabs input+label:hover {
     color: #777;
 }
-
-
-
 
 #tab-1:checked+label,
 #tab-2:checked+label,

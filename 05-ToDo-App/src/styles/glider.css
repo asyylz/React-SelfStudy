@@ -7,14 +7,14 @@
     position: absolute;
     background-color: #A100FA;
     transition: all 0.3s;
-    top: 68px;
+    top: 100px;
     z-index: 2;
-    left: 1.1%;
+    left: 0px;
 
 }
 
 #tab-1:checked~.glider {
-    left: 1.1%;
+    left: 1.5%;
 
 }
 
