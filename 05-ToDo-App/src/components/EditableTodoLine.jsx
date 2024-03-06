@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { RiDeleteBinLine, RiEdit2Line } from "react-icons/ri";
-export default function EditableTodoInput({
-  //editingTodoId,
+export default function EditableTodoLine({
   todo,
-  //setEditingTodoId,
   j,
   storedWeekData,
   setStoredWeekData,
   selectedDay,
 }) {
-  //const [isEditing, setIsEditing] = useState(false);
   const [editingTodoId, setEditingTodoId] = useState(null);
 
   function handleDeleteBtn(todoId) {
@@ -23,7 +20,7 @@ export default function EditableTodoInput({
     console.log(updatedWeekData);
     setStoredWeekData(updatedWeekData);
   }
-  
+
   function handleIsDoneBtn(todoId) {
     const updatedWeekData = storedWeekData.map((day) => {
       if (day.date === selectedDay) {
@@ -70,6 +67,7 @@ export default function EditableTodoInput({
             type="checkbox"
             onChange={() => handleIsDoneBtn(todo.id)}
             checked={todo.isDone}
+            onKeyDown={(e) => e.key === "Enter" && setEditingTodoId(null)}
           />
           <div className="checkmark"></div>
         </label>

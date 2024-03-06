@@ -1,14 +1,13 @@
 import { useState } from "react";
-import EditableTodoInput from "./EditableTodoInput";
-import { RiDeleteBinLine, RiEdit2Line } from "react-icons/ri";
+import EditableTodoLine from "./EditableTodoLine";
 
 export default function DisplayToDoContent({
   storedWeekData,
   setStoredWeekData,
   selectedDay,
 }) {
+
   const [input, setInput] = useState("");
-  //const [editingTodoId, setEditingTodoId] = useState(null);
 
   function handleAddBtn() {
     if (!input || input.trim() === "") {
@@ -25,43 +24,10 @@ export default function DisplayToDoContent({
       }
       return day;
     });
-   
+
     setStoredWeekData(updatedWeekData);
     setInput("");
   }
-
-  // function handleDeleteBtn(todoId) {
-  //   console.log("delete");
-  //   const updatedWeekData = storedWeekData.map((day) => {
-  //     if (day.date === selectedDay) {
-  //       const updatedTodos = day.todos.filter((todo) => todo.id !== todoId);
-  //       return { ...day, todos: updatedTodos };
-  //     }
-  //     return day;
-  //   });
-  //   console.log(updatedWeekData);
-  //   setStoredWeekData(updatedWeekData);
-  // }
-
-  // function handleIsDoneBtn(todoId) {
-  //   const updatedWeekData = storedWeekData.map((day) => {
-  //     if (day.date === selectedDay) {
-  //       const updatedTodos = day.todos.map((todo) => {
-  //         if (todo.id === todoId) {
-  //           return {
-  //             ...todo,
-  //             isDone: !todo.isDone,
-  //           };
-  //         }
-  //         return todo;
-  //       });
-  //       return { ...day, todos: updatedTodos };
-  //     }
-  //     return day;
-  //   });
-  //   console.log(updatedWeekData);
-  //   setStoredWeekData(updatedWeekData);
-  // }
 
   return (
     <section className="content">
@@ -78,7 +44,7 @@ export default function DisplayToDoContent({
             placeholder="Enter your todo here..."
             value={input}
             id="content-input"
-            onKeyDown={(e)=> e.key === "Enter" && handleAddBtn()}
+            onKeyDown={(e) => e.key === "Enter" && handleAddBtn()}
           />
           <button onClick={handleAddBtn} role="button" className="btnAdd">
             Add ToDo
@@ -95,39 +61,13 @@ export default function DisplayToDoContent({
                         justifyContent: "center",
                       }}
                     >
-                      {/* <div className="checkbox-wrapper-57">
-                        <label className="container">
-                          <input
-                            type="checkbox"
-                            onChange={() => handleIsDoneBtn(todo.id)}
-                            checked={todo.isDone}
-                          />
-                          <div className="checkmark"></div>
-                        </label>
-                      </div> */}
-                      <EditableTodoInput
+                      <EditableTodoLine
                         todo={todo}
-                        // editingTodoId={editingTodoId}
-                        // setEditingTodoId={setEditingTodoId}
                         j={j}
                         storedWeekData={storedWeekData}
                         setStoredWeekData={setStoredWeekData}
                         selectedDay={selectedDay}
                       />
-
-                      {/* <RiEdit2Line
-                        size={50}
-                        style={{ cursor: "pointer" }}
-                        //color="#ff7300"
-                        color={editingTodoId ? "red" : "#ff7300"}
-                        onClick={() => setEditingTodoId(todo.id)}
-                      />
-                      <RiDeleteBinLine
-                        size={50}
-                        style={{ cursor: "pointer" }}
-                        color="#ff7300"
-                        onClick={() => handleDeleteBtn(todo.id)}
-                      /> */}
                     </div>
                   ))}
               </div>
