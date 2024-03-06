@@ -7,10 +7,9 @@ export default function WeekDisplay({
 }) {
   const [selectedDate, setSelectedDate] = useState("");
 
-  function handleTabSelect(selectedDay,index) {
-if(index===0) {
-  
-}
+  function handleTabSelect(selectedDay, index) {
+    if (index === 0) {
+    }
     setSelectedDate(selectedDay);
   }
 
@@ -22,14 +21,21 @@ if(index===0) {
             id={`tab-${index + 1}`}
             type="radio"
             className="tab tab-selector"
-            //checked={day.date === selectedDate ? "checked" : ""}
             name="tab"
             onChange={() => handleTabSelect(day.date)}
           />
           <label
             htmlFor={`tab-${index + 1}`}
             className="tab tab-primary"
-            onSelect={() => handleTabSelect(day.date,index)}
+            onSelect={() => handleTabSelect(day.date, index)}
+            style={{
+              border:
+                day.status === "current"
+                  ? "2px solid #48ff00"
+                  : day.status === "past"
+                  ? "2px solid #ff0000"
+                  : "2px solid #fffb00",
+            }}
           >
             {day.date}
           </label>
