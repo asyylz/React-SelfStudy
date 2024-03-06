@@ -34,7 +34,7 @@ export default function WeekDisplay({
                   ? "2px solid #48ff00"
                   : day.status === "past"
                   ? "2px solid #ff0000"
-                  : "2px solid #fffb00",
+                  : "2px solid #002bff",
             }}
           >
             {day.date}

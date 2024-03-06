@@ -173,12 +173,6 @@ body {
     padding: 0;
 }
 
-/* .tabs input {
-    position: absolute;
-    opacity: 0;
-    margin: 0;
-    padding: 0;
-} */
 
 .tabs input+label:hover {
     color: #777;
@@ -240,19 +234,20 @@ body {
 }
 
 .content {
-    margin: 0px auto;
+    margin: 10px auto 0px auto;
     text-align: left;
     line-height: 20px;
-    height: 700px;
+    height: 70vh;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
     border-radius: 5px;
     border: 2px solid #A100FA;
-    /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
     display: block;
     padding: 1.25rem;
     z-index: 2;
-    /* border-top: 1px solid #3b3d3f; */
     background: hsl(232deg 16% 15%);
     position: relative;
+    overflow: hidden;
 }
 
 .content p {
@@ -358,7 +353,7 @@ label.tab.tab-warning {
     width: 12%;
     min-width: 10%;
     padding: 0px 13px;
-    height: 10px;
+    height: 20px;
     border-radius: 0 0 1px 1px;
     position: absolute;
     background-color: #A100FA;
@@ -369,10 +364,6 @@ label.tab.tab-warning {
     z-index: 2;
     left: 2%;
 
-}
-
-label.tab {
-    position: relative;
 }
 
 #tab-1:checked~.glider {
@@ -398,7 +389,7 @@ label.tab {
 }
 
 #tab-6:checked~.glider {
-    left: 71.8%;
+    left: 71.9%;
 }
 
 #tab-7:checked~.glider {
