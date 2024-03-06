@@ -1,5 +1,7 @@
 import { useState } from "react";
 import DisplayToDoContent from "../todos-section/DisplayToDoContent";
+import "../../styles/glider.css"
+
 export default function WeekDisplay({
   weekData,
   storedWeekData,

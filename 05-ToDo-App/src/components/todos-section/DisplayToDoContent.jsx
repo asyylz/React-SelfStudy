@@ -2,6 +2,11 @@ import { useState } from "react";
 import EditableTodoLine from "./EditableTodoLine";
 import IsDoneCheckBox from "./IsDoneCheckbox";
 
+import "../../styles/btnToDoAdd.css"
+import "../../styles/content.css"
+import "../../styles/tabs.css"
+import "../../styles/container.css"
+
 export default function DisplayToDoContent({
   storedWeekData,
   setStoredWeekData,
