@@ -3,8 +3,6 @@ node_modules
 dist
 dist-ssr
 *.local
-vite.config.js
+
 .eslintrc
 .gitignore
-package.json
-package-lock.json
