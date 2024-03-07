@@ -1,0 +1,13 @@
+body{
+
+
+}
+
+.book-appointment{
+border: 1px solid #ccc;
+border-radius: 20px;
+margin-top: 1rem;
+display: flex;
+flex-direction: column;
+
+}

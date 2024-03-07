@@ -1,77 +1,138 @@
 const Data = [
   {
     id: 1,
-    patientName: "Yavuz Selim",
-    day: "Dec 12th at 2:30pm",
-    bittiMi: false,
-    doctorName: "DR Ayse Okur",
+    doctorName: "Dr. John Smith",
     img: "./public/ahmet.png",
+    expertiseField: "Cardiology",
+    email: "john.smith@example.com",
+    telNumber: "+1234567890",
+    patient: [
+      {
+        id: 1,
+        patientName: "John Doe",
+        appointmentDate: "2024-03-10",
+        isSeen: true,
+        concerns: "Chest pain and shortness of breath",
+      },
+      {
+        id: 2,
+        patientName: "Jane Smith",
+        appointmentDate: "2024-03-15",
+        isSeen: false,
+        concerns: "High blood pressure and headaches",
+      },
+      {
+        id: 3,
+        patientName: "John Doe",
+        appointmentDate: "2024-03-10",
+        isSeen: true,
+        concerns: "Chest pain and shortness of breath",
+      },
+      {
+        id: 4,
+        patientName: "Jane Smith",
+        appointmentDate: "2024-03-15",
+        isSeen: false,
+        concerns: "High blood pressure and headaches",
+      },
+    ],
   },
   {
     id: 2,
-    patientName: "Mihrimah Sultan",
-    day: "Dec 13th at 1:30pm",
-    bittiMi: true,
-    doctorName: "DR Fatma Adil",
-    img: "./public/ahmet.png"
+    doctorName: "Dr. Emily Johnson",
+    img: "./public/ahmet.png",
+    expertiseField: "Pediatrics",
+    email: "emily.johnson@example.com",
+    telNumber: "+1987654321",
+    patient: [
+      {
+        id: 1,
+        patientName: "Michael Brown",
+        appointmentDate: "2024-03-12",
+        isSeen: false,
+        concerns: "Fever and cough",
+      },
+      {
+        id: 2,
+        patientName: "Emma Green",
+        appointmentDate: "2024-03-18",
+        isSeen: true,
+        concerns: "Stomach pain and vomiting",
+      },
+    ],
   },
   {
     id: 3,
-    patientName: "Fatih Mehmet",
-    day: "Dec 14th at 3:00pm",
-    bittiMi: false,
-    doctorName: "DR Oya Başar",
-    img: "./public/ahmet.png"
+    doctorName: "Dr. Michael Brown",
+    img: "./public/ahmet.png",
+    expertiseField: "Orthopedics",
+    email: "michael.brown@example.com",
+    telNumber: "+1122334455",
+    patient: [
+      {
+        id: 1,
+        patientName: "Liam Johnson",
+        appointmentDate: "2024-03-19",
+        isSeen: false,
+        concerns: "Fractured arm",
+      },
+      {
+        id: 2,
+        patientName: "Olivia Clark",
+        appointmentDate: "2024-03-23",
+        isSeen: true,
+        concerns: "Back pain",
+      },
+    ],
   },
   {
     id: 4,
-    patientName: "İpek Bilir",
-    day: "Dec 12th at 2:30pm",
-    bittiMi: false,
-    doctorName: "DR Ahmet Bilen",
-    img: "./public/ahmet.png"
+    doctorName: "Dr. Sarah White",
+    img: "./public/ahmet.png",
+    expertiseField: "Dermatology",
+    email: "sarah.white@example.com",
+    telNumber: "+9988776655",
+    patient: [
+      {
+        id: 1,
+        patientName: "Ethan Miller",
+        appointmentDate: "2024-03-21",
+        isSeen: true,
+        concerns: "Skin rash",
+      },
+      {
+        id: 2,
+        patientName: "Ava Wilson",
+        appointmentDate: "2024-03-25",
+        isSeen: false,
+        concerns: "Acne",
+      },
+    ],
   },
   {
     id: 5,
-    patientName: "Haluk Yilmaz",
-    day: "Dec 13th at 1:30pm",
-    bittiMi: true,
-    doctorName: "DR Ahmet Bilen",
-    img: "06-Hospital-Appointment/public/ahmet.png",
-    img: "./public/ahmet.png"
+    doctorName: "Dr. Olivia Martinez",
+    img: "./public/ahmet.png",
+    expertiseField: "Neurology",
+    email: "olivia.martinez@example.com",
+    telNumber: "+3344556677",
+    patient: [
+      {
+        id: 1,
+        patientName: "Noah Anderson",
+        appointmentDate: "2024-03-22",
+        isSeen: false,
+        concerns: "Headaches and dizziness",
+      },
+      {
+        id: 2,
+        patientName: "Sophia Thomas",
+        appointmentDate: "2024-03-26",
+        isSeen: true,
+        concerns: "Memory loss",
+      },
+    ],
   },
-  {
-    id: 6,
-    patientName: "Ayşe Güler",
-    day: "Dec 14th at 3:00pm",
-    bittiMi: false,
-    doctorName: "DR Oya Başar",
-    img: "./public/ahmet.png"
-  },
-  {
-    id: 7,
-    patientName: "Yavuz Selim",
-    day: "Dec 12th at 2:30pm",
-    bittiMi: false,
-    doctorName: "DR Ayse Okur",
-    img: "./public/ahmet.png"
-  },
-  {
-    id: 8,
-    patientName: "Mihrimah Sultan",
-    day: "Dec 13th at 1:30pm",
-    bittiMi: true,
-    doctorName: "DR Fatma Adil",
-    img: "./public/ahmet.png"
-  },
-  {
-    id: 9,
-    patientName: "Fatih Mehmet",
-    day: "Dec 14th at 3:00pm",
-    bittiMi: false,
-    doctorName: "DR Oya Başar",
-    img: "./public/ahmet.png"
-  },
-
 ];
+
 export default Data;
