@@ -1,0 +1,138 @@
+const Data = [
+  {
+    id: 1,
+    doctorName: "Dr. John Smith",
+    img: "./public/ahmet.png",
+    expertiseField: "Cardiology",
+    email: "john.smith@example.com",
+    telNumber: "+1234567890",
+    patient: [
+      {
+        id: 1,
+        patientName: "John Doe",
+        appointmentDate: "2024-03-10",
+        isSeen: true,
+        concerns: "Chest pain and shortness of breath",
+      },
+      {
+        id: 2,
+        patientName: "Jane Smith",
+        appointmentDate: "2024-03-15",
+        isSeen: false,
+        concerns: "High blood pressure and headaches",
+      },
+      {
+        id: 3,
+        patientName: "John Doe",
+        appointmentDate: "2024-03-10",
+        isSeen: true,
+        concerns: "Chest pain and shortness of breath",
+      },
+      {
+        id: 4,
+        patientName: "Jane Smith",
+        appointmentDate: "2024-03-15",
+        isSeen: false,
+        concerns: "High blood pressure and headaches",
+      },
+    ],
+  },
+  {
+    id: 2,
+    doctorName: "Dr. Emily Johnson",
+    img: "./public/ahmet.png",
+    expertiseField: "Pediatrics",
+    email: "emily.johnson@example.com",
+    telNumber: "+1987654321",
+    patient: [
+      {
+        id: 1,
+        patientName: "Michael Brown",
+        appointmentDate: "2024-03-12",
+        isSeen: false,
+        concerns: "Fever and cough",
+      },
+      {
+        id: 2,
+        patientName: "Emma Green",
+        appointmentDate: "2024-03-18",
+        isSeen: true,
+        concerns: "Stomach pain and vomiting",
+      },
+    ],
+  },
+  {
+    id: 3,
+    doctorName: "Dr. Michael Brown",
+    img: "./public/ahmet.png",
+    expertiseField: "Orthopedics",
+    email: "michael.brown@example.com",
+    telNumber: "+1122334455",
+    patient: [
+      {
+        id: 1,
+        patientName: "Liam Johnson",
+        appointmentDate: "2024-03-19",
+        isSeen: false,
+        concerns: "Fractured arm",
+      },
+      {
+        id: 2,
+        patientName: "Olivia Clark",
+        appointmentDate: "2024-03-23",
+        isSeen: true,
+        concerns: "Back pain",
+      },
+    ],
+  },
+  {
+    id: 4,
+    doctorName: "Dr. Sarah White",
+    img: "./public/ahmet.png",
+    expertiseField: "Dermatology",
+    email: "sarah.white@example.com",
+    telNumber: "+9988776655",
+    patient: [
+      {
+        id: 1,
+        patientName: "Ethan Miller",
+        appointmentDate: "2024-03-21",
+        isSeen: true,
+        concerns: "Skin rash",
+      },
+      {
+        id: 2,
+        patientName: "Ava Wilson",
+        appointmentDate: "2024-03-25",
+        isSeen: false,
+        concerns: "Acne",
+      },
+    ],
+  },
+  {
+    id: 5,
+    doctorName: "Dr. Olivia Martinez",
+    img: "./public/ahmet.png",
+    expertiseField: "Neurology",
+    email: "olivia.martinez@example.com",
+    telNumber: "+3344556677",
+    patient: [
+      {
+        id: 1,
+        patientName: "Noah Anderson",
+        appointmentDate: "2024-03-22",
+        isSeen: false,
+        concerns: "Headaches and dizziness",
+      },
+      {
+        id: 2,
+        patientName: "Sophia Thomas",
+        appointmentDate: "2024-03-26",
+        isSeen: true,
+        concerns: "Memory loss",
+      },
+    ],
+  },
+];
+
+export default Data;
