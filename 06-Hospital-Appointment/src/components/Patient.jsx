@@ -2,8 +2,9 @@ import "/src/styles/patient-buttons.css";
 import "/src/styles/patient-card.css";
 import "/src/styles/docs-profiles.css";
 export default function Patient({ patientList }) {
-  return (
-    <>
+  return 
+   {/*  <>
+    <h3 className=" mb-3">Patient Dashboard</h3>
       {patientList.map((patient) => (
         <div key={patient.id} className="col-md-6 ag-format-container">
           <div className="ag-courses_box">
@@ -19,7 +20,6 @@ export default function Patient({ patientList }) {
                 <div className="ag-courses-item_title">
                   {patient.patientName}
                   <h5 className="concerns" style={{ color: "white" }}>
-                    {" "}
                     {patient.concerns}
                   </h5>
                 </div>
@@ -36,23 +36,23 @@ export default function Patient({ patientList }) {
                     textDecoration: patient.isSeen ? "line-through" : "",
                   }}
                 >
-                  {patient.isSeen ? "CLOSED" : "CLOSE CASE"}
+                  {patient.isSeen ? "CLOSED" : "WAITING"}
                 </button>
                 <button className="button-33" role="button" style={{
                     textDecoration: patient.isSeen ? "line-through" : "",
                   }}>
-                  REFER
+                  REFERRAL
                 </button>
               </a>
             </div>
           </div>
         </div>
       ))}
-    </>
-  );
-}
+    </> */}
 
-{
+
+
+
   /* <div key={patient.id} className="col-md-6 patient-card">
           <div className="card offer-card shadow-sm">
             <div className="card-body">

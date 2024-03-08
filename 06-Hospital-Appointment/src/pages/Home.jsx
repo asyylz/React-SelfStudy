@@ -1,5 +1,5 @@
-import Doctors from "../components/Doctors";
-import React, { useState } from 'react';
+import MainPage from "../components/MainPage";
+import React, { useState, useEffect} from 'react';
 import Data from "../helper/Data";
 
 
@@ -21,8 +21,9 @@ export default function Home() {
     });
 
     setData(updatedData); // Update the state with the updated Data array
+
   };
 
 
-  return <Doctors dataDoctors={Data} updateData={updateData} />;
+  return <MainPage dataDoctors={Data} updateData={updateData} />;
 }

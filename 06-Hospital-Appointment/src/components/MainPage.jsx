@@ -8,7 +8,7 @@ import Patients from "./Patients";
 import { useState } from "react";
 import "/src/styles/docs-profiles.css";
 
-export default function Doctors({ dataDoctors, updateData }) {
+export default function MainPage({ dataDoctors, updateData }) {
   const [doctorSelected, setdoctorSelected] = useState(false);
   const [patientList, setPatientList] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState("");
@@ -49,7 +49,7 @@ export default function Doctors({ dataDoctors, updateData }) {
           updateData={updateData}
         />
       ) : (
-        <MDBContainer className="px-3 mt-4">
+        {/* <MDBContainer className="px-3 mt-4">
           <MDBRow className="row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gx-5 gy-5 ">
             {dataDoctors.map((doctor) => (
               <MDBCol key={doctor.id}>
@@ -63,7 +63,7 @@ export default function Doctors({ dataDoctors, updateData }) {
                         onClick={() => handleBringPatients(doctor.doctorName)}
                         variant="primary"
                       >
-                        Make Booking
+                        BOOKING
                       </Button>
                     </Card.Body>
                   </Card>
@@ -71,7 +71,9 @@ export default function Doctors({ dataDoctors, updateData }) {
               </MDBCol>
             ))}
           </MDBRow>
-        </MDBContainer>
+        </MDBContainer> */}
+
+        
       )}
     </>
   );
