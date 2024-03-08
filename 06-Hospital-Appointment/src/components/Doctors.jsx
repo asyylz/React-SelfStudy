@@ -8,7 +8,7 @@ import Patients from "./Patients";
 import { useState } from "react";
 import "/src/styles/docs-profiles.css";
 
-export default function Doctors({ dataDoctors }) {
+export default function Doctors({ dataDoctors, updateData }) {
   const [doctorSelected, setdoctorSelected] = useState(false);
   const [patientList, setPatientList] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState("");
@@ -22,6 +22,7 @@ export default function Doctors({ dataDoctors }) {
       }
     });
   }
+
   //console.log(patientList);
   //console.log(selectedDoctor);
 
@@ -44,6 +45,8 @@ export default function Doctors({ dataDoctors }) {
           selectedDoctor={selectedDoctor}
           patientList={patientList}
           dataDoctors={dataDoctors}
+          setPatientList={setPatientList}
+          updateData={updateData}
         />
       ) : (
         <MDBContainer className="px-3 mt-4">

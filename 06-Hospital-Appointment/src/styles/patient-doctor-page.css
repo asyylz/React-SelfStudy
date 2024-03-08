@@ -1,6 +1,5 @@
 body{
     margin-top:20px;
-    background:#eee;
 }
 /* My Account */
 .payments-item img.mr-3 {
@@ -19,14 +18,14 @@ body{
     color: #535665;
 }
 .osahan-user-media{
-    background-color: white;
+    /* background-color: white; */
     width: 100%;
     border-radius: 26px;
 }
 .osahan-account-page-left .nav-link i {
     width: 28px;
     height: 28px;
-    background: #535665;
+    /* background: #535665; */
     display: inline-block;
     text-align: center;
     line-height: 29px;
@@ -36,17 +35,17 @@ body{
     color: #fff;
 }
 .osahan-account-page-left .nav-link.active {
-    background: #f3f7f8;
-    color: #282c3f !important;
+    /* background: #f3f7f8; */
+    /* color: #282c3f !important; */
 }
 .osahan-account-page-left .nav-link.active i {
-    background: #282c3f !important;
+    /* background: #282c3f !important; */
 }
 .osahan-user-media img {
     width: 90px;
 }
 .card offer-card h5.card-title {
-    border: 2px dotted #000;
+    /* border: 2px dotted #000; */
 }
 .card.offer-card h5 {
     border: 1px dotted #daceb7;
@@ -67,9 +66,9 @@ body{
     border-radius: 2px;
 }
 .card.offer-card h5:after {
-    border-left: 4px solid transparent;
+    /* border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-bottom: 4px solid #daceb7;
+    border-bottom: 4px solid #daceb7; */
     content: "";
     left: 30px;
     position: absolute;
@@ -105,17 +104,25 @@ body{
 .osahan-cart-item p.text-gray.float-right {
     margin: 3px 0 0 0;
     font-size: 12px;
+    
 }
+
+/* #patient-container {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5)!important;
+} */
 .osahan-cart-item .food-item {
     vertical-align: bottom;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+/* .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: #000000;
-}
+} */
 
 .shadow-sm {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    /* box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5)!important;
 }
 
 .rounded-pill {

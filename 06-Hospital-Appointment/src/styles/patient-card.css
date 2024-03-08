@@ -5,7 +5,7 @@
 
 
 body {
-  background-color: #E3E4D2!important;
+  
 }
 
 .ag-courses_box {
@@ -70,16 +70,17 @@ body {
 
 .ag-courses-item_date {
   font-weight: bold;
-  color: #3ecd5e;
+  color: #FFF;
   -webkit-transition: color .5s ease;
   -o-transition: color .5s ease;
-  transition: color .5s ease
+  transition: color .5s ease;
+
 }
 
 .ag-courses-item_bg {
   height: 128px;
   width: 200px;
-  background-color: #3ecd5e;
+  background-color: #e44002;
   z-index: 1;
   position: absolute;
   top: -75px;
