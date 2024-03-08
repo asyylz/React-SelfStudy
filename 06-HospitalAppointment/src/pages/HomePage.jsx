@@ -1,5 +1,5 @@
-import Doctors from "../components/Doctors";
+import TopMenu from "../components/TopMenu";
 import Data from "../helper/Data";
 export default function HomePage() {
-  return <Doctors data={Data} />;
+  return <TopMenu data={Data} />;
 }

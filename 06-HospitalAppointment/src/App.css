@@ -137,6 +137,37 @@ img {
     grid-gap: 20px;
 }
 
-.card .cards {
+.cards .card {
     background: linear-gradient(45deg, #47cebe, #ef4a82);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.number {
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.card-name {
+    color: #444;
+    font-weight: 400;
+}
+
+.icon-box {
+    font-size: 45px;
+    color: #444;
+}
+
+.tables {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    align-items: self-start;
+    padding: 0 20px 20px 20px;
+
 }
