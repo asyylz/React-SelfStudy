@@ -69,7 +69,7 @@ body {
 
 .main {
     position: absolute;
-    width: calc(100% -300px);
+    width: calc(100% - 300px);
     min-height: 100vh;
     left: 300px;
     background: #f5f5f5;
@@ -78,8 +78,7 @@ body {
 .top-bar {
     position: fixed;
     height: 60px;
-    width: calc(100% -300px);
-    background: #fff;
+    width: calc(100% - 300px);
     display: grid;
     grid-template-columns: 10fr 0.4fr 1fr;
     grid-gap: 5px;
@@ -106,10 +105,11 @@ body {
     background: #f5f5f5;
 }
 
-.search i {
+.search label i{
     position: absolute;
     right: 15px;
     top: 10px;
+    cursor: pointer;
 }
 
 .user {
@@ -117,6 +117,7 @@ body {
     width: 50px;
     height: 50px;
 }
+
 
 img {
     position: absolute;
