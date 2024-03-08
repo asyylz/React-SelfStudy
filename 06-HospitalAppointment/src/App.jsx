@@ -1,52 +1,67 @@
+import "./App.css";
 
-import './App.css'
+export default function App() {
+  return 
+    // <div className="container">
+    //   <div className="sidebar">
+    //     <ul>
+    //       <li>
+    //         <a href="#">
+    //           <i className="fas fa-clinic-medical"></i>
+    //           <div className="title">Brand Name</div>
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a href="#">
+    //           <i className="fas fa-th-large"></i>
+    //           <div className="title">Dashboard</div>
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a href="#">
+    //           <i className="fas fa-stethoscope"></i>
+    //           <div className="title">Appointments</div>
+    //         </a>
+    //       </li>
 
-function App() {
+    //       <li>
+         
+    //         <a href="#">
+    //           <i className="fas fa-user-md"></i>
+    //           <div className="title">Doctors</div>
+    //         </a>
+    //       </li>
 
-  return (
-    <div class="container">
-      <div class="sidebar">
-        <ul>
-          <li>
-            <a href="#">
-              <i class="fas fa-clinic-medical"></i>
-              <div class="title">Brand Name</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-th-large"></i>
-              <div class="title">Dashboard</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-stethoscope"></i>
-              <div class="title">Appointments</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-user-md"></i>
-              <div class="title">Doctors</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-puzzle-piece"></i>
-              <div class="title">Departments</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-hand-holding-usd"></i>
-              <div class="title">Payments</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-cog"></i>
-              <div class="title">Settings</div>
-            </a>
-            <a href="#">
-              <i class="fas fa-question"></i>
-              <div class="title">Help</div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  )
-   
+    //       <li>
+         
+    //         <a href="#">
+    //           <i className="fas fa-puzzle-piece"></i>
+    //           <div className="title">Departments</div>
+    //         </a>
+    //       </li>
+
+    //       <li>
+    //         <a href="#">
+    //           <i className="fas fa-hand-holding-usd"></i>
+    //           <div className="title">Payments</div>
+    //         </a>
+    //       </li>
+
+    //       <li>
+           
+    //         <a href="#">
+    //           <i className="fas fa-cog"></i>
+    //           <div className="title">Settings</div>
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a href="#">
+    //           <i className="fas fa-question"></i>
+    //           <div className="title">Help</div>
+    //         </a>
+    //       </li>
+    //     </ul>
+    //   </div>
+    // </div>
   
 }
-
-export default App
