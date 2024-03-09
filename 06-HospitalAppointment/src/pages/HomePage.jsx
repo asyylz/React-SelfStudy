@@ -1,10 +1,15 @@
-import SideMenu from "../components/SideBar";
-import TopMenu from "../components/RightSubMain";
+import LeftSideBar from "../components/LeftSideBar";
+import TopSeacrhBar from "../components/TopSearchBar";
+import RightSubMain from "../components/RightSubMain";
 import Data from "../helper/Data";
-export default function HomePage() {
+export default function HomePage({ data }) {
   return (
     <>
-      <SideMenu />
+      <LeftSideBar />
+      <div className="main">
+        <TopSeacrhBar />
+        <RightSubMain doctorData={data} />
+      </div>
     </>
   );
 }

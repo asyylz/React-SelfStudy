@@ -2,7 +2,7 @@ import TopMenu from "./RightSubMain";
 import TopSeacrhBar from "./TopSearchBar";
 import RightSubMain from "./RightSubMain";
 
-export default function SideBar() {
+export default function LeftSideBar() {
   return (
     <>
       <div className="sidebar">
@@ -72,10 +72,6 @@ export default function SideBar() {
             </a>
           </li>
         </ul>
-      </div>
-      <div className="main">
-        <TopSeacrhBar />
-        <RightSubMain />
       </div>
     </>
   );

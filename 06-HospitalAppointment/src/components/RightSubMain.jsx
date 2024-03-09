@@ -4,25 +4,32 @@ import {
   FaWheelchair,
   FaDollarSign,
 } from "react-icons/fa";
+import { FaUserDoctor } from "react-icons/fa6";
 import Doctors from "./Doctors";
+import { useState } from "react";
+// import "/src/styles/doctor-profile-cards.css";
 
-export default function RightSubMain({ data }) {
+export default function RightSubMain({ doctorData }) {
+  const [doctorsTabSelected, setDoctorsTabSelected] = useState(false);
+  console.log(doctorsTabSelected);
+
   return (
     <>
       <div className="cards">
-        <div className="card">
+        <div
+          className="card"
+          onClick={() => setDoctorsTabSelected(!doctorsTabSelected)}
+        >
           <div className="card-content">
-            <div className="number">67</div>
-            <div className="card-name">Appointments</div>
+            <div className="card-name">Doctors</div>
           </div>
           <div className="icon-box">
-            <FaBriefcaseMedical />
+            <FaUserDoctor />
           </div>
         </div>
         <div className="card">
           <div className="card-content">
-            <div className="number">67</div>
-            <div className="card-name">New Patient</div>
+            <div className="card-name">Appointments</div>
           </div>
           <div className="icon-box">
             <FaWheelchair />
@@ -30,8 +37,7 @@ export default function RightSubMain({ data }) {
         </div>
         <div className="card">
           <div className="card-content">
-            <div className="number">67</div>
-            <div className="card-name">Operations</div>
+            <div className="card-name">New Patient</div>
           </div>
           <div className="icon-box">
             <FaBed />
@@ -39,15 +45,15 @@ export default function RightSubMain({ data }) {
         </div>
         <div className="card">
           <div className="card-content">
-            <div className="number">67</div>
-            <div className="card-name">Earnings</div>
+            <div className="card-name">Referrals</div>
           </div>
           <div className="icon-box">
             <FaDollarSign />
           </div>
         </div>
       </div>
-      <Doctors />
+      <hr />
+      {doctorsTabSelected && <Doctors dataDoctors={doctorData} />}
     </>
   );
 }

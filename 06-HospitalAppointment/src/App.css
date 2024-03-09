@@ -117,7 +117,7 @@ body {
 .top-bar .search {
     position: relative;
     max-width: 400px;
-    /* border: 1px solid red; */
+
 }
 
 .search input {
@@ -158,7 +158,7 @@ img {
 }
 
 .cards {
-    margin-top: 60px;
+    margin-top: 50px;
     width: 100%;
     padding: 35px 20px;
     display: grid;
@@ -168,23 +168,19 @@ img {
 
 .cards .card {
     background: rgba(173, 217, 209, 0.5);
-    padding: 20px;
+    padding: 5px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     border-radius: 28px;
-}
-
-.number {
-    font-size: 35px;
-    font-weight: 500;
-    color: #fff;
+    cursor: pointer;
 }
 
 .card-name {
     color: #444;
-    font-weight: 400;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .icon-box {
