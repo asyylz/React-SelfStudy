@@ -1,5 +1,10 @@
-import TopMenu from "../components/TopMenu";
+import SideMenu from "../components/SideBar";
+import TopMenu from "../components/RightSubMain";
 import Data from "../helper/Data";
 export default function HomePage() {
-  return <TopMenu data={Data} />;
+  return (
+    <>
+      <SideMenu />
+    </>
+  );
 }

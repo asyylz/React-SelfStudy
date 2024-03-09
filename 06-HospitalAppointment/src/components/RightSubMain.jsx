@@ -5,8 +5,8 @@ import {
   FaDollarSign,
 } from "react-icons/fa";
 import Doctors from "./Doctors";
-export default function TopMenu({ data }) {
-  console.log(data);
+
+export default function RightSubMain({ data }) {
   return (
     <>
       <div className="cards">

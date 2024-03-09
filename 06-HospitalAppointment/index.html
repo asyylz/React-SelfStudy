@@ -1,88 +1,102 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
-    crossorigin="anonymous"></script>
-  <title>Appointments</title>
-</head>
-
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <ul>
-        <li>
-          <a href="#">
-            <i class="fas fa-clinic-medical"></i>
-            <div class="title">Brand Name</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-th-large"></i>
-            <div class="title">Dashboard</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-stethoscope"></i>
-            <div class="title">Appointments</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-user-md"></i>
-            <div class="title">Doctors</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-puzzle-piece"></i>
-            <div class="title">Departments</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-hand-holding-usd"></i>
-            <div class="title">Payments</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-cog"></i>
-            <div class="title">Settings</div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-question"></i>
-            <div class="title">Help</div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="main">
-      <div class="top-bar">
-        <div class="search">
-          <input type="text" name="search" placeholder="search here">
-          <label for="search">
-            <i class="fas fa-search"></i>
-          </label>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+            integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+            crossorigin="anonymous"
+        ></script>
+        <title>Appointments</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- <div class="sidebar">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-clinic-medical"></i>
+                            <div>
+                                <div class="title">Brand Name</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <div class="title">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="title">Appointments</div>
+                        </a>
+                    </li>
+                    <li class="doctors">
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="title">Doctors</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="title">Departments</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="title">Payments</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="title">Settings</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon-div">
+                                <i class="fas fa-question"></i>
+                            </div>
+                            <div class="title">Help</div>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+            <!-- <div class="main">
+                <div class="top-bar">
+                    <div class="search">
+                        <input type="text" name="search" placeholder="search here">
+                        <label for="search">
+                            <div class="search-icon"><i class="fas fa-search"></i></div>
+                        </label>
+                    </div>
+                    <i class="fas fa-bell"></i>
+                    <div class="user">
+                        <img src="./public/doctor.png" alt="">
+                    </div>
+                </div>
+                <div id="root"></div>
+            </div> -->
         </div>
-        <i class="fas fa-bell"></i>
-        <div class="user">
-          <img src="./public/doctor.png" alt="">
-        </div>
-      </div>
-      <div id="root">
-      </div>
-    </div>
-  </div>
-
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
