@@ -1,16 +1,16 @@
 :root {
     --surface-color: rgba(173, 217, 209, 1);
     --curve: 40;
-  }
+}
 
 * {
     box-sizing: border-box;
-  }
+}
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #fef8f8;
-  }
+}
 
 
 /* .card-doctors-wrapper {
@@ -33,7 +33,7 @@ body {
     list-style-type: none;
 }
 
-.doctor-profile-card{
+.doctor-profile-card {
     position: relative;
     display: block;
     height: 100%;
@@ -41,7 +41,7 @@ body {
     overflow: hidden;
     text-decoration: none;
     height: 400px;
-   
+
 }
 
 .card-image {
@@ -104,10 +104,13 @@ body {
 }
 
 .card-title {
-    font-size: 1em;
-    margin: 2em 0 0 .7em;
+    /* font-size: 1.6em; */
+    margin: 0 0 1.5em 2em;
     color: #444;
-    
+}
+
+.card-header-text h3 {
+    color: #444;
 }
 
 

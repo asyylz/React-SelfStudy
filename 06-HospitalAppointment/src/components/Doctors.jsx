@@ -29,7 +29,8 @@ export default function Doctors({ dataDoctors }) {
                 alt=""
               />
               <div className="card-header-text">
-                <h3 className="card-title">Jessica Parker</h3>
+                <h2 className="card-title">Jessica Parker</h2>
+                <h3>{doctor.expertiseField}</h3>
               </div>
             </div>
             <p className="card-description">

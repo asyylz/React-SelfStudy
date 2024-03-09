@@ -157,6 +157,54 @@ const Data = [
       },
     ],
   },
+  {
+    id: 7,
+    doctorName: "Dr. Olivia Martinez",
+    img: "./public/ahmet.png",
+    expertiseField: "Neurology",
+    email: "olivia.martinez@example.com",
+    telNumber: "+3344556677",
+    patient: [
+      {
+        id: 1,
+        patientName: "Noah Anderson",
+        appointmentDate: "2024-03-22",
+        isSeen: false,
+        concerns: "Headaches and dizziness",
+      },
+      {
+        id: 2,
+        patientName: "Sophia Thomas",
+        appointmentDate: "2024-03-26",
+        isSeen: true,
+        concerns: "Memory loss",
+      },
+    ],
+  },
+  {
+    id: 8,
+    doctorName: "Dr. Olivia Martinez",
+    img: "./public/ahmet.png",
+    expertiseField: "Neurology",
+    email: "olivia.martinez@example.com",
+    telNumber: "+3344556677",
+    patient: [
+      {
+        id: 1,
+        patientName: "Noah Anderson",
+        appointmentDate: "2024-03-22",
+        isSeen: false,
+        concerns: "Headaches and dizziness",
+      },
+      {
+        id: 2,
+        patientName: "Sophia Thomas",
+        appointmentDate: "2024-03-26",
+        isSeen: true,
+        concerns: "Memory loss",
+      },
+    ],
+  },
 ];
 
 export default Data;
