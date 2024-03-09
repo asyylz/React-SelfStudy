@@ -11,7 +11,7 @@ export default function Doctors({ dataDoctors }) {
   return (
     <ul className="card-doctors-wrapper">
     {dataDoctors.map((doctor) =>
-      <li>
+      <li key={doctor.id}>
         <a href="" className="doctor-profile-card">
           <img
             src={doctor.img}
@@ -30,7 +30,6 @@ export default function Doctors({ dataDoctors }) {
               />
               <div className="card-header-text">
                 <h3 className="card-title">Jessica Parker</h3>
-                <span className="card-status">1 hour ago</span>
               </div>
             </div>
             <p className="card-description">

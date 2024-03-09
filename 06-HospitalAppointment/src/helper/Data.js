@@ -134,7 +134,7 @@ const Data = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     doctorName: "Dr. Olivia Martinez",
     img: "./public/ahmet.png",
     expertiseField: "Neurology",
