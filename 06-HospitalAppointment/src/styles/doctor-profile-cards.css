@@ -28,9 +28,9 @@ body {
     border-radius: calc(var(--curve) * 1px);
     overflow: hidden;
     text-decoration: none;
-    height: 40vh;
+    height: 35vh;
     min-height: 30vh;
-    
+
 }
 
 .card-image {
