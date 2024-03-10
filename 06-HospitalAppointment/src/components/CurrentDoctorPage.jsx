@@ -39,7 +39,7 @@ export default function CurrentDoctorPage(currentDoctor) {
       <div className="tables">
         <div className="last-appointments">
           <div className="heading">
-            <h2>Appointments</h2>
+            <h2>Completed Appointments</h2>
             <a href="#" className="btn">
               View All
             </a>
@@ -54,26 +54,74 @@ export default function CurrentDoctorPage(currentDoctor) {
               <td>Actions</td>
             </thead>
             <tbody>
-              {doctor.patients.map((patient) => (
-                <>
-                  <tr
-                    key={patient.id}
-                    className={patient.isSeen ? "completed" : "active"}
-                  >
-                    <td>{patient.patientName}</td>
-                    <td>{patient.concerns}</td>
-                    <td>{patient.appointmentDate}</td>
-                    <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                    <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                    <td>
-                      <FaRegEye className="icons eye" />
-                      <FaRegEdit className="icons edit" />
-                      <FaRegTrashAlt className="icons trash" />
-                    </td>
-                  </tr>
-                  <div className="gap-line"></div>
-                </>
-              ))}
+              {doctor.patients.filter(
+                (patient) =>
+                  patient.isSeen ===
+                  true).map((patient)=> (
+                    <>
+                      <tr
+                        key={patient.id}
+                        className={patient.isSeen ? "completed" : "active"}
+                      >
+                        <td>{patient.patientName}</td>
+                        <td>{patient.concerns}</td>
+                        <td>{patient.appointmentDate}</td>
+                        <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                        <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                        <td>
+                          <FaRegEye className="icons eye" />
+                          <FaRegEdit className="icons edit" />
+                          <FaRegTrashAlt className="icons trash" />
+                        </td>
+                      </tr>
+                      <div className="gap-line"></div>
+                    </>
+                  )
+              )}
+            </tbody>
+          </table>
+        </div>
+        <div className="last-appointments">
+          <div className="heading">
+            <h2>Upcoming Appointments</h2>
+            <a href="#" className="btn">
+              View All
+            </a>
+          </div>
+          <table className="appointments">
+            <thead>
+              <td>Patient Name</td>
+              <td>Concerns</td>
+              <td>Appointment Date</td>
+              <td>Status</td>
+              <td>Referrals</td>
+              <td>Actions</td>
+            </thead>
+            <tbody>
+              {doctor.patients.filter(
+                (patient) =>
+                  patient.isSeen ===
+                  false).map((patient)=> (
+                    <>
+                      <tr
+                        key={patient.id}
+                        className={patient.isSeen ? "completed" : "active"}
+                      >
+                        <td>{patient.patientName}</td>
+                        <td>{patient.concerns}</td>
+                        <td>{patient.appointmentDate}</td>
+                        <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                        <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                        <td>
+                          <FaRegEye className="icons eye" />
+                          <FaRegEdit className="icons edit" />
+                          <FaRegTrashAlt className="icons trash" />
+                        </td>
+                      </tr>
+                      <div className="gap-line"></div>
+                    </>
+                  )
+              )}
             </tbody>
           </table>
         </div>

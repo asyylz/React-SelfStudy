@@ -54,6 +54,7 @@ table {
     margin-top: 10px;
     width: 100%;
     border-collapse: collapse;
+   
 }
 
 thead td {
@@ -64,6 +65,7 @@ thead td {
 table tr {
     border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
+
 
 table tr.active {
     background: var(--active-background);
