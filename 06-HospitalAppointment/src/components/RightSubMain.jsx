@@ -8,10 +8,12 @@ import { FaUserDoctor } from "react-icons/fa6";
 import Doctors from "./Doctors";
 import { useState } from "react";
 import NewPatient from "./NewPatient";
+import AppointmentsAll from "./AppointmentsAll";
 
 export default function RightSubMain({ doctorData }) {
   const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
   const [newPatient, setNewPatient] = useState(false);
+  const [appointmentTab, setAppointmentTab] = useState(false);
 
   return (
     <>
@@ -20,6 +22,7 @@ export default function RightSubMain({ doctorData }) {
           className={`card ${doctorsTabSelected ? "selected" : ""}`}
           onClick={() => {
             setNewPatient(false);
+            setAppointmentTab(false);
             setDoctorsTabSelected(!doctorsTabSelected);
           }}
         >
@@ -30,7 +33,14 @@ export default function RightSubMain({ doctorData }) {
             <FaUserDoctor />
           </div>
         </div>
-        <div className="card">
+        <div
+          className={`card ${appointmentTab ? "selected" : ""}`}
+          onClick={() => {
+            setNewPatient(false);
+            setDoctorsTabSelected(false);
+            setAppointmentTab(!appointmentTab);
+          }}
+        >
           <div className="card-content">
             <div className="card-name">Appointments</div>
           </div>
@@ -42,6 +52,7 @@ export default function RightSubMain({ doctorData }) {
           className={`card ${newPatient ? "selected" : ""}`}
           onClick={() => {
             setDoctorsTabSelected(false);
+            setAppointmentTab(false);
             setNewPatient(!newPatient);
           }}
         >
@@ -69,6 +80,7 @@ export default function RightSubMain({ doctorData }) {
         />
       )}
       {newPatient && <NewPatient />}
+      {appointmentTab && <AppointmentsAll />}
     </>
   );
 }

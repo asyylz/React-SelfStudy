@@ -11,24 +11,48 @@ export default function NewPatient() {
         </h2>
         <div className="input-content-wrap">
           <dl className="inputbox">
-            <dt className="inputbox-title">Input Text</dt>
+            <dt className="inputbox-title">Patient Full Name</dt>
             <dd className="inputbox-content">
               <input id="input0" type="text" required />
-              <label htmlFor="input0">ID</label>
+              <label htmlFor="input0">Patient Name</label>
               <span className="underline"></span>
             </dd>
           </dl>
           <dl className="inputbox">
-            <dt className="inputbox-title">Input Password</dt>
+            <dt className="inputbox-title">Patient DOB</dt>
             <dd className="inputbox-content">
-              <input id="input1" type="password" required />
-              <label htmlFor="input1">Password</label>
+              <input id="input1" type="date" required />
+              <label htmlFor="input1"></label>
               <span className="underline"></span>
             </dd>
           </dl>
+          <DoctorSelectDropDownMenu />
+          <dl className="inputbox">
+            <dt className="inputbox-title">Appointment Date</dt>
+            <dd className="inputbox-content">
+              <input id="input2" type="date" required />
+              <label htmlFor="input2"></label>
+              <span className="underline"></span>
+            </dd>
+          </dl>
+          <dl className="inputbox">
+            <dt className="inputbox-title">Patient Concerns</dt>
+            <dd className="inputbox-content">
+              <textarea
+                id="textareaInput"
+                name="input3"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+              <label htmlFor="textareaInput">Patient Concerns</label>
+              <span className="underline"></span>
+            </dd>
+          </dl>
+
           <div className="btns">
-            <button className="btn btn-confirm">Sign In</button>
-            <button className="btn btn-cancel">Cancel</button>
+            <button className="btn btn-confirm">Create Appointment</button>
+            <button className="btn btn-cancel">Clear Form</button>
           </div>
         </div>
       </section>
