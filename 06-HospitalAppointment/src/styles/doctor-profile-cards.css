@@ -75,7 +75,7 @@ body {
     background-color: var(--surface-color);
     transform: translateY(-100%);
     transition: .2s ease-in-out;
-    height: 150px;
+    height: 180px;
 }
 
 .card-arc {
