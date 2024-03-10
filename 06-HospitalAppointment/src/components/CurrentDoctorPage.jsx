@@ -9,25 +9,32 @@ export default function CurrentDoctorPage(currentDoctor) {
   console.log(doctor.doctorName);
   return (
     <div className="current-doctor-wrapper">
-      <a href="#" className="doctor-profile-card">
-        <img src={doctor.img} className="card-image" alt="" />
-        <div className="card-overlay">
-          <div className="card-header">
-            <svg className="card-arc" xmlns="httpwww.w3.org/2000/svg">
-              <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" />
-            </svg>
-            <img className="card-thumb" src={doctor.img} alt="" />
-            <div className="card-header-text">
-              <h2 className="card-title">{doctor.doctorName}</h2>
-              <h3>{doctor.expertiseField}</h3>
+      <div>
+        <h2 className="sm-screen-doctor-name">{doctor.doctorName}</h2>
+        <a
+          href="#"
+          className="doctor-profile-card"
+          style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
+        >
+          <img src={doctor.img} className="card-image" alt="" />
+          <div className="card-overlay">
+            <div className="card-header">
+              <svg className="card-arc" xmlns="httpwww.w3.org/2000/svg">
+                <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" />
+              </svg>
+              <img className="card-thumb" src={doctor.img} alt="" />
+              <div className="card-header-text">
+                <h2 className="card-title">{doctor.doctorName}</h2>
+                <h3>{doctor.expertiseField}</h3>
+              </div>
             </div>
+            <p className="card-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, blanditiis?
+            </p>
           </div>
-          <p className="card-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-            blanditiis?
-          </p>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <div className="tables">
         <div className="last-appointments">

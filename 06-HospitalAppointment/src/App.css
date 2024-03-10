@@ -15,6 +15,7 @@ body {
     position: relative;
     width: 100%;
 }
+
 /* 
 .sidebar {
     position: fixed;
@@ -201,9 +202,21 @@ img {
     color: rgba(173, 217, 209, 1);
 }
 
-@media (max-width:1090px) {
+.sm-screen-doctor-name {
+    display: none;
+}
+
+@media (max-width:1230px) {
+    .cards {
+        margin-top: 50px;
+        padding: 35px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
     .sidebar {
-        width: 60px;
+        width: 60px !important;
     }
 
     .sidebar ul li a i {
@@ -228,9 +241,23 @@ img {
     }
 }
 
-@media (max-width:860px) {
+@media (max-width:970px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    a.doctor-profile-card {
+        display: none;
+    }
+
+
+    .current-doctor-wrapper {
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+
+    .sm-screen-doctor-name {
+        display: contents;
     }
 
     .tables {

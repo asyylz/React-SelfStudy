@@ -10,10 +10,10 @@ const Data = [
       {
         id: 1,
         patientName: "John Doe",
-        appointmentDate: "2024-03-10",
+        appointmentDate: "2024-05-10",
         isSeen: true,
         concerns: "Chest pain and shortness of breath",
-        referral: true
+        referral: true,
       },
       {
         id: 2,
@@ -21,9 +21,25 @@ const Data = [
         appointmentDate: "2024-03-15",
         isSeen: false,
         concerns: "High blood pressure and headaches",
-        referral: false
-      }
-    ]
+        referral: false,
+      },
+      {
+        id: 3,
+        patientName: "John Doe",
+        appointmentDate: "2024-03-10",
+        isSeen: true,
+        concerns: "Chest pain and shortness of breath",
+        referral: true,
+      },
+      {
+        id: 4,
+        patientName: "Jane Smith",
+        appointmentDate: "2024-06-15",
+        isSeen: false,
+        concerns: "High blood pressure and headaches",
+        referral: false,
+      },
+    ],
   },
   {
     id: 2,
@@ -39,7 +55,7 @@ const Data = [
         appointmentDate: "2024-03-12",
         isSeen: false,
         concerns: "Fever and cough",
-        referral: false
+        referral: false,
       },
       {
         id: 2,
@@ -47,9 +63,9 @@ const Data = [
         appointmentDate: "2024-03-18",
         isSeen: true,
         concerns: "Stomach pain and vomiting",
-        referral: true
-      }
-    ]
+        referral: true,
+      },
+    ],
   },
   {
     id: 3,
@@ -65,7 +81,7 @@ const Data = [
         appointmentDate: "2024-03-19",
         isSeen: false,
         concerns: "Fractured arm",
-        referral: false
+        referral: false,
       },
       {
         id: 2,
@@ -73,9 +89,9 @@ const Data = [
         appointmentDate: "2024-03-23",
         isSeen: true,
         concerns: "Back pain",
-        referral: true
-      }
-    ]
+        referral: true,
+      },
+    ],
   },
   {
     id: 4,
@@ -91,7 +107,7 @@ const Data = [
         appointmentDate: "2024-03-21",
         isSeen: true,
         concerns: "Skin rash",
-        referral: true
+        referral: true,
       },
       {
         id: 2,
@@ -99,9 +115,9 @@ const Data = [
         appointmentDate: "2024-03-25",
         isSeen: false,
         concerns: "Acne",
-        referral: false
-      }
-    ]
+        referral: false,
+      },
+    ],
   },
   {
     id: 5,
@@ -117,7 +133,7 @@ const Data = [
         appointmentDate: "2024-03-22",
         isSeen: false,
         concerns: "Headaches and dizziness",
-        referral: false
+        referral: false,
       },
       {
         id: 2,
@@ -125,9 +141,9 @@ const Data = [
         appointmentDate: "2024-03-26",
         isSeen: true,
         concerns: "Memory loss",
-        referral: true
-      }
-    ]
+        referral: true,
+      },
+    ],
   },
   // Add more doctors with their patients...
 ];
