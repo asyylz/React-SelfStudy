@@ -4,12 +4,12 @@ import "/src/styles/new-patient.css";
 
 export default function NewPatient() {
   return (
-    <div id="wrap" className="new-patient">
-      <header className="input-header">
-        <h1>Patient Details</h1>
-      </header>
-      <section className="new-patient-content">
-        <div className="new-patient-content-wrap">
+    <div id="wrap" className="input">
+      <section className="input-content">
+        <h2>
+          Input Text/Password Animation<span>Only CSS</span>
+        </h2>
+        <div className="input-content-wrap">
           <dl className="inputbox">
             <dt className="inputbox-title">Input Text</dt>
             <dd className="inputbox-content">
@@ -18,7 +18,6 @@ export default function NewPatient() {
               <span className="underline"></span>
             </dd>
           </dl>
-          <dl></dl>
           <dl className="inputbox">
             <dt className="inputbox-title">Input Password</dt>
             <dd className="inputbox-content">
