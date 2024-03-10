@@ -3,7 +3,7 @@ import CurrentDoctorPage from "./CurrentDoctorPage";
 import "/src/styles/doctor-profile-cards.css";
 
 export default function Doctors({ dataDoctors, doctorsTabSelected }) {
-  
+
   const [currentDoctorSelected, setCurrentDoctorSelected] = useState(false);
   const [currentDoctor, setCurrentDoctor] = useState([]);
 
@@ -32,7 +32,7 @@ export default function Doctors({ dataDoctors, doctorsTabSelected }) {
                     </svg>
                     <img className="card-thumb" src={doctor.img} alt="" />
                     <div className="card-header-text">
-                      <h2 className="card-title">Jessica Parker</h2>
+                      <h2 className="card-title">{doctor.doctorName}</h2>
                       <h3>{doctor.expertiseField}</h3>
                     </div>
                   </div>

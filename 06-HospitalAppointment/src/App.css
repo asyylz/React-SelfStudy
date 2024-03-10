@@ -15,7 +15,7 @@ body {
     position: relative;
     width: 100%;
 }
-
+/* 
 .sidebar {
     position: fixed;
     width: 300px;
@@ -89,7 +89,7 @@ body {
     font-size: 22px;
     flex: 2;
     text-align: start;
-}
+} */
 
 .main {
     position: absolute;
@@ -191,109 +191,15 @@ img {
 .card.selected {
     background: #444;
 }
+
 .card.selected .icon-box {
     font-size: 45px;
     color: rgba(173, 217, 209, 1);
 }
+
 .card.selected .card-name {
     color: rgba(173, 217, 209, 1);
 }
-
-/* 
-.tables {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-    align-items: self-start;
-    padding: 0 20px 20px 20px;
-
-}
-
-.img-box-small {
-    position: relative;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.last-appointments,
-.doctor-visiting {
-    min-height: 350px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #444;
-
-}
-
-.btn {
-    padding: 5px 10px;
-    background: linear-gradient(45deg, #47cebe, #ef4a82);
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-}
-
-table {
-    margin-top: 10px;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-thead td {
-    font-weight: 600;
-    color: #333;
-}
-
-table tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-tbody tr:hover {
-    background: #444;
-    color: #fff;
-}
-
-tbody table tr:last-child {
-    border-bottom: none;
-}
-
-td {
-    padding: 9px 5px;
-}
-
-td .icons {
-    padding: 7px;
-    color: #fff;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    margin-left: 5px;
-}
-
-.last-appointments table tbody td:last-child {
-    white-space: nowrap;
-}
-
-td .icons.edit {
-    background: #63b4f4;
-}
-
-td .icons.eye {
-    background: #32bea6;
-}
-
-td .icons.trash {
-    background: #ed5564;
-} */
 
 @media (max-width:1090px) {
     .sidebar {
@@ -344,8 +250,7 @@ td .icons.trash {
 
 @media (max-width:420px) {
 
-    .last-appointments,
-    .doctor-visiting {
+    .last-appointments {
         font-size: 70%;
         padding: 10px;
         min-height: 200px;

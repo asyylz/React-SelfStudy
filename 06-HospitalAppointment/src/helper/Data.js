@@ -6,13 +6,14 @@ const Data = [
     expertiseField: "Cardiology",
     email: "john.smith@example.com",
     telNumber: "+1234567890",
-    patient: [
+    patients: [
       {
         id: 1,
         patientName: "John Doe",
         appointmentDate: "2024-03-10",
         isSeen: true,
         concerns: "Chest pain and shortness of breath",
+        referral: true
       },
       {
         id: 2,
@@ -20,22 +21,9 @@ const Data = [
         appointmentDate: "2024-03-15",
         isSeen: false,
         concerns: "High blood pressure and headaches",
-      },
-      {
-        id: 3,
-        patientName: "John Doe",
-        appointmentDate: "2024-03-10",
-        isSeen: true,
-        concerns: "Chest pain and shortness of breath",
-      },
-      {
-        id: 4,
-        patientName: "Jane Smith",
-        appointmentDate: "2024-03-15",
-        isSeen: false,
-        concerns: "High blood pressure and headaches",
-      },
-    ],
+        referral: false
+      }
+    ]
   },
   {
     id: 2,
@@ -44,13 +32,14 @@ const Data = [
     expertiseField: "Pediatrics",
     email: "emily.johnson@example.com",
     telNumber: "+1987654321",
-    patient: [
+    patients: [
       {
         id: 1,
         patientName: "Michael Brown",
         appointmentDate: "2024-03-12",
         isSeen: false,
         concerns: "Fever and cough",
+        referral: false
       },
       {
         id: 2,
@@ -58,8 +47,9 @@ const Data = [
         appointmentDate: "2024-03-18",
         isSeen: true,
         concerns: "Stomach pain and vomiting",
-      },
-    ],
+        referral: true
+      }
+    ]
   },
   {
     id: 3,
@@ -68,13 +58,14 @@ const Data = [
     expertiseField: "Orthopedics",
     email: "michael.brown@example.com",
     telNumber: "+1122334455",
-    patient: [
+    patients: [
       {
         id: 1,
         patientName: "Liam Johnson",
         appointmentDate: "2024-03-19",
         isSeen: false,
         concerns: "Fractured arm",
+        referral: false
       },
       {
         id: 2,
@@ -82,8 +73,9 @@ const Data = [
         appointmentDate: "2024-03-23",
         isSeen: true,
         concerns: "Back pain",
-      },
-    ],
+        referral: true
+      }
+    ]
   },
   {
     id: 4,
@@ -92,13 +84,14 @@ const Data = [
     expertiseField: "Dermatology",
     email: "sarah.white@example.com",
     telNumber: "+9988776655",
-    patient: [
+    patients: [
       {
         id: 1,
         patientName: "Ethan Miller",
         appointmentDate: "2024-03-21",
         isSeen: true,
         concerns: "Skin rash",
+        referral: true
       },
       {
         id: 2,
@@ -106,8 +99,9 @@ const Data = [
         appointmentDate: "2024-03-25",
         isSeen: false,
         concerns: "Acne",
-      },
-    ],
+        referral: false
+      }
+    ]
   },
   {
     id: 5,
@@ -116,13 +110,14 @@ const Data = [
     expertiseField: "Neurology",
     email: "olivia.martinez@example.com",
     telNumber: "+3344556677",
-    patient: [
+    patients: [
       {
         id: 1,
         patientName: "Noah Anderson",
         appointmentDate: "2024-03-22",
         isSeen: false,
         concerns: "Headaches and dizziness",
+        referral: false
       },
       {
         id: 2,
@@ -130,81 +125,11 @@ const Data = [
         appointmentDate: "2024-03-26",
         isSeen: true,
         concerns: "Memory loss",
-      },
-    ],
+        referral: true
+      }
+    ]
   },
-  {
-    id: 6,
-    doctorName: "Dr. Olivia Martinez",
-    img: "./public/ahmet.png",
-    expertiseField: "Neurology",
-    email: "olivia.martinez@example.com",
-    telNumber: "+3344556677",
-    patient: [
-      {
-        id: 1,
-        patientName: "Noah Anderson",
-        appointmentDate: "2024-03-22",
-        isSeen: false,
-        concerns: "Headaches and dizziness",
-      },
-      {
-        id: 2,
-        patientName: "Sophia Thomas",
-        appointmentDate: "2024-03-26",
-        isSeen: true,
-        concerns: "Memory loss",
-      },
-    ],
-  },
-  {
-    id: 7,
-    doctorName: "Dr. Olivia Martinez",
-    img: "./public/ahmet.png",
-    expertiseField: "Neurology",
-    email: "olivia.martinez@example.com",
-    telNumber: "+3344556677",
-    patient: [
-      {
-        id: 1,
-        patientName: "Noah Anderson",
-        appointmentDate: "2024-03-22",
-        isSeen: false,
-        concerns: "Headaches and dizziness",
-      },
-      {
-        id: 2,
-        patientName: "Sophia Thomas",
-        appointmentDate: "2024-03-26",
-        isSeen: true,
-        concerns: "Memory loss",
-      },
-    ],
-  },
-  {
-    id: 8,
-    doctorName: "Dr. Olivia Martinez",
-    img: "./public/ahmet.png",
-    expertiseField: "Neurology",
-    email: "olivia.martinez@example.com",
-    telNumber: "+3344556677",
-    patient: [
-      {
-        id: 1,
-        patientName: "Noah Anderson",
-        appointmentDate: "2024-03-22",
-        isSeen: false,
-        concerns: "Headaches and dizziness",
-      },
-      {
-        id: 2,
-        patientName: "Sophia Thomas",
-        appointmentDate: "2024-03-26",
-        isSeen: true,
-        concerns: "Memory loss",
-      },
-    ],
-  },
+  // Add more doctors with their patients...
 ];
 
 export default Data;

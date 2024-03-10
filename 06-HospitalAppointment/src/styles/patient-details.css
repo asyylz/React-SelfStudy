@@ -1,10 +1,18 @@
+* {
+    --active-background: rgba(252, 106, 83, 0.6);
+    --completed-background: rgba(75, 191, 82, 0.5);
+    --primary-background: rgba(173, 217, 209, 1);
+    --primary-textcolor: #444;
+}
+
 .tables {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 20px;
     align-items: self-start;
     padding: 0 20px 20px 20px;
+
 
 }
 
@@ -20,8 +28,9 @@
 .doctor-visiting {
     min-height: 350px;
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
 }
 
 .heading {
@@ -34,10 +43,11 @@
 
 .btn {
     padding: 5px 10px;
-    background: linear-gradient(45deg, #47cebe, #ef4a82);
-    color: #fff;
+    background: var(--primary-background);
+    color:var(--primary-textcolor);
     text-decoration: none;
     text-align: center;
+    border-radius: 28px;
 }
 
 table {
@@ -52,7 +62,20 @@ thead td {
 }
 
 table tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+table tr.active {
+    background: var(--active-background);
+}
+
+table tr.completed {
+    background: var(--completed-background);
+    text-decoration: line-through;
+}
+
+div.gap-line {
+    height: 5px;
 }
 
 tbody tr:hover {

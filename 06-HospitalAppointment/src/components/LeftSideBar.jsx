@@ -1,6 +1,7 @@
 import TopMenu from "./RightSubMain";
 import TopSeacrhBar from "./TopSearchBar";
 import RightSubMain from "./RightSubMain";
+import "/src/styles/left-sidebar.css";
 
 export default function LeftSideBar() {
   return (
