@@ -7,17 +7,16 @@ import {
 import { FaUserDoctor } from "react-icons/fa6";
 import Doctors from "./Doctors";
 import { useState } from "react";
-// import "/src/styles/doctor-profile-cards.css";
 
 export default function RightSubMain({ doctorData }) {
-  const [doctorsTabSelected, setDoctorsTabSelected] = useState(false);
+  const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
   console.log(doctorsTabSelected);
 
   return (
     <>
       <div className="cards">
         <div
-          className="card"
+          className={`card ${doctorsTabSelected ? "selected" : ""}`}
           onClick={() => setDoctorsTabSelected(!doctorsTabSelected)}
         >
           <div className="card-content">
@@ -53,7 +52,12 @@ export default function RightSubMain({ doctorData }) {
         </div>
       </div>
       <hr />
-      {doctorsTabSelected && <Doctors dataDoctors={doctorData} />}
+      {doctorsTabSelected && (
+        <Doctors
+          dataDoctors={doctorData}
+          doctorsTabSelected={doctorsTabSelected}
+        />
+      )}
     </>
   );
 }

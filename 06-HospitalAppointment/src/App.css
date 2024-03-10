@@ -188,6 +188,18 @@ img {
     color: #444;
 }
 
+.card.selected {
+    background: #444;
+}
+.card.selected .icon-box {
+    font-size: 45px;
+    color: rgba(173, 217, 209, 1);
+}
+.card.selected .card-name {
+    color: rgba(173, 217, 209, 1);
+}
+
+/* 
 .tables {
     width: 100%;
     display: grid;
@@ -281,7 +293,7 @@ td .icons.eye {
 
 td .icons.trash {
     background: #ed5564;
-}
+} */
 
 @media (max-width:1090px) {
     .sidebar {
