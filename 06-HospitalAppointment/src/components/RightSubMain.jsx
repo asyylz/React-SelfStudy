@@ -75,12 +75,12 @@ export default function RightSubMain({ doctorData }) {
       <hr />
       {doctorsTabSelected && (
         <Doctors
-          dataDoctors={doctorData}
+         dataDoctors={doctorData}
           doctorsTabSelected={doctorsTabSelected}
         />
       )}
       {newPatient && <NewPatient />}
-      {appointmentTab && <AppointmentsAll />}
+      {appointmentTab && <AppointmentsAll dataDoctors={doctorData}/>}
     </>
   );
 }
