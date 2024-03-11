@@ -2,6 +2,8 @@ import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import "/src/styles/current-doctor-page.css";
 import "/src/styles/doctor-profile-cards.css";
 import "/src/styles/patient-details.css";
+import { MdDoneOutline } from "react-icons/md";
+import { useEffect } from "react";
 export default function CurrentDoctorPage({
   currentDoctor,
   setStoredData,
@@ -37,6 +39,30 @@ export default function CurrentDoctorPage({
     console.log("Patient deleted successfully.");
   }
 
+  function handleIsSeenStatus(patientID) {
+    const updatedData = storedData.map((doctor) => {
+      if (doctor.id === currentDoctor.id) {
+        const updatedPatients = doctor.patients.map((patient) => {
+          if (patient.id === patientID) {
+            return {
+              ...patient,
+              isSeen: !patient.isSeen,
+            };
+          }
+          return patient;
+        });
+        return {
+          ...doctor,
+          patients: updatedPatients,
+        };
+      }
+      return doctor;
+    });
+
+    setStoredData(updatedData);
+    console.log("Patient completed successfully.");
+  }
+
   return (
     <div className="current-doctor-wrapper">
       <div>
@@ -44,7 +70,7 @@ export default function CurrentDoctorPage({
         <a
           href="#"
           className="doctor-profile-card"
-          style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
+          // style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
         >
           <img src={doctor.img} className="card-image" alt="" />
           <div className="card-overlay">
@@ -98,9 +124,10 @@ export default function CurrentDoctorPage({
                       <td>{patient.isSeen ? "Completed" : "Active"}</td>
                       <td>{patient.referral ? "Referred" : "Not Applied"}</td>
                       <td>
-                        <FaRegEye className="icons eye" />
-                        <FaRegEdit className="icons edit" />
-                        <FaRegTrashAlt className="icons trash" />
+                        <FaRegTrashAlt
+                          className="icons trash"
+                          onClick={() => handleDeletePatient(patient.id)}
+                        />
                       </td>
                     </tr>
                     <div className="gap-line"></div>
@@ -140,8 +167,10 @@ export default function CurrentDoctorPage({
                       <td>{patient.isSeen ? "Completed" : "Active"}</td>
                       <td>{patient.referral ? "Referred" : "Not Applied"}</td>
                       <td>
-                        <FaRegEye className="icons eye" />
-                        <FaRegEdit className="icons edit" />
+                        <MdDoneOutline
+                          className="icons tick"
+                          onClick={() => handleIsSeenStatus(patient.id)}
+                        />
                         <FaRegTrashAlt
                           className="icons trash"
                           onClick={() => handleDeletePatient(patient.id)}

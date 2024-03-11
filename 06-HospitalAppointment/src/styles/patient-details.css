@@ -107,14 +107,12 @@ td .icons {
     white-space: nowrap;
 }
 
-td .icons.edit {
-    background: #63b4f4;
-}
-
-td .icons.eye {
+td .icons.tick {
     background: #32bea6;
+    cursor: pointer;
 }
 
 td .icons.trash {
     background: #ed5564;
+    cursor: pointer;
 }
