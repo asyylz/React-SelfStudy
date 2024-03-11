@@ -10,6 +10,7 @@ export default function CurrentDoctorPage({
   storedData,
 }) {
   const doctor = currentDoctor;
+  console.log(currentDoctor);
 
   function handleDeletePatient(patientID) {
     const updatedDoctor = storedData.find(
@@ -35,6 +36,7 @@ export default function CurrentDoctorPage({
     });
 
     setStoredData(updatedData);
+    console.log(storedData);
 
     console.log("Patient deleted successfully.");
   }
@@ -64,126 +66,145 @@ export default function CurrentDoctorPage({
   }
 
   return (
-    <div className="current-doctor-wrapper">
-      <div>
-        <h2 className="sm-screen-doctor-name">{doctor.doctorName}</h2>
-        <a
-          href="#"
-          className="doctor-profile-card"
-          // style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
-        >
-          <img src={doctor.img} className="card-image" alt="" />
-          <div className="card-overlay">
-            <div className="card-header">
-              <svg className="card-arc" xmlns="httpwww.w3.org/2000/svg">
-                <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" />
-              </svg>
-              <img className="card-thumb" src={doctor.img} alt="" />
-              <div className="card-header-text">
-                <h2 className="card-title">{doctor.doctorName}</h2>
-                <h3>{doctor.expertiseField}</h3>
+    <>
+      {storedData.map(
+        (doctor) =>
+          doctor.id === currentDoctor.id && (
+            <div className="current-doctor-wrapper">
+              <div>
+                <h2 className="sm-screen-doctor-name">{doctor.doctorName}</h2>
+                <a
+                  href="#"
+                  className="doctor-profile-card"
+                  // style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
+                >
+                  <img src={doctor.img} className="card-image" alt="" />
+                  <div className="card-overlay">
+                    <div className="card-header">
+                      <svg className="card-arc" xmlns="httpwww.w3.org/2000/svg">
+                        <path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" />
+                      </svg>
+                      <img className="card-thumb" src={doctor.img} alt="" />
+                      <div className="card-header-text">
+                        <h2 className="card-title">{doctor.doctorName}</h2>
+                        <h3>{doctor.expertiseField}</h3>
+                      </div>
+                    </div>
+                    <p className="card-description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Asperiores, blanditiis?
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div className="tables">
+                <div className="last-appointments">
+                  <div className="heading">
+                    <h2>Completed Appointments</h2>
+                    <a href="#" className="btn">
+                      View All
+                    </a>
+                  </div>
+                  <table className="appointments">
+                    <thead>
+                      <td>Patient Name</td>
+                      <td>Concerns</td>
+                      <td>Appointment Date</td>
+                      <td>Status</td>
+                      <td>Referrals</td>
+                      <td>Actions</td>
+                    </thead>
+                    <tbody>
+                      {doctor.patients
+                        .filter((patient) => patient.isSeen === true)
+                        .map((patient) => (
+                          <>
+                            <tr
+                              key={patient.id}
+                              className={
+                                patient.isSeen ? "completed" : "active"
+                              }
+                            >
+                              <td>{patient.patientName}</td>
+                              <td>{patient.concerns}</td>
+                              <td>{patient.appointmentDate}</td>
+                              <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                              <td>
+                                {patient.referral ? "Referred" : "Not Applied"}
+                              </td>
+                              <td>
+                                <FaRegTrashAlt
+                                  className="icons trash"
+                                  onClick={() =>
+                                    handleDeletePatient(patient.id)
+                                  }
+                                />
+                              </td>
+                            </tr>
+                            <div className="gap-line"></div>
+                          </>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="last-appointments">
+                  <div className="heading">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="#" className="btn">
+                      View All
+                    </a>
+                  </div>
+                  <table className="appointments">
+                    <thead>
+                      <td>Patient Name</td>
+                      <td>Concerns</td>
+                      <td>Appointment Date</td>
+                      <td>Status</td>
+                      <td>Referrals</td>
+                      <td>Actions</td>
+                    </thead>
+                    <tbody>
+                      {doctor.patients
+                        .filter((patient) => patient.isSeen === false)
+                        .map((patient) => (
+                          <>
+                            <tr
+                              key={patient.id}
+                              className={
+                                patient.isSeen ? "completed" : "active"
+                              }
+                            >
+                              <td>{patient.patientName}</td>
+                              <td>{patient.concerns}</td>
+                              <td>{patient.appointmentDate}</td>
+                              <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                              <td>
+                                {patient.referral ? "Referred" : "Not Applied"}
+                              </td>
+                              <td>
+                                <MdDoneOutline
+                                  className="icons tick"
+                                  onClick={() => handleIsSeenStatus(patient.id)}
+                                />
+                                <FaRegTrashAlt
+                                  className="icons trash"
+                                  onClick={() =>
+                                    handleDeletePatient(patient.id)
+                                  }
+                                />
+                              </td>
+                            </tr>
+                            <div className="gap-line"></div>
+                          </>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
-            <p className="card-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, blanditiis?
-            </p>
-          </div>
-        </a>
-      </div>
-
-      <div className="tables">
-        <div className="last-appointments">
-          <div className="heading">
-            <h2>Completed Appointments</h2>
-            <a href="#" className="btn">
-              View All
-            </a>
-          </div>
-          <table className="appointments">
-            <thead>
-              <td>Patient Name</td>
-              <td>Concerns</td>
-              <td>Appointment Date</td>
-              <td>Status</td>
-              <td>Referrals</td>
-              <td>Actions</td>
-            </thead>
-            <tbody>
-              {doctor.patients
-                .filter((patient) => patient.isSeen === true)
-                .map((patient) => (
-                  <>
-                    <tr
-                      key={patient.id}
-                      className={patient.isSeen ? "completed" : "active"}
-                    >
-                      <td>{patient.patientName}</td>
-                      <td>{patient.concerns}</td>
-                      <td>{patient.appointmentDate}</td>
-                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                      <td>
-                        <FaRegTrashAlt
-                          className="icons trash"
-                          onClick={() => handleDeletePatient(patient.id)}
-                        />
-                      </td>
-                    </tr>
-                    <div className="gap-line"></div>
-                  </>
-                ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="last-appointments">
-          <div className="heading">
-            <h2>Upcoming Appointments</h2>
-            <a href="#" className="btn">
-              View All
-            </a>
-          </div>
-          <table className="appointments">
-            <thead>
-              <td>Patient Name</td>
-              <td>Concerns</td>
-              <td>Appointment Date</td>
-              <td>Status</td>
-              <td>Referrals</td>
-              <td>Actions</td>
-            </thead>
-            <tbody>
-              {doctor.patients
-                .filter((patient) => patient.isSeen === false)
-                .map((patient) => (
-                  <>
-                    <tr
-                      key={patient.id}
-                      className={patient.isSeen ? "completed" : "active"}
-                    >
-                      <td>{patient.patientName}</td>
-                      <td>{patient.concerns}</td>
-                      <td>{patient.appointmentDate}</td>
-                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                      <td>
-                        <MdDoneOutline
-                          className="icons tick"
-                          onClick={() => handleIsSeenStatus(patient.id)}
-                        />
-                        <FaRegTrashAlt
-                          className="icons trash"
-                          onClick={() => handleDeletePatient(patient.id)}
-                        />
-                      </td>
-                    </tr>
-                    <div className="gap-line"></div>
-                  </>
-                ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+          )
+      )}
+    </>
   );
 }

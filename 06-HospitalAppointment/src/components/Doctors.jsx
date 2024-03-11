@@ -20,7 +20,7 @@ export default function Doctors({ storedData, doctorsTabSelected , setStoredData
               key={doctor.id}
               onClick={() => handleCurrentDoctorDetails(doctor)}
             >
-              <a href="#" className="doctor-profile-card">
+              <a href="#" className="doctors-profile-card">
                 <img src={doctor.img} className="card-image" alt="" />
                 <div className="card-overlay">
                   <div className="card-header">
