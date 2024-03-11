@@ -130,6 +130,10 @@ export default function CurrentDoctorPage({
                                 {patient.referral ? "Referred" : "Not Applied"}
                               </td>
                               <td>
+                              <MdDoneOutline
+                                  className="icons tick"
+                                  onClick={() => handleIsSeenStatus(patient.id)}
+                                />
                                 <FaRegTrashAlt
                                   className="icons trash"
                                   onClick={() =>
