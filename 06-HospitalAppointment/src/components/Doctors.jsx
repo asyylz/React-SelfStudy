@@ -2,7 +2,7 @@ import { useState } from "react";
 import CurrentDoctorPage from "./CurrentDoctorPage";
 import "/src/styles/doctor-profile-cards.css";
 
-export default function Doctors({ dataDoctors, doctorsTabSelected }) {
+export default function Doctors({ storedData, doctorsTabSelected }) {
 
   const [currentDoctorSelected, setCurrentDoctorSelected] = useState(false);
   const [currentDoctor, setCurrentDoctor] = useState([]);
@@ -15,7 +15,7 @@ export default function Doctors({ dataDoctors, doctorsTabSelected }) {
     <>
       {doctorsTabSelected && !currentDoctorSelected ? (
         <ul className="card-doctors-wrapper">
-          {dataDoctors.map((doctor) => (
+          {storedData.map((doctor) => (
             <li
               key={doctor.id}
               onClick={() => handleCurrentDoctorDetails(doctor)}

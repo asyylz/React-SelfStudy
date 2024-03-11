@@ -9,11 +9,13 @@ import Doctors from "./Doctors";
 import { useState } from "react";
 import NewPatient from "./NewPatient";
 import AppointmentsAll from "./AppointmentsAll";
+import Referrals from "./Referrals";
 
-export default function RightSubMain({ doctorData }) {
+export default function RightSubMain({ storedData, setStoredData }) {
   const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
   const [newPatient, setNewPatient] = useState(false);
   const [appointmentTab, setAppointmentTab] = useState(false);
+  const [referralTab, setReferralTab] = useState(false);
 
   return (
     <>
@@ -23,6 +25,7 @@ export default function RightSubMain({ doctorData }) {
           onClick={() => {
             setNewPatient(false);
             setAppointmentTab(false);
+            setReferralTab(false);
             setDoctorsTabSelected(!doctorsTabSelected);
           }}
         >
@@ -38,6 +41,7 @@ export default function RightSubMain({ doctorData }) {
           onClick={() => {
             setNewPatient(false);
             setDoctorsTabSelected(false);
+            setReferralTab(false);
             setAppointmentTab(!appointmentTab);
           }}
         >
@@ -53,6 +57,7 @@ export default function RightSubMain({ doctorData }) {
           onClick={() => {
             setDoctorsTabSelected(false);
             setAppointmentTab(false);
+            setReferralTab(false);
             setNewPatient(!newPatient);
           }}
         >
@@ -63,7 +68,15 @@ export default function RightSubMain({ doctorData }) {
             <FaBed />
           </div>
         </div>
-        <div className="card">
+        <div
+          className={`card ${referralTab ? "selected" : ""}`}
+          onClick={() => {
+            setDoctorsTabSelected(false);
+            setAppointmentTab(false);
+            setNewPatient(false);
+            setReferralTab(!referralTab);
+          }}
+        >
           <div className="card-content">
             <div className="card-name">Referrals</div>
           </div>
@@ -75,12 +88,16 @@ export default function RightSubMain({ doctorData }) {
       <hr />
       {doctorsTabSelected && (
         <Doctors
-         dataDoctors={doctorData}
+          storedData={storedData}
           doctorsTabSelected={doctorsTabSelected}
         />
       )}
-      {newPatient && <NewPatient />}
-      {appointmentTab && <AppointmentsAll dataDoctors={doctorData}/>}
+      {newPatient && (
+        <NewPatient storedData={storedData} setStoredData={setStoredData} />
+      )}
+      {appointmentTab && <AppointmentsAll storedData={storedData} />}
+
+      {referralTab && <Referrals storedData={storedData} />}
     </>
   );
 }

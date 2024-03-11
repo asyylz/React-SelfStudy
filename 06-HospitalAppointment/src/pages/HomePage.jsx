@@ -17,7 +17,7 @@ export default function HomePage({ data }) {
       <LeftSideBar />
       <div className="main">
         <TopSeacrhBar />
-        <RightSubMain doctorData={storedData} setStoredData={setStoredData}/>
+        <RightSubMain storedData={storedData} setStoredData={setStoredData}/>
       </div>
     </>
   );

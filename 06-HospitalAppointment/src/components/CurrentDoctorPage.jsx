@@ -3,10 +3,8 @@ import "/src/styles/current-doctor-page.css";
 import "/src/styles/doctor-profile-cards.css";
 import "/src/styles/patient-details.css";
 export default function CurrentDoctorPage(currentDoctor) {
-  console.log(currentDoctor.currentDoctor);
   const doctor = currentDoctor.currentDoctor;
-  console.log(doctor);
-  console.log(doctor.doctorName);
+
   return (
     <div className="current-doctor-wrapper">
       <div>
@@ -54,30 +52,28 @@ export default function CurrentDoctorPage(currentDoctor) {
               <td>Actions</td>
             </thead>
             <tbody>
-              {doctor.patients.filter(
-                (patient) =>
-                  patient.isSeen ===
-                  true).map((patient)=> (
-                    <>
-                      <tr
-                        key={patient.id}
-                        className={patient.isSeen ? "completed" : "active"}
-                      >
-                        <td>{patient.patientName}</td>
-                        <td>{patient.concerns}</td>
-                        <td>{patient.appointmentDate}</td>
-                        <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                        <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                        <td>
-                          <FaRegEye className="icons eye" />
-                          <FaRegEdit className="icons edit" />
-                          <FaRegTrashAlt className="icons trash" />
-                        </td>
-                      </tr>
-                      <div className="gap-line"></div>
-                    </>
-                  )
-              )}
+              {doctor.patients
+                .filter((patient) => patient.isSeen === true)
+                .map((patient) => (
+                  <>
+                    <tr
+                      key={patient.id}
+                      className={patient.isSeen ? "completed" : "active"}
+                    >
+                      <td>{patient.patientName}</td>
+                      <td>{patient.concerns}</td>
+                      <td>{patient.appointmentDate}</td>
+                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                      <td>
+                        <FaRegEye className="icons eye" />
+                        <FaRegEdit className="icons edit" />
+                        <FaRegTrashAlt className="icons trash" />
+                      </td>
+                    </tr>
+                    <div className="gap-line"></div>
+                  </>
+                ))}
             </tbody>
           </table>
         </div>
@@ -98,30 +94,28 @@ export default function CurrentDoctorPage(currentDoctor) {
               <td>Actions</td>
             </thead>
             <tbody>
-              {doctor.patients.filter(
-                (patient) =>
-                  patient.isSeen ===
-                  false).map((patient)=> (
-                    <>
-                      <tr
-                        key={patient.id}
-                        className={patient.isSeen ? "completed" : "active"}
-                      >
-                        <td>{patient.patientName}</td>
-                        <td>{patient.concerns}</td>
-                        <td>{patient.appointmentDate}</td>
-                        <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                        <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                        <td>
-                          <FaRegEye className="icons eye" />
-                          <FaRegEdit className="icons edit" />
-                          <FaRegTrashAlt className="icons trash" />
-                        </td>
-                      </tr>
-                      <div className="gap-line"></div>
-                    </>
-                  )
-              )}
+              {doctor.patients
+                .filter((patient) => patient.isSeen === false)
+                .map((patient) => (
+                  <>
+                    <tr
+                      key={patient.id}
+                      className={patient.isSeen ? "completed" : "active"}
+                    >
+                      <td>{patient.patientName}</td>
+                      <td>{patient.concerns}</td>
+                      <td>{patient.appointmentDate}</td>
+                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                      <td>
+                        <FaRegEye className="icons eye" />
+                        <FaRegEdit className="icons edit" />
+                        <FaRegTrashAlt className="icons trash" />
+                      </td>
+                    </tr>
+                    <div className="gap-line"></div>
+                  </>
+                ))}
             </tbody>
           </table>
         </div>
