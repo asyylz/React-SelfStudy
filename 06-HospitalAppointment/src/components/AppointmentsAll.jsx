@@ -1,7 +1,6 @@
 import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 export default function AppointmentsAll({ storedData }) {
-  // console.log(storedData[0].patients[0]);
-  console.log(storedData)
+ 
   return (
     <div className="tables">
       <div className="last-appointments">

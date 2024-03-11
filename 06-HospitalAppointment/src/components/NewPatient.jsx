@@ -6,9 +6,13 @@ export default function NewPatient({ storedData, setStoredData }) {
   const [namePatient, setNamePatient] = useState("");
   const [DOBPatient, setDOBPatient] = useState("");
   const [appDatePatient, setAppDatePatient] = useState("");
-  const [doctorPatient, setdoctorPatient] = useState("");
-  console.log(doctorPatient);
+  const [doctorPatient, setDoctorPatient] = useState("");
   const [concernsPatient, setConcernsPatient] = useState("");
+  console.log(doctorPatient);
+  console.log(namePatient);
+  console.log(DOBPatient);
+  console.log(appDatePatient);
+  console.log(concernsPatient);
 
   function handleNewPatientAdd() {
     if (
@@ -23,7 +27,7 @@ export default function NewPatient({ storedData, setStoredData }) {
       return;
     }
     const updatedData = storedData.map((doctor) => {
-      if (doctor.doctorName === doctorPatient) {
+      if (doctor.id === doctorPatient) { // doctorPatient ID
         const patientIdCounter = doctor.patients.id
           ? doctor.patients.length + 1
           : 1;
@@ -46,9 +50,13 @@ export default function NewPatient({ storedData, setStoredData }) {
     setNamePatient("");
     setDOBPatient("");
     setAppDatePatient("");
-    setdoctorPatient("");
+    setDoctorPatient("");
     setConcernsPatient("");
   }
+
+  const handleSelect = (e) => {
+    setDoctorPatient(e.target.value);
+  };
 
   return (
     <div id="wrap" className="input">
@@ -84,9 +92,7 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <span className="underline"></span>
               </dd>
             </dl>
-            <DoctorSelectDropDownMenu
-              onSelect={(e) => setdoctorPatient(e.target.value)}
-            />
+            <DoctorSelectDropDownMenu onSelect={handleSelect} />
             <div className="btns">
               <button
                 className="btn btn-confirm"
