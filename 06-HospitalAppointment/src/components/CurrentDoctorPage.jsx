@@ -1,6 +1,5 @@
 import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import "/src/styles/current-doctor-page.css";
-// import "/src/styles/doctor-profile-cards.css";
 import "/src/styles/patient-details.css";
 import { MdDoneOutline } from "react-icons/md";
 import { useEffect } from "react";
@@ -9,9 +8,6 @@ export default function CurrentDoctorPage({
   setStoredData,
   storedData,
 }) {
-  const doctor = currentDoctor;
-  console.log(currentDoctor);
-
   function handleDeletePatient(patientID) {
     const updatedDoctor = storedData.find(
       (doctor) => doctor.id === currentDoctor.id

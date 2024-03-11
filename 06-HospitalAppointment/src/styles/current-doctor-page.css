@@ -70,7 +70,7 @@
     fill: var(--surface-color);
 }
 
-.current-doctor .profile-card:hover .card-header {
+.current-doctor.profile-card:hover .card-header {
     transform: translateY(0);
 }
 
@@ -103,15 +103,21 @@
     overflow: hidden;
 }
 
-
-@media (max-width:820px) {
-    .current-doctor wrapper {
+.sm-screen-doctor-name {
+    display: none;
+}
+@media (max-width:975px) {
+    .current-doctor.wrapper {
         display: grid;
         grid-template-columns: 1fr !important;
     }
 
-    .current-doctor profile-card {
+    .current-doctor.profile-card {
         display: none;
+        
+    }
+    .sm-screen-doctor-name {
+        display: contents;
     }
 
 
