@@ -17,18 +17,20 @@ export default function NewPatient({ storedData, setStoredData }) {
   function handleNewPatientAdd() {
     if (
       !namePatient ||
-      namePatient.trim() ||
+      namePatient.trim() == "" ||
       !DOBPatient ||
       !appDatePatient ||
       !concernsPatient ||
-      concernsPatient.trim() ||
-      !doctorPatient === ""
+      concernsPatient.trim() === "" ||
+      !doctorPatient
     ) {
       return;
     }
+    console.log("clicked");
     const updatedData = storedData.map((doctor) => {
-      if (doctor.id === doctorPatient) { // doctorPatient ID
-        const patientIdCounter = doctor.patients.id
+      if (doctor.id === parseInt(doctorPatient)) {
+        console.log(doctorPatient);
+        const patientIdCounter = doctor.patients
           ? doctor.patients.length + 1
           : 1;
         const updatedPatient = [
@@ -45,7 +47,7 @@ export default function NewPatient({ storedData, setStoredData }) {
       }
       return doctor;
     });
-
+    console.log(updatedData);
     setStoredData(updatedData);
     setNamePatient("");
     setDOBPatient("");
@@ -96,7 +98,7 @@ export default function NewPatient({ storedData, setStoredData }) {
             <div className="btns">
               <button
                 className="btn btn-confirm"
-                onClick={() => handleNewPatientAdd}
+                onClick={() => handleNewPatientAdd()}
               >
                 Create Appointment
               </button>
