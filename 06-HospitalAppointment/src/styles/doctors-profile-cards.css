@@ -17,21 +17,20 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 4rem 5vw;
-    padding: 0;
     list-style-type: none;
+    text-align: center;
+    justify-self: center;
+
 }
 
 .doctors-profile-card {
     position: relative;
     display: block;
-    height: 100%;
     border-radius: calc(var(--curve) * 1px);
     overflow: hidden;
     text-decoration: none;
-    height: 35vh;
-    max-width: 200px;
-
-
+    height: 350px;
+    width: 80%;
 }
 
 .card-image {
@@ -51,7 +50,7 @@ body {
     transition: .2s ease-in-out;
 }
 
-.doctor-profile-card:hover .card-overlay {
+.doctors-profile-card:hover .card-overlay {
     transform: translateY(0);
 }
 
@@ -112,4 +111,18 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+}
+
+
+@media (max-width:790px) {
+    .doctors-profile-card {
+        height: 450px;
+        width: 60%;
+    }
+
+    .card-doctors-wrapper {
+      margin-left: 10rem;
+      width: 90%;
+
+    }
 }

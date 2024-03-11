@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CurrentDoctorPage from "./CurrentDoctorPage";
-import "/src/styles/doctor-profile-cards.css";
+import "/src/styles/doctors-profile-cards.css";
 
 export default function Doctors({ storedData, doctorsTabSelected , setStoredData }) {
 

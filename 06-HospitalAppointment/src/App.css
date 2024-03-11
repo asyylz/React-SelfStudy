@@ -173,10 +173,7 @@ hr{
         grid-template-columns: repeat(2, 1fr);
     }
 
-    a.doctor-profile-card {
-        display: none;
-    }
-
+  
 
     .current-doctor-wrapper {
         display: grid;
