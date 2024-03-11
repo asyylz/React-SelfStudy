@@ -10,8 +10,6 @@ export default function CurrentDoctorPage({
   const doctor = currentDoctor;
 
   function handleDeletePatient(patientID) {
-
-    // Find the updated doctor
     const updatedDoctor = storedData.find(
       (doctor) => doctor.id === currentDoctor.id
     );
@@ -21,17 +19,12 @@ export default function CurrentDoctorPage({
       return;
     }
 
-    // Filter out the patient with the given ID
     const updatedPatients = updatedDoctor.patients.filter(
       (patient) => patient.id !== patientID
     );
 
-    console.log(updatedPatients);
-
-    // Update the doctor's patients
     updatedDoctor.patients = updatedPatients;
 
-    // Update the stored data
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === updatedDoctor.id) {
         return { ...doctor, patients: updatedPatients };
@@ -39,7 +32,6 @@ export default function CurrentDoctorPage({
       return doctor;
     });
 
-    // Update the state with the new data
     setStoredData(updatedData);
 
     console.log("Patient deleted successfully.");

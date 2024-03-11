@@ -8,7 +8,7 @@ export default function NewPatient({ storedData, setStoredData }) {
   const [appDatePatient, setAppDatePatient] = useState("");
   const [doctorPatient, setDoctorPatient] = useState("");
   const [concernsPatient, setConcernsPatient] = useState("");
-  
+
   function handleNewPatientAdd() {
     if (
       !namePatient ||
@@ -35,7 +35,7 @@ export default function NewPatient({ storedData, setStoredData }) {
           {
             id: patientIdCounter,
             patientName: namePatient,
-            appointmentData: appDatePatient,
+            appointmentDate: appDatePatient,
             concerns: concernsPatient,
             isSeen: false,
           },
