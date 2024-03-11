@@ -9,20 +9,20 @@
   margin: 2em;
   padding: 0.2em;
   border-radius: 2em;
-  width: 100%;
-  max-width: 900px;
+  width: 95%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 
 }
+
 .input-content {
   position: relative;
   margin: 2em;
   padding: 3em;
   background: #fff;
   z-index: 10;
-  border-radius:2em;
+  border-radius: 2em;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
- 
+
 }
 
 .input-content h2 {
@@ -30,6 +30,10 @@
   font-size: 1.625em;
   font-weight: bold;
   vertical-align: middle;
+}
+.input-content-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .inputbox {
@@ -69,7 +73,7 @@
 
 .inputbox-content input:focus,
 .inputbox-content input:valid {
-  & ~ label {
+  &~label {
     color: var(--accent-color);
     transform: translateY(-20px);
     font-size: 0.825em;
@@ -78,7 +82,7 @@
 }
 
 .inputbox-content input:focus {
-  & ~ .underline {
+  &~.underline {
     width: 100%;
   }
 }
