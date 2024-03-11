@@ -2,7 +2,7 @@ import { useState } from "react";
 import CurrentDoctorPage from "./CurrentDoctorPage";
 import "/src/styles/doctor-profile-cards.css";
 
-export default function Doctors({ storedData, doctorsTabSelected }) {
+export default function Doctors({ storedData, doctorsTabSelected , setStoredData }) {
 
   const [currentDoctorSelected, setCurrentDoctorSelected] = useState(false);
   const [currentDoctor, setCurrentDoctor] = useState([]);
@@ -46,7 +46,7 @@ export default function Doctors({ storedData, doctorsTabSelected }) {
           ))}
         </ul>
       ) : (
-        <CurrentDoctorPage currentDoctor={currentDoctor} />
+        <CurrentDoctorPage currentDoctor={currentDoctor} storedData={storedData} setStoredData={setStoredData} />
       )}
     </>
   );

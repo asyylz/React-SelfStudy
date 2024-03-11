@@ -2,8 +2,48 @@ import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import "/src/styles/current-doctor-page.css";
 import "/src/styles/doctor-profile-cards.css";
 import "/src/styles/patient-details.css";
-export default function CurrentDoctorPage(currentDoctor) {
-  const doctor = currentDoctor.currentDoctor;
+export default function CurrentDoctorPage({
+  currentDoctor,
+  setStoredData,
+  storedData,
+}) {
+  const doctor = currentDoctor;
+
+  function handleDeletePatient(patientID) {
+
+    // Find the updated doctor
+    const updatedDoctor = storedData.find(
+      (doctor) => doctor.id === currentDoctor.id
+    );
+
+    if (!updatedDoctor) {
+      console.error("Doctor not found in stored data.");
+      return;
+    }
+
+    // Filter out the patient with the given ID
+    const updatedPatients = updatedDoctor.patients.filter(
+      (patient) => patient.id !== patientID
+    );
+
+    console.log(updatedPatients);
+
+    // Update the doctor's patients
+    updatedDoctor.patients = updatedPatients;
+
+    // Update the stored data
+    const updatedData = storedData.map((doctor) => {
+      if (doctor.id === updatedDoctor.id) {
+        return { ...doctor, patients: updatedPatients };
+      }
+      return doctor;
+    });
+
+    // Update the state with the new data
+    setStoredData(updatedData);
+
+    console.log("Patient deleted successfully.");
+  }
 
   return (
     <div className="current-doctor-wrapper">
@@ -110,7 +150,10 @@ export default function CurrentDoctorPage(currentDoctor) {
                       <td>
                         <FaRegEye className="icons eye" />
                         <FaRegEdit className="icons edit" />
-                        <FaRegTrashAlt className="icons trash" />
+                        <FaRegTrashAlt
+                          className="icons trash"
+                          onClick={() => handleDeletePatient(patient.id)}
+                        />
                       </td>
                     </tr>
                     <div className="gap-line"></div>

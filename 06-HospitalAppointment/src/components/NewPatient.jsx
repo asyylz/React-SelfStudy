@@ -8,12 +8,7 @@ export default function NewPatient({ storedData, setStoredData }) {
   const [appDatePatient, setAppDatePatient] = useState("");
   const [doctorPatient, setDoctorPatient] = useState("");
   const [concernsPatient, setConcernsPatient] = useState("");
-  console.log(doctorPatient);
-  console.log(namePatient);
-  console.log(DOBPatient);
-  console.log(appDatePatient);
-  console.log(concernsPatient);
-
+  
   function handleNewPatientAdd() {
     if (
       !namePatient ||
@@ -24,6 +19,8 @@ export default function NewPatient({ storedData, setStoredData }) {
       concernsPatient.trim() === "" ||
       !doctorPatient
     ) {
+      const alertMessage = "Please enter all details...";
+      alert(alertMessage);
       return;
     }
     console.log("clicked");
@@ -75,9 +72,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                   id="input0"
                   type="text"
                   onChange={(e) => setNamePatient(e.target.value)}
+                  value={namePatient}
                   required
                 />
-                {/* <label htmlFor="input0">Patient Name</label> */}
+
                 <span className="underline"></span>
               </dd>
             </dl>
@@ -88,9 +86,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                   id="input1"
                   type="date"
                   onChange={(e) => setDOBPatient(e.target.value)}
+                  value={DOBPatient}
                   required
                 />
-                <label htmlFor="input1"></label>
+
                 <span className="underline"></span>
               </dd>
             </dl>
@@ -113,9 +112,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                   id="input2"
                   type="date"
                   onChange={(e) => setAppDatePatient(e.target.value)}
+                  value={appDatePatient}
                   required
                 />
-                <label htmlFor="input2"></label>
+
                 <span className="underline"></span>
               </dd>
             </dl>
@@ -129,9 +129,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                   cols="30"
                   rows="10"
                   onChange={(e) => setConcernsPatient(e.target.value)}
+                  value={concernsPatient}
                   required
                 ></textarea>
-                {/* <label htmlFor="textareaInput"></label> */}
+
                 <span className="underline"></span>
               </dd>
             </dl>

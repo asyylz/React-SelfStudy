@@ -90,6 +90,7 @@ export default function RightSubMain({ storedData, setStoredData }) {
         <Doctors
           storedData={storedData}
           doctorsTabSelected={doctorsTabSelected}
+          setStoredData={setStoredData}
         />
       )}
       {newPatient && (

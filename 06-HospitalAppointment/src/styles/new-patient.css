@@ -36,12 +36,12 @@
 #textareaInput {
   width: 100%;
   padding: 1rem;
+  font-size: 1.3rem;
 }
 
-/* textarea#textareaInput:valid,
-textarea#textareaInput:focus {
-  border: 1px solid var(--accent-color)!important;
-} */
+#textareaInput:hover {
+  border: 1px solid var(--accent-color) !important;
+}
 
 #doctorSelect {
   width: 100%;
@@ -97,7 +97,7 @@ textarea#textareaInput:focus {
   border-radius: 0;
 }
 
-.inputbox-content input:focus,
+/* .inputbox-content input:focus,
 .inputbox-content input:valid {
   &~label {
     color: var(--accent-color);
@@ -105,7 +105,8 @@ textarea#textareaInput:focus {
     font-size: 0.825em;
     cursor: default;
   }
-}
+} */
+
 
 .inputbox-content input:focus {
   &~.underline {
@@ -113,6 +114,7 @@ textarea#textareaInput:focus {
   }
 }
 
+/* 
 .inputbox-content label {
   position: absolute;
   top: 0;
@@ -123,7 +125,7 @@ textarea#textareaInput:focus {
   cursor: text;
   transition: all 200ms ease-out;
   z-index: 10;
-}
+} */
 
 .inputbox-content .underline {
   content: "";
@@ -132,13 +134,12 @@ textarea#textareaInput:focus {
   bottom: -1px;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 3px;
   background: var(--accent-color);
   transition: all 200ms ease-out;
 }
 
 .btns {
-  /* padding: 30px 0 0 200px; */
   display: flex;
   margin-top: 1rem;
   justify-content: space-evenly;
@@ -167,8 +168,6 @@ textarea#textareaInput:focus {
 
 .btns .btn-confirm,
 .btns .btn-cancel {
-  /* border: 1px solid var(--accent-color);
-  background: var(--accent-color); */
   color: #fff;
   padding: 5px 10px;
   background: var(--primary-background);
