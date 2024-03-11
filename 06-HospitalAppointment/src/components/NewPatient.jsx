@@ -7,7 +7,7 @@ export default function NewPatient() {
     <div id="wrap" className="input">
       <section className="input-content">
         <h2>
-          Input Text/Password Animation<span>Only CSS</span>
+          Patient Details<span> (New Patient)</span>
         </h2>
         <div className="input-content-wrap">
           <div className="input-section-1">
