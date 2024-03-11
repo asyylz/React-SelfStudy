@@ -15,7 +15,7 @@ export default function NewPatient() {
               <dt className="inputbox-title">Patient Full Name</dt>
               <dd className="inputbox-content">
                 <input id="input0" type="text" required />
-                <label htmlFor="input0">Patient Name</label>
+                {/* <label htmlFor="input0">Patient Name</label> */}
                 <span className="underline"></span>
               </dd>
             </dl>
@@ -53,7 +53,7 @@ export default function NewPatient() {
                   rows="10"
                   required
                 ></textarea>
-                <label htmlFor="textareaInput">Patient Concerns</label>
+                {/* <label htmlFor="textareaInput"></label> */}
                 <span className="underline"></span>
               </dd>
             </dl>
