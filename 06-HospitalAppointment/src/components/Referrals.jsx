@@ -1,4 +1,5 @@
-export default function Referrals(storedData) {
+import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+export default function Referrals({ storedData }) {
   return (
     <div className="tables">
       <div className="last-appointments">
@@ -19,26 +20,28 @@ export default function Referrals(storedData) {
           </thead>
           <tbody>
             {storedData.map((doctor) =>
-              doctor.patients.map((patient) => (
-                <>
-                  <tr
-                    key={doctor.patients.id}
-                    className={patient.isSeen ? "completed" : "active"}
-                  >
-                    <td>{patient.patientName}</td>
-                    <td>{patient.concerns}</td>
-                    <td>{patient.appointmentDate}</td>
-                    <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                    <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                    <td>
-                      <FaRegEye className="icons eye" />
-                      <FaRegEdit className="icons edit" />
-                      <FaRegTrashAlt className="icons trash" />
-                    </td>
-                  </tr>
-                  <div className="gap-line"></div>
-                </>
-              ))
+              doctor.patients
+                .filter((patient) => patient.referral === true)
+                .map((patient) => (
+                  <>
+                    <tr
+                      key={doctor.patients.id}
+                      className={patient.isSeen ? "completed" : "active"}
+                    >
+                      <td>{patient.patientName}</td>
+                      <td>{patient.concerns}</td>
+                      <td>{patient.appointmentDate}</td>
+                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                      <td>
+                        <FaRegEye className="icons eye" />
+                        <FaRegEdit className="icons edit" />
+                        <FaRegTrashAlt className="icons trash" />
+                      </td>
+                    </tr>
+                    <div className="gap-line"></div>
+                  </>
+                ))
             )}
           </tbody>
         </table>
