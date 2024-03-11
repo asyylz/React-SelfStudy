@@ -1,6 +1,6 @@
 import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import "/src/styles/current-doctor-page.css";
-import "/src/styles/doctor-profile-cards.css";
+// import "/src/styles/doctor-profile-cards.css";
 import "/src/styles/patient-details.css";
 import { MdDoneOutline } from "react-icons/md";
 import { useEffect } from "react";
@@ -70,12 +70,12 @@ export default function CurrentDoctorPage({
       {storedData.map(
         (doctor) =>
           doctor.id === currentDoctor.id && (
-            <div className="current-doctor-wrapper">
+            <div className="current-doctor wrapper">
               <div>
                 <h2 className="sm-screen-doctor-name">{doctor.doctorName}</h2>
                 <a
                   href="#"
-                  className="doctor-profile-card"
+                  className="current-doctor profile-card"
                   // style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
                 >
                   <img src={doctor.img} className="card-image" alt="" />

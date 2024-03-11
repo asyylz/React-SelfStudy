@@ -172,9 +172,6 @@ hr{
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
-
-  
-
     .current-doctor-wrapper {
         display: grid;
         grid-template-columns: 1fr !important;
