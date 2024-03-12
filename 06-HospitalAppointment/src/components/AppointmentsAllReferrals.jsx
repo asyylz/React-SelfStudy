@@ -6,7 +6,6 @@ export default function AppointmentsAllReferrals({
   storedData,
   setStoredData,
 }) {
-  console.log(referralTab);
   function handleDeletePatient(patientID, patientName, doctorID) {
     const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
 
@@ -32,29 +31,6 @@ export default function AppointmentsAllReferrals({
     const alertMessage = "Patient's case is deleted successfully.";
     alert(alertMessage);
   }
-
-  //   function handleIsSeenStatus(patientID, patientName,doctorID) {
-  //     console.log(patientID);
-  //     const updatedData = storedData.map((doctor) => {
-  //       const updatedPatients = doctor.patients.map((patient) => {
-  //         if (patient.id === patientID && patient.patientName === patientName) {
-  //           return {
-  //             ...patient,
-  //             isSeen: !patient.isSeen,
-  //           };
-  //         }
-  //         return patient;
-  //       });
-  //       return {
-  //         ...doctor,
-  //         patients: updatedPatients,
-  //       };
-  //     });
-  //     console.log(updatedData);
-
-  //     setStoredData(updatedData);
-  //     console.log("Patient completed successfully.");
-  //   }
 
   function handleIsSeenStatus(patientID, patientName, doctorID, patientStatus) {
     const updatedData = storedData.map((doctor) => {
@@ -95,12 +71,14 @@ export default function AppointmentsAllReferrals({
         </div>
         <table className="appointments">
           <thead>
-            <td>Patient Name</td>
-            <td>Concerns</td>
-            <td>Appointment Date</td>
-            <td>Status</td>
-            <td>Referrals</td>
-            <td>Actions</td>
+            <tr>
+              <th>Patient Name</th>
+              <th>Concerns</th>
+              <th>Appointment Date</th>
+              <th>Status</th>
+              <th>Referrals</th>
+              <th>Actions</th>
+            </tr>
           </thead>
           <tbody>
             {appointmentTab &&
@@ -141,7 +119,7 @@ export default function AppointmentsAllReferrals({
                         />
                       </td>
                     </tr>
-                    <div className="gap-line"></div>
+                    <tr className="gap-line"></tr>
                   </>
                 ))
               )}
@@ -185,7 +163,7 @@ export default function AppointmentsAllReferrals({
                           />
                         </td>
                       </tr>
-                      <div className="gap-line"></div>
+                      <tr className="gap-line"></tr>
                     </>
                   ))
               )}
