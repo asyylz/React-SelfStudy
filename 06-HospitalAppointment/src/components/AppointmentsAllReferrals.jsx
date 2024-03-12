@@ -6,10 +6,8 @@ export default function AppointmentsAllReferrals({
   storedData,
   setStoredData,
 }) {
-  function handleDeletePatient(patientID) {
-    const updatedDoctor = storedData.find(
-      (doctor) => doctor.id === currentDoctor.id
-    );
+  function handleDeletePatient(patientID, patientName, doctorID) {
+    const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
 
     if (!updatedDoctor) {
       console.error("Doctor not found in stored data.");
@@ -35,28 +33,53 @@ export default function AppointmentsAllReferrals({
     console.log("Patient deleted successfully.");
   }
 
-  function handleIsSeenStatus(patientID, patientName) {
-    console.log(patientID);
+  //   function handleIsSeenStatus(patientID, patientName,doctorID) {
+  //     console.log(patientID);
+  //     const updatedData = storedData.map((doctor) => {
+  //       const updatedPatients = doctor.patients.map((patient) => {
+  //         if (patient.id === patientID && patient.patientName === patientName) {
+  //           return {
+  //             ...patient,
+  //             isSeen: !patient.isSeen,
+  //           };
+  //         }
+  //         return patient;
+  //       });
+  //       return {
+  //         ...doctor,
+  //         patients: updatedPatients,
+  //       };
+  //     });
+  //     console.log(updatedData);
+
+  //     setStoredData(updatedData);
+  //     console.log("Patient completed successfully.");
+  //   }
+
+  function handleIsSeenStatus(patientID, patientName, doctorID) {
     const updatedData = storedData.map((doctor) => {
-      const updatedPatients = doctor.patients.map((patient) => {
-        if (patient.id === patientID && patient.patientName === patientName) {
-          return {
-            ...patient,
-            isSeen: !patient.isSeen,
-          };
-        }
-        return patient;
-      });
-      return {
-        ...doctor,
-        patients: updatedPatients,
-      };
+      if (doctor.id === doctorID) {
+        const updatedPatients = doctor.patients.map((patient) => {
+          if (patient.id === patientID && patient.patientName === patientName) {
+            return {
+              ...patient,
+              isSeen: !patient.isSeen,
+            };
+          }
+          return patient;
+        });
+        return {
+          ...doctor,
+          patients: updatedPatients,
+        };
+      }
+      return doctor;
     });
-    console.log(updatedData);
 
     setStoredData(updatedData);
     console.log("Patient completed successfully.");
   }
+
   return (
     <div className="tables">
       <div className="last-appointments">
@@ -94,10 +117,23 @@ export default function AppointmentsAllReferrals({
                         <MdDoneOutline
                           className="icons tick"
                           onClick={() =>
-                            handleIsSeenStatus(patient.id, patient.patientName)
+                            handleIsSeenStatus(
+                              patient.id,
+                              patient.patientName,
+                              doctor.id
+                            )
                           }
                         />
-                        <FaRegTrashAlt className="icons trash" />
+                        <FaRegTrashAlt
+                          className="icons trash"
+                          onClick={() =>
+                            handleDeletePatient(
+                              patient.id,
+                              patient.patientName,
+                              doctor.id
+                            )
+                          }
+                        />
                       </td>
                     </tr>
                     <div className="gap-line"></div>
@@ -123,12 +159,22 @@ export default function AppointmentsAllReferrals({
                         <MdDoneOutline
                           className="icons tick"
                           onClick={() =>
-                            handleIsSeenStatus(patient.id, patient.patientName)
+                            handleIsSeenStatus(
+                              patient.id,
+                              patient.patientName,
+                              doctor.id
+                            )
                           }
                         />
                         <FaRegTrashAlt
                           className="icons trash"
-                          onClick={() => handleDeletePatient(patient.id,patient.patientName)}
+                          onClick={() =>
+                            handleDeletePatient(
+                              patient.id,
+                              patient.patientName,
+                              doctor.id
+                            )
+                          }
                         />
                       </td>
                     </tr>
