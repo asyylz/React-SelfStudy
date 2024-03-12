@@ -17,6 +17,7 @@ export default function RightSubMain({ storedData, setStoredData }) {
   const [newPatient, setNewPatient] = useState(false);
   const [appointmentTab, setAppointmentTab] = useState(false);
   const [referralTab, setReferralTab] = useState(false);
+  console.log(referralTab)
 
   return (
     <>
@@ -111,6 +112,11 @@ export default function RightSubMain({ storedData, setStoredData }) {
           setStoredData={setStoredData}
         />
       }
+
+
+
+
+      {/* eksi */}
 
       {/* {appointmentTab && <AppointmentsAllReferrals filteredData={storedData} />}
       {referralTab && (

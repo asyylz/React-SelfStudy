@@ -6,6 +6,7 @@ export default function AppointmentsAllReferrals({
   storedData,
   setStoredData,
 }) {
+  console.log(referralTab)
   function handleDeletePatient(patientID, patientName, doctorID) {
     const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
 
@@ -28,9 +29,8 @@ export default function AppointmentsAllReferrals({
     });
 
     setStoredData(updatedData);
-    console.log(storedData);
-
-    console.log("Patient deleted successfully.");
+    const alertMessage = "Patient's case is deleted successfully.";
+    alert(alertMessage);
   }
 
   //   function handleIsSeenStatus(patientID, patientName,doctorID) {
@@ -56,7 +56,7 @@ export default function AppointmentsAllReferrals({
   //     console.log("Patient completed successfully.");
   //   }
 
-  function handleIsSeenStatus(patientID, patientName, doctorID) {
+  function handleIsSeenStatus(patientID, patientName, doctorID, patientStatus) {
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === doctorID) {
         const updatedPatients = doctor.patients.map((patient) => {
@@ -77,7 +77,11 @@ export default function AppointmentsAllReferrals({
     });
 
     setStoredData(updatedData);
-    console.log("Patient completed successfully.");
+
+    if (!patientStatus) {
+      const alertMessage = "Patient's case is completed successfully.";
+      alert(alertMessage);
+    }
   }
 
   return (
@@ -120,7 +124,8 @@ export default function AppointmentsAllReferrals({
                             handleIsSeenStatus(
                               patient.id,
                               patient.patientName,
-                              doctor.id
+                              doctor.id,
+                              patient.isSeen
                             )
                           }
                         />
@@ -140,48 +145,50 @@ export default function AppointmentsAllReferrals({
                   </>
                 ))
               )}
-            {storedData.map((doctor) =>
-              doctor.patients
-                .filter((patient) => patient.referral === true)
-                .map((patient) => (
-                  <>
-                    <tr
-                      key={doctor.patients.id}
-                      className={patient.isSeen ? "completed" : "active"}
-                    >
-                      <td>{patient.patientName}</td>
-                      <td>{patient.concerns}</td>
-                      <td>{patient.appointmentDate}</td>
-                      <td>{patient.isSeen ? "Completed" : "Active"}</td>
-                      <td>{patient.referral ? "Referred" : "Not Applied"}</td>
-                      <td>
-                        <FaRegEdit className="icons edit" />
-                        <MdDoneOutline
-                          className="icons tick"
-                          onClick={() =>
-                            handleIsSeenStatus(
-                              patient.id,
-                              patient.patientName,
-                              doctor.id
-                            )
-                          }
-                        />
-                        <FaRegTrashAlt
-                          className="icons trash"
-                          onClick={() =>
-                            handleDeletePatient(
-                              patient.id,
-                              patient.patientName,
-                              doctor.id
-                            )
-                          }
-                        />
-                      </td>
-                    </tr>
-                    <div className="gap-line"></div>
-                  </>
-                ))
-            )}
+            {referralTab &&
+              storedData.map((doctor) =>
+                doctor.patients
+                  .filter((patient) => patient.referral === true)
+                  .map((patient) => (
+                    <>
+                      <tr
+                        key={doctor.patients.id}
+                        className={patient.isSeen ? "completed" : "active"}
+                      >
+                        <td>{patient.patientName}</td>
+                        <td>{patient.concerns}</td>
+                        <td>{patient.appointmentDate}</td>
+                        <td>{patient.isSeen ? "Completed" : "Active"}</td>
+                        <td>{patient.referral ? "Referred" : "Not Applied"}</td>
+                        <td>
+                          <FaRegEdit className="icons edit" />
+                          <MdDoneOutline
+                            className="icons tick"
+                            onClick={() =>
+                              handleIsSeenStatus(
+                                patient.id,
+                                patient.patientName,
+                                doctor.id,
+                                patient.isSeen
+                              )
+                            }
+                          />
+                          <FaRegTrashAlt
+                            className="icons trash"
+                            onClick={() =>
+                              handleDeletePatient(
+                                patient.id,
+                                patient.patientName,
+                                doctor.id
+                              )
+                            }
+                          />
+                        </td>
+                      </tr>
+                      <div className="gap-line"></div>
+                    </>
+                  ))
+              )}
           </tbody>
         </table>
       </div>
