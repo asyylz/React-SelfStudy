@@ -184,7 +184,8 @@ export default function CurrentDoctorPage({
                               </td>
                               <td>
                                 <MdDoneOutline
-                                  className="icons tick"
+                                  //className="icons tick"
+                                  className={`icons tick ${patient.isSeen ? "":"notSeen"}`}
                                   onClick={() => handleIsSeenStatus(patient.id)}
                                 />
                                 <FaRegTrashAlt

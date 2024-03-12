@@ -112,7 +112,9 @@ td .icons.tick {
     cursor: pointer;
 }
 
-td .icons.trash {
+
+td .icons.trash,
+td .icons.tick.notSeen {
     background: #ed5564;
     cursor: pointer;
 }
