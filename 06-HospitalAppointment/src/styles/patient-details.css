@@ -118,6 +118,10 @@ td .icons.tick {
     background: #32bea6;
     cursor: pointer;
 }
+td .icons.edit{
+    background: #4BB2F2;
+    cursor: pointer;
+}
 
 
 td .icons.trash,
