@@ -1,24 +1,15 @@
-import {
-  FaBriefcaseMedical,
-  FaBed,
-  FaWheelchair,
-  FaDollarSign,
-} from "react-icons/fa";
+import { FaBed, FaWheelchair, FaDollarSign } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import Doctors from "./Doctors";
 import { useState } from "react";
 import NewPatient from "./NewPatient";
-import AppointmentsAll from "./AppointmentsAll";
-import Referrals from "./Referrals";
 import AppointmentsAllReferrals from "./AppointmentsAllReferrals";
 
 export default function RightSubMain({ storedData, setStoredData }) {
-  
   const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
   const [newPatient, setNewPatient] = useState(false);
   const [appointmentTab, setAppointmentTab] = useState(false);
   const [referralTab, setReferralTab] = useState(false);
-
 
   return (
     <>

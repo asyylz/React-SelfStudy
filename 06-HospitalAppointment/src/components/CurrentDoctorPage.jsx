@@ -32,12 +32,12 @@ export default function CurrentDoctorPage({
     });
 
     setStoredData(updatedData);
-    console.log(storedData);
 
-    console.log("Patient deleted successfully.");
+    const alertMessage = "Patient's case is deleted successfully.";
+    alert(alertMessage);
   }
 
-  function handleIsSeenStatus(patientID) {
+  function handleIsSeenStatus(patientID, patientStatus) {
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === currentDoctor.id) {
         const updatedPatients = doctor.patients.map((patient) => {
@@ -58,7 +58,10 @@ export default function CurrentDoctorPage({
     });
 
     setStoredData(updatedData);
-    console.log("Patient completed successfully.");
+    if (!patientStatus) {
+      const alertMessage = "Patient's case is completed successfully.";
+      alert(alertMessage);
+    }
   }
 
   return (
@@ -69,11 +72,7 @@ export default function CurrentDoctorPage({
             <div className="current-doctor wrapper">
               <div>
                 <h2 className="sm-screen-doctor-name">{doctor.doctorName}</h2>
-                <a
-                  href="#"
-                  className="current-doctor profile-card"
-                  // style={{ height: "30vh", maxWidth: "330px", minWidth: "220px" }}
-                >
+                <a href="#" className="current-doctor profile-card">
                   <img src={doctor.img} className="card-image" alt="" />
                   <div className="card-overlay">
                     <div className="card-header">
@@ -103,14 +102,6 @@ export default function CurrentDoctorPage({
                     </a>
                   </div>
                   <table className="appointments">
-                   {/* <thead>
-                      <td>Patient Name</td>
-                      <td>Concerns</td>
-                      <td>Appointment Date</td>
-                      <td>Status</td>
-                      <td>Referrals</td>
-                      <td>Actions</td>
-                    </thead> */}
                     <thead>
                       <tr>
                         <th>Patient Name</th>
@@ -142,7 +133,12 @@ export default function CurrentDoctorPage({
                               <td>
                                 <MdDoneOutline
                                   className="icons tick"
-                                  onClick={() => handleIsSeenStatus(patient.id)}
+                                  onClick={() =>
+                                    handleIsSeenStatus(
+                                      patient.id,
+                                      patient.isSeen
+                                    )
+                                  }
                                 />
                                 <FaRegTrashAlt
                                   className="icons trash"
@@ -166,14 +162,6 @@ export default function CurrentDoctorPage({
                     </a>
                   </div>
                   <table className="appointments">
-                    {/* <thead>
-                      <td>Patient Name</td>
-                      <td>Concerns</td>
-                      <td>Appointment Date</td>
-                      <td>Status</td>
-                      <td>Referrals</td>
-                      <td>Actions</td>
-                    </thead> */}
                     <thead>
                       <tr>
                         <th>Patient Name</th>
@@ -208,7 +196,12 @@ export default function CurrentDoctorPage({
                                   className={`icons tick ${
                                     patient.isSeen ? "" : "notSeen"
                                   }`}
-                                  onClick={() => handleIsSeenStatus(patient.id)}
+                                  onClick={() =>
+                                    handleIsSeenStatus(
+                                      patient.id,
+                                      patient.isSeen
+                                    )
+                                  }
                                 />
                                 <FaRegTrashAlt
                                   className="icons trash"
