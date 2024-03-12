@@ -103,13 +103,23 @@ export default function CurrentDoctorPage({
                     </a>
                   </div>
                   <table className="appointments">
-                    <thead>
+                   {/* <thead>
                       <td>Patient Name</td>
                       <td>Concerns</td>
                       <td>Appointment Date</td>
                       <td>Status</td>
                       <td>Referrals</td>
                       <td>Actions</td>
+                    </thead> */}
+                    <thead>
+                      <tr>
+                        <th>Patient Name</th>
+                        <th>Concerns</th>
+                        <th>Appointment Date</th>
+                        <th>Status</th>
+                        <th>Referrals</th>
+                        <th>Actions</th>
+                      </tr>
                     </thead>
                     <tbody>
                       {doctor.patients
@@ -130,7 +140,7 @@ export default function CurrentDoctorPage({
                                 {patient.referral ? "Referred" : "Not Applied"}
                               </td>
                               <td>
-                              <MdDoneOutline
+                                <MdDoneOutline
                                   className="icons tick"
                                   onClick={() => handleIsSeenStatus(patient.id)}
                                 />
@@ -142,7 +152,7 @@ export default function CurrentDoctorPage({
                                 />
                               </td>
                             </tr>
-                            <div className="gap-line"></div>
+                            <tr className="gap-line"></tr>
                           </>
                         ))}
                     </tbody>
@@ -156,13 +166,23 @@ export default function CurrentDoctorPage({
                     </a>
                   </div>
                   <table className="appointments">
-                    <thead>
+                    {/* <thead>
                       <td>Patient Name</td>
                       <td>Concerns</td>
                       <td>Appointment Date</td>
                       <td>Status</td>
                       <td>Referrals</td>
                       <td>Actions</td>
+                    </thead> */}
+                    <thead>
+                      <tr>
+                        <th>Patient Name</th>
+                        <th>Concerns</th>
+                        <th>Appointment Date</th>
+                        <th>Status</th>
+                        <th>Referrals</th>
+                        <th>Actions</th>
+                      </tr>
                     </thead>
                     <tbody>
                       {doctor.patients
@@ -185,7 +205,9 @@ export default function CurrentDoctorPage({
                               <td>
                                 <MdDoneOutline
                                   //className="icons tick"
-                                  className={`icons tick ${patient.isSeen ? "":"notSeen"}`}
+                                  className={`icons tick ${
+                                    patient.isSeen ? "" : "notSeen"
+                                  }`}
                                   onClick={() => handleIsSeenStatus(patient.id)}
                                 />
                                 <FaRegTrashAlt
@@ -196,7 +218,7 @@ export default function CurrentDoctorPage({
                                 />
                               </td>
                             </tr>
-                            <div className="gap-line"></div>
+                            <tr className="gap-line"></tr>
                           </>
                         ))}
                     </tbody>

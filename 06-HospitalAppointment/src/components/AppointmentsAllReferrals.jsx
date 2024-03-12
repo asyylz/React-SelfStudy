@@ -6,7 +6,7 @@ export default function AppointmentsAllReferrals({
   storedData,
   setStoredData,
 }) {
-  console.log(referralTab)
+  console.log(referralTab);
   function handleDeletePatient(patientID, patientName, doctorID) {
     const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
 

@@ -13,11 +13,12 @@ import Referrals from "./Referrals";
 import AppointmentsAllReferrals from "./AppointmentsAllReferrals";
 
 export default function RightSubMain({ storedData, setStoredData }) {
+  
   const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
   const [newPatient, setNewPatient] = useState(false);
   const [appointmentTab, setAppointmentTab] = useState(false);
   const [referralTab, setReferralTab] = useState(false);
-  console.log(referralTab)
+
 
   return (
     <>
@@ -104,17 +105,14 @@ export default function RightSubMain({ storedData, setStoredData }) {
         <NewPatient storedData={storedData} setStoredData={setStoredData} />
       )}
 
-      {!newPatient && !doctorsTabSelected &&
+      {!newPatient && !doctorsTabSelected && (
         <AppointmentsAllReferrals
           appointmentTab={appointmentTab}
-          referralTab={appointmentTab}
+          referralTab={referralTab}
           storedData={storedData}
           setStoredData={setStoredData}
         />
-      }
-
-
-
+      )}
 
       {/* eksi */}
 
