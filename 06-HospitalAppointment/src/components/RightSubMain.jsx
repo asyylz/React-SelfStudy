@@ -10,6 +10,7 @@ import { useState } from "react";
 import NewPatient from "./NewPatient";
 import AppointmentsAll from "./AppointmentsAll";
 import Referrals from "./Referrals";
+import AppointmentsAllReferrals from "./AppointmentsAllReferrals";
 
 export default function RightSubMain({ storedData, setStoredData }) {
   const [doctorsTabSelected, setDoctorsTabSelected] = useState(true);
@@ -26,7 +27,8 @@ export default function RightSubMain({ storedData, setStoredData }) {
             setNewPatient(false);
             setAppointmentTab(false);
             setReferralTab(false);
-            setDoctorsTabSelected(!doctorsTabSelected);
+            //setDoctorsTabSelected(!doctorsTabSelected);
+            setDoctorsTabSelected(true);
           }}
         >
           <div className="card-content">
@@ -42,7 +44,8 @@ export default function RightSubMain({ storedData, setStoredData }) {
             setNewPatient(false);
             setDoctorsTabSelected(false);
             setReferralTab(false);
-            setAppointmentTab(!appointmentTab);
+            //setAppointmentTab(!appointmentTab);
+            setAppointmentTab(true);
           }}
         >
           <div className="card-content">
@@ -58,7 +61,8 @@ export default function RightSubMain({ storedData, setStoredData }) {
             setDoctorsTabSelected(false);
             setAppointmentTab(false);
             setReferralTab(false);
-            setNewPatient(!newPatient);
+            //setNewPatient(!newPatient);
+            setNewPatient(true);
           }}
         >
           <div className="card-content">
@@ -74,7 +78,8 @@ export default function RightSubMain({ storedData, setStoredData }) {
             setDoctorsTabSelected(false);
             setAppointmentTab(false);
             setNewPatient(false);
-            setReferralTab(!referralTab);
+            //setReferralTab(!referralTab);
+            setReferralTab(true);
           }}
         >
           <div className="card-content">
@@ -93,12 +98,32 @@ export default function RightSubMain({ storedData, setStoredData }) {
           setStoredData={setStoredData}
         />
       )}
+
       {newPatient && (
         <NewPatient storedData={storedData} setStoredData={setStoredData} />
       )}
-      {appointmentTab && <AppointmentsAll storedData={storedData} />}
 
-      {referralTab && <Referrals storedData={storedData} />}
+      {!newPatient && !doctorsTabSelected &&
+        <AppointmentsAllReferrals
+          appointmentTab={appointmentTab}
+          referralTab={appointmentTab}
+          storedData={storedData}
+          setStoredData={setStoredData}
+        />
+      }
+
+      {/* {appointmentTab && <AppointmentsAllReferrals filteredData={storedData} />}
+      {referralTab && (
+        <AppointmentsAllReferrals
+          filteredData={storedData.flatMap((doctor) =>
+            doctor.patients.filter((patient) => patient.referral === true)
+          )}
+        />
+      )} */}
+
+      {/* {appointmentTab && <AppointmentsAll storedData={storedData} />}
+
+      {referralTab && <Referrals storedData={storedData} />} */}
     </>
   );
 }
