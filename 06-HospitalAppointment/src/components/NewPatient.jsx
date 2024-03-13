@@ -8,7 +8,7 @@ export default function NewPatient({ storedData, setStoredData }) {
   const [appDatePatient, setAppDatePatient] = useState("");
   const [doctorPatient, setDoctorPatient] = useState("");
   const [concernsPatient, setConcernsPatient] = useState("");
-  const [referral, setReferral] = useState(false);
+  const [referral, setReferral] = useState("");
 
   function handleNewPatientAdd() {
     if (
@@ -53,6 +53,7 @@ export default function NewPatient({ storedData, setStoredData }) {
     setAppDatePatient("");
     setDoctorPatient("");
     setConcernsPatient("");
+    setReferral("");
   }
 
   const handleSelect = (e) => {
@@ -105,8 +106,9 @@ export default function NewPatient({ storedData, setStoredData }) {
                   value={referral}
                   onChange={(e) => setReferral(e.target.value)}
                 >
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Select referral status:</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
                 </select>
               </dd>
             </dl>
