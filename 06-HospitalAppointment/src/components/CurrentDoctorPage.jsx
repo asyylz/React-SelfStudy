@@ -127,6 +127,7 @@ export default function CurrentDoctorPage({
                       <thead>
                         <tr>
                           <th>Patient Name</th>
+                          <th>DOB</th>
                           <th>Concerns</th>
                           <th>Appointment Date</th>
                           <th>Status</th>
@@ -146,6 +147,7 @@ export default function CurrentDoctorPage({
                                 }
                               >
                                 <td>{patient.patientName}</td>
+                                <td>{patient.DOB}</td>
                                 <td>{patient.concerns}</td>
                                 <td>{patient.appointmentDate}</td>
                                 <td>
@@ -199,6 +201,7 @@ export default function CurrentDoctorPage({
                       <thead>
                         <tr>
                           <th>Patient Name</th>
+                          <th>DOB</th>
                           <th>Concerns</th>
                           <th>Appointment Date</th>
                           <th>Status</th>
@@ -218,6 +221,7 @@ export default function CurrentDoctorPage({
                                 }
                               >
                                 <td>{patient.patientName}</td>
+                                <td>{patient.DOB}</td>
                                 <td>{patient.concerns}</td>
                                 <td>{patient.appointmentDate}</td>
                                 <td>

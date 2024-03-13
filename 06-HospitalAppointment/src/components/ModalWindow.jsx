@@ -42,7 +42,6 @@ export default function ModalWindow({
 
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
-    
   };
   function handleUpdate() {
     const updatedData = storedData.map((doctor) => {
@@ -64,8 +63,11 @@ export default function ModalWindow({
     });
     console.log(pat);
     setStoredData(updatedData);
-    
-    setDoctorPatient("");
+
+    const alertMessage = "Would you like patient's case to be updated?";
+    alert(alertMessage);
+    setModalIsOpen(false);
+
   }
 
   useEffect(() => {
@@ -96,7 +98,6 @@ export default function ModalWindow({
                   <input
                     id="input0"
                     type="text"
-                    // onChange={(e) => setNamePatient(e.target.value)}
                     onChange={(e) =>
                       setPat({
                         ...pat,
@@ -144,7 +145,6 @@ export default function ModalWindow({
                   <input
                     id="input2"
                     type="date"
-                    // onChange={(e) => setAppDatePatient(e.target.value)}
                     onChange={(e) =>
                       setPat({
                         ...pat,
@@ -166,7 +166,6 @@ export default function ModalWindow({
                     name="input3"
                     cols="30"
                     rows="10"
-                    // onChange={(e) => setConcernsPatient(e.target.value)}
                     onChange={(e) =>
                       setPat({
                         ...pat,

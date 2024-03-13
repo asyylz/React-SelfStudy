@@ -5,13 +5,12 @@ import { useEffect } from "react";
 export default function DoctorSelectDropDownMenu({
   onSelect,
   doc,
-  doctorPatient
+  doctorPatient,
 }) {
-
   //const [selected, setSelected] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState(doctorPatient || "");
 
-   useEffect(() => {
+  useEffect(() => {
     setSelectedDoctor(doctorPatient || "");
   }, [doctorPatient]);
 
@@ -28,12 +27,7 @@ export default function DoctorSelectDropDownMenu({
           <select
             id="doctorSelect"
             value={doc?.id || selectedDoctor}
-            //value={selected}
-             onChange={handleDoctorChange}
-            // onChange={(e) => {
-            //   handleDoctorChange(e);
-            //   onSelect(e);
-            // }}
+            onChange={handleDoctorChange}
           >
             <option value="">Select a doctor</option>
             {Data.map((doctor) => (
