@@ -14,6 +14,7 @@ const Data = [
         isSeen: true,
         concerns: "Chest pain and shortness of breath",
         referral: true,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -22,6 +23,7 @@ const Data = [
         isSeen: false,
         concerns: "High blood pressure and headaches",
         referral: false,
+        DOB: "1988-03-15",
       },
       {
         id: 3,
@@ -30,6 +32,7 @@ const Data = [
         isSeen: true,
         concerns: "Chest pain and shortness of breath",
         referral: true,
+        DOB: "1988-03-15",
       },
       {
         id: 4,
@@ -38,6 +41,7 @@ const Data = [
         isSeen: false,
         concerns: "High blood pressure and headaches",
         referral: false,
+        DOB: "1988-03-15",
       },
     ],
   },
@@ -56,6 +60,7 @@ const Data = [
         isSeen: false,
         concerns: "Fever and cough",
         referral: false,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -64,6 +69,7 @@ const Data = [
         isSeen: true,
         concerns: "Stomach pain and vomiting",
         referral: true,
+        DOB: "1988-03-15",
       },
     ],
   },
@@ -82,6 +88,7 @@ const Data = [
         isSeen: false,
         concerns: "Fractured arm",
         referral: false,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -90,6 +97,7 @@ const Data = [
         isSeen: true,
         concerns: "Back pain",
         referral: true,
+        DOB: "1988-03-15",
       },
     ],
   },
@@ -108,6 +116,7 @@ const Data = [
         isSeen: true,
         concerns: "Skin rash",
         referral: true,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -116,6 +125,7 @@ const Data = [
         isSeen: false,
         concerns: "Acne",
         referral: false,
+        DOB: "1988-03-15",
       },
     ],
   },
@@ -134,6 +144,7 @@ const Data = [
         isSeen: false,
         concerns: "Headaches and dizziness",
         referral: false,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -142,6 +153,7 @@ const Data = [
         isSeen: true,
         concerns: "Memory loss",
         referral: true,
+        DOB: "1988-03-15",
       },
     ],
   },
@@ -160,6 +172,7 @@ const Data = [
         isSeen: false,
         concerns: "Headaches and dizziness",
         referral: false,
+        DOB: "1988-03-15",
       },
       {
         id: 2,
@@ -168,6 +181,7 @@ const Data = [
         isSeen: true,
         concerns: "Memory loss",
         referral: true,
+        DOB: "1988-03-15",
       },
     ],
   },

@@ -38,6 +38,7 @@ export default function NewPatient({ storedData, setStoredData }) {
             appointmentDate: appDatePatient,
             concerns: concernsPatient,
             isSeen: false,
+            DOB: DOBPatient,
           },
         ];
         return { ...doctor, patients: updatedPatient };

@@ -182,7 +182,3 @@
 .btns .btn-cancel {
   background: none;
 }
-
-#modal {
-  z-index: 10 !important;
-}

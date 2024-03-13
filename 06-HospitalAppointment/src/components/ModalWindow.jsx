@@ -14,23 +14,49 @@ const customStyles = {
   },
 };
 export default function ModalWindow({
-  //   patientID,
-  //   doctorID,
+  pat,
+  doc,
   setStoredData,
   storedData,
   modalIsOpen,
   setModalIsOpen,
 }) {
-  console.log(modalIsOpen);
-  const [namePatient, setNamePatient] = useState("");
-  const [DOBPatient, setDOBPatient] = useState("");
-  const [appDatePatient, setAppDatePatient] = useState("");
+  const [updatedPatient, setUpdatedPatient] = useState(pat);
+  const [namePatient, setNamePatient] = useState(pat.patientName);
+  const [DOBPatient, setDOBPatient] = useState(pat.DOB);
+  const [appDatePatient, setAppDatePatient] = useState(pat.appointmentDate);
   const [doctorPatient, setDoctorPatient] = useState("");
-  const [concernsPatient, setConcernsPatient] = useState("");
+  const [concernsPatient, setConcernsPatient] = useState(pat.concerns);
 
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
   };
+  function handleUpdate(patient, doctor) {
+    console.log(patient, doctor);
+    const updatedData = storedData.map((doctor) => {
+      if (doctor.id === doc.id) {
+        const updatedPatients = doctor.patients.map((patient) => {
+          if (patient.id === pat.id) {
+            return {
+              ...patient,
+              isSeen: !patient.isSeen,
+            };
+          }
+          return patient;
+        });
+        return {
+          ...doctor,
+          patients: updatedPatients,
+        };
+      }
+      return doctor;
+    });
+  }
+
+//   useEffect(() => {
+//     setTitle(eskiTitle);
+//     setDescription(eskiDesc);
+//   }, [eskiDesc, eskiTitle]);
 
   return (
     <Modal
@@ -53,7 +79,13 @@ export default function ModalWindow({
                   <input
                     id="input0"
                     type="text"
-                    onChange={(e) => setNamePatient(e.target.value)}
+                    // onChange={(e) => setNamePatient(e.target.value)}
+                    onChange={() =>
+                      setUpdatedPatient({
+                        ...updatedPatient,
+                        patientName: e.target.value,
+                      })
+                    }
                     value={namePatient}
                     required
                   />
@@ -67,23 +99,28 @@ export default function ModalWindow({
                   <input
                     id="input1"
                     type="date"
-                    onChange={(e) => setDOBPatient(e.target.value)}
-                    value={DOBPatient}
+                    onChange={() =>
+                      setUpdatedPatient({
+                        ...updatedPatient,
+                        DOB: e.target.value,
+                      })
+                    }
+                    value={pat.DOB}
                     required
                   />
 
                   <span className="underline"></span>
                 </dd>
               </dl>
-              <DoctorSelectDropDownMenu onSelect={handleSelect} />
+              <DoctorSelectDropDownMenu doc={doc} onSelect={handleSelect} />
               <div className="btns">
                 <button
                   className="btn btn-confirm"
-                  onClick={() => handleNewPatientAdd()}
+                  onClick={() => handleUpdate()}
                 >
-                  Create Appointment
+                  Update Detailes
                 </button>
-                <button className="btn btn-cancel">Clear Form</button>
+            
               </div>
             </div>
             <div className="input-section-2">
@@ -93,8 +130,14 @@ export default function ModalWindow({
                   <input
                     id="input2"
                     type="date"
-                    onChange={(e) => setAppDatePatient(e.target.value)}
-                    value={appDatePatient}
+                    // onChange={(e) => setAppDatePatient(e.target.value)}
+                    onChange={() =>
+                      setUpdatedPatient({
+                        ...updatedPatient,
+                        appointmentDate: e.target.value,
+                      })
+                    }
+                    value={pat.appointmentDate}
                     required
                   />
 
@@ -110,8 +153,14 @@ export default function ModalWindow({
                     name="input3"
                     cols="30"
                     rows="10"
-                    onChange={(e) => setConcernsPatient(e.target.value)}
-                    value={concernsPatient}
+                    // onChange={(e) => setConcernsPatient(e.target.value)}
+                    onChange={() =>
+                      setUpdatedPatient({
+                        ...updatedPatient,
+                        concerns: e.target.value,
+                      })
+                    }
+                    value={pat.concerns}
                     required
                   ></textarea>
 

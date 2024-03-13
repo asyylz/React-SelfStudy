@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Data from "../helper/Data";
 
-export default function DoctorSelectDropDownMenu({ onSelect }) {
+export default function DoctorSelectDropDownMenu({ onSelect, doc }) {
   const [selectedDoctor, setSelectedDoctor] = useState("");
 
   const handleDoctorChange = (event) => {
@@ -15,7 +15,7 @@ export default function DoctorSelectDropDownMenu({ onSelect }) {
         <dd className="inputbox-content">
           <select
             id="doctorSelect"
-            value={selectedDoctor}
+            value={doc?.id || selectedDoctor}
             onChange={(e) => {
               handleDoctorChange(e);
               onSelect(e);

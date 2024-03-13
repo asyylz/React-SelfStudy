@@ -10,6 +10,8 @@ export default function CurrentDoctorPage({
   storedData,
 }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [patient, setPatient] = useState("");
+  const [doc, setDoc] = useState("");
 
   function handleDeletePatient(patientID) {
     const updatedDoctor = storedData.find(
@@ -67,23 +69,19 @@ export default function CurrentDoctorPage({
     }
   }
 
-  // function handleEdit(patientID, doctorID) {
-
-  // }
-
   return (
     <>
       {modalIsOpen && (
         <ModalWindow
-          // patientID={patientID}
-          // doctorID={doctorID}
+          pat={patient}
+          doc={doc}
           setStoredData={setStoredData}
           storedData={storedData}
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
         />
       )}
-      
+
       {!modalIsOpen &&
         storedData.map(
           (doctor) =>
@@ -159,7 +157,11 @@ export default function CurrentDoctorPage({
                                 <td>
                                   <FaRegEdit
                                     className="icons edit"
-                                    onClick={() => setModalIsOpen(true)}
+                                    onClick={() => {
+                                      setPatient(patient);
+                                      setDoc(doctor);
+                                      setModalIsOpen(true);
+                                    }}
                                   />
                                   <MdDoneOutline
                                     className="icons tick"
@@ -225,6 +227,14 @@ export default function CurrentDoctorPage({
                                     : "Not Applied"}
                                 </td>
                                 <td>
+                                  <FaRegEdit
+                                    className="icons edit"
+                                    onClick={() => {
+                                      setPatient(patient);
+                                      setDoc(doctor);
+                                      setModalIsOpen(true);
+                                    }}
+                                  />
                                   <MdDoneOutline
                                     className={`icons tick ${
                                       patient.isSeen ? "" : "notSeen"
