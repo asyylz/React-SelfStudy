@@ -41,6 +41,7 @@ export default function ModalWindow({
 
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
+    
   };
   function handleUpdate() {
     const updatedData = storedData.map((doctor) => {

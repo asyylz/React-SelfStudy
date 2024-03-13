@@ -4,8 +4,10 @@ import Data from "../helper/Data";
 export default function DoctorSelectDropDownMenu({ onSelect, doc }) {
   const [selectedDoctor, setSelectedDoctor] = useState("");
 
+
   const handleDoctorChange = (event) => {
     setSelectedDoctor(event.target.value);
+   
   };
 
   return (

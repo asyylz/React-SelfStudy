@@ -27,7 +27,6 @@ export default function NewPatient({ storedData, setStoredData }) {
 
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === parseInt(doctorPatient)) {
-        console.log(doctorPatient);
         const patientIdCounter = doctor.patients
           ? doctor.patients.length + 1
           : 1;
@@ -40,6 +39,7 @@ export default function NewPatient({ storedData, setStoredData }) {
             concerns: concernsPatient,
             isSeen: false,
             DOB: DOBPatient,
+            referral: referral === "Yes" ? true : false,
           },
         ];
         return { ...doctor, patients: updatedPatient };
@@ -59,6 +59,10 @@ export default function NewPatient({ storedData, setStoredData }) {
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
   };
+
+  // const handleSelect = (selectedDoctor) => {
+  //   setDoctorPatient(selectedDoctor);
+  // };
 
   return (
     <div id="wrap" className="input">
