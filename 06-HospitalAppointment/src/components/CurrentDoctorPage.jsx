@@ -10,7 +10,7 @@ export default function CurrentDoctorPage({
   storedData,
 }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [patient, setPatient] = useState("");
+  const [pat, setPat] = useState("");
   const [doc, setDoc] = useState("");
 
   function handleDeletePatient(patientID) {
@@ -73,7 +73,9 @@ export default function CurrentDoctorPage({
     <>
       {modalIsOpen && (
         <ModalWindow
-          pat={patient}
+          pat={pat}
+          setPat={setPat}
+          setDoc={setDoc}
           doc={doc}
           setStoredData={setStoredData}
           storedData={storedData}
@@ -158,7 +160,7 @@ export default function CurrentDoctorPage({
                                   <FaRegEdit
                                     className="icons edit"
                                     onClick={() => {
-                                      setPatient(patient);
+                                      setPat(patient);
                                       setDoc(doctor);
                                       setModalIsOpen(true);
                                     }}
@@ -230,7 +232,7 @@ export default function CurrentDoctorPage({
                                   <FaRegEdit
                                     className="icons edit"
                                     onClick={() => {
-                                      setPatient(patient);
+                                      setPat(patient);
                                       setDoc(doctor);
                                       setModalIsOpen(true);
                                     }}

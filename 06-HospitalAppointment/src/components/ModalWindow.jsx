@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DoctorSelectDropDownMenu from "./DoctorSelectDropDownMenu";
 import "/src/styles/new-patient.css";
 import Modal from "react-modal";
@@ -16,30 +16,39 @@ const customStyles = {
 export default function ModalWindow({
   pat,
   doc,
+  setPat,
+  setDoc,
   setStoredData,
   storedData,
   modalIsOpen,
   setModalIsOpen,
 }) {
-  const [updatedPatient, setUpdatedPatient] = useState(pat);
-  const [namePatient, setNamePatient] = useState(pat.patientName);
-  const [DOBPatient, setDOBPatient] = useState(pat.DOB);
-  const [appDatePatient, setAppDatePatient] = useState(pat.appointmentDate);
+  const {
+    id,
+    patientName: prevName,
+    appointmentDate: prevAppDate,
+    isSeen: prevIsSeen,
+    concerns: prevConcerns,
+    DOB: prevDOB,
+    referral: prevRefferal,
+  } = pat;
+  //const [updatedPatient, setUpdatedPatient] = useState(pat);
   const [doctorPatient, setDoctorPatient] = useState("");
-  const [concernsPatient, setConcernsPatient] = useState(pat.concerns);
+  const [namePatient, setNamePatient] = useState(prevName);
+  const [DOBPatient, setDOBPatient] = useState(prevDOB);
+  const [appDatePatient, setAppDatePatient] = useState(prevAppDate);
+  const [concernsPatient, setConcernsPatient] = useState(prevConcerns);
 
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
   };
-  function handleUpdate(patient, doctor) {
-    console.log(patient, doctor);
+  function handleUpdate() {
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === doc.id) {
         const updatedPatients = doctor.patients.map((patient) => {
           if (patient.id === pat.id) {
             return {
-              ...patient,
-              isSeen: !patient.isSeen,
+              ...pat,
             };
           }
           return patient;
@@ -51,12 +60,16 @@ export default function ModalWindow({
       }
       return doctor;
     });
+    console.log(pat);
+    setStoredData(updatedData);
   }
 
-//   useEffect(() => {
-//     setTitle(eskiTitle);
-//     setDescription(eskiDesc);
-//   }, [eskiDesc, eskiTitle]);
+  useEffect(() => {
+    setNamePatient(prevName);
+    setConcernsPatient(prevConcerns);
+    setAppDatePatient(prevAppDate);
+    setDOBPatient(prevDOB);
+  }, [prevName, prevConcerns, prevDOB, prevAppDate]);
 
   return (
     <Modal
@@ -80,14 +93,13 @@ export default function ModalWindow({
                     id="input0"
                     type="text"
                     // onChange={(e) => setNamePatient(e.target.value)}
-                    onChange={() =>
-                      setUpdatedPatient({
-                        ...updatedPatient,
+                    onChange={(e) =>
+                      setPat({
+                        ...pat,
                         patientName: e.target.value,
                       })
                     }
-                    value={namePatient}
-                    required
+                    value={namePatient || ""}
                   />
 
                   <span className="underline"></span>
@@ -99,14 +111,13 @@ export default function ModalWindow({
                   <input
                     id="input1"
                     type="date"
-                    onChange={() =>
-                      setUpdatedPatient({
-                        ...updatedPatient,
+                    onChange={(e) =>
+                      setPat({
+                        ...pat,
                         DOB: e.target.value,
                       })
                     }
-                    value={pat.DOB}
-                    required
+                    value={DOBPatient}
                   />
 
                   <span className="underline"></span>
@@ -116,11 +127,10 @@ export default function ModalWindow({
               <div className="btns">
                 <button
                   className="btn btn-confirm"
-                  onClick={() => handleUpdate()}
+                  onClick={(e) => handleUpdate()}
                 >
                   Update Detailes
                 </button>
-            
               </div>
             </div>
             <div className="input-section-2">
@@ -131,14 +141,13 @@ export default function ModalWindow({
                     id="input2"
                     type="date"
                     // onChange={(e) => setAppDatePatient(e.target.value)}
-                    onChange={() =>
-                      setUpdatedPatient({
-                        ...updatedPatient,
+                    onChange={(e) =>
+                      setPat({
+                        ...pat,
                         appointmentDate: e.target.value,
                       })
                     }
-                    value={pat.appointmentDate}
-                    required
+                    value={appDatePatient}
                   />
 
                   <span className="underline"></span>
@@ -154,14 +163,13 @@ export default function ModalWindow({
                     cols="30"
                     rows="10"
                     // onChange={(e) => setConcernsPatient(e.target.value)}
-                    onChange={() =>
-                      setUpdatedPatient({
-                        ...updatedPatient,
+                    onChange={(e) =>
+                      setPat({
+                        ...pat,
                         concerns: e.target.value,
                       })
                     }
-                    value={pat.concerns}
-                    required
+                    value={concernsPatient || ""}
                   ></textarea>
 
                   <span className="underline"></span>
