@@ -100,7 +100,7 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <span className="underline"></span>
               </dd>
             </dl>
-            <DoctorSelectDropDownMenu onSelect={handleSelect} />
+            <DoctorSelectDropDownMenu onSelect={handleSelect} selectedDoctor={doctorPatient}  />
 
             <dl className="inputbox">
               <dt className="inputbox-title">Referral:</dt>

@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import Data from "../helper/Data";
+import { useEffect } from "react";
 
-export default function DoctorSelectDropDownMenu({ onSelect, doc }) {
-  const [selectedDoctor, setSelectedDoctor] = useState("");
+export default function DoctorSelectDropDownMenu({
+  onSelect,
+  doc,
+  selectedDoctor,
+}) {
+const [selected, setSelected] = useState("");
 
+ useEffect(() => {
+  setSelected(selectedDoctor || "");
+}, [selectedDoctor]);
 
   const handleDoctorChange = (event) => {
-    setSelectedDoctor(event.target.value);
-   
+    setSelected(event.target.value);
+    onSelect(event);
   };
 
   return (
@@ -17,11 +25,13 @@ export default function DoctorSelectDropDownMenu({ onSelect, doc }) {
         <dd className="inputbox-content">
           <select
             id="doctorSelect"
-            value={doc?.id || selectedDoctor}
-            onChange={(e) => {
-              handleDoctorChange(e);
-              onSelect(e);
-            }}
+            // value={doc?.id || selectedDoctor}
+            value={selected}
+            onChange={handleDoctorChange}
+            // onChange={(e) => {
+            //   handleDoctorChange(e);
+            //   onSelect(e);
+            // }}
           >
             <option value="">Select a doctor</option>
             {Data.map((doctor) => (

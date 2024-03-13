@@ -38,7 +38,7 @@ export default function CurrentDoctorPage({
 
     setStoredData(updatedData);
 
-    const alertMessage = "Patient's case is deleted successfully.";
+    const alertMessage = "Would you like patient's case to be deleted ?";
     alert(alertMessage);
   }
 
@@ -64,7 +64,7 @@ export default function CurrentDoctorPage({
 
     setStoredData(updatedData);
     if (!patientStatus) {
-      const alertMessage = "Patient's case is completed successfully.";
+      const alertMessage = "Would you like Patient's case to be completed ?";
       alert(alertMessage);
     }
   }
