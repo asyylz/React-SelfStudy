@@ -63,6 +63,7 @@ export default function CurrentDoctorPage({
     });
 
     setStoredData(updatedData);
+    
     if (!patientStatus) {
       const alertMessage = "Would you like Patient's case to be completed ?";
       alert(alertMessage);

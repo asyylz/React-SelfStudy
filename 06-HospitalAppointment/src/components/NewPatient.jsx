@@ -55,7 +55,7 @@ export default function NewPatient({ storedData, setStoredData }) {
     setConcernsPatient("");
     setReferral("");
   }
-console.log(doctorPatient)
+
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
   };
