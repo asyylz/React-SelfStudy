@@ -8,6 +8,7 @@ export default function NewPatient({ storedData, setStoredData }) {
   const [appDatePatient, setAppDatePatient] = useState("");
   const [doctorPatient, setDoctorPatient] = useState("");
   const [concernsPatient, setConcernsPatient] = useState("");
+  const [referral, setReferral] = useState(false);
 
   function handleNewPatientAdd() {
     if (
@@ -23,7 +24,7 @@ export default function NewPatient({ storedData, setStoredData }) {
       alert(alertMessage);
       return;
     }
-    console.log("clicked");
+
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === parseInt(doctorPatient)) {
         console.log(doctorPatient);
@@ -45,7 +46,7 @@ export default function NewPatient({ storedData, setStoredData }) {
       }
       return doctor;
     });
-    console.log(updatedData);
+
     setStoredData(updatedData);
     setNamePatient("");
     setDOBPatient("");
@@ -95,6 +96,21 @@ export default function NewPatient({ storedData, setStoredData }) {
               </dd>
             </dl>
             <DoctorSelectDropDownMenu onSelect={handleSelect} />
+
+            <dl className="inputbox">
+              <dt className="inputbox-title">Referral:</dt>
+              <dd className="inputbox-content">
+                <select
+                  id="referral"
+                  value={referral}
+                  onChange={(e) => setReferral(e.target.value)}
+                >
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+              </dd>
+            </dl>
+
             <div className="btns">
               <button
                 className="btn btn-confirm"
