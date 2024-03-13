@@ -5,16 +5,18 @@ import { useEffect } from "react";
 export default function DoctorSelectDropDownMenu({
   onSelect,
   doc,
-  selectedDoctor,
+  doctorPatient
 }) {
-const [selected, setSelected] = useState("");
 
- useEffect(() => {
-  setSelected(selectedDoctor || "");
-}, [selectedDoctor]);
+  //const [selected, setSelected] = useState("");
+  const [selectedDoctor, setSelectedDoctor] = useState(doctorPatient || "");
+
+   useEffect(() => {
+    setSelectedDoctor(doctorPatient || "");
+  }, [doctorPatient]);
 
   const handleDoctorChange = (event) => {
-    setSelected(event.target.value);
+    setSelectedDoctor(event.target.value);
     onSelect(event);
   };
 
@@ -25,9 +27,9 @@ const [selected, setSelected] = useState("");
         <dd className="inputbox-content">
           <select
             id="doctorSelect"
-            // value={doc?.id || selectedDoctor}
-            value={selected}
-            onChange={handleDoctorChange}
+            value={doc?.id || selectedDoctor}
+            //value={selected}
+             onChange={handleDoctorChange}
             // onChange={(e) => {
             //   handleDoctorChange(e);
             //   onSelect(e);

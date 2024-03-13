@@ -55,14 +55,10 @@ export default function NewPatient({ storedData, setStoredData }) {
     setConcernsPatient("");
     setReferral("");
   }
-
+console.log(doctorPatient)
   const handleSelect = (e) => {
     setDoctorPatient(e.target.value);
   };
-
-  // const handleSelect = (selectedDoctor) => {
-  //   setDoctorPatient(selectedDoctor);
-  // };
 
   return (
     <div id="wrap" className="input">
@@ -100,7 +96,7 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <span className="underline"></span>
               </dd>
             </dl>
-            <DoctorSelectDropDownMenu onSelect={handleSelect} selectedDoctor={doctorPatient}  />
+            <DoctorSelectDropDownMenu onSelect={handleSelect}  doctorPatient={doctorPatient}  />
 
             <dl className="inputbox">
               <dt className="inputbox-title">Referral:</dt>

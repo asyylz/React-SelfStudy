@@ -32,6 +32,7 @@ export default function ModalWindow({
     DOB: prevDOB,
     referral: prevRefferal,
   } = pat;
+
   //const [updatedPatient, setUpdatedPatient] = useState(pat);
   const [doctorPatient, setDoctorPatient] = useState("");
   const [namePatient, setNamePatient] = useState(prevName);
@@ -63,6 +64,8 @@ export default function ModalWindow({
     });
     console.log(pat);
     setStoredData(updatedData);
+    
+    setDoctorPatient("");
   }
 
   useEffect(() => {
