@@ -1,24 +1,6 @@
-import React, { useState } from "react";
 
-export default function UserInput() {
 
-  // Initialize figures state
-  const [figures, setFigures] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-
-  function handleInputChange(inputIdentifier, newValue) {
-    setFigures((prevFigures) => {
-      return {
-        ...prevFigures,
-        [inputIdentifier]: newValue,
-      };
-    });
-  }
-
+export default function UserInput({ onChange, figures, setFigures }) {
   return (
     <>
       <section id="user-input">
@@ -28,9 +10,7 @@ export default function UserInput() {
             <input
               type="number"
               value={figures.initialInvestment}
-              onChange={(e) =>
-                handleInputChange("initialInvestment", e.target.value)
-              }
+              onChange={(e) => onChange("initialInvestment", e.target.value)}
               required
             />
           </p>
@@ -39,9 +19,7 @@ export default function UserInput() {
             <input
               type="number"
               value={figures.annualInvestment}
-              onChange={(e) =>
-                handleInputChange("annualInvestment", e.target.value)
-              }
+              onChange={(e) => onChange("annualInvestment", e.target.value)}
               required
             />
           </p>
@@ -52,9 +30,7 @@ export default function UserInput() {
             <input
               type="number"
               value={figures.expectedReturn}
-              onChange={(e) =>
-                handleInputChange("expectedReturn", e.target.value)
-              }
+              onChange={(e) => onChange("expectedReturn", e.target.value)}
               required
             />
           </p>
@@ -63,7 +39,7 @@ export default function UserInput() {
             <input
               type="number"
               value={figures.duration}
-              onChange={(e) => handleInputChange("duration", e.target.value)}
+              onChange={(e) => onChange("duration", e.target.value)}
               required
             />
           </p>
