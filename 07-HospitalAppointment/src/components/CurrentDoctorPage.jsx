@@ -4,6 +4,7 @@ import "/src/styles/patient-details.css";
 import { MdDoneOutline } from "react-icons/md";
 import ModalWindow from "./ModalWindow";
 import { useEffect, useState } from "react";
+import { handleDeletePatient, handleIsSeenStatus } from "../util/Actions";
 export default function CurrentDoctorPage({
   currentDoctor,
   setStoredData,
@@ -12,63 +13,6 @@ export default function CurrentDoctorPage({
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pat, setPat] = useState("");
   const [doc, setDoc] = useState("");
-
-  function handleDeletePatient(patientID) {
-    const updatedDoctor = storedData.find(
-      (doctor) => doctor.id === currentDoctor.id
-    );
-
-    if (!updatedDoctor) {
-      console.error("Doctor not found in stored data.");
-      return;
-    }
-
-    const updatedPatients = updatedDoctor.patients.filter(
-      (patient) => patient.id !== patientID
-    );
-
-    updatedDoctor.patients = updatedPatients;
-
-    const updatedData = storedData.map((doctor) => {
-      if (doctor.id === updatedDoctor.id) {
-        return { ...doctor, patients: updatedPatients };
-      }
-      return doctor;
-    });
-
-    setStoredData(updatedData);
-
-    const alertMessage = "Would you like patient's case to be deleted ?";
-    alert(alertMessage);
-  }
-
-  function handleIsSeenStatus(patientID, patientStatus) {
-    const updatedData = storedData.map((doctor) => {
-      if (doctor.id === currentDoctor.id) {
-        const updatedPatients = doctor.patients.map((patient) => {
-          if (patient.id === patientID) {
-            return {
-              ...patient,
-              isSeen: !patient.isSeen,
-            };
-          }
-          return patient;
-        });
-        return {
-          ...doctor,
-          patients: updatedPatients,
-        };
-      }
-      return doctor;
-    });
-
-    setStoredData(updatedData);
-    
-    if (!patientStatus) {
-      const alertMessage = "Would you like Patient's case to be completed ?";
-      alert(alertMessage);
-    }
-  }
 
   return (
     <>
@@ -173,14 +117,24 @@ export default function CurrentDoctorPage({
                                     onClick={() =>
                                       handleIsSeenStatus(
                                         patient.id,
-                                        patient.isSeen
+                                        patient.patientName,
+                                        doctor.id,
+                                        patient.isSeen,
+                                        storedData,
+                                        setStoredData
                                       )
                                     }
                                   />
                                   <FaRegTrashAlt
                                     className="icons trash"
                                     onClick={() =>
-                                      handleDeletePatient(patient.id)
+                                      handleDeletePatient(
+                                        patient.id,
+                                        null,
+                                        doctor.id,
+                                        storedData,
+                                        setStoredData
+                                      )
                                     }
                                   />
                                 </td>
@@ -249,14 +203,24 @@ export default function CurrentDoctorPage({
                                     onClick={() =>
                                       handleIsSeenStatus(
                                         patient.id,
-                                        patient.isSeen
+                                        patient.patientName,
+                                        doctor.id,
+                                        patient.isSeen,
+                                        storedData,
+                                        setStoredData
                                       )
                                     }
                                   />
                                   <FaRegTrashAlt
                                     className="icons trash"
                                     onClick={() =>
-                                      handleDeletePatient(patient.id)
+                                      handleDeletePatient(
+                                        patient.id,
+                                        null,
+                                        doctor.id,
+                                        storedData,
+                                        setStoredData
+                                      )
                                     }
                                   />
                                 </td>

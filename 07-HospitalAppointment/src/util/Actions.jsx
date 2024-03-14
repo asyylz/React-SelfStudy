@@ -3,9 +3,9 @@ import LocalStoragePostGet from "../components/LocalStoragePostGet";
 import Data from "../helper/Data";
 
 // Function to initialize state using LocalStoragePostGet hook
-function useStoredData() {
-  return LocalStoragePostGet("dataInfo", Data);
-}
+// function useStoredData() {
+//   return LocalStoragePostGet("dataInfo", Data);
+// }
 export function handleDeletePatient(
   patientID,
   patientName,
