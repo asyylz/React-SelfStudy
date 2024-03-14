@@ -3,44 +3,55 @@ import DoctorSelectDropDownMenu from "./DoctorSelectDropDownMenu";
 import "/src/styles/new-patient.css";
 
 export default function NewPatient({ storedData, setStoredData }) {
-  const [namePatient, setNamePatient] = useState("");
-  const [DOBPatient, setDOBPatient] = useState("");
-  const [appDatePatient, setAppDatePatient] = useState("");
-  const [doctorPatient, setDoctorPatient] = useState("");
-  const [concernsPatient, setConcernsPatient] = useState("");
-  const [referral, setReferral] = useState("");
+  const [patient, setPatient] = useState({
+    patientName: "",
+    DOB: "",
+    concerns: "",
+    appointmentDate: "",
+    isSeen: false,
+    patientDoc: "",
+    referral: false,
+  });
+  const resetPatient = () => {
+    setPatient({
+      patientName: "",
+      DOB: "",
+      concerns: "",
+      appointmentDate: "",
+      isSeen: false,
+      patientDoc: "",
+      referral: false,
+    });
+  };
+
+  const inputIsValid =
+    !patient.patientName ||
+    patient.patientName.trim() === "" ||
+    !patient.DOB ||
+    !patient.appointmentDate ||
+    !patient.concerns ||
+    patient.concerns.trim() === "" ||
+    !patient.patientDoc;
+
+  // const handleSelect = (e) => {
+  //   setDoctorPatient(e.target.value);
+  // };
 
   function handleNewPatientAdd() {
-    if (
-      !namePatient ||
-      namePatient.trim() == "" ||
-      !DOBPatient ||
-      !appDatePatient ||
-      !concernsPatient ||
-      concernsPatient.trim() === "" ||
-      !doctorPatient
-    ) {
+    if (inputIsValid) {
       const alertMessage = "Please enter all details...";
       alert(alertMessage);
       return;
     }
 
     const updatedData = storedData.map((doctor) => {
-      if (doctor.id === parseInt(doctorPatient)) {
+      if (doctor.id === parseInt(patient.patientDoc)) {
         const patientIdCounter = doctor.patients
           ? doctor.patients.length + 1
           : 1;
         const updatedPatient = [
           ...(doctor.patients || []),
-          {
-            id: patientIdCounter,
-            patientName: namePatient,
-            appointmentDate: appDatePatient,
-            concerns: concernsPatient,
-            isSeen: false,
-            DOB: DOBPatient,
-            referral: referral === "Yes" ? true : false,
-          },
+          { id: patientIdCounter, ...patient },
         ];
         return { ...doctor, patients: updatedPatient };
       }
@@ -48,17 +59,19 @@ export default function NewPatient({ storedData, setStoredData }) {
     });
 
     setStoredData(updatedData);
-    setNamePatient("");
-    setDOBPatient("");
-    setAppDatePatient("");
-    setDoctorPatient("");
-    setConcernsPatient("");
-    setReferral("");
+    resetPatient();
   }
 
-  const handleSelect = (e) => {
-    setDoctorPatient(e.target.value);
-  };
+  function handleInputChange(inputIdentifier, newValue) {
+    setPatient((prevPatient) => {
+      return {
+        ...prevPatient,
+        [inputIdentifier]: newValue,
+      };
+    });
+  }
+
+  console.log(patient);
 
   return (
     <div id="wrap" className="input">
@@ -74,8 +87,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <input
                   id="input0"
                   type="text"
-                  onChange={(e) => setNamePatient(e.target.value)}
-                  value={namePatient}
+                  onChange={(e) =>
+                    handleInputChange("patientName", e.target.value)
+                  }
+                  value={patient.patientName}
                   required
                 />
 
@@ -88,23 +103,31 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <input
                   id="input1"
                   type="date"
-                  onChange={(e) => setDOBPatient(e.target.value)}
-                  value={DOBPatient}
+                  onChange={(e) => handleInputChange("DOB", e.target.value)}
+                  value={patient.DOB}
                   required
                 />
 
                 <span className="underline"></span>
               </dd>
             </dl>
-            <DoctorSelectDropDownMenu onSelect={handleSelect}  doctorPatient={doctorPatient}  />
+            <DoctorSelectDropDownMenu
+              onSelect={(e) => handleInputChange("patientDoc", e.target.value)}
+              doctorPatient={patient.patientDoc}
+            />
 
             <dl className="inputbox">
               <dt className="inputbox-title">Referral:</dt>
               <dd className="inputbox-content">
                 <select
                   id="referral"
-                  value={referral}
-                  onChange={(e) => setReferral(e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange(
+                      "referral",
+                      e.target.value === "Yes" ? true : false
+                    )
+                  }
+                  value={patient.referral ? "Yes" : "No"}
                 >
                   <option value="">Select referral status:</option>
                   <option value="Yes">Yes</option>
@@ -130,8 +153,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <input
                   id="input2"
                   type="date"
-                  onChange={(e) => setAppDatePatient(e.target.value)}
-                  value={appDatePatient}
+                  onChange={(e) =>
+                    handleInputChange("appointmentDate", e.target.value)
+                  }
+                  value={patient.appointmentDate}
                   required
                 />
 
@@ -147,8 +172,10 @@ export default function NewPatient({ storedData, setStoredData }) {
                   name="input3"
                   cols="30"
                   rows="10"
-                  onChange={(e) => setConcernsPatient(e.target.value)}
-                  value={concernsPatient}
+                  onChange={(e) =>
+                    handleInputChange("concerns", e.target.value)
+                  }
+                  value={patient.concerns}
                   required
                 ></textarea>
 
