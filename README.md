@@ -3,7 +3,6 @@
     <h1>Welcome to the React-SelfStudy Repo!</h1>
     <p>The React-SelfStudy repository contains multiple projects and resources related to self-studying React. This repo serves as a demonstration of fundamental React concepts and features, including components, props, state management, conditional rendering, and event handling.</p>
   </header>
-
   <section id="getting-started">
     <h2>Getting Started</h2>
     <h3>Prerequisites</h3>
@@ -12,7 +11,6 @@
       <li>Node.js</li>
       <li>npm (Node Package Manager)</li>
     </ul>
-
     <h3>Installation</h3>
     <ol>
       <li>Clone the repository to your local machine using the following command:</li>
@@ -67,7 +65,6 @@
   <footer>
     <h2>Contributing</h2>
     <p>Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.</p>
-
     <h2>License</h2>
     <p>This project is licensed under the MIT License.</p>
   </footer>
