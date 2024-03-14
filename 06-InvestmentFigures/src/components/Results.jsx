@@ -1,16 +1,17 @@
+import { calculateInvestmentResults, formatter } from "../util/investment";
 export default function Results() {
-    return (
-        <table id="result">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Investment Value</th>
-            <th>Interest (Year)</th>
-            <th>Total Interest</th>
-            <th>Invested Capital</th>
-          </tr>
-        </thead>
-        {/* <tbody>
+  return (
+    <table id="result">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Investment Value</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
+        </tr>
+      </thead>
+      {/* <tbody>
           {calculateInvestmentResults(figures).map((yearData) => {
             const totalInterest =
               yearData.valueEndOfYear -
@@ -29,6 +30,6 @@ export default function Results() {
             );
           })}
         </tbody> */}
-      </table>
-    )
+    </table>
+  );
 }
