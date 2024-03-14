@@ -66,6 +66,10 @@
           <td><strong>05</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/05-ToDo-App-RGB/public/outcome.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
+        <tr>
+          <td><strong>06</strong></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg" width="600" height="400" alt="Project 02 outcome"></td>
+        </tr>
       </tbody>
     </table>
   </section>
