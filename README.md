@@ -50,19 +50,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+          <tr>
           <td><strong>01-02</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/28548769f47460df1efee60746b7f4d4af1c71fa/01-starting-project/01-outcome.jpg" width="600" height="400" alt="Project 01 outcome"></td>
-        </tr>
-        <tr>
           <td><strong>03</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/03-TicTacToe-Game/public/outcome.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
         <tr>
           <td><strong>04</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
-        </tr>
-        <tr>
           <td><strong>05</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/05-ToDo-App-RGB/public/outcome.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
