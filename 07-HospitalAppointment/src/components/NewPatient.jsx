@@ -33,10 +33,6 @@ export default function NewPatient({ storedData, setStoredData }) {
     patient.concerns.trim() === "" ||
     !patient.patientDoc;
 
-  // const handleSelect = (e) => {
-  //   setDoctorPatient(e.target.value);
-  // };
-
   function handleNewPatientAdd() {
     if (inputIsValid) {
       const alertMessage = "Please enter all details...";
@@ -70,7 +66,6 @@ export default function NewPatient({ storedData, setStoredData }) {
       };
     });
   }
-
 
   return (
     <div id="wrap" className="input">
@@ -110,6 +105,7 @@ export default function NewPatient({ storedData, setStoredData }) {
                 <span className="underline"></span>
               </dd>
             </dl>
+{/* DROPDOWN INPUT */}
             <DoctorSelectDropDownMenu
               onSelect={(e) => handleInputChange("patientDoc", e.target.value)}
               doctorPatient={patient.patientDoc}

@@ -23,34 +23,33 @@ export default function ModalWindow({
   modalIsOpen,
   setModalIsOpen,
 }) {
-  const {
-    // id,
-    patientName: prevName,
-    DOB: prevDOB,
-    concerns: prevConcerns,
-    appointmentDate: prevAppDate,
-    isSeen: prevIsSeen,
-    patientDoc: prevPatientDoc,
-    referral: prevRefferal,
-  } = pat;
+  
+  const [updatedPatient, setUpdatedPatient] = useState({
+    patientName: pat.patientName,
+    DOB: pat.DOB,
+    concerns: pat.concerns,
+    appointmentDate: pat.appointmentDate,
+    isSeen: pat.isSeen,
+    patientDoc: pat.patientDoc,
+    referral: pat.referral,
+  });
 
-  //const [updatedPatient, setUpdatedPatient] = useState(pat);
-  const [doctorPatient, setDoctorPatient] = useState("");
-  const [namePatient, setNamePatient] = useState(prevName);
-  const [DOBPatient, setDOBPatient] = useState(prevDOB);
-  const [appDatePatient, setAppDatePatient] = useState(prevAppDate);
-  const [concernsPatient, setConcernsPatient] = useState(prevConcerns);
+  function handleInputChange(inputIdentifier, newValue) {
+    setUpdatedPatient((prevPatient) => {
+      return {
+        ...prevPatient,
+        [inputIdentifier]: newValue,
+      };
+    });
+  }
 
-  const handleSelect = (e) => {
-    setDoctorPatient(e.target.value);
-  };
   function handleUpdate() {
     const updatedData = storedData.map((doctor) => {
       if (doctor.id === doc.id) {
         const updatedPatients = doctor.patients.map((patient) => {
           if (patient.id === pat.id) {
             return {
-              ...pat,
+              ...updatedPatient,
             };
           }
           return patient;
@@ -62,21 +61,13 @@ export default function ModalWindow({
       }
       return doctor;
     });
-    console.log(pat);
+
     setStoredData(updatedData);
 
     const alertMessage = "Would you like patient's case to be updated?";
     alert(alertMessage);
     setModalIsOpen(false);
-
   }
-
-  useEffect(() => {
-    setNamePatient(prevName);
-    setConcernsPatient(prevConcerns);
-    setAppDatePatient(prevAppDate);
-    setDOBPatient(prevDOB);
-  }, [prevName, prevConcerns, prevDOB, prevAppDate]);
 
   return (
     <Modal
@@ -89,7 +80,7 @@ export default function ModalWindow({
       <div id="wrap" className="input">
         <section className="input-content">
           <h2>
-            Patient Details<span> (New Patient)</span>
+            Patient Details<span> (Update)</span>
           </h2>
           <div className="input-content-wrap">
             <div className="input-section-1">
@@ -100,12 +91,9 @@ export default function ModalWindow({
                     id="input0"
                     type="text"
                     onChange={(e) =>
-                      setPat({
-                        ...pat,
-                        patientName: e.target.value,
-                      })
+                      handleInputChange("patientName", e.target.value)
                     }
-                    value={namePatient || ""}
+                    value={updatedPatient.patientName}
                   />
 
                   <span className="underline"></span>
@@ -117,19 +105,41 @@ export default function ModalWindow({
                   <input
                     id="input1"
                     type="date"
-                    onChange={(e) =>
-                      setPat({
-                        ...pat,
-                        DOB: e.target.value,
-                      })
-                    }
-                    value={DOBPatient}
+                    onChange={(e) => handleInputChange("DOB", e.target.value)}
+                    value={updatedPatient.DOB}
                   />
 
                   <span className="underline"></span>
                 </dd>
               </dl>
-              <DoctorSelectDropDownMenu doc={doc} onSelect={handleSelect} />
+              {/* DROPDOWN INPUT */}
+              <DoctorSelectDropDownMenu
+                doc={doc}
+                onSelect={(e) =>
+                  handleInputChange("patientDoc", e.target.value)
+                }
+              />
+
+              <dl className="inputbox">
+                <dt className="inputbox-title">Referral:</dt>
+                <dd className="inputbox-content">
+                  <select
+                    id="referral"
+                    onChange={(e) =>
+                      handleInputChange(
+                        "referral",
+                        e.target.value === "Yes" ? true : false
+                      )
+                    }
+                    value={updatedPatient.referral ? "Yes" : "No"}
+                  >
+                    <option value="">Select referral status:</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </dd>
+              </dl>
+
               <div className="btns">
                 <button
                   className="btn btn-confirm"
@@ -147,12 +157,9 @@ export default function ModalWindow({
                     id="input2"
                     type="date"
                     onChange={(e) =>
-                      setPat({
-                        ...pat,
-                        appointmentDate: e.target.value,
-                      })
+                      handleInputChange("appointmentDate", e.target.value)
                     }
-                    value={appDatePatient}
+                    value={updatedPatient.appointmentDate}
                   />
 
                   <span className="underline"></span>
@@ -168,12 +175,9 @@ export default function ModalWindow({
                     cols="30"
                     rows="10"
                     onChange={(e) =>
-                      setPat({
-                        ...pat,
-                        concerns: e.target.value,
-                      })
+                      handleInputChange("concerns", e.target.value)
                     }
-                    value={concernsPatient || ""}
+                    value={updatedPatient.concerns}
                   ></textarea>
 
                   <span className="underline"></span>
