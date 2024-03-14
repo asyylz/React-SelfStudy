@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-import Header from "./components/Header";
+import Header from "./components/Header.jsx";
 import Input from "./components/Input";
 
 
