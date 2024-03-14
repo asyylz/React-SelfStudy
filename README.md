@@ -62,6 +62,10 @@
           <td><strong>04</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
+        <tr>
+          <td><strong>05</strong></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
+        </tr>
       </tbody>
     </table>
   </section>
