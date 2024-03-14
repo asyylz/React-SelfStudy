@@ -56,7 +56,7 @@
         </tr>
         <tr>
           <td><strong>03</strong></td>
-          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/03-TictacToe-Game/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/03-TicTacToe-Game/public/outcome.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
         <tr>
           <td><strong>04</strong></td>
