@@ -40,6 +40,7 @@ export default function AppointmentsAllReferrals({
             <thead>
               <tr>
                 <th>Patient Name</th>
+                <th>Patient Doctor</th>
                 <th>Concerns</th>
                 <th>Appointment Date</th>
                 <th>Status</th>
@@ -57,6 +58,7 @@ export default function AppointmentsAllReferrals({
                         className={patient.isSeen ? "completed" : "active"}
                       >
                         <td>{patient.patientName}</td>
+                        <td>{patient.patientDoc===doctor.id && doctor.doctorName}</td>
                         <td>{patient.concerns}</td>
                         <td>{patient.appointmentDate}</td>
                         <td>{patient.isSeen ? "Completed" : "Active"}</td>
@@ -113,6 +115,7 @@ export default function AppointmentsAllReferrals({
                           className={patient.isSeen ? "completed" : "active"}
                         >
                           <td>{patient.patientName}</td>
+                          <td>{patient.patientDoc===doctor.id && doctor.doctorName}</td>
                           <td>{patient.concerns}</td>
                           <td>{patient.appointmentDate}</td>
                           <td>{patient.isSeen ? "Completed" : "Active"}</td>
