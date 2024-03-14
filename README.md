@@ -51,11 +51,15 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>01</strong></td>
+          <td><strong>01-02</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/28548769f47460df1efee60746b7f4d4af1c71fa/01-starting-project/01-outcome.jpg" width="600" height="400" alt="Project 01 outcome"></td>
         </tr>
         <tr>
-          <td><strong>02</strong></td>
+          <td><strong>03</strong></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/03-TictacToe-Game/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
+        </tr>
+        <tr>
+          <td><strong>04</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg" width="600" height="400" alt="Project 02 outcome"></td>
         </tr>
       </tbody>
