@@ -13,60 +13,6 @@ export default function AppointmentsAllReferrals({
   const [pat, setPat] = useState("");
   const [doc, setDoc] = useState("");
 
-  // function handleDeletePatient(patientID, patientName, doctorID) {
-  //   const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
-
-  //   if (!updatedDoctor) {
-  //     console.error("Doctor not found in stored data.");
-  //     return;
-  //   }
-
-  //   const updatedPatients = updatedDoctor.patients.filter(
-  //     (patient) => patient.id !== patientID
-  //   );
-
-  //   updatedDoctor.patients = updatedPatients;
-
-  //   const updatedData = storedData.map((doctor) => {
-  //     if (doctor.id === updatedDoctor.id) {
-  //       return { ...doctor, patients: updatedPatients };
-  //     }
-  //     return doctor;
-  //   });
-
-  //   setStoredData(updatedData);
-  //   const alertMessage = "Would you like patient's case to be deleted ?";
-  //   alert(alertMessage);
-  // }
-
-  function handleIsSeenStatus(patientID, patientName, doctorID, patientStatus) {
-    const updatedData = storedData.map((doctor) => {
-      if (doctor.id === doctorID) {
-        const updatedPatients = doctor.patients.map((patient) => {
-          if (patient.id === patientID && patient.patientName === patientName) {
-            return {
-              ...patient,
-              isSeen: !patient.isSeen,
-            };
-          }
-          return patient;
-        });
-        return {
-          ...doctor,
-          patients: updatedPatients,
-        };
-      }
-      return doctor;
-    });
-
-    setStoredData(updatedData);
-
-    if (!patientStatus) {
-      const alertMessage = "Would you like Patient's case to be completed ?";
-      alert(alertMessage);
-    }
-  }
-
   return (
     <>
       {modalIsOpen && (
@@ -132,7 +78,9 @@ export default function AppointmentsAllReferrals({
                                 patient.id,
                                 patient.patientName,
                                 doctor.id,
-                                patient.isSeen
+                                patient.isSeen,
+                                storedData,
+                                setStoredData
                               )
                             }
                           />
@@ -187,7 +135,9 @@ export default function AppointmentsAllReferrals({
                                   patient.id,
                                   patient.patientName,
                                   doctor.id,
-                                  patient.isSeen
+                                  patient.isSeen,
+                                  storedData,
+                                  setStoredData
                                 )
                               }
                             />
@@ -197,7 +147,9 @@ export default function AppointmentsAllReferrals({
                                 handleDeletePatient(
                                   patient.id,
                                   patient.patientName,
-                                  doctor.id
+                                  doctor.id,
+                                  storedData,
+                                  setStoredData
                                 )
                               }
                             />
