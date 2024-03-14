@@ -13,6 +13,7 @@ function App() {
     expectedReturn: 6,
     duration: 10,
   });
+  const inputIsValid = figures.duration >= 1;
 
   function handleInputChange(inputIdentifier, newValue) {
     setFigures((prevFigures) => {
@@ -30,7 +31,10 @@ function App() {
         figures={figures}
         setFigures={setFigures}
       />
-      <Results figures={figures} />
+      {!inputIsValid && (
+        <p className="center">Please enter a duration greater than zero.</p>
+      )}
+      {inputIsValid && <Results figures={figures} />}
     </>
   );
 }
