@@ -2,6 +2,7 @@ import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import { MdDoneOutline } from "react-icons/md";
 import { useState } from "react";
 import ModalWindow from "./ModalWindow";
+import { handleDeletePatient, handleIsSeenStatus } from "../util/Actions";
 export default function AppointmentsAllReferrals({
   appointmentTab,
   referralTab,
@@ -12,31 +13,31 @@ export default function AppointmentsAllReferrals({
   const [pat, setPat] = useState("");
   const [doc, setDoc] = useState("");
 
-  function handleDeletePatient(patientID, patientName, doctorID) {
-    const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
+  // function handleDeletePatient(patientID, patientName, doctorID) {
+  //   const updatedDoctor = storedData.find((doctor) => doctor.id === doctorID);
 
-    if (!updatedDoctor) {
-      console.error("Doctor not found in stored data.");
-      return;
-    }
+  //   if (!updatedDoctor) {
+  //     console.error("Doctor not found in stored data.");
+  //     return;
+  //   }
 
-    const updatedPatients = updatedDoctor.patients.filter(
-      (patient) => patient.id !== patientID
-    );
+  //   const updatedPatients = updatedDoctor.patients.filter(
+  //     (patient) => patient.id !== patientID
+  //   );
 
-    updatedDoctor.patients = updatedPatients;
+  //   updatedDoctor.patients = updatedPatients;
 
-    const updatedData = storedData.map((doctor) => {
-      if (doctor.id === updatedDoctor.id) {
-        return { ...doctor, patients: updatedPatients };
-      }
-      return doctor;
-    });
+  //   const updatedData = storedData.map((doctor) => {
+  //     if (doctor.id === updatedDoctor.id) {
+  //       return { ...doctor, patients: updatedPatients };
+  //     }
+  //     return doctor;
+  //   });
 
-    setStoredData(updatedData);
-    const alertMessage = "Would you like patient's case to be deleted ?";
-    alert(alertMessage);
-  }
+  //   setStoredData(updatedData);
+  //   const alertMessage = "Would you like patient's case to be deleted ?";
+  //   alert(alertMessage);
+  // }
 
   function handleIsSeenStatus(patientID, patientName, doctorID, patientStatus) {
     const updatedData = storedData.map((doctor) => {
@@ -141,7 +142,9 @@ export default function AppointmentsAllReferrals({
                               handleDeletePatient(
                                 patient.id,
                                 patient.patientName,
-                                doctor.id
+                                doctor.id,
+                                storedData,
+                                setStoredData
                               )
                             }
                           />
