@@ -71,7 +71,6 @@ export default function NewPatient({ storedData, setStoredData }) {
     });
   }
 
-  console.log(patient);
 
   return (
     <div id="wrap" className="input">

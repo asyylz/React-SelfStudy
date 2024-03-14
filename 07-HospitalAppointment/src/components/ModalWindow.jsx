@@ -24,12 +24,13 @@ export default function ModalWindow({
   setModalIsOpen,
 }) {
   const {
-    id,
+    // id,
     patientName: prevName,
+    DOB: prevDOB,
+    concerns: prevConcerns,
     appointmentDate: prevAppDate,
     isSeen: prevIsSeen,
-    concerns: prevConcerns,
-    DOB: prevDOB,
+    patientDoc: prevPatientDoc,
     referral: prevRefferal,
   } = pat;
 
