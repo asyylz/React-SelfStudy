@@ -1,22 +1,16 @@
+import { Link } from "react-router-dom";
+import { CustomLink } from "../utils/CustomLink";
 export default function Navbar() {
   return (
     <nav className="nav">
-      <a href="/" className="site-title">
+      <Link to="/" className="site-title">
         Shopping Cart
-      </a>
+      </Link>
       <ul>
-        <li className="active">
-          <a href="/home">Home</a>
-        </li>
-        <li>
-          <a href="/newProduct">New Product</a>
-        </li>
-        <li>
-          <a href="/productList">Product List</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
+        <CustomLink to="/home">Home</CustomLink>
+        <CustomLink to="/newProduct">New Product</CustomLink>
+        <CustomLink to="/productList">Product List</CustomLink>
+        <CustomLink to="/about">About</CustomLink>
       </ul>
     </nav>
   );

@@ -1,0 +1,17 @@
+body{
+  
+}
+.container {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: #ccc;
+}
+
+.btns {
+    background-color: red;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
