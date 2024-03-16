@@ -1,0 +1,36 @@
+.container {
+    margin-top: 3rem;
+}
+
+.product-section {
+    background-color: #ccc;
+}
+
+.summary-section {
+    background-color: azure;
+}
+
+.summary-wrapper {
+    background-color: red;
+    margin-top: 3rem;
+}
+
+tbody td img {
+    height: 150px;
+    width: 150px;
+    border: 4px solid #ccc;
+}
+thead th {
+    font-size: 1.5rem;
+}
+table .icons{
+    font-size: 1.5rem;
+    margin:0 5px;
+    cursor: pointer;
+}
+table .icons.trash{
+    color: red;
+}
+tbody tr td{
+    vertical-align: middle; 
+}
