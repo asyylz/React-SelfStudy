@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
-//import { getProducts, updateProduct, deleteProduct } from "../utils/Actions";
+import { getProducts, updateProduct, deleteProduct } from "../utils/Actions";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { MdAddCircleOutline } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
@@ -18,23 +18,45 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const getProducts = async () => {
+    try {
+      const products = await axios.get(url);
+      setProductList(products.data);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  //   const putProducts = async (updatedProductID, updatedProduct) => {
+  //     try {
+  //       await axios.put(`${url + updatedProductID}`, updatedProduct);
+  //       getProducts();
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(url);
-        setProductList(response.data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (updatedProduct) {
+      updateProduct(updatedProduct.id, updatedProduct);
+      getProducts();
 
-    fetchData();
+    }
+  }, [updatedProduct,setUpdatedProduct]);
+
+  useEffect(() => {
+    getProducts();
   }, []);
 
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>Error: {error.message}</h1>;
+  }
 
   return (
     <Container className="container">
@@ -60,12 +82,12 @@ export default function ProductList() {
                   <td>
                     <MdAddCircleOutline
                       className="icons plus"
-                      onClick={(e) =>
+                      onClick={(e) => {
                         setUpdatedProduct({
                           ...product,
                           amount: product.amount + 1,
-                        })
-                      }
+                        });
+                      }}
                     />
                     {product.amount}
                     <AiOutlineMinusCircle

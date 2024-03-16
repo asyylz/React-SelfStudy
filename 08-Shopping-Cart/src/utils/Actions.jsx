@@ -20,7 +20,7 @@ export async function updateProduct(productID, product) {
       if (res.ok) {
         return res.json();
       }
-      // handle error
+      
     })
     .then((product) => {})
     .catch((error) => {
