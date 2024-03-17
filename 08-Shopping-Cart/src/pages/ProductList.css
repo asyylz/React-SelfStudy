@@ -136,9 +136,10 @@ tbody tr td {
     width: 100%;
 }
 
-@media (min-width:385px) and (max-width:1020px) {
+@media (min-width:630px) and (max-width:1020px) {
     .container {
         max-width: 90vw !important;
+
     }
 
     .row {
@@ -152,6 +153,7 @@ tbody tr td {
         align-items: center;
         text-align: center;
     }
+
     .summary-section {
         border-radius: 28px;
         margin-top: 1rem;
@@ -160,7 +162,10 @@ tbody tr td {
 
     .product-section {
         border-radius: 28px;
+        min-width: 425px !important;
+        padding: 1rem;
     }
+
 
     .amount {
         display: flex;
