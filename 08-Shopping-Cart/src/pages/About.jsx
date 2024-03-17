@@ -8,7 +8,7 @@ export default function About() {
       <div class={classes.titleBox}>
         <h2>Asiye Yaliz</h2>
         <hr className={classes.hr1} />
-        <div class={classes.intro}>Software Developer</div>
+        <div class={classes.intro}>Frontend Developer</div>
         <hr className={classes.hr2} />
       </div>
       <div class={classes.iconsHolder}>
