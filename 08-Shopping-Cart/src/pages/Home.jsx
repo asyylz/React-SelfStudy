@@ -5,7 +5,7 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes.div1}>
         <button
           className={classes.btnAdd}
           onClick={() => navigate("/newproduct")}
@@ -13,7 +13,7 @@ export default function Home() {
           New Product
         </button>
       </div>
-      <div>
+      <div className={classes.div2}>
         <button
           className={classes.btnAdd}
           onClick={() => navigate("/productList")}

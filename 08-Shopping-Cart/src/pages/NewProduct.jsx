@@ -19,6 +19,15 @@ export default function NewProduct() {
     !product.amount ||
     !product.price;
 
+  const resetNewProductInput = () => {
+    setproduct({
+      name: "",
+      image: "",
+      price: 0,
+      amount: 0,
+      dampingRate: 18,
+    });
+  };
   function handlePost() {
     if (inputIsValid) {
       const alertMessage = "Please enter all details...";
@@ -26,6 +35,7 @@ export default function NewProduct() {
       return;
     }
     postProduct(product);
+    resetNewProductInput(product);
   }
 
   return (
@@ -35,6 +45,7 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="text"
+            value={product.name}
             className={classes.form__field}
             placeholder="Name"
             name="name"
@@ -49,6 +60,7 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="text"
+            value={product.image}
             className={classes.form__field}
             placeholder="Product Image"
             name="image"
@@ -63,6 +75,7 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="number"
+            value={product.price === 0 ? "" : product.price}
             className={classes.form__field}
             placeholder="Price"
             name="price"
@@ -79,6 +92,7 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="number"
+            value={product.amount === 0 ? "" : product.amount}
             className={classes.form__field}
             placeholder="amount"
             name="amount"

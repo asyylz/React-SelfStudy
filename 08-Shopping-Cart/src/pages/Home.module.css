@@ -9,12 +9,19 @@
 
 }
 
-.container div {
+.container .div1 {
   width: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }
+.container .div2 {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 
 .btnAdd {
   --b: 3px;
@@ -37,7 +44,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-bottom: 2rem;
-  width: 70%;
+  width: 50%;
   height: 70px;
   margin-right: 1rem;
 
