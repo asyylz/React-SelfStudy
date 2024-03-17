@@ -132,16 +132,20 @@ tbody tr td {
 }
 
 @media (min-width:385px) and (max-width:1020px) {
+    .container {
+        max-width: 90vw !important;
+    }
 
     .row {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-  
+
     .summary-section {
         border-radius: 28px;
         margin-top: 1rem;
+        padding: 0 2rem;
     }
 
     .product-section {
