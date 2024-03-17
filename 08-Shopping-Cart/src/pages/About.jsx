@@ -4,26 +4,12 @@ import { FaGithub } from "react-icons/fa";
 import classes from "./About.module.css";
 export default function About() {
   return (
-    // <div className={classes.container}>
-    //   <h1>About</h1>
-    //   <div className={classes.icons}>
-    //     <div className={classes.iconBox}>
-    //       <FaLinkedin />
-    //     </div>
-    //     <div className={classes.iconBox}>
-    //       <BsInstagram />
-    //     </div>
-    //     <div className={classes.iconBox}>
-    //       <FaGithub />
-    //     </div>
-    //   </div>
-    // </div>
     <div class={classes.blog}>
       <div class={classes.titleBox}>
         <h2>Asiye Yaliz</h2>
-        <hr />
+        <hr className={classes.hr1} />
         <div class={classes.intro}>Software Developer</div>
-        <hr />
+        <hr className={classes.hr2} />
       </div>
       <div class={classes.iconsHolder}>
         <div className={classes.iconHolder}>
@@ -57,6 +43,11 @@ export default function About() {
           </a>
         </div>
       </div>
+      <div className={classes.btnContact}>
+        <button>Contact</button>
+        <button>Message</button>
+      </div>
+
       <div class={classes.info}>
         <span>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do

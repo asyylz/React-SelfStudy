@@ -1,19 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
-/* body{
-  background: #323c3f;
-  font-family: Roboto, veranda;
-  padding-bottom: 4em;
-} */
+* {
+    --primary-color: rgba(59, 115, 2, 0.7);
+}
 
 .blog {
     margin-top: 10rem !important;
     position: relative;
     width: 50%;
     height: 30em;
-
     background: url(https://img.freepik.com/free-photo/architect-history-victorian-famous-tower_53876-16496.jpg?w=1380);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
     margin: auto;
     /* -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); */
@@ -57,14 +55,24 @@
     margin-top: 2em;
 }
 
-.titleBox hr {
+.titleBox .hr1 {
     margin-top: -0.4em;
     margin-bottom: 1em;
-    width: 60%;
+    width: 65%;
     height: 0.25em;
     box-sizing: content-box;
     border: none;
-    background: green;
+    background: var(--primary-color)
+}
+
+.titleBox .hr2 {
+    margin-top: -0.4em;
+    margin-bottom: 1em;
+    width: 50%;
+    height: 0.25em;
+    box-sizing: content-box;
+    border: none;
+    background:var(--primary-color)
 }
 
 .titleBox h2 {
@@ -112,18 +120,6 @@
     border-radius: 0 0 0.7em 0.7em;
 }
 
-/* 
-.footer>.iconHolder {
-    position: absolute;
-    bottom: 0;
-    height: 3em;
-    width: 100%;
-    display: inline-block;
-    font-size: 1.2em;
-    padding: 0 2em;
-
-} */
-
 .iconsHolder {
     display: flex;
     color: green;
@@ -146,21 +142,33 @@
 
 .iconHolder:hover {
     color: #ddd;
-    background-color: green;
+    background-color: rgba(59, 115, 2, 0.7);
+    border-radius: 10px;
 }
 
 .icon {
     height: 70%;
     width: 70%;
-    color: green;
+    color: rgba(59, 115, 2, 0.7);
 }
 
 .icon:hover {
     color: #ddd;
 }
 
-space {
-    display: inline-block;
-    width: 0.6em;
-    height: 1em;
+.btnContact button {
+    height: 50px;
+    width: 100px;
+    border: none;
+    background: transparent;
+    color: rgba(59, 115, 2, 0.7);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btnContact button:hover {
+    color: #ddd;
+    background-color: rgba(59, 115, 2, 0.7);
+    border-radius: 10px;
 }
