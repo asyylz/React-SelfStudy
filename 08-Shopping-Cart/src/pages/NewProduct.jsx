@@ -1,4 +1,5 @@
 import classes from "./NewProduct.module.css";
+import styles from "./Home.module.css";
 import { useEffect, useState } from "react";
 import { postProduct } from "../utils/Actions";
 export default function NewProduct() {
@@ -44,7 +45,7 @@ export default function NewProduct() {
         </div>
         <div className={classes.form__group}>
           <input
-            type="text"
+            type="number"
             className={classes.form__field}
             placeholder="Price"
             name="price"
@@ -60,7 +61,7 @@ export default function NewProduct() {
         </div>
         <div className={classes.form__group}>
           <input
-            type="input"
+            type="number"
             className={classes.form__field}
             placeholder="amount"
             name="amount"
@@ -75,7 +76,7 @@ export default function NewProduct() {
           </label>
         </div>
         <button
-          className={classes.btnAdd}
+          className={styles.btnAdd}
           role="button"
           onClick={() => postProduct(product)}
         >

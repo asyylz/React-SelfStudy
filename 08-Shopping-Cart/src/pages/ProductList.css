@@ -1,6 +1,5 @@
 .container {
-    margin-top: 3rem;
-    /* border: 1px solid red; */
+    margin-top: 10rem;
     border-radius: 28px;
     background-color: #ddd;
     padding: 1rem 3rem 2rem 3rem;
@@ -95,10 +94,13 @@ tbody tr td {
     flex-direction: column;
 }
 
-.promotion input {
+.promotion input,
+.shipping select {
     height: 40px;
     padding-left: 10px;
     margin-bottom: 3rem;
+    border: none;
+    border-radius: 10px;
 }
 
 .unit-total {
@@ -115,6 +117,7 @@ tbody tr td {
 .name {
     text-align: start;
 }
-.btn-div{
+
+.btn-div {
     width: 100%;
 }

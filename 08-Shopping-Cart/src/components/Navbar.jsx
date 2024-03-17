@@ -4,9 +4,7 @@ import "./Navbar.css"
 export default function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/" className="site-title">
-        Shopping Cart
-      </Link>
+      <h1>Shopping Cart</h1>
       <ul>
         <CustomLink to="/home">Home</CustomLink>
         <CustomLink to="/newProduct">New Product</CustomLink>
