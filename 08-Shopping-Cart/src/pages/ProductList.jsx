@@ -113,11 +113,9 @@ export default function ProductList() {
 
   function handleDelete(productID) {
     deleteProduct(productID).then(() =>
-      setProductList(productsList.filter((p) => p.id !== productID)).catch(
-        (error) => {
-          console.error("Error deleting product", error);
-        }
-      )
+      getAllProducts().then((products) => {
+        setProductList(products);
+      })
     );
   }
 

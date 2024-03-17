@@ -46,12 +46,11 @@ export const deleteProduct = async (productId) => {
     console.error("Error deleting product:", error);
     throw error;
   }
-  getAllProducts();
 };
 
-export const formatter = new Intl.NumberFormat('en-GB', {
-  style: 'currency',
-  currency: 'GBP',
+export const formatter = new Intl.NumberFormat("en-GB", {
+  style: "currency",
+  currency: "GBP",
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 });
