@@ -25,7 +25,6 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [delivery, setDelivery] = useState(0);
-  console.log(delivery);
 
   //ASK
   //   useEffect(() => {
@@ -108,6 +107,8 @@ export default function ProductList() {
 
     fetchData();
   }, [updatedProduct]);
+  console.log(updatedProduct)
+  console.log(productsList)
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -118,9 +119,10 @@ export default function ProductList() {
   }
 
   const total = productsList.reduce(
-    (total, product) => total + product.price,
+    (total, product) => total + product.price * product.amount,
     0
   );
+
   return (
     <Container className="container">
       <h3>Shopping Cart</h3>
@@ -143,7 +145,7 @@ export default function ProductList() {
                   </td>
                   <td>{product.name}</td>
                   <td>{product.price}</td>
-                  <td>
+                  <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
                       onClick={(e) => {
@@ -168,6 +170,14 @@ export default function ProductList() {
                       className="icons trash"
                       onClick={() => deleteProduct(product.id)}
                     />
+                  </td>
+                  <td>
+                  <div className="unit-total">
+                    <small>Total</small>
+                    <small>
+                      {formatter.format(product.amount * product.price)}
+                    </small>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -203,8 +213,22 @@ export default function ProductList() {
           </div>
           <hr />
           <div className="total price">
-            <span>TOTAL PRICE</span>
-            <span>{formatter.format(total + parseInt(delivery))}</span>
+            <div>
+              <span>SUB TOTAL: </span>
+              <span>
+                {formatter.format((total + parseInt(delivery)) * 0.82)}
+              </span>
+            </div>
+            <div>
+              <span>TAX(%18): </span>
+              <span>
+                {formatter.format((total + parseInt(delivery)) * 0.18)}
+              </span>
+            </div>
+            <div>
+              <span>TOTAL PRICE:</span>
+              <span>{formatter.format(total + parseInt(delivery))}</span>
+            </div>
           </div>
           <button className="checkout">CHECKOUT</button>
         </Col>

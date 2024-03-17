@@ -63,13 +63,30 @@ tbody tr td {
     margin-bottom: 1rem;
 }
 
+.total.price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.total.price div {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .summary-section span {
     font-size: 1.2rem;
     font-weight: 700;
     text-align: start;
     margin-bottom: 10px;
 }
-.shipping,.promotion{
+
+.shipping,
+.promotion {
     text-align: start;
 }
 
@@ -77,6 +94,7 @@ tbody tr td {
     display: flex;
     flex-direction: column;
 }
+
 .promotion input {
     height: 40px;
     padding-left: 10px;
@@ -89,20 +107,33 @@ tbody tr td {
     color: white;
     width: 100%;
     font-size: 0.7rem;
-    margin-top: 4vh;
+    margin-top: 1vh;
     padding: 1vh;
     border-radius: 0;
 }
-.checkout:focus{
+
+.checkout:focus {
     box-shadow: none;
     outline: none;
     box-shadow: none;
     color: white;
     -webkit-box-shadow: none;
     -webkit-user-select: none;
-    transition: none; 
+    transition: none;
 }
-.checkout:hover{
+
+.checkout:hover {
     background-color: white;
     color: #000;
+}
+
+.unit-total {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.amount {
+    font-size: 1.4rem;
+    font-weight: 700;
 }
