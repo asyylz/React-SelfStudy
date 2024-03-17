@@ -90,15 +90,17 @@ export default function ProductList() {
 
   useEffect(() => {
     const fetchData = () => {
-      const asiye = () =>
+      const handleGet = () =>
         getAllProducts().then((products) => {
           setProductList(products);
           setLoading(false);
         });
       try {
         updatedProduct
-          ? updateProduct(updatedProduct.id, updatedProduct).then(() => asiye())
-          : asiye();
+          ? updateProduct(updatedProduct.id, updatedProduct).then(() =>
+              handleGet()
+            )
+          : handleGet();
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -108,6 +110,16 @@ export default function ProductList() {
 
     fetchData();
   }, [updatedProduct]);
+
+  function handleDelete(productID) {
+    deleteProduct(productID).then(() =>
+      setProductList(productsList.filter((p) => p.id !== productID)).catch(
+        (error) => {
+          console.error("Error deleting product", error);
+        }
+      )
+    );
+  }
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -171,7 +183,7 @@ export default function ProductList() {
                     />
                     <RiDeleteBin5Line
                       className="icons trash"
-                      onClick={() => deleteProduct(product.id)}
+                      onClick={() => handleDelete(product.id)}
                     />
                   </td>
                   <td>
@@ -222,9 +234,7 @@ export default function ProductList() {
             </div>
             <div>
               <span>TAX(%18): </span>
-              <span>
-              {formatter.format(total * 0.18)}
-              </span>
+              <span>{formatter.format(total * 0.18)}</span>
             </div>
             <div>
               <span>TOTAL PRICE:</span>
