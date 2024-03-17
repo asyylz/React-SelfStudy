@@ -1,17 +1,27 @@
 .container {
     margin-top: 3rem;
+    /* border: 1px solid red; */
+    border-radius: 28px;
+    background-color: #ddd;
+    padding: 3rem;
+
 }
 
 .product-section {
-    background-color: #ccc;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 28px 0 0 28px;
+    padding: 2rem;
+    background-color: #fff;
 }
 
 .summary-section {
-    background-color: azure;
+    background-color: #ddd;
+    border-radius: 0 28px 28px 0;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .summary-wrapper {
-    background-color: red;
     margin-top: 3rem;
 }
 
@@ -20,17 +30,23 @@ tbody td img {
     width: 150px;
     border: 4px solid #ccc;
 }
+
+
 thead th {
     font-size: 1.5rem;
 }
-table .icons{
+
+table .icons {
     font-size: 1.5rem;
-    margin:0 5px;
+    margin: 0 5px;
     cursor: pointer;
+    
 }
-table .icons.trash{
+
+table .icons.trash {
     color: red;
 }
-tbody tr td{
-    vertical-align: middle; 
+
+tbody tr td {
+    vertical-align: middle;
 }

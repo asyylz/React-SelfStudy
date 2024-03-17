@@ -14,7 +14,7 @@ import {
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { MdAddCircleOutline } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import axios from "axios";
+//import axios from "axios";
 
 export default function ProductList() {
   const [updatedProduct, setUpdatedProduct] = useState(null);
@@ -57,7 +57,7 @@ export default function ProductList() {
   //         setLoading(false);
   //       });
   //   }, [updatedProduct]);
-  
+
 
   //ASK
   //   useEffect(() => {
@@ -120,14 +120,14 @@ export default function ProductList() {
       <Row>
         <Col xs={12} md={8} className="product-section">
           <Table>
-            <thead>
+            {/* <thead>
               <th>No</th>
               <th>Image</th>
               <th>Product Name</th>
               <th>Price</th>
               <th>Quantity</th>
-            </thead>
-            <tbody>
+            </thead> */}
+            <tbody id="tbody">
               {productsList.map((product, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
