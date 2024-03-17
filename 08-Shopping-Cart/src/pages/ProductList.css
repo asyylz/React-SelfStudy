@@ -57,7 +57,52 @@ tbody tr td {
     vertical-align: middle;
 }
 
-.total{
+.total {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.summary-section span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: start;
+    margin-bottom: 10px;
+}
+.shipping,.promotion{
+    text-align: start;
+}
+
+.promotion {
+    display: flex;
+    flex-direction: column;
+}
+.promotion input {
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 3rem;
+}
+
+.checkout {
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0;
+}
+.checkout:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none; 
+}
+.checkout:hover{
+    background-color: white;
+    color: #000;
 }

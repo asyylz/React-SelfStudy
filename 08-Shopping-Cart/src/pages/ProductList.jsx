@@ -4,11 +4,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import {
   updateProduct,
   getAllProducts,
   deleteProduct,
+  formatter,
   getProductById,
 } from "../utils/Actions";
 import { AiOutlineMinusCircle } from "react-icons/ai";
@@ -22,6 +24,8 @@ export default function ProductList() {
   const [productsList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [delivery, setDelivery] = useState(0);
+  console.log(delivery);
 
   //ASK
   //   useEffect(() => {
@@ -113,6 +117,10 @@ export default function ProductList() {
     return <h1>Error: {error.message}</h1>;
   }
 
+  const total = productsList.reduce(
+    (total, product) => total + product.price,
+    0
+  );
   return (
     <Container className="container">
       <h3>Shopping Cart</h3>
@@ -136,16 +144,6 @@ export default function ProductList() {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>
-                    <MdAddCircleOutline
-                      className="icons plus"
-                      onClick={(e) => {
-                        setUpdatedProduct({
-                          ...product,
-                          amount: product.amount + 1,
-                        });
-                      }}
-                    />
-                    {product.amount}
                     <AiOutlineMinusCircle
                       className="icons minus"
                       onClick={(e) => {
@@ -154,6 +152,16 @@ export default function ProductList() {
                             ...product,
                             amount: product.amount - 1,
                           });
+                      }}
+                    />
+                    {product.amount}
+                    <MdAddCircleOutline
+                      className="icons plus"
+                      onClick={(e) => {
+                        setUpdatedProduct({
+                          ...product,
+                          amount: product.amount + 1,
+                        });
                       }}
                     />
                     <RiDeleteBin5Line
@@ -172,10 +180,33 @@ export default function ProductList() {
           </div>
           <hr />
           <div className="total">
-            <span>Items: {productsList.length}</span>
-            <span>Total: {productsList.reduce((total, product) => total + product.price, 0)}</span>
-
+            <span>ITEMS: {productsList.length}</span>
+            <span>TOTAL: {formatter.format(total)}</span>
           </div>
+          <hr />
+          <div className="shipping">
+            <span>SHIPPING</span>
+            <Form.Select
+              aria-label="Default select example"
+              className="mt-4 mb-4"
+              onChange={(e) => setDelivery(e.target.value)}
+            >
+              <option value="0">Choose delivery option</option>
+              <option value="0">Standard Delivery - Free (4-5 days)</option>
+              <option value="10">Express Delivery - £10.00 (1-2 days)</option>
+            </Form.Select>
+          </div>
+          <hr />
+          <div className="promotion">
+            <span>GIVE CODE</span>
+            <input type="text" placeholder="Enter your code" />
+          </div>
+          <hr />
+          <div className="total price">
+            <span>TOTAL PRICE</span>
+            <span>{formatter.format(total + parseInt(delivery))}</span>
+          </div>
+          <button className="checkout">CHECKOUT</button>
         </Col>
       </Row>
     </Container>
