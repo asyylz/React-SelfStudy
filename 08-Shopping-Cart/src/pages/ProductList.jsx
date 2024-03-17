@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
+import classes from "./Home.module.css";
 import {
   updateProduct,
   getAllProducts,
@@ -107,8 +108,8 @@ export default function ProductList() {
 
     fetchData();
   }, [updatedProduct]);
-  console.log(updatedProduct)
-  console.log(productsList)
+  console.log(updatedProduct);
+  console.log(productsList);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -120,6 +121,10 @@ export default function ProductList() {
 
   const total = productsList.reduce(
     (total, product) => total + product.price * product.amount,
+    0
+  );
+  const totalItem = productsList.reduce(
+    (total, product) => total + product.amount,
     0
   );
 
@@ -143,8 +148,8 @@ export default function ProductList() {
                   <td>
                     <img src={product.image} alt={product.name} />
                   </td>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
+                  <td className="name">{product.name}</td>
+                  <td>{formatter.format(product.price)}</td>
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
@@ -172,11 +177,11 @@ export default function ProductList() {
                     />
                   </td>
                   <td>
-                  <div className="unit-total">
-                    <small>Total</small>
-                    <small>
-                      {formatter.format(product.amount * product.price)}
-                    </small>
+                    <div className="unit-total">
+                      <small>Total</small>
+                      <small>
+                        {formatter.format(product.amount * product.price)}
+                      </small>
                     </div>
                   </td>
                 </tr>
@@ -190,7 +195,7 @@ export default function ProductList() {
           </div>
           <hr />
           <div className="total">
-            <span>ITEMS: {productsList.length}</span>
+            <span>ITEMS: {totalItem}</span>
             <span>TOTAL: {formatter.format(total)}</span>
           </div>
           <hr />
@@ -230,7 +235,9 @@ export default function ProductList() {
               <span>{formatter.format(total + parseInt(delivery))}</span>
             </div>
           </div>
-          <button className="checkout">CHECKOUT</button>
+          <div className="btn-div">
+            <button className={classes.btnAdd}>CHECKOUT</button>
+          </div>
         </Col>
       </Row>
     </Container>

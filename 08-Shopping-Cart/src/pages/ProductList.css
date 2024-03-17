@@ -101,32 +101,6 @@ tbody tr td {
     margin-bottom: 3rem;
 }
 
-.checkout {
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 1vh;
-    padding: 1vh;
-    border-radius: 0;
-}
-
-.checkout:focus {
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    -webkit-user-select: none;
-    transition: none;
-}
-
-.checkout:hover {
-    background-color: white;
-    color: #000;
-}
-
 .unit-total {
     display: flex;
     flex-direction: column;
@@ -136,4 +110,11 @@ tbody tr td {
 .amount {
     font-size: 1.4rem;
     font-weight: 700;
+}
+
+.name {
+    text-align: start;
+}
+.btn-div{
+    width: 100%;
 }
