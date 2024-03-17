@@ -8,6 +8,7 @@
     margin-top: 10rem !important;
     position: relative;
     width: 50%;
+    min-width:600px ;
     height: 30em;
     background: url(https://img.freepik.com/free-photo/architect-history-victorian-famous-tower_53876-16496.jpg?w=1380);
     background-size: cover;
@@ -156,10 +157,6 @@
     color: var(--primary-color);
 
 }
-
-/* .icon:hover {
-    color: #ddd;
-} */
 
 .btnContact button {
     height: 50px;
