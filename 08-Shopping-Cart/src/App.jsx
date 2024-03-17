@@ -10,12 +10,14 @@ function App() {
   return (
     <>
       <Navbar />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/newProduct" element={<NewProduct />} />
-          <Route path="/productList" element={<ProductList />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/newProduct" element={<NewProduct />} />
+        <Route path="/productList" element={<ProductList />} />
+        <Route path="/about" element={<About />} />
+        {/* Redirect to /home by default */}
+      </Routes>
     </>
   );
 }
