@@ -11,6 +11,23 @@ export default function NewProduct() {
     dampingRate: 18,
   });
 
+  const inputIsValid =
+    !product.name ||
+    product.name.trim() === "" ||
+    product.image.trim() === "" ||
+    !product.image ||
+    !product.amount ||
+    !product.price;
+
+  function handlePost() {
+    if (inputIsValid) {
+      const alertMessage = "Please enter all details...";
+      alert(alertMessage);
+      return;
+    }
+    postProduct(product);
+  }
+
   return (
     <div className={classes.bodyVirtual}>
       <div className={classes.wrapper}>
@@ -75,11 +92,7 @@ export default function NewProduct() {
             Quantity
           </label>
         </div>
-        <button
-          className={styles.btnAdd}
-          role="button"
-          onClick={() => postProduct(product)}
-        >
+        <button className={styles.btnAdd} role="button" onClick={handlePost}>
           Save New Product
         </button>
       </div>

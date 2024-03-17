@@ -16,7 +16,6 @@ function App() {
         <Route path="/newProduct" element={<NewProduct />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/about" element={<About />} />
-        {/* Redirect to /home by default */}
       </Routes>
     </>
   );
