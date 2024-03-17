@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+/* body{
+  background: #323c3f;
+  font-family: Roboto, veranda;
+  padding-bottom: 4em;
+} */
+
+.blog {
+    margin-top: 10rem !important;
+    position: relative;
+    width: 50%;
+    height: 30em;
+
+    background: url(https://img.freepik.com/free-photo/architect-history-victorian-famous-tower_53876-16496.jpg?w=1380);
+    background-size: contain;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    /* -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); */
+    overflow: hidden;
+}
+
+.blog * {
+    position: relative;
+    z-index: 2;
+}
+
+.blog:hover .colorOverlay {
+    background: rgba(74, 100, 114, 0.8);
+}
+
+.blog:hover .info {
+    bottom: -3em;
+    opacity: 1;
+}
+
+.blog,
+.colorOverlay {
+    border-radius: 0.7em;
+}
+
+.colorOverlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transition: 0.7s background;
+    background: rgba(74, 100, 114, 0.3);
+    z-index: 1;
+}
+
+.titleBox {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.titleBox hr {
+    margin-top: -0.4em;
+    margin-bottom: 1em;
+    width: 60%;
+    height: 0.25em;
+    box-sizing: content-box;
+    border: none;
+    background: green;
+}
+
+.titleBox h2 {
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+}
+
+.intro {
+    width: 250px;
+    margin: 20px 14rem;
+    color: #fff;
+    font-family: 'Droid Serif', serif;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 28px;
+}
+
+
+.info {
+    font-family: 'Droid Serif', serif;
+    font-size: 1.2em;
+    color: #ddd;
+    line-height: 1.1em;
+    padding: 0 2em;
+    position: relative;
+    bottom: -4em;
+    opacity: 0;
+    background: transparent;
+    transition: opacity 0.3s, bottom 0.3s;
+    text-align: center;
+}
+
+.footer {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10em;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    border-radius: 0 0 0.7em 0.7em;
+}
+
+/* 
+.footer>.iconHolder {
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 0 2em;
+
+} */
+
+.iconsHolder {
+    display: flex;
+    color: green;
+}
+
+.iconsHolder .iconHolder {
+    margin-left: 0.5rem;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.iconHolder a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconHolder:hover {
+    color: #ddd;
+    background-color: green;
+}
+
+.icon {
+    height: 70%;
+    width: 70%;
+    color: green;
+}
+
+.icon:hover {
+    color: #ddd;
+}
+
+space {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+}
