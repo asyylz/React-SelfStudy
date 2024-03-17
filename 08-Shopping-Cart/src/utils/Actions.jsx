@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL = "https://65f44b1ff54db27bc0215106.mockapi.io";
 export async function postProduct(product) {
-  await axios.post(url, product);
+  await axios.post(`${baseURL}/products/`, product);
 }
 
 export const getAllProducts = async () => {
@@ -26,23 +26,12 @@ export const getProductById = async (productId) => {
   }
 };
 
-// export const createProduct = async (productData) => {
-//   try {
-//     const response = await axios.post(`${baseURL}/products`, productData);
-//     return response.data;
-//   } catch (error) {
-//     console.error("Error creating product:", error);
-//     throw error;
-//   }
-// };
-
 export const updateProduct = async (productId, productData) => {
   try {
     const response = await axios.put(
       `${baseURL}/products/${productId}`,
       productData
     );
-    console.log("AA");
     return response.data;
   } catch (error) {
     console.error("Error updating product:", error);

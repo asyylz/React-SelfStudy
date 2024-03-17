@@ -62,11 +62,11 @@ export default function NewProduct() {
           <input
             type="input"
             className={classes.form__field}
-            placeholder="Quantity"
-            name="quantity"
-            id="quantity"
+            placeholder="amount"
+            name="amount"
+            id="amount"
             onChange={(e) =>
-              setproduct({ ...product, quantity: parseInt(e.target.value) })
+              setproduct({ ...product, amount: parseInt(e.target.value) })
             }
             required
           />

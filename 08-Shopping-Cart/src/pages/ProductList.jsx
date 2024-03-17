@@ -23,7 +23,6 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
   //ASK
   //   useEffect(() => {
   //     const fetchData = async () => {
@@ -58,22 +57,45 @@ export default function ProductList() {
   //         setLoading(false);
   //       });
   //   }, [updatedProduct]);
+  
+
+  //ASK
+  //   useEffect(() => {
+  //     const fetchData = () => {
+  //       try {
+  //         if (updatedProduct) {
+  //           updateProduct(updatedProduct.id, updatedProduct).then(() =>
+  //             getAllProducts().then((products) => {
+  //               setProductList(products);
+  //               setLoading(false);
+  //             })
+  //           );
+  //         }
+  //         getAllProducts().then((products) => {
+  //           setProductList(products);
+  //           setLoading(false);
+  //         });
+  //       } catch (error) {
+  //         setError(error);
+  //         setLoading(false);
+  //         console.error("Error fetching or updating products:", error);
+  //       }
+  //     };
+
+  //     fetchData();
+  //   }, [updatedProduct]);
 
   useEffect(() => {
     const fetchData = () => {
-      try {
-        if (updatedProduct) {
-          updateProduct(updatedProduct.id, updatedProduct).then(() =>
-            getAllProducts().then((products) => {
-              setProductList(products);
-              setLoading(false);
-            })
-          );
-        }
-        const products = getAllProducts().then((products) => {
+      const asiye = () =>
+        getAllProducts().then((products) => {
           setProductList(products);
           setLoading(false);
         });
+      try {
+        updatedProduct
+          ? updateProduct(updatedProduct.id, updatedProduct).then(() => asiye())
+          : asiye();
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -83,6 +105,7 @@ export default function ProductList() {
 
     fetchData();
   }, [updatedProduct]);
+
 
   if (loading) {
     return <h1>Loading...</h1>;
