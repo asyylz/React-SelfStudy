@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: end;
 }
+
 .container .div2 {
   width: 90%;
   display: flex;
@@ -60,4 +61,36 @@
 .btnAdd:active {
   background: var(--color);
   color: #fff;
+}
+
+@media (min-width:385px) and (max-width:640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    
+  }
+
+  .container .div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .div2 {
+    justify-content: center;
+    align-items: center;
+  }
+  .btnAdd {
+    margin-bottom: 1rem;
+    width: 60%;
+   
+  }
+
+  #root {
+    margin-top: 200px;
+  }
+
 }

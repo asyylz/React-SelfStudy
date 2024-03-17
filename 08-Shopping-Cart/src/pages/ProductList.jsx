@@ -140,15 +140,8 @@ export default function ProductList() {
     <Container className="container">
       <h3>Shopping Cart</h3>
       <Row>
-        <Col xs={12} md={8} className="product-section">
+        <Col md={12} lg={8} className="product-section">
           <Table>
-            {/* <thead>
-              <th>No</th>
-              <th>Image</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-            </thead> */}
             <tbody id="tbody">
               {productsList.map((product, index) => (
                 <tr key={index}>
@@ -197,7 +190,7 @@ export default function ProductList() {
             </tbody>
           </Table>
         </Col>
-        <Col xs={6} md={4} className="summary-section">
+        <Col  md={12} lg={4} className="summary-section">
           <div className="summary-wrapper">
             <h3>Summary</h3>
           </div>

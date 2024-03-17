@@ -70,3 +70,7 @@
 .form__field:invalid {
     box-shadow: none;
 }
+
+@media (min-width:385px) and (max-width:640px) {
+    
+}

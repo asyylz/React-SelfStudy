@@ -63,3 +63,19 @@ h1 {
 .nav li:hover {
   background-color: #777;
 }
+
+
+@media (min-width:385px) and (max-width:640px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+  }
+  .nav ul{
+    margin-left: 0.2rem;
+  }
+  #root {
+    margin-top: 200px;
+  }
+
+}

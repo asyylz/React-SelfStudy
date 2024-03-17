@@ -118,7 +118,8 @@ tbody tr td {
     font-weight: 700;
     color: #666 !important;
 }
-.amount .icons{
+
+.amount .icons {
     margin: 0 1rem;
 }
 
@@ -128,4 +129,26 @@ tbody tr td {
 
 .btn-div {
     width: 100%;
+}
+
+@media (min-width:385px) and (max-width:1020px) {
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    .summary-section {
+        border-radius: 28px;
+        margin-top: 1rem;
+    }
+
+    .product-section {
+        border-radius: 28px;
+    }
+
+    #root {
+        margin-top: 100px;
+    }
 }
