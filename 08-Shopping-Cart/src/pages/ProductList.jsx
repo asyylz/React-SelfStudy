@@ -149,8 +149,11 @@ export default function ProductList() {
                   <td>
                     <img src={product.image} alt={product.name} />
                   </td>
-                  <td className="name">{product.name}</td>
-                  <td>{formatter.format(product.price)}</td>
+                  <td className="name">
+                    <span>{product.name}</span>
+                    <span>{formatter.format(product.price)}</span>
+                  </td>
+                  {/* <td>{formatter.format(product.price)}</td> */}
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
@@ -190,7 +193,7 @@ export default function ProductList() {
             </tbody>
           </Table>
         </Col>
-        <Col  md={12} lg={4} className="summary-section">
+        <Col md={12} lg={4} className="summary-section">
           <div className="summary-wrapper">
             <h3>Summary</h3>
           </div>
