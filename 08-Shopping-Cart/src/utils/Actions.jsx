@@ -1,38 +1,61 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 
-const url = "https://65f44b1ff54db27bc0215106.mockapi.io/products/";
+const baseURL = "https://65f44b1ff54db27bc0215106.mockapi.io";
 export async function postProduct(product) {
   await axios.post(url, product);
 }
-export async function deleteProduct(product) {
-  await axios.delete(url + product.id);
-}
 
-export async function updateProduct(productID, product) {
-  console.log(productID);
-  fetch(`${url + productID}`, {
-    method: "PUT", // or PATCH
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ ...product }),
-  })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      
-    })
-    .then((product) => {})
-    .catch((error) => {
-      // handle error
-    });
-}
-
-export async function getProducts() {
+export const getAllProducts = async () => {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(`${baseURL}/products/`);
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
+    throw error;
   }
-}
+};
+
+export const getProductById = async (productId) => {
+  try {
+    const response = await axios.get(`${baseURL}/products/${productId}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    throw error;
+  }
+};
+
+// export const createProduct = async (productData) => {
+//   try {
+//     const response = await axios.post(`${baseURL}/products`, productData);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error creating product:", error);
+//     throw error;
+//   }
+// };
+
+export const updateProduct = async (productId, productData) => {
+  try {
+    const response = await axios.put(
+      `${baseURL}/products/${productId}`,
+      productData
+    );
+    console.log("AA");
+    return response.data;
+  } catch (error) {
+    console.error("Error updating product:", error);
+    throw error;
+  }
+};
+
+export const deleteProduct = async (productId) => {
+  try {
+    await axios.delete(`${baseURL}/products/${productId}`);
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    throw error;
+  }
+  getAllProducts();
+};

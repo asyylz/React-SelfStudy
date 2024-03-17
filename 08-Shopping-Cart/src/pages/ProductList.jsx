@@ -5,7 +5,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
-import { getProducts, updateProduct, deleteProduct } from "../utils/Actions";
+import {
+  updateProduct,
+  getAllProducts,
+  deleteProduct,
+  getProductById,
+} from "../utils/Actions";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { MdAddCircleOutline } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
@@ -18,37 +23,66 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const getProducts = async () => {
-    try {
-      const products = await axios.get(url);
-      setProductList(products.data);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
-  //   const putProducts = async (updatedProductID, updatedProduct) => {
-  //     try {
-  //       await axios.put(`${url + updatedProductID}`, updatedProduct);
-  //       getProducts();
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  //ASK
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       if (updatedProduct) {
+  //         await updateProduct(updatedProduct.id, updatedProduct);
+  //         await getProducts(); // Await the getProducts call
+  //       }
+  //     };
+
+  //     fetchData();
+  //   }, [updatedProduct]);
+
+  //OPTION2
+  //   useEffect(() => {
+  //     const fetchData = () => {
+  //       if (updatedProduct) {
+  //         updateProduct(updatedProduct.id, updatedProduct)
+  //          .then(() => getAllProducts()); // Use then() instead of await
+  //       }
+  //     };
+  //     fetchData();
+  //   }, [updatedProduct]);
+
+  //   useEffect(() => {
+  //     getAllProducts()
+  //       .then((products) => {
+  //         setProductList(products);
+  //         setLoading(false);
+  //       })
+  //       .catch((error) => {
+  //         setError(error);
+  //         setLoading(false);
+  //       });
+  //   }, [updatedProduct]);
 
   useEffect(() => {
-    if (updatedProduct) {
-      updateProduct(updatedProduct.id, updatedProduct);
-      getProducts();
+    const fetchData = () => {
+      try {
+        if (updatedProduct) {
+          updateProduct(updatedProduct.id, updatedProduct).then(() =>
+            getAllProducts().then((products) => {
+              setProductList(products);
+              setLoading(false);
+            })
+          );
+        }
+        const products = getAllProducts().then((products) => {
+          setProductList(products);
+          setLoading(false);
+        });
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+        console.error("Error fetching or updating products:", error);
+      }
+    };
 
-    }
-  }, [updatedProduct,setUpdatedProduct]);
-
-  useEffect(() => {
-    getProducts();
-  }, []);
+    fetchData();
+  }, [updatedProduct]);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -100,7 +134,10 @@ export default function ProductList() {
                           });
                       }}
                     />
-                    <RiDeleteBin5Line className="icons trash" />
+                    <RiDeleteBin5Line
+                      className="icons trash"
+                      onClick={() => deleteProduct(product.id)}
+                    />
                   </td>
                 </tr>
               ))}
