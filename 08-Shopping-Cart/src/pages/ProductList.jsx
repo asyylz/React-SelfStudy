@@ -109,7 +109,6 @@ export default function ProductList() {
     fetchData();
   }, [updatedProduct]);
 
-
   if (loading) {
     return <h1>Loading...</h1>;
   }
@@ -219,14 +218,12 @@ export default function ProductList() {
           <div className="total price">
             <div>
               <span>SUB TOTAL: </span>
-              <span>
-                {formatter.format((total + parseInt(delivery)) * 0.82)}
-              </span>
+              <span>{formatter.format(total * 0.82)}</span>
             </div>
             <div>
               <span>TAX(%18): </span>
               <span>
-                {formatter.format((total + parseInt(delivery)) * 0.18)}
+              {formatter.format(total * 0.18)}
               </span>
             </div>
             <div>
