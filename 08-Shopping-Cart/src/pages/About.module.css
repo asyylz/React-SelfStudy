@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
 * {
-    --primary-color: rgba(59, 115, 2, 0.7);
+    --primary-color: rgba(59, 115, 2, 0.8);
 }
 
 .blog {
@@ -72,7 +72,7 @@
     height: 0.25em;
     box-sizing: content-box;
     border: none;
-    background:var(--primary-color)
+    background: var(--primary-color)
 }
 
 .titleBox h2 {
@@ -122,7 +122,7 @@
 
 .iconsHolder {
     display: flex;
-    color: green;
+    color: var(--primary-color)
 }
 
 .iconsHolder .iconHolder {
@@ -140,28 +140,33 @@
     justify-content: center;
 }
 
-.iconHolder:hover {
+.iconHolder :hover {
     color: #ddd;
-    background-color: rgba(59, 115, 2, 0.7);
+    background-color: var(--primary-color);
     border-radius: 10px;
+
+    .icon {
+        color: #ddd;
+    }
 }
 
 .icon {
     height: 70%;
     width: 70%;
-    color: rgba(59, 115, 2, 0.7);
+    color: var(--primary-color);
+
 }
 
-.icon:hover {
+/* .icon:hover {
     color: #ddd;
-}
+} */
 
 .btnContact button {
     height: 50px;
     width: 100px;
     border: none;
     background: transparent;
-    color: rgba(59, 115, 2, 0.7);
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
@@ -169,6 +174,6 @@
 
 .btnContact button:hover {
     color: #ddd;
-    background-color: rgba(59, 115, 2, 0.7);
+    background-color: var(--primary-color);
     border-radius: 10px;
 }

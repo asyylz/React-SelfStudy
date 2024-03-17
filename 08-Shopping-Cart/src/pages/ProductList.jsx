@@ -108,8 +108,7 @@ export default function ProductList() {
 
     fetchData();
   }, [updatedProduct]);
-  console.log(updatedProduct);
-  console.log(productsList);
+
 
   if (loading) {
     return <h1>Loading...</h1>;
