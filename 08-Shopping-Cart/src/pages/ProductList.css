@@ -3,8 +3,12 @@
     /* border: 1px solid red; */
     border-radius: 28px;
     background-color: #ddd;
-    padding: 3rem;
+    padding: 1rem 3rem 2rem 3rem;
 
+}
+
+h3 {
+    margin-bottom: 2rem;
 }
 
 .product-section {
@@ -23,6 +27,8 @@
 
 .summary-wrapper {
     margin-top: 3rem;
+    text-align: start;
+    padding-left: 2rem;
 }
 
 tbody td img {
@@ -40,7 +46,7 @@ table .icons {
     font-size: 1.5rem;
     margin: 0 5px;
     cursor: pointer;
-    
+
 }
 
 table .icons.trash {
@@ -49,4 +55,9 @@ table .icons.trash {
 
 tbody tr td {
     vertical-align: middle;
+}
+
+.total{
+    display: flex;
+    justify-content: space-around;
 }

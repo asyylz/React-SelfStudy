@@ -58,7 +58,6 @@ export default function ProductList() {
   //       });
   //   }, [updatedProduct]);
 
-
   //ASK
   //   useEffect(() => {
   //     const fetchData = () => {
@@ -106,7 +105,6 @@ export default function ProductList() {
     fetchData();
   }, [updatedProduct]);
 
-
   if (loading) {
     return <h1>Loading...</h1>;
   }
@@ -117,6 +115,7 @@ export default function ProductList() {
 
   return (
     <Container className="container">
+      <h3>Shopping Cart</h3>
       <Row>
         <Col xs={12} md={8} className="product-section">
           <Table>
@@ -168,7 +167,15 @@ export default function ProductList() {
           </Table>
         </Col>
         <Col xs={6} md={4} className="summary-section">
-          <div className="summary-wrapper">Summary</div>
+          <div className="summary-wrapper">
+            <h3>Summary</h3>
+          </div>
+          <hr />
+          <div className="total">
+            <span>Items: {productsList.length}</span>
+            <span>Total: {productsList.reduce((total, product) => total + product.price, 0)}</span>
+
+          </div>
         </Col>
       </Row>
     </Container>
