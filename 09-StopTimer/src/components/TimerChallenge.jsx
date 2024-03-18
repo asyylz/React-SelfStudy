@@ -3,22 +3,21 @@ import ResultModal from "./ResultModal";
 
 //let timer;
 export default function TimerChallenge({ title, targetTime }) {
-  const [timerExpired, setTimerExpired] = useState(false);
-  const [timerStarted, setTimerStarted] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
   const timer = useRef();
   const dialog = useRef();
-
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
+  if (timeRemaining <= 0) {
+    clearInterval(timer.current);
+    setTimeRemaining(targetTime * 1000);
+  }
   function handleStart() {
-    timer.current = setTimeout(() => {
-      setTimerExpired(true);
-      dialog.current.open();
-    }, targetTime * 1000);
-    setTimerStarted(true);
-    console.log(timer);
+    timer.current = setInterval(() => {
+      setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
+    }, 10);
   }
   function handleStop() {
-    clearTimeout(timer.current);
-    console.log(timer);
+    clearInterval(timer.current);
   }
   return (
     <>
