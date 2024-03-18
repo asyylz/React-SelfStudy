@@ -111,6 +111,8 @@ export default function ProductList() {
     fetchData();
   }, [updatedProduct]);
 
+
+
   function handleDelete(productID) {
     deleteProduct(productID).then(() =>
       getAllProducts().then((products) => {
