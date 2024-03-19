@@ -20,16 +20,10 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 
 export default function ProductList() {
   const [updatedProduct, setUpdatedProduct] = useState(null);
-  const url = "https://65f44b1ff54db27bc0215106.mockapi.io/products/";
   const [productsList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [delivery, setDelivery] = useState(0);
-
-  useEffect(() => {
-    updatedProduct &&
-      updateProduct(updatedProduct.id, updatedProduct).then(handleGetData);
-  }, [updatedProduct]);
 
   useEffect(() => {
     handleGetData();
@@ -46,6 +40,27 @@ export default function ProductList() {
         setLoading(false);
         console.error("Error fetching or updating products:", err);
       });
+  }
+  function handleUpdate(product, e) {
+    let updatedProductData;
+    const classNames = e.target.className.baseVal.split(" ");
+    if (product.amount > 0 && classNames.includes("minus")) {
+      updatedProductData = {
+        ...product,
+        amount: product.amount - 1,
+      };
+    } else if (classNames.includes("plus")) {
+      updatedProductData = {
+        ...product,
+        amount: product.amount + 1,
+      };
+    }
+    if (updatedProductData) {
+      setUpdatedProduct(updatedProductData);
+      updateProduct(updatedProductData.id, updatedProductData).then(
+        handleGetData
+      );
+    }
   }
 
   function handleDelete(productID) {
@@ -89,23 +104,12 @@ export default function ProductList() {
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
-                      onClick={(e) => {
-                        if (product.amount > 0)
-                          setUpdatedProduct({
-                            ...product,
-                            amount: product.amount - 1,
-                          });
-                      }}
+                      onClick={(e) => handleUpdate(product, e)}
                     />
                     {product.amount}
                     <MdAddCircleOutline
                       className="icons plus"
-                      onClick={(e) => {
-                        setUpdatedProduct({
-                          ...product,
-                          amount: product.amount + 1,
-                        });
-                      }}
+                      onClick={(e) => handleUpdate(product, e)}
                     />
                     <RiDeleteBin5Line
                       className="icons trash"
