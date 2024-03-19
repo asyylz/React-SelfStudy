@@ -64,7 +64,7 @@ export default function ProductList() {
   }
 
   function handleDelete(productID) {
-    deleteProduct(productID).then(() => handleGetData());
+    deleteProduct(productID).then(handleGetData);
   }
 
   if (loading) {
