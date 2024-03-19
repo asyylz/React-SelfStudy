@@ -47,7 +47,7 @@
     <h2>Individual Readmes</h2>
     <ul>
       <details>
-        <summary>Project 10 : Project Management App
+         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>Description:</strong> This is a simple project management app built with React. It allows users to
