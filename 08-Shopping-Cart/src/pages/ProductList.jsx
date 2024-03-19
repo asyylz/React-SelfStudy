@@ -17,7 +17,6 @@ import {
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { MdAddCircleOutline } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-//import axios from "axios";
 
 export default function ProductList() {
   const [updatedProduct, setUpdatedProduct] = useState(null);
@@ -27,98 +26,32 @@ export default function ProductList() {
   const [error, setError] = useState(null);
   const [delivery, setDelivery] = useState(0);
 
-  //ASK
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       if (updatedProduct) {
-  //         await updateProduct(updatedProduct.id, updatedProduct);
-  //         await getProducts(); // Await the getProducts call
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, [updatedProduct]);
-
-  //OPTION2
-  //   useEffect(() => {
-  //     const fetchData = () => {
-  //       if (updatedProduct) {
-  //         updateProduct(updatedProduct.id, updatedProduct)
-  //          .then(() => getAllProducts()); // Use then() instead of await
-  //       }
-  //     };
-  //     fetchData();
-  //   }, [updatedProduct]);
-
-  //   useEffect(() => {
-  //     getAllProducts()
-  //       .then((products) => {
-  //         setProductList(products);
-  //         setLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         setError(error);
-  //         setLoading(false);
-  //       });
-  //   }, [updatedProduct]);
-
-  //ASK
-  //   useEffect(() => {
-  //     const fetchData = () => {
-  //       try {
-  //         if (updatedProduct) {
-  //           updateProduct(updatedProduct.id, updatedProduct).then(() =>
-  //             getAllProducts().then((products) => {
-  //               setProductList(products);
-  //               setLoading(false);
-  //             })
-  //           );
-  //         }
-  //         getAllProducts().then((products) => {
-  //           setProductList(products);
-  //           setLoading(false);
-  //         });
-  //       } catch (error) {
-  //         setError(error);
-  //         setLoading(false);
-  //         console.error("Error fetching or updating products:", error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, [updatedProduct]);
-
   useEffect(() => {
-    const fetchData = () => {
-      const handleGet = () =>
-        getAllProducts().then((products) => {
-          setProductList(products);
-          setLoading(false);
-        });
-      try {
-        updatedProduct
-          ? updateProduct(updatedProduct.id, updatedProduct).then(() =>
-              handleGet()
-            )
-          : handleGet();
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-        console.error("Error fetching or updating products:", error);
-      }
-    };
-
-    fetchData();
+    updatedProduct &&
+      updateProduct(updatedProduct.id, updatedProduct).then(() =>
+        handleGetData()
+      );
   }, [updatedProduct]);
 
+  useEffect(() => {
+    handleGetData();
+  }, []);
 
+  function handleGetData() {
+    getAllProducts()
+      .then((res) => {
+        setProductList(res);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+        console.error("Error fetching or updating products:", err);
+      });
+  }
 
   function handleDelete(productID) {
-    deleteProduct(productID).then(() =>
-      getAllProducts().then((products) => {
-        setProductList(products);
-      })
-    );
+    deleteProduct(productID).then(() => handleGetData());
   }
 
   if (loading) {
@@ -159,6 +92,7 @@ export default function ProductList() {
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
+                      //onClick={(e) => handleUpdateDecrease(product)}
                       onClick={(e) => {
                         if (product.amount > 0)
                           setUpdatedProduct({
@@ -170,6 +104,7 @@ export default function ProductList() {
                     {product.amount}
                     <MdAddCircleOutline
                       className="icons plus"
+                      //onClick={(e) => handleUpdateIncrease(product)}
                       onClick={(e) => {
                         setUpdatedProduct({
                           ...product,
