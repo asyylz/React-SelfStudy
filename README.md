@@ -69,6 +69,9 @@
           <em>Deleting a Project:</em> To delete a project, select the project from the sidebar and click the "Delete Project"
           button.
           <br>
+          <strong>Notes</strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
     </ul>
