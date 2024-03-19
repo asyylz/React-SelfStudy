@@ -9,7 +9,7 @@ function App() {
     selectedProjectId: undefined, // We are doing nothing
     projects: [],
   });
-  function handleSelectproject(id) {
+  function handleSelectProject(id) {
     setProjectsState((prevState) => {
       return {
         ...prevState,
@@ -34,7 +34,7 @@ function App() {
     });
   }
 
-  function handleAddproject(projectData) {
+  function handleAddProject(projectData) {
     setProjectsState((prevState) => {
       const newProject = {
         ...projectData,
@@ -48,11 +48,15 @@ function App() {
     });
   }
 
-  let content = <SelectedProject />;
+  const selectedProject = projectsState.projects.find(
+    (project) => project.id === projectsState.selectedProjectId
+  );
+
+  let content = <SelectedProject project={selectedProject} />;
 
   if (projectsState.selectedProjectId === null) {
     content = (
-      <NewProject onAdd={handleAddproject} onCancel={handleCancelAddProject} />
+      <NewProject onAdd={handleAddProject} onCancel={handleCancelAddProject} />
     );
   } else if (projectsState.selectedProjectId === undefined) {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
@@ -63,8 +67,7 @@ function App() {
       <ProjectsSidebar
         onStartAddProject={handleStartAddProject}
         projects={projectsState.projects}
-        onSelectProject={handleSelectproject}
-        //selectedProjectId={selectedProjectId}
+        onSelectProject={handleSelectProject}
       />
       {content}
     </main>
