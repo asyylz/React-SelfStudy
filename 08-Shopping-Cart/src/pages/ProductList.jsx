@@ -88,11 +88,10 @@ export default function ProductList() {
                     <span>{product.name}</span>
                     <span>{formatter.format(product.price)}</span>
                   </td>
-                  {/* <td>{formatter.format(product.price)}</td> */}
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
-                      //onClick={(e) => handleUpdateDecrease(product)}
+                      
                       onClick={(e) => {
                         if (product.amount > 0)
                           setUpdatedProduct({
@@ -104,7 +103,6 @@ export default function ProductList() {
                     {product.amount}
                     <MdAddCircleOutline
                       className="icons plus"
-                      //onClick={(e) => handleUpdateIncrease(product)}
                       onClick={(e) => {
                         setUpdatedProduct({
                           ...product,
