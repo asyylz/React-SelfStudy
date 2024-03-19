@@ -18,6 +18,18 @@ function App() {
       };
     });
   }
+  function handleAddproject(projectData) {
+    setProjectsState((performance) => {
+      const newProject = {
+        ...projectData,
+        id: Math.random(),
+      };
+      return {
+        ...prevState,
+        projects: [...prevState.projects,newProject],
+      };
+    });
+  }
 
   let content;
 
