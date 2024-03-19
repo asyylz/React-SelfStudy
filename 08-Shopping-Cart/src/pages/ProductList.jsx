@@ -28,9 +28,7 @@ export default function ProductList() {
 
   useEffect(() => {
     updatedProduct &&
-      updateProduct(updatedProduct.id, updatedProduct).then(() =>
-        handleGetData()
-      );
+      updateProduct(updatedProduct.id, updatedProduct).then(handleGetData);
   }, [updatedProduct]);
 
   useEffect(() => {
@@ -91,7 +89,6 @@ export default function ProductList() {
                   <td className="amount">
                     <AiOutlineMinusCircle
                       className="icons minus"
-                      
                       onClick={(e) => {
                         if (product.amount > 0)
                           setUpdatedProduct({
