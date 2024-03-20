@@ -66,6 +66,7 @@
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
+      <hr>
       <details>
         <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
         </summary>
@@ -73,6 +74,7 @@
         <p> <strong><h3>You can reach its own repo</h3>(<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong>
         </p>
       </details>
+      <hr>
       <details>
         <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
         </summary>
@@ -91,6 +93,7 @@
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
+      <hr>
       <details>
         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
@@ -119,6 +122,7 @@
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
+      <hr>
     </ul>
   </section>
   <section id="outcomes">
