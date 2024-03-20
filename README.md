@@ -43,7 +43,8 @@
     </ul>
   </section>
   <section id="individual-readmes">
-    <h2>Individual Readmes</h2>
+    <h2>Individual Project Details</h2>
+    <p><strong>You can find each project details corresponding dropdown menu.</strong></p>
     <ul>
       <details>
         <summary>Project 03: Tic Tac Toe Game (<a href="https://glittery-tapioca-e95324.netlify.app/">Outcome Link</a>)
@@ -54,9 +55,11 @@
           <br>
           <strong>Features:</strong>
           <br>
-          <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the player's name.
+          <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the
+          player's name.
           <br>
-          <em>Dynamic Display:</em>The component dynamically switches between displaying the player's name as text or as an editable input field based on user interaction.
+          <em>Dynamic Display:</em>The component dynamically switches between displaying the player's name as text or as
+          an editable input field based on user interaction.
           <br>
           <em>Save Changes:</em>Users can save changes made to the player's name by clicking the "Save" button.
           <br>
@@ -69,7 +72,27 @@
         <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong>You can reach  its own repo (<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong> 
+        <p> <strong>You can reach its own repo (<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong>
+        </p>
+      </details>
+      <details>
+        <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>Description:</strong>
+          <br>
+          The Timer Challenge component is a React component designed to facilitate timed challenges or activities. It includes features for starting, stopping, and resetting a timer, as well as displaying the remaining time and managing a modal dialog for displaying results.
+          <br>
+          <strong>Features:</strong><br>
+          <em>Timer Management:</em>Start, stop, and reset the timer for the challenge.
+          <br>
+          <em>Dynamic Display:</em>Display the remaining time dynamically during the challenge.
+          <br>
+          <em>Result Modal:</em>Open a modal dialog to display the results of the challenge upon completion.
+          <br>
+          <strong>Notes</strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
       <details>
