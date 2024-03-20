@@ -50,10 +50,10 @@
         <summary>Project 03: Tic Tac Toe Game (<a href="https://glittery-tapioca-e95324.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong>Description:</strong> This is a simple project management app built with React. It allows users to
+        <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
           create projects, add tasks to projects, and manage tasks within projects.
           <br>
-          <strong>Features:</strong>
+          <strong><h3>Features:</h3></strong>
           <br>
           <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the
           player's name.
@@ -63,7 +63,7 @@
           <br>
           <em>Save Changes:</em>Users can save changes made to the player's name by clicking the "Save" button.
           <br>
-          <strong>Notes</strong>
+          <strong><h3>Notes:</h3></strong>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
@@ -72,25 +72,25 @@
         <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong>You can reach its own repo (<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong>
+        <p> <strong><h3>You can reach its own repo</h3>(<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong>
         </p>
       </details>
       <details>
         <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong>Description:</strong>
+        <p> <strong><h3>Description:</h3></strong>
           <br>
           The Timer Challenge component is a React component designed to facilitate timed challenges or activities. It includes features for starting, stopping, and resetting a timer, as well as displaying the remaining time and managing a modal dialog for displaying results.
           <br>
-          <strong>Features:</strong><br>
+          <strong><h3>Features:</h3></strong><br>
           <em>Timer Management:</em>Start, stop, and reset the timer for the challenge.
           <br>
           <em>Dynamic Display:</em>Display the remaining time dynamically during the challenge.
           <br>
           <em>Result Modal:</em>Open a modal dialog to display the results of the challenge upon completion.
           <br>
-          <strong>Notes</strong>
+          <strong><h3>Notes:</h3></strong>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
@@ -99,17 +99,17 @@
         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong>Description:</strong> This is a simple project management app built with React. It allows users to
+        <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
           create projects, add tasks to projects, and manage tasks within projects.
           <br>
-          <strong>Features:</strong>
+          <strong><h3>Features:</h3></strong>
           <br>
           <em>Project Management:</em> Users can create new projects, view existing projects, and delete projects.
           <br>
           <em>Task Management:</em>Within each project, users can add tasks, delete tasks, and view all tasks associated
           with the project.
           <br>
-          <strong>Usage:</strong>
+          <strong><h3>Usage:</h3></strong>
           <br>
           <em>Creating a Project:</em> Click on the "Add Project" button in the sidebar to create a new project. Enter
           the project details and click "Save".
@@ -121,7 +121,8 @@
           Project"
           button.
           <br>
-          <strong>Notes</strong>
+          <strong><h3>Notes:</h3></strong>
+          <br>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
