@@ -1,0 +1,195 @@
+.container {
+    margin-top: 10rem;
+    border-radius: 28px;
+    background-color: #ddd;
+    padding: 1rem 3rem 2rem 3rem;
+    color: #666;
+}
+
+h3 {
+    margin-bottom: 2rem;
+}
+
+.product-section {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 28px 0 0 28px;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.summary-section {
+    background-color: #ddd;
+    border-radius: 0 28px 28px 0;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.summary-wrapper {
+    margin-top: 3rem;
+    text-align: start;
+    padding-left: 2rem;
+}
+
+tbody td img {
+    height: 150px;
+    width: 150px;
+    border: 4px solid #ccc;
+}
+
+
+thead th {
+    font-size: 1.5rem;
+}
+
+table .icons {
+    font-size: 1.8rem;
+    margin: 0 5px;
+    cursor: pointer;
+
+}
+
+table .icons.trash {
+    color: red;
+}
+
+tbody tr td {
+    vertical-align: middle;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total.price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.total.price div {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.summary-section span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.shipping,
+.promotion {
+    text-align: start;
+}
+
+.promotion {
+    display: flex;
+    flex-direction: column;
+}
+
+.promotion input,
+.shipping select {
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 3rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.unit-total {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #666;
+    ;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #666 !important;
+}
+
+.amount .icons {
+    margin: 0 1rem;
+}
+
+.name {
+    text-align: start;
+}
+
+.name span {
+    color: #666;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.btn-div {
+    width: 100%;
+}
+
+@media (min-width:630px) and (max-width:1020px) {
+    .container {
+        max-width: 90vw !important;
+
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .summary-section {
+        border-radius: 28px;
+        margin-top: 1rem;
+        padding: 0 2rem;
+    }
+
+    .product-section {
+        border-radius: 28px;
+        min-width: 425px !important;
+        padding: 1rem;
+    }
+
+
+    .amount {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .icons.trash {
+        margin-top: 10px;
+    }
+
+    .table>:not(caption)>*>* {
+        border-bottom: none;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name span {
+        margin-bottom: 10px;
+    }
+
+    #root {
+        margin-top: 100px;
+    }
+}
