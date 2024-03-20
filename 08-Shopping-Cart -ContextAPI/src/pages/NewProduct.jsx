@@ -1,10 +1,12 @@
 import classes from "./NewProduct.module.css";
 import styles from "./Home.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { CartContext } from "../store/shopping-cart-context";
 export default function NewProduct() {
-  const { postProduct } =
-  useContext(CartContext);
+  const { postProduct } = useContext(CartContext);
+
+  const nameRef = useRef(null);
+
   const [product, setproduct] = useState({
     name: "",
     image: "",
@@ -36,9 +38,14 @@ export default function NewProduct() {
       alert(alertMessage);
       return;
     }
+
     postProduct(product);
     resetNewProductInput(product);
   }
+  const handleFocus = () => {
+    let inputName = nameRef.current;
+    inputName.focus();
+  };
 
   return (
     <div className={classes.bodyVirtual}>
@@ -47,12 +54,14 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="text"
+            ref={nameRef}
             value={product.name}
             className={classes.form__field}
             placeholder="Name"
             name="name"
             id="name"
             onChange={(e) => setproduct({ ...product, name: e.target.value })}
+            onMouseMove={handleFocus}
             required
           />
           <label htmlFor="name" className={classes.form__label}>
