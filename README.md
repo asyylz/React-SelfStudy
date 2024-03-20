@@ -52,9 +52,7 @@
         <br>
         <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
           create projects, add tasks to projects, and manage tasks within projects.
-          <br>
           <strong><h3>Features:</h3></strong>
-          <br>
           <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the
           player's name.
           <br>
@@ -80,10 +78,8 @@
         </summary>
         <br>
         <p> <strong><h3>Description:</h3></strong>
-          <br>
           The Timer Challenge component is a React component designed to facilitate timed challenges or activities. It includes features for starting, stopping, and resetting a timer, as well as displaying the remaining time and managing a modal dialog for displaying results.
-          <br>
-          <strong><h3>Features:</h3></strong><br>
+          <strong><h3>Features:</h3></strong>
           <em>Timer Management:</em>Start, stop, and reset the timer for the challenge.
           <br>
           <em>Dynamic Display:</em>Display the remaining time dynamically during the challenge.
@@ -100,17 +96,14 @@
         </summary>
         <br>
         <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
-          create projects, add tasks to projects, and manage tasks within projects.
-          <br>
+          create projects, add tasks to projects, and manage tasks within projects.        
           <strong><h3>Features:</h3></strong>
-          <br>
           <em>Project Management:</em> Users can create new projects, view existing projects, and delete projects.
           <br>
           <em>Task Management:</em>Within each project, users can add tasks, delete tasks, and view all tasks associated
           with the project.
           <br>
           <strong><h3>Usage:</h3></strong>
-          <br>
           <em>Creating a Project:</em> Click on the "Add Project" button in the sidebar to create a new project. Enter
           the project details and click "Save".
           <br>
@@ -122,7 +115,6 @@
           button.
           <br>
           <strong><h3>Notes:</h3></strong>
-          <br>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
