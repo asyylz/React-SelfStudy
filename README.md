@@ -66,6 +66,13 @@
         </p>
       </details>
       <details>
+        <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>You can reach  its own repo (<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong> 
+        </p>
+      </details>
+      <details>
         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
