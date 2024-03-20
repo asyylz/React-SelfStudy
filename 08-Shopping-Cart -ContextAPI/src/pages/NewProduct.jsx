@@ -5,64 +5,58 @@ import { CartContext } from "../store/shopping-cart-context";
 export default function NewProduct() {
   const { postProduct } = useContext(CartContext);
 
-  const nameRef = useRef(null);
-
-  const [product, setproduct] = useState({
-    name: "",
-    image: "",
-    price: 0,
-    amount: 0,
-    dampingRate: 18,
-  });
+  const productName = useRef();
+  const productImage = useRef();
+  const productPrice = useRef();
+  const productAmount = useRef();
 
   const inputIsValid =
-    !product.name ||
-    product.name.trim() === "" ||
-    product.image.trim() === "" ||
-    !product.image ||
-    !product.amount ||
-    !product.price;
+    !productName.current ||
+    !productName.current.value ||
+    productName.current.value.trim() === "" ||
+    !productImage.current ||
+    !productImage.current.value ||
+    productImage.current.value.trim() === "" ||
+    !productAmount.current ||
+    !productAmount.current.value ||
+    !productPrice.current ||
+    !productPrice.current.value;
 
-  const resetNewProductInput = () => {
-    setproduct({
-      name: "",
-      image: "",
-      price: 0,
-      amount: 0,
-      dampingRate: 18,
-    });
-  };
-  function handlePost() {
+  function handlePost(event) {
+    event.preventDefault();
     if (inputIsValid) {
       const alertMessage = "Please enter all details...";
       alert(alertMessage);
       return;
     }
+    const newProduct = {
+      name: productName.current.value,
+      image: productImage.current.value,
+      price: parseInt(productPrice.current.value),
+      amount: parseInt(productAmount.current.value),
+      dampingRate: 18,
+    };
 
-    postProduct(product);
-    resetNewProductInput(product);
+    postProduct(newProduct);
+    event.target.reset();
   }
-  const handleFocus = () => {
-    let inputName = nameRef.current;
-    inputName.focus();
-  };
+
+  // const handleFocus = () => {
+  //   let inputName = nameRef.current;
+  //   inputName.focus();
+  // };
 
   return (
     <div className={classes.bodyVirtual}>
-      <div className={classes.wrapper}>
+      <form className={classes.wrapper} onSubmit={handlePost}>
         <h1 className={classes.title}>New Product</h1>
         <div className={classes.form__group}>
           <input
             type="text"
-            ref={nameRef}
-            value={product.name}
+            ref={productName}
             className={classes.form__field}
             placeholder="Name"
-            name="name"
             id="name"
-            onChange={(e) => setproduct({ ...product, name: e.target.value })}
-            onMouseMove={handleFocus}
-            required
           />
           <label htmlFor="name" className={classes.form__label}>
             Product Name
@@ -71,13 +65,10 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="text"
-            value={product.image}
+            ref={productImage}
             className={classes.form__field}
             placeholder="Product Image"
-            name="image"
             id="image"
-            onChange={(e) => setproduct({ ...product, image: e.target.value })}
-            required
           />
           <label htmlFor="name" className={classes.form__label}>
             Product Image
@@ -86,15 +77,10 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="number"
-            value={product.price === 0 ? "" : product.price}
+            ref={productPrice}
             className={classes.form__field}
             placeholder="Price"
-            name="price"
             id="price"
-            onChange={(e) =>
-              setproduct({ ...product, price: parseInt(e.target.value) })
-            }
-            required
           />
           <label htmlFor="name" className={classes.form__label}>
             Price
@@ -103,24 +89,19 @@ export default function NewProduct() {
         <div className={classes.form__group}>
           <input
             type="number"
-            value={product.amount === 0 ? "" : product.amount}
+            ref={productAmount}
             className={classes.form__field}
             placeholder="amount"
-            name="amount"
             id="amount"
-            onChange={(e) =>
-              setproduct({ ...product, amount: parseInt(e.target.value) })
-            }
-            required
           />
           <label htmlFor="name" className={classes.form__label}>
             Quantity
           </label>
         </div>
-        <button className={styles.btnAdd} role="button" onClick={handlePost}>
+        <button className={styles.btnAdd} role="button" type="submit">
           Save New Product
         </button>
-      </div>
+      </form>
     </div>
   );
 }
