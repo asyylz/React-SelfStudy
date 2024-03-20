@@ -1,4 +1,3 @@
-
 <body>
   <header>
     <h1>Welcome to the React-SelfStudy Repo!</h1>
@@ -47,7 +46,27 @@
     <h2>Individual Readmes</h2>
     <ul>
       <details>
-         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
+        <summary>Project 03: Tic Tac Toe Game (<a href="https://glittery-tapioca-e95324.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>Description:</strong> This is a simple project management app built with React. It allows users to
+          create projects, add tasks to projects, and manage tasks within projects.
+          <br>
+          <strong>Features:</strong>
+          <br>
+          <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the player's name.
+          <br>
+          <em>Dynamic Display:</em>The component dynamically switches between displaying the player's name as text or as an editable input field based on user interaction.
+          <br>
+          <em>Save Changes:</em>Users can save changes made to the player's name by clicking the "Save" button.
+          <br>
+          <strong>Notes</strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
+        </p>
+      </details>
+      <details>
+        <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>Description:</strong> This is a simple project management app built with React. It allows users to
@@ -62,11 +81,14 @@
           <br>
           <strong>Usage:</strong>
           <br>
-          <em>Creating a Project:</em> Click on the "Add Project" button in the sidebar to create a new project. Enter the project details and click "Save".
+          <em>Creating a Project:</em> Click on the "Add Project" button in the sidebar to create a new project. Enter
+          the project details and click "Save".
           <br>
-          <em>Managing Tasks:</em> Select a project from the sidebar to view and manage tasks associated with that project. You can add tasks, delete tasks, and view all tasks.
+          <em>Managing Tasks:</em> Select a project from the sidebar to view and manage tasks associated with that
+          project. You can add tasks, delete tasks, and view all tasks.
           <br>
-          <em>Deleting a Project:</em> To delete a project, select the project from the sidebar and click the "Delete Project"
+          <em>Deleting a Project:</em> To delete a project, select the project from the sidebar and click the "Delete
+          Project"
           button.
           <br>
           <strong>Notes</strong>
