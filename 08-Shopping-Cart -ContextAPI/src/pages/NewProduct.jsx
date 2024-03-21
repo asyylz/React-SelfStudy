@@ -10,20 +10,20 @@ export default function NewProduct() {
   const productPrice = useRef();
   const productAmount = useRef();
 
-  const inputIsValid =
-    !productName.current ||
-    !productName.current.value ||
-    productName.current.value.trim() === "" ||
-    !productImage.current ||
-    !productImage.current.value ||
-    productImage.current.value.trim() === "" ||
-    !productAmount.current ||
-    !productAmount.current.value ||
-    !productPrice.current ||
-    !productPrice.current.value;
-
   function handlePost(event) {
     event.preventDefault();
+    const inputIsValid =
+      !productName.current ||
+      !productName.current.value ||
+      productName.current.value.trim() === "" ||
+      !productImage.current ||
+      !productImage.current.value ||
+      productImage.current.value.trim() === "" ||
+      !productAmount.current ||
+      !productAmount.current.value ||
+      !productPrice.current ||
+      !productPrice.current.value;
+
     if (inputIsValid) {
       const alertMessage = "Please enter all details...";
       alert(alertMessage);
@@ -41,10 +41,13 @@ export default function NewProduct() {
     event.target.reset();
   }
 
-  // const handleFocus = () => {
-  //   let inputName = nameRef.current;
-  //   inputName.focus();
-  // };
+  const handleFocus = () => {
+    productName.current.focus();
+  };
+
+  // useEffect(() => {
+  //   handleFocus();
+  // }, []);
 
   return (
     <div className={classes.bodyVirtual}>
@@ -57,6 +60,7 @@ export default function NewProduct() {
             className={classes.form__field}
             placeholder="Name"
             id="name"
+            autoFocus
           />
           <label htmlFor="name" className={classes.form__label}>
             Product Name
