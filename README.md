@@ -222,7 +222,7 @@
         </tr>
         <tr>
           <td><strong>10</strong></td>
-          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
               width="400" height="400" alt="Project10outcome"></td>
           <td><strong>11</strong></td>
           <td><img
