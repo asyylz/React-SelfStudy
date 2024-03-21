@@ -205,26 +205,28 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg"
               width="300" height="300" alt="Project04outcome"></td>
-            </tr>
+        </tr>
         <tr>
-           <td><strong>05</strong></td>
+          <td><strong>05</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/05-ToDo-App-RGB/public/outcome.jpg"
               width="300" height="300" alt="Project02outcome"></td>
-            <td><strong>06</strong></td>
+          <td><strong>06</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
               width="300" height="300" alt="Project06outcome"></td>
           <td><strong>09</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/ee6ed3c8a88035533ff2ec9bde401be024f314e6/09-StopTimer/public/outcome.jpg"
               width="300" height="300" alt="Project 11 outcome"></td>
-              </tr>
-          <td><strong>10</strong></td>
-          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
-              width="300" height="300" alt="Project10outcome"></td>
-          <td><strong>11</strong></td>
-          <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
-              width="300" height="300" alt="Project 11 outcome"></td>
+        </tr>
+        <tr>
+        <td><strong>10</strong></td>
+        <td><img
+            src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
+            width="300" height="300" alt="Project10outcome"></td>
+        <td><strong>11</strong></td>
+        <td><img
+            src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+            width="300" height="300" alt="Project 11 outcome"></td>
         </tr>
       </tbody>
     </table>
