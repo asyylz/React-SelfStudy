@@ -215,10 +215,20 @@
           <td><strong>06</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
               width="400" height="400" alt="Project06outcome"></td>
-            <td><strong>11</strong></td>
-          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+          <td><strong>07</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="400" height="400" alt="Project 11 outcome"></td>
-        </tr> 
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
+              width="400" height="400" alt="Project10outcome"></td>
+          <td><strong>11</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+              width="400" height="400" alt="Project 11 outcome"></td>
+        </tr>
       </tbody>
     </table>
   </section>
