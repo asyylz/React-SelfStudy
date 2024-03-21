@@ -50,9 +50,13 @@
         <summary>Project 03: Tic Tac Toe Game (<a href="https://glittery-tapioca-e95324.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong> This is a simple project management app built with React. It allows users to
           create projects, add tasks to projects, and manage tasks within projects.
-          <strong><h3>Features:</h3></strong>
+          <strong>
+            <h3>Features:</h3>
+          </strong>
           <em>Player Name Editing:</em> Users can edit the name of a player by clicking the "Edit" button next to the
           player's name.
           <br>
@@ -61,7 +65,9 @@
           <br>
           <em>Save Changes:</em>Users can save changes made to the player's name by clicking the "Save" button.
           <br>
-          <strong><h3>Notes:</h3></strong>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
@@ -71,7 +77,9 @@
         <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong><h3>You can reach its own repo</h3>(<a href="https://github.com/asyylz/Weather-Check-App">here</a>)</strong>
+        <p> <strong>
+            <h3>You can reach its own repo</h3>(<a href="https://github.com/asyylz/Weather-Check-App">here</a>)
+          </strong>
         </p>
       </details>
       <hr>
@@ -79,16 +87,24 @@
         <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong><h3>Description:</h3></strong>
-          The Timer Challenge component is a React component designed to facilitate timed challenges or activities. It includes features for starting, stopping, and resetting a timer, as well as displaying the remaining time and managing a modal dialog for displaying results.
-          <strong><h3>Features:</h3></strong>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>
+          The Timer Challenge component is a React component designed to facilitate timed challenges or activities. It
+          includes features for starting, stopping, and resetting a timer, as well as displaying the remaining time and
+          managing a modal dialog for displaying results.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
           <em>Timer Management:</em>Start, stop, and reset the timer for the challenge.
           <br>
           <em>Dynamic Display:</em>Display the remaining time dynamically during the challenge.
           <br>
           <em>Result Modal:</em>Open a modal dialog to display the results of the challenge upon completion.
           <br>
-          <strong><h3>Notes:</h3></strong>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
@@ -98,15 +114,21 @@
         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
-        <p> <strong><h3>Description:</h3></strong> This is a simple project management app built with React. It allows users to
-          create projects, add tasks to projects, and manage tasks within projects.        
-          <strong><h3>Features:</h3></strong>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong> This is a simple project management app built with React. It allows users to
+          create projects, add tasks to projects, and manage tasks within projects.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
           <em>Project Management:</em> Users can create new projects, view existing projects, and delete projects.
           <br>
           <em>Task Management:</em>Within each project, users can add tasks, delete tasks, and view all tasks associated
           with the project.
           <br>
-          <strong><h3>Usage:</h3></strong>
+          <strong>
+            <h3>Usage:</h3>
+          </strong>
           <em>Creating a Project:</em> Click on the "Add Project" button in the sidebar to create a new project. Enter
           the project details and click "Save".
           <br>
@@ -117,7 +139,43 @@
           Project"
           button.
           <br>
-          <strong><h3>Notes:</h3></strong>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
+        </p>
+      </details>
+      <hr>
+      <details>
+        <summary>Project 11 : Place Picker App (<a href="https://placechose.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>The "PlacePicker" app allows users to create and manage their personal collection of places they
+          would like to visit or have visited. With a user-friendly interface, users can easily browse through available
+          places, select them for their collection, and remove them if needed. The app also provides a feature to sort
+          available places based on the user's current location, making it convenient for users to discover nearby
+          places of interest.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
+          <em>Personalized Collection:</em> Users can create their own collection of places they want to visit or have
+          visited, making it easy to keep track of their travel goals and experiences.
+          <br>
+          <em>Geolocation Sorting::</em>Utilizing geolocation services, the app sorts available places based on the
+          user's current location, enabling users to discover nearby attractions effortlessly.
+          <br>
+          <em>Modal Confirmation: </em> When removing a selected place from their collection, users are presented with a
+          modal confirmation dialog to ensure accurate removal.
+          <br>
+          <em>ProgressBar:</em>A customizable progress bar component that displays the remaining time and triggers a
+          callback function when the timer expires.
+          <br>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
           This project was created as part of an educational course on Udemy and is intended for learning purposes only.
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
