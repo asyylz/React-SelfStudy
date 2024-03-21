@@ -188,7 +188,11 @@
     <table>
       <thead>
         <tr>
-          <th>Project No</th>
+          <th>No</th>
+          <th>Outcome</th>
+          <th>No</th>
+          <th>Outcome</th>
+          <th>No</th>
           <th>Outcome</th>
         </tr>
       </thead>
