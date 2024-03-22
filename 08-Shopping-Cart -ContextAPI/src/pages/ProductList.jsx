@@ -13,8 +13,12 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { CartContext } from "../store/shopping-cart-context";
 
 export default function ProductList() {
-  const { getAllProducts, updateProduct, deleteProduct, formatter } =
-    useContext(CartContext);
+  const {
+    getAllProducts,
+    updateProduct,
+    deleteProduct,
+    formatter,
+  } = useContext(CartContext);
 
   const [updatedProduct, setUpdatedProduct] = useState(null);
   const [productsList, setProductList] = useState([]);

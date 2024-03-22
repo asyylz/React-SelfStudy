@@ -1,9 +1,7 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useReducer } from "react";
 import axios from "axios";
 
 export const CartContext = createContext({
-  cartItems: [],
-  delivery: 0,
   postProduct: () => {},
   getAllProducts: () => {},
   updateProduct: () => {},
@@ -12,11 +10,6 @@ export const CartContext = createContext({
 });
 
 export default function CartContextProvider({ children }) {
-  const [productsList, setProductList] = useState({
-    cartItems: []
-  });
-  const [delivery, setDelivery] = useState(0);
-
   const baseURL = "https://65f44b1ff54db27bc0215106.mockapi.io";
 
   async function postProduct(product) {
@@ -74,7 +67,6 @@ export default function CartContextProvider({ children }) {
   });
 
   const ctxValue = {
-    //cartItems: shoppingCart.items,
     postProduct: postProduct,
     getAllProducts: getAllProducts,
     updateProduct: updateProduct,
@@ -83,8 +75,6 @@ export default function CartContextProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={ctxValue}>
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>
   );
 }
