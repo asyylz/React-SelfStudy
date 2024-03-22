@@ -5,5 +5,5 @@ export default function Header() {
       <img src={logoImg} alt="Quiz logo" />
       <h1>React Quizz</h1>
     </header>
-  );
+  )
 }
