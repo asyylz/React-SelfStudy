@@ -1,8 +1,9 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import QUESTIONS from "../questions.js";
 import QuestionTimer from "./QuestionTimer.jsx";
 import quizCompleteImg from "../assets/quiz-complete.png";
 export default function Quiz() {
+  const shuffledAnswers = useRef();
   const [userAnswers, setUserAnswers] = useState([]);
   const [answerState, setAnswerState] = useState("");
   const activeQuestionIndex =
@@ -44,9 +45,10 @@ export default function Quiz() {
       </div>
     );
   }
-  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
-  shuffledAnswers.sort(() => Math.random() - 0.5);
-
+  if (!shuffledAnswers.current) {
+    shuffledAnswers.current = [...QUESTIONS[activeQuestionIndex].answers];
+    shuffledAnswers.current.sort(() => Math.random() - 0.5);
+  }
   return (
     <div id="quiz">
       <div id="question">
@@ -57,14 +59,17 @@ export default function Quiz() {
         />
         <p>{QUESTIONS[activeQuestionIndex].text}</p>
         <ul id="answers">
-          {shuffledAnswers.map((answer) => {
+          {shuffledAnswers.current.map((answer) => {
             const isSelected = userAnswers[userAnswers.length - 1] === answer;
             let cssClasses = "";
             if (answerState === "answered" && isSelected) {
               cssClasses = "selected";
             }
-            if((answerState ==="correct" || answerState ==="wrong") && isSelected) {
-              cssClasses=answerState
+            if (
+              (answerState === "correct" || answerState === "wrong") &&
+              isSelected
+            ) {
+              cssClasses = answerState;
             }
 
             return (
