@@ -10,6 +10,7 @@ export default function ProjectsSidebar({
       <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">
         Your Project
       </h2>
+      
       <div>
         <Button onClick={onStartAddProject}>+ Add Project</Button>
       </div>
