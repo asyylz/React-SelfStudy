@@ -1,10 +1,10 @@
-import ButtonHomeSSS from "./styles/ButtonHomeSSS.jsx";
-import SelectHomeSSS from "./styles/SelectHomeSSS.jsx";
-import ContainerSSS from "./styles/ContainerHomeSSS";
-import InputHomeSSS from "./styles/InputHomeSSS";
-import RecipeCardHomeSSS from "./styles/RecipeCardHomeSSS.jsx";
+import ButtonHomeSSS from "./ButtonHomeSSS.jsx";
+import SelectHomeSSS from "./SelectHomeSSS.jsx";
+import ContainerSSS from "./ContainerHomeSSS.jsx";
+import InputHomeSSS from "./InputHomeSSS.jsx";
+import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext } from "react";
-import { Context } from "../contextAPI/ContextProvider.jsx";
+import { Context } from "../../contextAPI/ContextProvider.jsx";
 
 export default function Home() {
   const {
@@ -59,7 +59,7 @@ export default function Home() {
                 <div
                   className="av"
                   style={{
-                    backgroundImage: `url(${recipe.recipe.image})`
+                    backgroundImage: `url(${recipe.recipe.image})`,
                   }}
                 ></div>
                 <div className="info">
