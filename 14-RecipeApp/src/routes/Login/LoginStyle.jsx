@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Font = 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap';
 const peach = "#e5ae8a";
+const dgreen = "#2c3834";
 
 const LoginStyle = styled.div`
 /* Global Reset */
@@ -15,12 +16,15 @@ const LoginStyle = styled.div`
 ::selection{
     background: rgba(229, 174, 138, 0.5);
   }
+  background-color:;
+  height: 100vh;
 
 .container {
     max-width: 40vw;
     min-width:30vw;
     padding: 0 20px;
     margin: 170px auto;
+    
 
 }
 

@@ -1,6 +1,6 @@
 import ButtonHomeSSS from "./ButtonHomeSSS.jsx";
 import SelectHomeSSS from "./SelectHomeSSS.jsx";
-import ContainerSSS from "./ContainerHomeSSS.jsx";
+import ContainerHomeSSS from "./ContainerHomeSSS.jsx";
 import InputHomeSSS from "./InputHomeSSS.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext } from "react";
@@ -18,7 +18,7 @@ export default function Home() {
   console.log(recipeData);
 
   return (
-    <ContainerSSS>
+    <ContainerHomeSSS isEmpty={recipeData.length === 0 ? true : false}>
       <div className="wrapper">
         <h1>Recipe Search</h1>
         <div className="search-wrapper">
@@ -65,7 +65,7 @@ export default function Home() {
                 <div className="info">
                   <h3>{recipe.recipe.label}</h3>
                 </div>
-                <a className="plot" title="plot with jinkyu" href="/">
+                <a className="plot" title="plot with recipe" href="/">
                   view recipe →
                 </a>
               </div>
@@ -73,6 +73,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </ContainerSSS>
+    </ContainerHomeSSS>
   );
 }

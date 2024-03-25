@@ -19,7 +19,7 @@ export default function ContexProvider({ children }) {
     try {
       const response = await axios.get(`${baseURL}`);
       setRecipeData(response.data.hits);
-      return response.data;
+      return response.data.hits;
     } catch (error) {
       console.error("Error fetching products:", error);
       throw error;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Define variables as JavaScript template literals
 const white = "#f7f1e1";
 const cream = "#f6e6cb";
 const dcream = "#eacea3";
@@ -19,7 +18,7 @@ const RecipeCardHomeSSS = styled.div`
   body {
     margin: 100px;
     padding: 0px;
-    background: ${beige}; /* Using the variable */
+    background: ${beige}; 
   }
 
   .minip {
@@ -28,7 +27,7 @@ const RecipeCardHomeSSS = styled.div`
     margin: auto;
     background: ${white};
     position: relative;
-    box-shadow: 0px 0px 5px ${terracotta}; /* Using the variable */
+    box-shadow: 0px 0px 5px ${terracotta}; 
   }
 
   .minip .mg {
