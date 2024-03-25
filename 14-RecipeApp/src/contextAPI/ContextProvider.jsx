@@ -11,7 +11,10 @@ export default function ContexProvider({ children }) {
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
   const [recipeData, setRecipeData] = useState([]);
-  console.log(recipeData);
+  const [userName, setUserName] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [success, setSuccess] = useState(false);
+  console.log(success)
 
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
@@ -33,6 +36,12 @@ export default function ContexProvider({ children }) {
     setRecipeSearch: setRecipeSearch,
     recipeSearch: recipeSearch,
     recipeData: recipeData,
+    userName,
+    setUserName,
+    userPassword,
+    setUserPassword,
+    success,
+    setSuccess,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;

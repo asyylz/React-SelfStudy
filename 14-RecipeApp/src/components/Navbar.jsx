@@ -8,9 +8,9 @@ export default function Navbar() {
         <h1>Recipe</h1>
         <ul>
           <Link to="/">Home</Link>
-          <Link to="register">Register</Link>
-          <Link to="login">Login</Link>
-          <Link to="about">About</Link>
+          <Link to="/register">Register</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/about">About</Link>
         </ul>
       </nav>
 

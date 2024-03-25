@@ -1,5 +1,3 @@
 export default function RecipeDetails() {
-    return (
-        <></>
-    )
+  return <div style={{ marginTop: "10rem" }}>recipe</div>;
 }

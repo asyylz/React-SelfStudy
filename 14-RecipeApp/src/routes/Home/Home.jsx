@@ -5,6 +5,7 @@ import InputHomeSSS from "./InputHomeSSS.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const {
@@ -15,8 +16,10 @@ export default function Home() {
     recipeSearch,
     recipeData,
   } = useContext(Context);
-  console.log(recipeData);
 
+  const navigate = useNavigate();
+
+  
   return (
     <ContainerHomeSSS isEmpty={recipeData.length === 0 ? true : false}>
       <div className="wrapper">
@@ -65,7 +68,12 @@ export default function Home() {
                 <div className="info">
                   <h3>{recipe.recipe.label}</h3>
                 </div>
-                <a className="plot" title="plot with recipe" href="/">
+                <a
+                  className="plot"
+                  title="plot with recipe"
+                  href=""
+                  onClick={() => navigate("/recipe")}
+                >
                   view recipe →
                 </a>
               </div>

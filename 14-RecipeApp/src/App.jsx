@@ -1,26 +1,32 @@
 import "./App.css";
-import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
-import { Outlet } from "react-router-dom";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Routes,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar.jsx";
 import ContexProvider from "./contextAPI/ContextProvider.jsx";
-
-
+import Home from "./routes/Home/Home.jsx";
+import Login from "./routes/Login/Login.jsx";
+import Register from "./routes/Register/Register.jsx";
+import About from "./routes/About/About.jsx";
+import RecipeDetails from "./routes/Recipe/RecipeDetails.jsx";
+import PrivateRouter from "./routes/PrivateRouter.jsx";
 
 export default function App() {
   return (
     <ContexProvider>
-      <Navbar />
-      <Outlet />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/recipe" element={<PrivateRouter />}>
+            <Route path="" element={<RecipeDetails />} />
+          </Route>
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </ContexProvider>
   );
 }
- 
