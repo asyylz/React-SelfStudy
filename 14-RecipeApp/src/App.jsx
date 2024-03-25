@@ -24,6 +24,7 @@ export default function App() {
           <Route path="/recipe" element={<PrivateRouter />}>
             <Route path="" element={<RecipeDetails />} />
           </Route>
+          <Route path="/recipeAuthorized" element={<RecipeDetails />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>

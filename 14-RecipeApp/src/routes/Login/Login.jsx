@@ -3,19 +3,10 @@ import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 export default function () {
-  const { setUserName, setUserPassword, success } = useContext(Context);
-  console.log(success);
-  const navigate = useNavigate();
+  const { userCredits, setUserCredits } = useContext(Context);
+  const { userName, userPassword, authorized } = userCredits;
 
-  function handleLogin() {
-    console.log(success)
-    if (success) {
-      // setUserName("");
-      // setUserPassword("");
-      navigate("/home");
-      console.log(success);
-    }
-  }
+  const navigate = useNavigate();
 
   return (
     <LoginStyle>
@@ -31,7 +22,12 @@ export default function () {
                 type="text"
                 placeholder="User Name"
                 required
-                onChange={(e) => setUserName(e.target.value)}
+                onChange={(e) =>
+                  setUserCredits((prevState) => ({
+                    ...prevState,
+                    userName: e.target.value,
+                  }))
+                }
               />
             </div>
             <div className="row">
@@ -40,7 +36,12 @@ export default function () {
                 type="password"
                 placeholder="Password"
                 required
-                onChange={(e) => setUserPassword(e.target.value)}
+                onChange={(e) =>
+                  setUserCredits((prevState) => ({
+                    ...prevState,
+                    userPassword: e.target.value,
+                  }))
+                }
               />
             </div>
             <div className="pass">
@@ -50,7 +51,10 @@ export default function () {
               <input
                 type="submit"
                 value="Login"
-                onClick={()=>navigate("/recipe")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/recipe")
+                }}
               />
             </div>
             <div className="signup-link">

@@ -3,9 +3,9 @@ import SelectHomeSSS from "./SelectHomeSSS.jsx";
 import ContainerHomeSSS from "./ContainerHomeSSS.jsx";
 import InputHomeSSS from "./InputHomeSSS.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Home() {
   const {
@@ -15,11 +15,18 @@ export default function Home() {
     setRecipeSearch,
     recipeSearch,
     recipeData,
+    userCredits,
+    setSelectedRecipe,
   } = useContext(Context);
 
   const navigate = useNavigate();
 
-  
+  function handleClick(recipe, e) {
+    e.preventDefault();
+    navigate("/recipe");
+    setSelectedRecipe(recipe);
+  }
+
   return (
     <ContainerHomeSSS isEmpty={recipeData.length === 0 ? true : false}>
       <div className="wrapper">
@@ -72,7 +79,7 @@ export default function Home() {
                   className="plot"
                   title="plot with recipe"
                   href=""
-                  onClick={() => navigate("/recipe")}
+                  onClick={(e) => handleClick(recipe,e)}
                 >
                   view recipe →
                 </a>

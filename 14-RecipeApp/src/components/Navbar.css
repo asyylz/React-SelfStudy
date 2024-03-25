@@ -65,6 +65,14 @@
     background-color: #777;
   }
   
+  .user-account{
+    position: absolute;
+    right: 3rem;
+    margin-top: 10px;
+  }
+  .user-account small{
+    cursor: pointer;
+  }
   
   @media (min-width:385px) and (max-width:640px) {
     .nav {
