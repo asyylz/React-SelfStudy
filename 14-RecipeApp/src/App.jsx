@@ -10,20 +10,17 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./routes/Home.jsx";
-import About from "./routes/About.jsx";
-import Register from "./routes/Register.jsx";
-import Login from "./routes/Login.jsx";
 import Navbar from "./components/Navbar.jsx";
+import ContexProvider from "./contextAPI/ContextProvider.jsx";
 
 
 
 export default function App() {
   return (
-    <>
+    <ContexProvider>
       <Navbar />
       <Outlet />
-    </>
+    </ContexProvider>
   );
 }
  

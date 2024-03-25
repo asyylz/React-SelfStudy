@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const ButtonHomeSSS = styled.button`
-  background-color: #ffffff;
+const SelectHomeSSS = styled.select`
+ background-color: #ffffff;
   border: 1px solid rgb(209, 213, 219);
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -37,6 +37,4 @@ const ButtonHomeSSS = styled.button`
     box-shadow: none;
   }
 `;
-
-export default ButtonHomeSSS;
-
+export default SelectHomeSSS;
