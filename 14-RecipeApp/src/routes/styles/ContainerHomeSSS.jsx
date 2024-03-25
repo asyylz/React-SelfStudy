@@ -1,26 +1,25 @@
 import styled from "styled-components";
-import background from "/public/background.jpg";
+import background from "/public/bg3.avif";
 
 const ContainerHomeSSS = styled.div`
   height: 100%;
   width: 100vw;
   margin-top: 6.2rem;
-  ${
-    "" /* background-image: url(${background});
-  background-size: cover; */
-  }
-  background-color:#e5ae8a;
+  background-image: url(${background});
+  background-size: cover;
+
   display: flex;
   justify-content: center;
-  ${"" /* background-attachment: fixed;  */}
+ background-attachment: fixed;
   .wrapper {
-    margin-top: 15rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .wrapper h1 {
     text-align: center;
+    color:#2c3834;
   }
   .search-wrapper {
     width: 45vw;

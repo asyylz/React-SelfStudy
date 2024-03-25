@@ -59,7 +59,7 @@ export default function Home() {
                 <div
                   className="av"
                   style={{
-                    backgroundImage:`url(${recipe.recipe.image})`
+                    backgroundImage: `url(${recipe.recipe.image})`
                   }}
                 ></div>
                 <div className="info">

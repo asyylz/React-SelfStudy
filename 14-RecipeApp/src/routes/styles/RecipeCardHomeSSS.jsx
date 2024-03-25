@@ -54,7 +54,7 @@ const RecipeCardHomeSSS = styled.div`
   }
   .minip .mg .clr {
     grid-area: clr;
-    height:400px;
+    height: 400px;
     background: ${green};
   }
   .minip .mg .group {
@@ -77,6 +77,7 @@ const RecipeCardHomeSSS = styled.div`
   }
 
   .minip .av {
+    border: 15px solid ${peach};
     width: 200px;
     height: 350px;
     position: absolute;
@@ -87,6 +88,7 @@ const RecipeCardHomeSSS = styled.div`
     background-size: cover;
     transition: width 0.6s linear, height 0.6s linear;
   }
+ 
   .minip:hover .av {
     width: 250px;
     height: 400px;
@@ -113,7 +115,7 @@ const RecipeCardHomeSSS = styled.div`
   }
   .minip .info h3 {
     display: block;
-    ${'' /* font: 16px/20px ${mono}; */}
+    ${"" /* font: 16px/20px ${mono}; */}
     font: 200 15px/25px ${display};
     text-indent: -25px;
     margin: 0 6px;
