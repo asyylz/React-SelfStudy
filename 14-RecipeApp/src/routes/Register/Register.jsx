@@ -7,9 +7,15 @@ export default function Register() {
     useContext(Context);
 
   function handleNewUser(e) {
-    console.log(newUser)
     e.preventDefault();
-    usersData.push(newUser);
+    const { name, password } = newUser;
+    //const isExist = !!usersData.find((user) => user.name === name);
+    const isExist = Boolean(usersData.find((user) => user.name === name));
+    if (!isExist) {
+      usersData.push(newUser);
+    } else {
+      alert("This user already exist");
+    }
     navigate("/login");
   }
 
@@ -32,7 +38,7 @@ export default function Register() {
                 onChange={(e) =>
                   setNewUser((prevState) => ({
                     ...prevState,
-                    userName: e.target.value,
+                    userName: e.target.value.toLowerCase(),
                   }))
                 }
               />

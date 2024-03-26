@@ -18,7 +18,7 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [newUser, setNewUser] = useState({ authorized: false });
+  const [newUser, setNewUser] = useState({});
   const [userData, setUserData] = useState([]);
  
 
