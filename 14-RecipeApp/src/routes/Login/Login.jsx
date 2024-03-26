@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
-  const { userCredits, setUserCredits } = useContext(Context);
+  const { userCredits, setUserCredits, selectedRecipe } = useContext(Context);
   const { userName, userPassword, authorized } = userCredits;
 
   const navigate = useNavigate();
@@ -53,7 +53,11 @@ export default function Login() {
                 value="Login"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate("/recipe")
+                  if (selectedRecipe) {
+                    navigate("/recipe");
+                  } else {
+                    navigate("/");
+                  }
                 }}
               />
             </div>

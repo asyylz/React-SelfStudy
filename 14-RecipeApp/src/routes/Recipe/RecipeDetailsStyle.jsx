@@ -27,7 +27,7 @@ const RecipeDetailsStyle = styled.div`
   justify-content: center;
 
   .container {
-    margin-top: 2rem;
+    margin-top: 5rem;
     width: 80vw;
     padding: 2.5rem;
     background-color: white;
