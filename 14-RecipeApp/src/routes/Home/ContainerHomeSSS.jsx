@@ -22,7 +22,7 @@ const ContainerHomeSSS = styled.div`
     color: #2c3834;
   }
   .search-wrapper {
-    width: 45vw;
+    width: 90vw;
   }
   .result-wrapper {
     margin: 2rem 0;
@@ -34,6 +34,18 @@ const ContainerHomeSSS = styled.div`
   }
   .recipe-card {
     color: #fff;
+  }
+  @media (min-width: 1100px) {
+    .search-wrapper {
+      max-width: 60vw;
+    }
+  }
+  @media (max-width: 500px) {
+    .search-wrapper {
+     display: flex;
+     flex-direction: column;
+  
+    }
   }
 `;
 

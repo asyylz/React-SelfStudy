@@ -36,6 +36,11 @@ const ButtonHomeSSS = styled.button`
   &:focus-visible {
     box-shadow: none;
   }
+
+  @media (max-width: 690px) {
+  width: 90%;
+  margin-bottom:1rem;
+  }
 `;
 
 export default ButtonHomeSSS;

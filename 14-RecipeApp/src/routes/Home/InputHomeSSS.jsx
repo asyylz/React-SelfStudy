@@ -16,6 +16,10 @@ const Input = styled.input`
     outline-offset: 5px;
     background-color: #fff;
   }
+  @media (max-width: 690px) {
+  width: 90%;
+  margin-bottom:1rem;
+  }
 `;
 
 export default Input;

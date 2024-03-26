@@ -76,15 +76,21 @@
   
   @media (min-width:385px) and (max-width:640px) {
     .nav {
-      display: flex;
-      flex-direction: column;
-      height: 150px;
+      height: 200px;
+      min-width: 420px;
     }
     .nav ul{
-      margin-left: 0.2rem;
+      display: flex;
+      flex-direction: column;
+      margin-left:0.2rem;
+      margin-top: 1rem;
     }
     #root {
       margin-top: 200px;
+    }
+    .user-account{
+     top:1.5rem ;
+     
     }
   
   }

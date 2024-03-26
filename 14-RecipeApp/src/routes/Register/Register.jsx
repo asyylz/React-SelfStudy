@@ -9,7 +9,7 @@ export default function Register() {
   function handleNewUser(e) {
     e.preventDefault();
     usersData.push(newUser);
-    navigate("/");
+    navigate("/login");
   }
 
   const navigate = useNavigate();
