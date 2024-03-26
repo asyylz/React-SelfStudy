@@ -21,6 +21,7 @@ export default function Home() {
   } = useContext(Context);
 
   console.log(usersData);
+  console.log(userCredits)
 
   const navigate = useNavigate();
 

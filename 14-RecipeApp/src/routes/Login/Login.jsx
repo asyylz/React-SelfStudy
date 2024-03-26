@@ -56,7 +56,7 @@ export default function Login() {
                   if (selectedRecipe) {
                     navigate("/recipe");
                   } else {
-                    navigate("/");
+                    navigate("/home2");
                   }
                 }}
               />

@@ -8,6 +8,8 @@ export default function PrivateRouter() {
   const { userName, userPassword, authorized } = userCredits;
   const foundUser = usersData.find((user) => user.userName === userName && user.userPassword === userPassword);
   const [loading, setLoading] = useState(true);
+  
+  console.log(userCredits)
 
   useEffect(() => {
     if (foundUser) {

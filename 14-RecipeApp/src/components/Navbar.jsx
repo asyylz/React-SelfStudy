@@ -12,6 +12,7 @@ export default function Navbar() {
 
   function handleLogout() {
     setUserCredits({ userName: "", userPassword: "", authorized: false });
+    navigate("/login");
   }
   return (
     <>
