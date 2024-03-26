@@ -3,8 +3,9 @@ import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
-  const { userCredits, setUserCredits, selectedRecipe } = useContext(Context);
-  const { userName, userPassword, authorized } = userCredits;
+  const { activeUserCredits, setActiveUserCredits, selectedRecipe } =
+    useContext(Context);
+  const { userName, userPassword, authorized } = activeUserCredits;
 
   const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ export default function Login() {
                 placeholder="User Name"
                 required
                 onChange={(e) =>
-                  setUserCredits((prevState) => ({
+                  setActiveUserCredits((prevState) => ({
                     ...prevState,
                     userName: e.target.value,
                   }))
@@ -37,7 +38,7 @@ export default function Login() {
                 placeholder="Password"
                 required
                 onChange={(e) =>
-                  setUserCredits((prevState) => ({
+                  setActiveUserCredits((prevState) => ({
                     ...prevState,
                     userPassword: e.target.value,
                   }))
@@ -62,7 +63,7 @@ export default function Login() {
               />
             </div>
             <div className="signup-link">
-              Not a member? <a href="#">Signup now</a>
+              Not a member? <a href="/register">Signup now</a>
             </div>
           </form>
         </div>

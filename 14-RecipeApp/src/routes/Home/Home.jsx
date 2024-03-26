@@ -16,19 +16,18 @@ export default function Home() {
     setRecipeSearch,
     recipeSearch,
     recipeData,
-    userCredits,
+    activeUserCredits,
     setSelectedRecipe,
     usersData,
   } = useContext(Context);
 
   console.log(usersData);
-  console.log(userCredits);
 
   const navigate = useNavigate();
 
   function handleClick(recipe, e) {
     e.preventDefault();
-    if (userCredits.authorized) {
+    if (activeUserCredits.authorized) {
       navigate("/recipe");
       setSelectedRecipe(recipe);
     } else {
@@ -67,11 +66,13 @@ export default function Home() {
           </ButtonHomeSSS>
         </div>
         <div className="result-wrapper">
-          {recipeData.map((recipe) => (
-            <RecipeCardHomeSSS>
+          {recipeData.map((recipe, index) => (
+            <RecipeCardHomeSSS key={index}>
               <div className="minip">
                 <div className="mg">
-                  <div className="clr"><MdFavoriteBorder className="icon fav" /></div>
+                  <div className="clr">
+                    <MdFavoriteBorder className="icon fav" />
+                  </div>
                   <div className="group">
                     <span>{mealType}</span>
                   </div>

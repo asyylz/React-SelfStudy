@@ -3,7 +3,7 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
 export default function Register() {
-  const { setNewUser, newUser, userData, setUserData, usersData } =
+  const { setNewUser, newUser, usersData } =
     useContext(Context);
 
   function handleNewUser(e) {
@@ -13,8 +13,9 @@ export default function Register() {
     const isExist = Boolean(usersData.find((user) => user.name === name));
     if (!isExist) {
       usersData.push(newUser);
+     
     } else {
-      alert("This user already exist");
+      alert("This user already exist, create a new one or please log in!");
     }
     navigate("/login");
   }

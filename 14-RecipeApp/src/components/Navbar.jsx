@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { Context } from "../contextAPI/ContextProvider";
 import { useNavigate } from "react-router-dom";
 export default function Navbar() {
-  const { userCredits, setUserCredits, setSelectedRecipe } =
+  const { activeUserCredits, setActiveUserCredits, setSelectedRecipe } =
     useContext(Context);
   const { userName, userPassword, authorized } =
-    useContext(Context).userCredits;
+    useContext(Context).activeUserCredits;
   const navigate = useNavigate();
 
   function handleLogout() {

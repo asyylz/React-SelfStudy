@@ -12,7 +12,7 @@ export default function ContexProvider({ children }) {
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
   const [recipeData, setRecipeData] = useState([]);
-  const [userCredits, setUserCredits] = useState({
+  const [activeUserCredits, setActiveUserCredits] = useState({
     userName: "",
     userPassword: "",
     authorized: false,
@@ -42,14 +42,12 @@ export default function ContexProvider({ children }) {
     setRecipeSearch: setRecipeSearch,
     recipeSearch: recipeSearch,
     recipeData: recipeData,
-    userCredits,
-    setUserCredits,
+    activeUserCredits,
+    setActiveUserCredits,
     selectedRecipe,
     setSelectedRecipe,
     setNewUser,
     newUser,
-    userData,
-    setUserData,
     usersData,
   };
 
