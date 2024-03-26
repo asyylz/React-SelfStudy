@@ -41,6 +41,7 @@ export default function ContexProvider({ children }) {
     recipeData: recipeData,
     userCredits,
     setUserCredits,
+    selectedRecipe,
     setSelectedRecipe
   };
 
