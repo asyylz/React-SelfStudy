@@ -29,6 +29,7 @@ export default function Home() {
     e.preventDefault();
     if (userCredits.authorized) {
       navigate("/recipe");
+      setSelectedRecipe(recipe);
     } else {
       alert("You are not logged in");
       navigate("/login");
