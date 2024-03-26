@@ -2,7 +2,7 @@ import styled from "styled-components";
 import background from "/public/bg3.avif";
 const beige = "#cdad93";
 const ContainerHomeSSS = styled.div`
-  height: ${({ isEmpty }) => (isEmpty ? "100vh" : "")};
+  height: ${({ isempty }) => (isempty === "true" ? "100vh" : "")};
   width: 100vw;
   margin-top: 6.2rem;
   background-image: url(${background});

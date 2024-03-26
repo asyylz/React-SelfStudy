@@ -11,7 +11,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   function handleLogout() {
-    setUserCredits({ userName: "", userPassword: "", authorized: false });
+    setActiveUserCredits({ userName: "", userPassword: "", authorized: false });
     navigate("/login");
   }
   return (

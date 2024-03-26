@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <ContainerHomeSSS isEmpty={recipeData.length === 0 ? true : false}>
+    <ContainerHomeSSS isempty={recipeData.length === 0 ? 'true' : 'false'}>
       <div className="wrapper">
         <h1>Recipe Search</h1>
         <div className="search-wrapper">

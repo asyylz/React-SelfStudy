@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const { activeUserCredits, setActiveUserCredits, selectedRecipe } =
     useContext(Context);
-  const { userName, userPassword, authorized } = activeUserCredits;
+  //const { userName, userPassword, authorized } = activeUserCredits;
 
   const navigate = useNavigate();
 
