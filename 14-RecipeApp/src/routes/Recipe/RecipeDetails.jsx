@@ -27,12 +27,6 @@ export default function RecipeDetails() {
               <li>
                 <span>Total: </span>{`${selectedRecipe.totalTime} min`}
               </li>
-              {/* <li>
-                <span>Preparation: </span>5 minutes
-              </li>
-              <li>
-                <span>Cooking: </span>5 minutes
-              </li> */}
             </ul>
           </div>
         </section>
