@@ -2,7 +2,7 @@ import LoginStyle from "./LoginStyle";
 import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
-export default function () {
+export default function Login() {
   const { userCredits, setUserCredits } = useContext(Context);
   const { userName, userPassword, authorized } = userCredits;
 

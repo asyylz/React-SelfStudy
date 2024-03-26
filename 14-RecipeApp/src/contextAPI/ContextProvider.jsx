@@ -17,7 +17,10 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+  const [newUser, setNewUser] = useState({
+    userName: "",
+    userPassword: "",
+  });
 
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
@@ -42,7 +45,7 @@ export default function ContexProvider({ children }) {
     userCredits,
     setUserCredits,
     selectedRecipe,
-    setSelectedRecipe
+    setSelectedRecipe,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;
