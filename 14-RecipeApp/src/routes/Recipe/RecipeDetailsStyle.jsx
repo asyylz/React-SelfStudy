@@ -22,22 +22,27 @@ const youngSerif = "'Young Serif', serif";
 const RecipeDetailsStyle = styled.div`
   margin-top: 3rem;
   width: 100%;
-  background-color:${body};
+  background-color: ${body};
   display: flex;
   justify-content: center;
 
-  main {
-    width: 100%;
-    max-width: 750px;
+  .container {
+    margin-top: 2rem;
+    width: 80vw;
     padding: 2.5rem;
-    background-color: ${white};
+    background-color: white;
     border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:3rem;
+  }
+
+  .div2 {
+    text-align: start;
   }
 
   img {
-    max-width: 100%;
     border-radius: 10px;
-
   }
 
   h1,
@@ -103,14 +108,14 @@ const RecipeDetailsStyle = styled.div`
   }
 
   span {
-    color:${text};
+    color: ${text};
     font-weight: 700;
   }
 
   .preparation-time {
     padding: 1rem;
     margin: 1rem 0;
-    background-color:${prepationBg};
+    background-color: ${prepationBg};
     border-radius: 0.5rem;
   }
 
