@@ -11,17 +11,16 @@ import { MdFavoriteBorder } from "react-icons/md";
 export default function Home() {
   const {
     getRecipe,
-    mealType,
-    setMealType,
-    setRecipeSearch,
-    recipeSearch,
     recipeData,
     activeUserCredits,
     setSelectedRecipe,
-    usersData,
   } = useContext(Context);
 
-  console.log(usersData);
+  const [mealType, setMealType] = useState("");
+  const [recipeSearch, setRecipeSearch] = useState("");
+  const APP_ID = "b87d8a95";
+  const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
+  const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const navigate = useNavigate();
 
@@ -61,7 +60,7 @@ export default function Home() {
             className="input"
             onChange={(e) => setRecipeSearch(e.target.value)}
           />
-          <ButtonHomeSSS role="button" onClick={() => getRecipe()}>
+          <ButtonHomeSSS role="button" onClick={() => getRecipe(baseURL)}>
             Search
           </ButtonHomeSSS>
         </div>

@@ -7,10 +7,6 @@ export const Context = createContext({
 });
 //const usersData = [];
 export default function ContexProvider({ children }) {
-  const APP_ID = "b87d8a95";
-  const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
-  const [mealType, setMealType] = useState("");
-  const [recipeSearch, setRecipeSearch] = useState("");
   const [recipeData, setRecipeData] = useState([]);
   const [activeUserCredits, setActiveUserCredits] = useState({
     userName: "",
@@ -20,13 +16,10 @@ export default function ContexProvider({ children }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null); //navigate ile yolla
   const [newUser, setNewUser] = useState({});
   const [usersData, setUsersData] = useState([]);
- 
-  
-  const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
-  const getRecipe = async () => {
+  const getRecipe = async (URL) => {
     try {
-      const response = await axios.get(`${baseURL}`);
+      const response = await axios.get(`${URL}`);
       setRecipeData(response.data.hits);
       return response.data.hits;
     } catch (error) {
@@ -37,10 +30,6 @@ export default function ContexProvider({ children }) {
 
   const contextContent = {
     getRecipe: getRecipe,
-    mealType: mealType,
-    setMealType: setMealType,
-    setRecipeSearch: setRecipeSearch,
-    recipeSearch: recipeSearch,
     recipeData: recipeData,
     activeUserCredits,
     setActiveUserCredits,
@@ -49,7 +38,7 @@ export default function ContexProvider({ children }) {
     setNewUser,
     newUser,
     usersData,
-    setUsersData
+    setUsersData,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;
