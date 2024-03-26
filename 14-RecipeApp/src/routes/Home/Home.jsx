@@ -21,14 +21,18 @@ export default function Home() {
   } = useContext(Context);
 
   console.log(usersData);
-  console.log(userCredits)
+  console.log(userCredits);
 
   const navigate = useNavigate();
 
   function handleClick(recipe, e) {
     e.preventDefault();
-    navigate("/recipe");
-    setSelectedRecipe(recipe);
+    if (userCredits.authorized) {
+      navigate("/recipe");
+    } else {
+      alert("You are not logged in");
+      navigate("/login");
+    }
   }
 
   return (
