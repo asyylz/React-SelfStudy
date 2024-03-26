@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import background from "/public/bg3.avif";
-
+const beige = "#cdad93";
 const ContainerHomeSSS = styled.div`
   height: ${({ isEmpty }) => (isEmpty ? "100vh" : "")};
   width: 100vw;
@@ -35,6 +35,11 @@ const ContainerHomeSSS = styled.div`
   .recipe-card {
     color: #fff;
   }
+  .icon {
+    color: ${beige};
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
   @media (min-width: 1100px) {
     .search-wrapper {
       max-width: 60vw;
@@ -42,9 +47,8 @@ const ContainerHomeSSS = styled.div`
   }
   @media (max-width: 500px) {
     .search-wrapper {
-     display: flex;
-     flex-direction: column;
-  
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

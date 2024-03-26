@@ -37,6 +37,7 @@ const SelectHomeSSS = styled.select`
     box-shadow: none;
   }
 
+
   @media (max-width: 690px) {
   width: 90%;
   margin-bottom:1rem;

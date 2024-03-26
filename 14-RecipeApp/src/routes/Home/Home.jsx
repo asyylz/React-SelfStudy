@@ -6,6 +6,7 @@ import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate, useParams } from "react-router-dom";
+import { MdFavoriteBorder } from "react-icons/md";
 
 export default function Home() {
   const {
@@ -70,7 +71,7 @@ export default function Home() {
             <RecipeCardHomeSSS>
               <div className="minip">
                 <div className="mg">
-                  <div className="clr"></div>
+                  <div className="clr"><MdFavoriteBorder className="icon fav" /></div>
                   <div className="group">
                     <span>{mealType}</span>
                   </div>
