@@ -6,16 +6,15 @@ import { useContext } from "react";
 export default function PrivateRouter() {
   const { userCredits, setUserCredits, usersData } = useContext(Context);
   const { userName, userPassword, authorized } = userCredits;
+  const foundUser = usersData.find((user) => user.userName === userName && user.userPassword === userPassword);
   const [loading, setLoading] = useState(true);
-  const foundUser = usersData.find((user) => user.userName === userName && user.password === userPassword);
-  console.log(foundUser)
 
   useEffect(() => {
     if (foundUser) {
       setUserCredits((prevCredits) => ({ ...prevCredits, authorized: true }));
     }
     setLoading(false);
-  }, [userName, userPassword, setUserCredits]);
+  }, [foundUser, setUserCredits]);
 
   if (loading) {
     return <div>Loading...</div>;

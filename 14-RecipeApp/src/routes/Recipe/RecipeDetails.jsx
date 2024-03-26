@@ -4,8 +4,6 @@ import RecipeDetailsStyle from "./RecipeDetailsStyle.jsx";
 export default function RecipeDetails() {
   const { selectedRecipe } = useContext(Context);
 
-  console.log(selectedRecipe);
-
   return (
     <RecipeDetailsStyle>
       <div className="container">
