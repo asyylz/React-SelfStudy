@@ -5,6 +5,7 @@ export const Context = createContext({
   getRecipe: () => {},
   recipeData: [],
 });
+const usersData = [];
 export default function ContexProvider({ children }) {
   const APP_ID = "b87d8a95";
   const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
@@ -17,10 +18,9 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [newUser, setNewUser] = useState({
-    userName: "",
-    userPassword: "",
-  });
+  const [newUser, setNewUser] = useState({ authorized: false });
+  const [userData, setUserData] = useState([]);
+ 
 
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
@@ -46,6 +46,11 @@ export default function ContexProvider({ children }) {
     setUserCredits,
     selectedRecipe,
     setSelectedRecipe,
+    setNewUser,
+    newUser,
+    userData,
+    setUserData,
+    usersData,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;

@@ -3,6 +3,14 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
 export default function Register() {
+  const { setNewUser, newUser, userData, setUserData, usersData } =
+    useContext(Context);
+
+  function handleNewUser(e) {
+    e.preventDefault();
+    usersData.push(newUser);
+    navigate("/");
+  }
 
   const navigate = useNavigate();
 
@@ -21,7 +29,7 @@ export default function Register() {
                 placeholder="User Name"
                 required
                 onChange={(e) =>
-                  setUserCredits((prevState) => ({
+                  setNewUser((prevState) => ({
                     ...prevState,
                     userName: e.target.value,
                   }))
@@ -35,7 +43,7 @@ export default function Register() {
                 placeholder="Password"
                 required
                 onChange={(e) =>
-                  setUserCredits((prevState) => ({
+                  setNewUser((prevState) => ({
                     ...prevState,
                     userPassword: e.target.value,
                   }))
@@ -46,10 +54,7 @@ export default function Register() {
               <input
                 type="submit"
                 value="Register"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/recipe");
-                }}
+                onClick={(e) => handleNewUser(e)}
               />
             </div>
           </form>

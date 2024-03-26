@@ -17,8 +17,10 @@ export default function Home() {
     recipeData,
     userCredits,
     setSelectedRecipe,
+    usersData,
   } = useContext(Context);
 
+  console.log(usersData);
 
   const navigate = useNavigate();
 
@@ -80,7 +82,7 @@ export default function Home() {
                   className="plot"
                   title="plot with recipe"
                   href=""
-                  onClick={(e) => handleClick(recipe.recipe,e)}
+                  onClick={(e) => handleClick(recipe.recipe, e)}
                 >
                   view recipe →
                 </a>
