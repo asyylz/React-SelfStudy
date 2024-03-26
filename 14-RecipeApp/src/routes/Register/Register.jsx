@@ -7,6 +7,7 @@ export default function Register() {
     useContext(Context);
 
   function handleNewUser(e) {
+    console.log(newUser)
     e.preventDefault();
     usersData.push(newUser);
     navigate("/login");

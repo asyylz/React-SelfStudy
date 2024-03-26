@@ -67,7 +67,7 @@ export default function Home() {
                 <div className="mg">
                   <div className="clr"></div>
                   <div className="group">
-                    <span>{recipe.recipe.mealType}</span>
+                    <span>{mealType}</span>
                   </div>
                 </div>
                 <div
