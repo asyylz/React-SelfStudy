@@ -73,6 +73,10 @@
   .user-account small{
     cursor: pointer;
   }
+  .heart {
+    font-size: 1.5rem;
+    color: red;
+  }
   
   @media (min-width:385px) and (max-width:640px) {
     .nav {

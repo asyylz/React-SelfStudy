@@ -1,21 +1,22 @@
-//import { useContext } from "react";
-//import { Context } from "../../contextAPI/ContextProvider.jsx";
-import { useParams, useLocation,useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import RecipeDetailsStyle from "./RecipeDetailsStyle.jsx";
 import { BsArrowBarLeft } from "react-icons/bs";
 export default function RecipeDetails() {
-  //const { selectedRecipe } = useContext(Context);
   const {
     state: { recipe },
   } = useLocation();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   console.log(recipe);
   return (
     <RecipeDetailsStyle>
       <div className="container">
         <div className="div1">
-          <BsArrowBarLeft className="navigate-back" onClick={()=>navigate(-1)} style={{cursor:"pointer"}}/>
+          <BsArrowBarLeft
+            className="navigate-back"
+            onClick={() => navigate(-1)}
+            style={{ cursor: "pointer" }}
+          />
           <div>
             <div>
               <img src={recipe.image} alt="omelette" />

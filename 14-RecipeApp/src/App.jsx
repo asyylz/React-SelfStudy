@@ -10,6 +10,7 @@ import Register from "./routes/Register/Register.jsx";
 import About from "./routes/About/About.jsx";
 import RecipeDetails from "./routes/Recipe/RecipeDetails.jsx";
 import PrivateRouter from "./routes/PrivateRouter.jsx";
+import FavRecipes from "./routes/FavRecipes/FavRecipes.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="" element={<RecipeDetails />} />
           </Route>
           <Route path="/about" element={<About />} />
+          <Route path="/fav" element={<FavRecipes />} />
         </Routes>
       </Router>
     </ContexProvider>

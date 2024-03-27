@@ -1,5 +1,6 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
+import { AiFillHeart } from "react-icons/ai";
 import { useContext } from "react";
 import { Context } from "../contextAPI/ContextProvider";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +26,7 @@ export default function Navbar() {
           </Link>
           <Link to="/register">Register</Link>
           <Link to="/login">Login</Link>
+          <Link to="/fav">My<small><AiFillHeart className="heart" /></small><br />Recipes</Link>
           <Link to="/about">About</Link>
           <div className="user-account">
             <small onClick={() => navigate("/login")}>
