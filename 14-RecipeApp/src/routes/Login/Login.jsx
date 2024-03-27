@@ -1,13 +1,44 @@
 import LoginStyle from "./LoginStyle";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
-  const { activeUserCredits, setActiveUserCredits, selectedRecipe } =
+  const { activeUserCredits, setActiveUserCredits, selectedRecipe, usersData } =
     useContext(Context);
-  //const { userName, userPassword, authorized } = activeUserCredits;
-
+  const { userName, userPassword, authorized } = activeUserCredits;
   const navigate = useNavigate();
+ 
+
+  console.log(usersData);
+  console.log(userName);
+  console.log(activeUserCredits)
+  useEffect(() => {
+    if (authorized) {
+      // Navigate back to the previous location in the history stack
+      navigate(-1);
+    }
+  }, [authorized, navigate]);
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const foundUser = usersData.find(
+      (user) => user.userName === userName && user.userPassword === userPassword
+    );
+    console.log(foundUser);
+    if (foundUser) {
+      console.log("clicked");
+      setActiveUserCredits((prevCredits) => ({
+        ...prevCredits,
+        authorized: true,
+      }))
+       navigate(-1);
+    } else {
+      const message = "You haven't registered yet...Please register...";
+      alert(message);
+      navigate("/register")
+    }
+
+  }
 
   return (
     <LoginStyle>
@@ -52,14 +83,15 @@ export default function Login() {
               <input
                 type="submit"
                 value="Login"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (selectedRecipe) {
-                    navigate("/recipe");
-                  } else {
-                    navigate("/home2");
-                  }
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   if (selectedRecipe) {
+                //     navigate("/recipe");
+                //   } else {
+                //     navigate("/home2");
+                //   }
+                // }}
+                onClick={handleLogin}
               />
             </div>
             <div className="signup-link">

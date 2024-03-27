@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className="nav">
         <h1>Recipe</h1>
         <ul>
-          <Link to="/" onClick={() => setSelectedRecipe(null)}>
+          <Link to="/">
             Home
           </Link>
           <Link to="/register">Register</Link>

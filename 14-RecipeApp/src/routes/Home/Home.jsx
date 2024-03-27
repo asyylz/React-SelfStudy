@@ -9,11 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 
 export default function Home() {
-  const {
-    getRecipe,
-    recipeData,
-    activeUserCredits,
-  } = useContext(Context);
+  const { getRecipe, recipeData, activeUserCredits } = useContext(Context);
 
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
@@ -25,16 +21,11 @@ export default function Home() {
 
   function handleClick(recipe, e) {
     e.preventDefault();
-    if (activeUserCredits.authorized) {
-      navigate("/recipe",{state:{recipe}});
-    } else {
-      alert("You are not logged in");
-      navigate("/login");
-    }
+    navigate("/recipe", { state: { recipe } });
   }
 
   return (
-    <ContainerHomeSSS isempty={recipeData.length === 0 ? 'true' : 'false'}>
+    <ContainerHomeSSS isempty={recipeData.length === 0 ? "true" : "false"}>
       <div className="wrapper">
         <h1>Recipe Search</h1>
         <div className="search-wrapper">
