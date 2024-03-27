@@ -13,7 +13,6 @@ export default function ContexProvider({ children }) {
     userPassword: "",
     authorized: false,
   });
-  const [selectedRecipe, setSelectedRecipe] = useState(null); //navigate ile yolla
   const [usersData, setUsersData] = useState([]);
 
   const getRecipe = async (URL) => {
@@ -32,8 +31,6 @@ export default function ContexProvider({ children }) {
     recipeData: recipeData,
     activeUserCredits,
     setActiveUserCredits,
-    selectedRecipe,
-    setSelectedRecipe,
     usersData,
     setUsersData,
   };

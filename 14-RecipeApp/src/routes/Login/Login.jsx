@@ -3,15 +3,11 @@ import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
-  const { activeUserCredits, setActiveUserCredits, selectedRecipe, usersData } =
+  const { activeUserCredits, setActiveUserCredits, usersData } =
     useContext(Context);
   const { userName, userPassword, authorized } = activeUserCredits;
   const navigate = useNavigate();
- 
 
-  console.log(usersData);
-  console.log(userName);
-  console.log(activeUserCredits)
   useEffect(() => {
     if (authorized) {
       // Navigate back to the previous location in the history stack
@@ -26,18 +22,16 @@ export default function Login() {
     );
     console.log(foundUser);
     if (foundUser) {
-      console.log("clicked");
       setActiveUserCredits((prevCredits) => ({
         ...prevCredits,
         authorized: true,
-      }))
-       navigate(-1);
+      }));
+      navigate(-1);
     } else {
       const message = "You haven't registered yet...Please register...";
       alert(message);
-      navigate("/register")
+      navigate("/register");
     }
-
   }
 
   return (
@@ -80,19 +74,7 @@ export default function Login() {
               <a htmlFor="#">Forgot password?</a>
             </div>
             <div className="row button">
-              <input
-                type="submit"
-                value="Login"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   if (selectedRecipe) {
-                //     navigate("/recipe");
-                //   } else {
-                //     navigate("/home2");
-                //   }
-                // }}
-                onClick={handleLogin}
-              />
+              <input type="submit" value="Login" onClick={handleLogin} />
             </div>
             <div className="signup-link">
               Not a member? <a href="/register">Signup now</a>
