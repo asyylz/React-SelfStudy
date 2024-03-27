@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "/public/bgAbout.avif";
+const font = "'Imbue', sans-serif";
 
 const AboutStyle = styled.div`
   * {
@@ -25,29 +26,34 @@ const AboutStyle = styled.div`
     display: flex;
     justify-content: center;
   }
-.media-icons {
+  .media-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
-  .media-icons a {
+  }
+  .media-icons .icon {
     margin-left: 1rem;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     padding: 1rem;
     font-size: 2rem;
     color: #2c3e50;
     font-weight: 500;
     opacity: 0.7;
     transition: all 0.3s ease;
-    border: 2px solid red;
+    border: 1px solid red;
     border-radius: 30%;
-  
-
+    cursor: pointer;
   }
-  .media-icons a:hover {
+  .media-icons .icon:hover {
     opacity: 1;
+    scale: 1.2;
+  }
+  h1 {
+    margin-top: 1rem;
+    font-family: ${font};
+    color: #2c3e50;
   }
 `;
 export default AboutStyle;
