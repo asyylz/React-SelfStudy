@@ -22,12 +22,14 @@ const youngSerif = "'Young Serif', serif";
 const RecipeDetailsStyle = styled.div`
   margin-top: 3rem;
   width: 100%;
+  height:100vh;
   background-color: ${body};
   display: flex;
   justify-content: center;
 
   .container {
     margin-top: 5rem;
+    max-height:90vh;
     width: 80vw;
     padding: 2.5rem;
     background-color: white;
@@ -35,6 +37,12 @@ const RecipeDetailsStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:3rem;
+  }
+  .div1 .navigate-back{
+    font-size:2rem;
+    position:absolute;
+    left:3rem;
+
   }
 
   .div2 {
@@ -60,19 +68,19 @@ const RecipeDetailsStyle = styled.div`
     color: ${primary};
   }
 
+  .preparation-time li {
+    list-style-type: none;
+  }
+
   p,
   li {
     color: ${text};
     font-family: "Outfit", sans-serif;
   }
 
-  ul {
-    margin-left: 0.5rem;
-  }
-
   li {
-    margin-left: 1rem;
-    padding-left: 1rem;
+    ${'' /* margin-left: 1rem;
+    padding-left: 1rem; */}
     line-height: 1.7rem;
     list-style-position: outside;
   }

@@ -15,7 +15,7 @@ export default function RecipeDetails() {
     <RecipeDetailsStyle>
       <div className="container">
         <div className="div1">
-          <BsArrowBarLeft onClick={()=>navigate(-1)} style={{cursor:"pointer"}}/>
+          <BsArrowBarLeft className="navigate-back" onClick={()=>navigate(-1)} style={{cursor:"pointer"}}/>
           <div>
             <div>
               <img src={recipe.image} alt="omelette" />
