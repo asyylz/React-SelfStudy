@@ -1,27 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
 export default function Register() {
-  const { setNewUser, newUser, usersData, setUsersData } = useContext(Context);
-
+  const { usersData, setUsersData } = useContext(Context);
+  const [newUser, setNewUser] = useState({ userName: "", userPassword: "" });
+  const [error, setError] = useState({
+    nameError: "",
+    passwordError: "",
+  });
+  const { userName, userPassword } = newUser;
+  const navigate = useNavigate();
+  console.log();
   function handleNewUser(e) {
     e.preventDefault();
-    const { userName, userPassword } = newUser;
-    //const isExist = !!usersData.find((user) => user.name === name);
+
+    if (!userName || userName.trim() === "") {
+      setError((prevState) => ({
+        ...prevState,
+        nameError: "User Name is required",
+      }));
+      return;
+    }
+    if (!userPassword || userPassword.trim() === "") {
+      setError((prevState) => ({
+        ...prevState,
+        passwordError: "User password is required",
+      }));
+
+      return;
+    }
     const isExist = usersData.some((user) => user.userName === userName);
     if (!isExist) {
       setUsersData((prevState) => [...prevState, newUser]);
+      alert("User registered successfully!");
     } else {
-      alert("This user already exist, create a new one or please log in!");
+      alert("This user already exists. Please create a new one or log in.");
     }
-    navigate("/login");
+    setNewUser({ userName: "", userPassword: "" });
+    //navigate("/login");
   }
 
-  
-  
-
-  const navigate = useNavigate();
+  console.log(newUser);
+  console.log(usersData);
 
   return (
     <RegisterStyle>
@@ -35,36 +56,42 @@ export default function Register() {
               <i className="fas fa-user"></i>
               <input
                 type="text"
+                onFocus={() => setError({ nameError: "", passwordError: "" })}
+                autoFocus
+                // value={newUser.userName}
                 placeholder="User Name"
                 required
-                onChange={(e) =>
+                onChange={(e) => {
                   setNewUser((prevState) => ({
                     ...prevState,
                     userName: e.target.value.toLowerCase(),
-                  }))
-                }
+                  }));
+                }}
               />
+              {/* {!newUser.userName ? (
+                <span> error msg: Please enter your first name</span>
+              ) : null} */}
+              {<span className="error">{error.nameError}</span>}
             </div>
             <div className="row">
               <i className="fas fa-lock"></i>
               <input
                 type="password"
                 placeholder="Password"
+                onFocus={() => setError({ nameError: "", passwordError: "" })}
+                // value={newUser.userPassword}
                 required
-                onChange={(e) =>
+                onChange={(e) => {
                   setNewUser((prevState) => ({
                     ...prevState,
                     userPassword: e.target.value,
-                  }))
-                }
+                  }));
+                }}
               />
+              {<span className="error">{error.passwordError}</span>}
             </div>
             <div className="row button">
-              <input
-                type="submit"
-                value="Register"
-                onClick={handleNewUser}
-              />
+              <input type="submit" value="Register" onClick={handleNewUser} />
             </div>
           </form>
         </div>

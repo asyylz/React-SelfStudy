@@ -123,6 +123,13 @@ const RegisterStyle = styled.div`
     color: ${dgreen};
     border:1px solid ${dgreen};
   }
+  .error{
+    position: absolute;
+    top:-30px;
+    color:red;
+    font-size: 18px;
+    font-weight: 500;
+  }
 `;
 
 export default RegisterStyle;
