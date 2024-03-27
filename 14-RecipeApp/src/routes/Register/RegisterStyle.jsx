@@ -1,13 +1,11 @@
 import styled from "styled-components";
-
+import background from "/public/bgRegister.avif";
 const Font =
   "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap";
-const peach = "#e5ae8a";
 const dgreen = "#2c3834";
 const white = "#f7f1e1";
 
 const RegisterStyle = styled.div`
-  /* Global Reset */
   * {
     margin: 0;
     padding: 0;
@@ -18,14 +16,17 @@ const RegisterStyle = styled.div`
   ::selection {
     background: rgba(229, 174, 138, 0.5);
   }
-  background-color: ;
   height: 100vh;
+  background-image: url(${background});
+  background-size: cover;
+  display: flex;
+  justify-content: center;
 
   .container {
     max-width: 40vw;
     min-width: 30vw;
     padding: 0 20px;
-    margin: 170px auto;
+    padding-top: 10rem;
   }
 
   .wrapper {
@@ -61,17 +62,12 @@ const RegisterStyle = styled.div`
     height: 100%;
     width: 100%;
     padding-left: 60px;
-    outline: none; /* Remove the default focus outline */
+    outline: none;
     border-radius: 5px;
     border: 1px solid lightgray;
     font-size: 16px;
-    transition: all 0.3s ease; /* Apply a smooth transition for all properties over 0.3s */
+    transition: all 0.3s ease;
   }
-
-  ${'' /* form .row input:focus {
-    border-color: ${peach};
-    box-shadow: inset 0px 0px 5px 5px rgba(229, 174, 138, 0.7);
-  } */}
 
   form .row input::placeholder {
     color: #999;
@@ -95,23 +91,11 @@ const RegisterStyle = styled.div`
     margin: -8px 0 20px 0;
   }
 
-  ${
-    "" /* .wrapper form .pass a {
-    color: ${white};
-    text-decoration: none;
-    font-size: 17px;
-} */
-  }
-
-  ${'' /* .wrapper form .pass a:hover {
-    text-decoration: underline;
-  } */}
-
   .wrapper form .button input {
     color: rgba(177, 235, 228, 0.7);
     font-size: 20px;
     font-weight: 500;
-    padding-left: 0; /* previous padding  from input canceled for this item to center it */
+    padding-left: 0;
     background: ${dgreen};
     cursor: pointer;
     border: none;
@@ -121,12 +105,12 @@ const RegisterStyle = styled.div`
   form .button input:hover {
     background: ${white};
     color: ${dgreen};
-    border:1px solid ${dgreen};
+    border: 1px solid ${dgreen};
   }
-  .error{
+  .error {
     position: absolute;
-    top:-30px;
-    color:red;
+    top: -30px;
+    color: red;
     font-size: 18px;
     font-weight: 500;
   }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "/public/bg3.avif";
+import background from "/public/bgHome.avif";
 const beige = "#cdad93";
 const ContainerHomeSSS = styled.div`
   height: ${({ isempty }) => (isempty === "true" ? "100vh" : "")};

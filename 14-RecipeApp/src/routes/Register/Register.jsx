@@ -38,7 +38,7 @@ export default function Register() {
       alert("This user already exists. Please create a new one or log in.");
     }
     setNewUser({ userName: "", userPassword: "" });
-    //navigate("/login");
+    navigate("/login");
   }
 
   console.log(newUser);
