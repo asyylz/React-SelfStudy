@@ -5,7 +5,7 @@ import InputHomeSSS from "./InputHomeSSS.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 
 export default function Home() {
@@ -13,7 +13,6 @@ export default function Home() {
     getRecipe,
     recipeData,
     activeUserCredits,
-    setSelectedRecipe,
   } = useContext(Context);
 
   const [mealType, setMealType] = useState("");
@@ -27,8 +26,7 @@ export default function Home() {
   function handleClick(recipe, e) {
     e.preventDefault();
     if (activeUserCredits.authorized) {
-      navigate("/recipe");
-      setSelectedRecipe(recipe);
+      navigate("/recipe",{state:{recipe}});
     } else {
       alert("You are not logged in");
       navigate("/login");

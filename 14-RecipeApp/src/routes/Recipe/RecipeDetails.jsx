@@ -1,20 +1,25 @@
-import { useContext } from "react";
-import { Context } from "../../contextAPI/ContextProvider.jsx";
+//import { useContext } from "react";
+//import { Context } from "../../contextAPI/ContextProvider.jsx";
+import { useParams, useLocation } from "react-router-dom";
 import RecipeDetailsStyle from "./RecipeDetailsStyle.jsx";
 export default function RecipeDetails() {
-  const { selectedRecipe } = useContext(Context);
+  //const { selectedRecipe } = useContext(Context);
+  const {
+    state: { recipe },
+  } = useLocation();
 
+  console.log(recipe);
   return (
     <RecipeDetailsStyle>
       <div className="container">
         <div className="div1">
           <div>
             <div>
-              <img src={selectedRecipe.image} alt="omelette" />
+              <img src={recipe.image} alt="omelette" />
             </div>
             <section>
               <div>
-                <h1>{selectedRecipe.label}</h1>
+                <h1>{recipe.label}</h1>
                 <p>
                   An easy and quick dish, perfect for any meal. This classic
                   omelette combines beaten eggs cooked to perfection, optionally
@@ -26,7 +31,7 @@ export default function RecipeDetails() {
                 <ul>
                   <li>
                     <span>Total: </span>
-                    {`${selectedRecipe.totalTime} min`}
+                    {`${recipe.totalTime} min`}
                   </li>
                 </ul>
               </div>
@@ -40,29 +45,29 @@ export default function RecipeDetails() {
                 <table>
                   <tr>
                     <th>Total Weigth</th>
-                    <td>{`${selectedRecipe.totalWeight.toFixed(2)} gr`}</td>
+                    <td>{`${recipe.totalWeight.toFixed(2)} gr`}</td>
                   </tr>
                   <tr>
                     <th>Calories</th>
-                    <td>{`${selectedRecipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
+                    <td>{`${recipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
                       2
                     )} kCal`}</td>
                   </tr>
                   <tr>
                     <th>Carbs</th>
-                    <td>{`${selectedRecipe.totalNutrients.CHOCDF.quantity.toFixed(
+                    <td>{`${recipe.totalNutrients.CHOCDF.quantity.toFixed(
                       2
                     )} gr`}</td>
                   </tr>
                   <tr>
                     <th>Protein</th>
-                    <td>{`${selectedRecipe.totalNutrients.PROCNT.quantity.toFixed(
+                    <td>{`${recipe.totalNutrients.PROCNT.quantity.toFixed(
                       2
                     )} gr`}</td>
                   </tr>
                   <tr>
                     <th>Fat</th>
-                    <td>{`${selectedRecipe.totalNutrients.FAT.quantity.toFixed(
+                    <td>{`${recipe.totalNutrients.FAT.quantity.toFixed(
                       2
                     )} gr`}</td>
                   </tr>
@@ -75,7 +80,7 @@ export default function RecipeDetails() {
           <section>
             <h2>Ingredients</h2>
             <ul>
-              {selectedRecipe.ingredientLines.map((ingredient, index) => (
+              {recipe.ingredientLines.map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
             </ul>
