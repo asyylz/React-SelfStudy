@@ -108,7 +108,7 @@ const LoginStyle = styled.div`
     text-decoration: underline;
   }
 
-  .wrapper form .button input {
+  .wrapper form .button button {
     color: ${peach};
     font-size: 20px;
     font-weight: 500;
@@ -118,7 +118,7 @@ const LoginStyle = styled.div`
     cursor: pointer;
   }
 
-  form .button input:hover {
+  form .button button:hover {
     background: lightgray;
     color: ${peach};
   }

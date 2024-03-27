@@ -8,6 +8,7 @@ export default function Navbar() {
     useContext(Context);
   const { userName, userPassword, authorized } =
     useContext(Context).activeUserCredits;
+    console.log(userName)
   const navigate = useNavigate();
 
   function handleLogout() {

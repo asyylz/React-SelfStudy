@@ -13,11 +13,7 @@ const body = "hsl(30, 54%, 90%)";
 const title = "hsl(24, 5%, 18%)";
 const text = "hsl(30, 10%, 34%)";
 const border = "hsl(30, 18%, 87%)";
-const white = "hsl(0, 0%, 100%)";
 const prepationBg = "hsl(330, 100%, 98%)";
-const fontSize = "16px";
-const outfit = "'Outfit', sans-serif";
-const youngSerif = "'Young Serif', serif";
 
 const RecipeDetailsStyle = styled.div`
   margin-top: 3rem;
