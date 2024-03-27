@@ -58,7 +58,7 @@ export default function Register() {
                 type="text"
                 onFocus={() => setError({ nameError: "", passwordError: "" })}
                 autoFocus
-                // value={newUser.userName}
+                value={newUser.userName}
                 placeholder="User Name"
                 required
                 onChange={(e) => {
@@ -68,9 +68,6 @@ export default function Register() {
                   }));
                 }}
               />
-              {/* {!newUser.userName ? (
-                <span> error msg: Please enter your first name</span>
-              ) : null} */}
               {<span className="error">{error.nameError}</span>}
             </div>
             <div className="row">
@@ -79,7 +76,7 @@ export default function Register() {
                 type="password"
                 placeholder="Password"
                 onFocus={() => setError({ nameError: "", passwordError: "" })}
-                // value={newUser.userPassword}
+                value={newUser.userPassword}
                 required
                 onChange={(e) => {
                   setNewUser((prevState) => ({
