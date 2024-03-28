@@ -14,6 +14,7 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [usersData, setUsersData] = useState([]);
+  const [favRecipesData, setFavRecipesData] = useState([]);
 
   const getRecipe = async (URL) => {
     try {
@@ -25,6 +26,7 @@ export default function ContexProvider({ children }) {
       throw error;
     }
   };
+  console.log(recipeData);
 
   const contextContent = {
     getRecipe: getRecipe,
@@ -33,6 +35,8 @@ export default function ContexProvider({ children }) {
     setActiveUserCredits,
     usersData,
     setUsersData,
+    favRecipesData,
+    setFavRecipesData,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;

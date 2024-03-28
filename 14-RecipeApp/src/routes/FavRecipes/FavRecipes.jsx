@@ -1,11 +1,13 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
-import FavRecipesStyle from "./FavRecipesStyle";
+import { RecipeContainerStyle,FavRecipesStyle } from "./FavRecipesStyle.jsx";
 
 export default function FavRecipes() {
   return (
     <FavRecipesStyle>
-    <Sidebar />
-    <div className="recipe">recipe</div>
+      <Sidebar />
+      <RecipeContainerStyle>
+        <div>asiye</div>
+      </RecipeContainerStyle>
     </FavRecipesStyle>
   );
 }

@@ -9,20 +9,45 @@ import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 
 export default function Home() {
-  const { getRecipe, recipeData, activeUserCredits } = useContext(Context);
-
+  /* --------------------- Context API -------------------- */
+  const {
+    getRecipe,
+    recipeData,
+    activeUserCredits,
+    favRecipesData,
+    setFavRecipesData,
+  } = useContext(Context);
+  /* ----------------------- States ----------------------- */
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
+
+  /* --------------------- API-------------------- */
   const APP_ID = "b87d8a95";
   const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const navigate = useNavigate();
 
+  /* --------------------- Handle Favs -------------------- */
+  function handleFavClick(e, selectedRecipe) {
+    e.preventDefault();
+    const isExist = favRecipesData.some(
+      (recipe) => recipe.calories === selectedRecipe.calories
+    );
+    if (!isExist) {
+      setFavRecipesData((prevState) => [...prevState, selectedRecipe]);
+      alert("Recipe added to your fav list successfully!");
+    } else {
+      alert("This recipe already exists in your fav list...");
+    }
+  }
+  /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();
     navigate("/recipe", { state: { recipe } });
   }
+
+  /* ----------------------- RETURN ----------------------- */
 
   return (
     <ContainerHomeSSS isempty={recipeData.length === 0 ? "true" : "false"}>
@@ -59,7 +84,10 @@ export default function Home() {
               <div className="minip">
                 <div className="mg">
                   <div className="clr">
-                    <MdFavoriteBorder className="icon fav" />
+                    <MdFavoriteBorder
+                      className="icon fav"
+                      onClick={(e) => handleFavClick(e, recipe)}
+                    />
                   </div>
                   <div className="group">
                     <span>{mealType}</span>
