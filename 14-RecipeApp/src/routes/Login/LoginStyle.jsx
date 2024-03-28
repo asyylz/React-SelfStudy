@@ -25,8 +25,6 @@ const LoginStyle = styled.div`
   justify-content: center;
 
   .container {
-    max-width: 40vw;
-    min-width: 30vw;
     padding: 0 20px;
     padding-top: 10rem;
   }
@@ -139,6 +137,7 @@ const LoginStyle = styled.div`
   form .signup-link a:hover {
     text-decoration: underline;
   }
+
 `;
 
 export default LoginStyle;
