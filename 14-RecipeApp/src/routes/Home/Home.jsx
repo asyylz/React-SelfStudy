@@ -29,20 +29,23 @@ export default function Home() {
   const navigate = useNavigate();
 
   /* --------------------- Handle Favs -------------------- */
-  function handleFavClick(e, selectedRecipe,index) {
+  function handleFavClick(e, selectedRecipe, index) {
     e.preventDefault();
-    const isExist = favRecipesData.some(
+    const isExist = favRecipesData.favRecipes.some(
       (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
-      
     );
     if (!isExist) {
-      setFavRecipesData((prevState) => [...prevState, selectedRecipe]);
+      setFavRecipesData((prevState) => ({
+        user:activeUserCredits.userName,
+        favRecipes: [...prevState.favRecipes, selectedRecipe]
+      }));
       alert("Recipe added to your fav list successfully!");
     } else {
       alert("This recipe already exists in your fav list...");
     }
   }
-  
+  console.log(favRecipesData)
+
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();
