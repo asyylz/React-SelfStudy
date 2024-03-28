@@ -17,14 +17,11 @@ const RegisterStyle = styled.div`
     background: rgba(229, 174, 138, 0.5);
   }
   height: 100vh;
+  width: 100vw;
   background-image: url(${background});
   background-size: cover;
-  display: flex;
-  justify-content: center;
 
   .container {
-    max-width: 40vw;
-    min-width: 30vw;
     padding: 0 20px;
     padding-top: 10rem;
   }
@@ -113,6 +110,28 @@ const RegisterStyle = styled.div`
     color: red;
     font-size: 18px;
     font-weight: 500;
+  }
+  @media (min-width: 701px) {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper {
+      max-width: 700px;
+    }
+  }
+  @media (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 100vh;
+    padding: auto;
+
+    .wrapper {
+      width: 60vw;
+      margin-left: 1.5rem;
+    }
   }
 `;
 
