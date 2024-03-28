@@ -39,6 +39,7 @@ const ContainerHomeSSS = styled.div`
     color: ${beige};
     font-size: 2.5rem;
     margin: 1rem;
+    cursor: pointer;
   }
   @media (min-width: 1100px) {
     .search-wrapper {

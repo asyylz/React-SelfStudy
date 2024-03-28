@@ -29,10 +29,11 @@ export default function Home() {
   const navigate = useNavigate();
 
   /* --------------------- Handle Favs -------------------- */
-  function handleFavClick(e, selectedRecipe) {
+  function handleFavClick(e, selectedRecipe,index) {
     e.preventDefault();
     const isExist = favRecipesData.some(
-      (recipe) => recipe.calories === selectedRecipe.calories
+      (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
+      
     );
     if (!isExist) {
       setFavRecipesData((prevState) => [...prevState, selectedRecipe]);
@@ -41,6 +42,7 @@ export default function Home() {
       alert("This recipe already exists in your fav list...");
     }
   }
+  
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();
@@ -86,7 +88,7 @@ export default function Home() {
                   <div className="clr">
                     <MdFavoriteBorder
                       className="icon fav"
-                      onClick={(e) => handleFavClick(e, recipe)}
+                      onClick={(e) => handleFavClick(e, recipe, index)}
                     />
                   </div>
                   <div className="group">
