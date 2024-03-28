@@ -9,7 +9,7 @@ export default function Navbar() {
     useContext(Context);
   const { userName, userPassword, authorized } =
     useContext(Context).activeUserCredits;
-    console.log(userName)
+  console.log(userName);
   const navigate = useNavigate();
 
   function handleLogout() {
@@ -21,12 +21,18 @@ export default function Navbar() {
       <nav className="nav">
         <h1>Recipe</h1>
         <ul>
-          <Link to="/">
-            Home
+          <Link to="/">Home</Link>
+          <Link to="/fav">
+            My
+            <small>
+              <AiFillHeart className="heart" />
+            </small>
+            <br />
+            Recipes
           </Link>
           <Link to="/register">Register</Link>
           <Link to="/login">Login</Link>
-          <Link to="/fav">My<small><AiFillHeart className="heart" /></small><br />Recipes</Link>
+
           <Link to="/about">About</Link>
           <div className="user-account">
             <small onClick={() => navigate("/login")}>
