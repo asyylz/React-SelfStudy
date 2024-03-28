@@ -21,6 +21,7 @@ export default function Home() {
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
 
+
   /* --------------------- API-------------------- */
   const APP_ID = "b87d8a95";
   const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
@@ -39,9 +40,9 @@ export default function Home() {
         user:activeUserCredits.userName,
         favRecipes: [...prevState.favRecipes, selectedRecipe]
       }));
-      alert("Recipe added to your fav list successfully!");
+      //alert("Recipe added to your fav list successfully!");
     } else {
-      alert("This recipe already exists in your fav list...");
+      //alert("This recipe already exists in your fav list...");
     }
   }
   console.log(favRecipesData)

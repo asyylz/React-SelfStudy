@@ -19,4 +19,12 @@ export const RecipeContainerStyle = styled.div`
   backdrop-filter: blur(6.6px);
   -webkit-backdrop-filter: blur(6.6px);
   border: 1px solid rgba(160, 156, 156, 0.2);
+
+  .recipe-wrapper {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:3rem;
+    padding:2rem;
+    
+  }
 `;
