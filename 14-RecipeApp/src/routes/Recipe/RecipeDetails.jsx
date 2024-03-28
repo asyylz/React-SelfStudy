@@ -47,34 +47,36 @@ export default function RecipeDetails() {
                   additional fillings.
                 </p>
                 <table>
-                  <tr>
-                    <th>Total Weigth</th>
-                    <td>{`${recipe.totalWeight.toFixed(2)} gr`}</td>
-                  </tr>
-                  <tr>
-                    <th>Calories</th>
-                    <td>{`${recipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
-                      2
-                    )} kCal`}</td>
-                  </tr>
-                  <tr>
-                    <th>Carbs</th>
-                    <td>{`${recipe.totalNutrients.CHOCDF.quantity.toFixed(
-                      2
-                    )} gr`}</td>
-                  </tr>
-                  <tr>
-                    <th>Protein</th>
-                    <td>{`${recipe.totalNutrients.PROCNT.quantity.toFixed(
-                      2
-                    )} gr`}</td>
-                  </tr>
-                  <tr>
-                    <th>Fat</th>
-                    <td>{`${recipe.totalNutrients.FAT.quantity.toFixed(
-                      2
-                    )} gr`}</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>Total Weigth</th>
+                      <td>{`${recipe.totalWeight.toFixed(2)} gr`}</td>
+                    </tr>
+                    <tr>
+                      <th>Calories</th>
+                      <td>{`${recipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
+                        2
+                      )} kCal`}</td>
+                    </tr>
+                    <tr>
+                      <th>Carbs</th>
+                      <td>{`${recipe.totalNutrients.CHOCDF.quantity.toFixed(
+                        2
+                      )} gr`}</td>
+                    </tr>
+                    <tr>
+                      <th>Protein</th>
+                      <td>{`${recipe.totalNutrients.PROCNT.quantity.toFixed(
+                        2
+                      )} gr`}</td>
+                    </tr>
+                    <tr>
+                      <th>Fat</th>
+                      <td>{`${recipe.totalNutrients.FAT.quantity.toFixed(
+                        2
+                      )} gr`}</td>
+                    </tr>
+                  </tbody>
                 </table>
               </section>
             </section>

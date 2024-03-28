@@ -2,18 +2,42 @@ import LoginStyle from "./LoginStyle";
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate, useLocation } from "react-router-dom";
+import PrivateRouter from "../PrivateRouter.jsx";
 export default function Login() {
   const { activeUserCredits, setActiveUserCredits, usersData } =
     useContext(Context);
   const { userName, userPassword, authorized } = activeUserCredits;
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const [previousRoute, setPreviousRoute] = useState(null);
+
+  // useEffect(() => {
+  //   if (location.state && location.state.from) {
+  //     setPreviousRoute(location.state.from);
+  //   }
+  // }, [location]);
+
+  // useEffect(() => {
+  //   if (authorized) {
+  //     // Navigate based on the previous route
+  //     if (previousRoute === "/recipe") {
+  //       navigate("/home");
+  //     } else if (previousRoute === "/recipe") {
+  //       navigate("/recipe");
+  //     } else {
+  //       // Navigate back to the previous location in the history stack
+  //       navigate(-1);
+  //     }
+  //   }
+  // }, [authorized, previousRoute, navigate]);
 
   function handleLogin(e) {
     e.preventDefault();
     const foundUser = usersData.find(
       (user) => user.userName === userName && user.userPassword === userPassword
     );
-    console.log(foundUser);
+
     if (foundUser) {
       setActiveUserCredits((prevCredits) => ({
         ...prevCredits,
