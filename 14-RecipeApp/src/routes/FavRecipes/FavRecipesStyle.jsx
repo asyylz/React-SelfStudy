@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "/public/bgFav.avif";
+const dgreen = "#2c3834";
 
 export const FavRecipesStyle = styled.div`
   margin-top: 6rem;
@@ -21,10 +22,31 @@ export const RecipeContainerStyle = styled.div`
   border: 1px solid rgba(160, 156, 156, 0.2);
 
   .recipe-wrapper {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap:3rem;
-    padding:2rem;
-    
+    grid-gap: 3rem;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 80vh;
+  }
+  img {
+    border-radius: 20px;
+    border: 2px solid red;
+  }
+  h1 {
+    color: ${dgreen};
+  }
+
+  table {
+    width: 100%;
+  }
+
+  tr {
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid ${dgreen};
   }
 `;
