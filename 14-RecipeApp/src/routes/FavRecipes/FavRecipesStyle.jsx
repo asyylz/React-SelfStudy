@@ -13,7 +13,7 @@ export const RecipeContainerStyle = styled.div`
   margin: 1rem;
   margin-top: 1rem;
   padding: 1rem;
-  height: 100vh;
+  height: 100%;
   background: rgba(160, 156, 156, 0.23);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -29,14 +29,22 @@ export const RecipeContainerStyle = styled.div`
     padding: 1rem;
     background-color: #fff;
     border-radius: 20px;
-    height: 80vh;
+   
+  }
+  .image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
   }
   img {
     border-radius: 20px;
     border: 2px solid red;
   }
-  h1 {
+  h1,h2 {
     color: ${dgreen};
+    border-bottom: 1px solid red;
+    margin-top:2rem;
   }
 
   table {
@@ -49,4 +57,17 @@ export const RecipeContainerStyle = styled.div`
     justify-content: space-between;
     border-bottom: 1px solid ${dgreen};
   }
+  @media (max-width: 802px) {
+    .recipe-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 802px) {
+    .recipe-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  }
+
 `;

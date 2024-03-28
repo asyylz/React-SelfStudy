@@ -7,7 +7,7 @@ const SidebarStyle = styled.div`
     flex-direction: column;
     margin-left: 1rem;
     margin-top: 1rem;
-    height: 100vh;
+    height: 100%;
     background: rgba(160, 156, 156, 0.7);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
