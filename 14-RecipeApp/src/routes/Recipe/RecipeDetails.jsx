@@ -18,7 +18,7 @@ export default function RecipeDetails() {
             style={{ cursor: "pointer" }}
           />
           <div>
-            <div>
+            <div className="image">
               <img src={recipe.image} alt="omelette" />
             </div>
             <section>

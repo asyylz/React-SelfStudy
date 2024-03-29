@@ -1,12 +1,5 @@
 import styled from "styled-components";
 const dgreen = "#2c3834";
-const cream = "#f6e6cb";
-const dcream = "#eacea3";
-const beige = "#cdad93";
-const terracotta = "#b9816d";
-const dterracotta = "#885444";
-const peach = "#e5ae8a";
-
 const primary = "hsl(14, 45%, 36%)";
 const secondary = "hsl(332, 51%, 32%)";
 const body = "hsl(30, 54%, 90%)";
@@ -18,27 +11,32 @@ const prepationBg = "hsl(330, 100%, 98%)";
 const RecipeDetailsStyle = styled.div`
   margin-top: 3rem;
   width: 100%;
-  height:100vh;
   background-color: ${body};
   display: flex;
   justify-content: center;
+  border:1px solid red;
 
   .container {
     margin-top: 5rem;
-    max-height:90vh;
     width: 80vw;
     padding: 2.5rem;
     background-color: white;
     border-radius: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:3rem;
+    gap: 3rem;
   }
-  .div1 .navigate-back{
-    font-size:2rem;
-    position:absolute;
-    left:3rem;
 
+  @media (max-width: 700px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .div1 .navigate-back {
+    font-size: 2rem;
+    position: absolute;
+    left: 3rem;
   }
 
   .div2 {
@@ -47,6 +45,8 @@ const RecipeDetailsStyle = styled.div`
 
   img {
     border-radius: 10px;
+    height: 100%;
+    width: 100%;
   }
 
   h1,
@@ -75,8 +75,10 @@ const RecipeDetailsStyle = styled.div`
   }
 
   li {
-    ${'' /* margin-left: 1rem;
-    padding-left: 1rem; */}
+    ${
+      "" /* margin-left: 1rem;
+    padding-left: 1rem; */
+    }
     line-height: 1.7rem;
     list-style-position: outside;
   }
