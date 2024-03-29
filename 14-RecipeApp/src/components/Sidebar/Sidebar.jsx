@@ -41,7 +41,7 @@ export default function Sidebar() {
                   }`}
                   onClick={() => handleClick(recipe.recipe, index)}
                 >
-                  <a href="#">
+                  <a>
                     <i>{recipe.recipe.label}</i>
                   </a>
                 </li>

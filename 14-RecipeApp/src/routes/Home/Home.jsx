@@ -92,6 +92,13 @@ export default function Home() {
     navigate("/recipe", { state: { recipe } });
   }
 
+  /* ---------------- Handle Enter Key Pess --------------- */
+  const handleKeyPess = (e) => {
+    if (e.key === "Enter") {
+      getRecipe(baseURL);
+    }
+  };
+
   /* ----------------------- RETURN ----------------------- */
 
   return (
@@ -118,6 +125,7 @@ export default function Home() {
             name="text"
             className="input"
             onChange={(e) => setRecipeSearch(e.target.value)}
+            onKeyDown={handleKeyPess}
           />
           <ButtonHomeSSS role="button" onClick={() => getRecipe(baseURL)}>
             Search
