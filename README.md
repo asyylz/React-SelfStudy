@@ -181,6 +181,29 @@
         </p>
       </details>
       <hr>
+      <details>
+        <summary>Project 14 : Recipe App (<a href="https://recipereciperecipe.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>The Recipe app is a web application designed to provide users with a convenient way to discover, save, and organize their favorite recipes. With an intuitive user interface and a vast database of recipes, users can explore a variety of dishes, find inspiration for their next meal, and create a personalized collection of favorite recipes.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
+          <em>Search Recipes:</em> Users can search for recipes based on dish name  or meal types.
+          <br>
+          <em>Save Favorites: </em> Logged-in users can save their favorite recipes to access them later with ease. Saved recipes are associated with the user's account.
+          <br>
+          <em>User Registration: </em>New users can register for an account by providing basic information such as name, email address, and password.
+          <br>
+          <em>User Login: </em>Registered users can securely log in to their accounts using their email address and password.
+          <br>
+          <em>Responsive Design:</em>The app is optimized for various devices, including desktops, tablets, and mobile phones, ensuring a seamless user experience across platforms.
+          <br>
+        </p>
+      </details>
+      <hr>
     </ul>
   </section>
   <section id="outcomes">
