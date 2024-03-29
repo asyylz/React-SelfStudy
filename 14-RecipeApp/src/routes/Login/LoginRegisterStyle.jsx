@@ -5,8 +5,7 @@ const Font =
 const peach = "#e5ae8a";
 const dgreen = "#2c3834";
 
-const LoginStyle = styled.div`
-  /* Global Reset */
+const LoginRegisterStyle = styled.div`
   * {
     margin: 0;
     padding: 0;
@@ -138,11 +137,6 @@ const LoginStyle = styled.div`
   form .signup-link a:hover {
     text-decoration: underline;
   }
-  @media (min-width: 768px) {
-    .wrapper {
-      width: 80%;
-    }
-  }
 `;
 
-export default LoginStyle;
+export default LoginRegisterStyle;

@@ -6,90 +6,15 @@ const dgreen = "#2c3834";
 const white = "#f7f1e1";
 
 const RegisterStyle = styled.div`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: ${Font};
-  }
 
-  ::selection {
-    background: rgba(229, 174, 138, 0.5);
-  }
-  height: 100vh;
-  background-image: url(${background});
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-
-  .container {
-    padding: 0 20px;
-    padding-top: 10rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .wrapper {
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
-  }
-
-  .wrapper .title {
-    line-height: 90px;
-    background: ${dgreen};
-    border-radius: 10px 10px 0 0;
+  .wrapper .title { 
     color: ${white};
-    font-weight: 600;
-    font-size: 30px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
   }
 
-  .wrapper form {
-    padding: 30px 25px 25px 25px;
-  }
-
-  .wrapper form .row {
-    height: 45px;
-    margin-bottom: 15px;
-    position: relative;
-  }
-
-  .wrapper form .row input {
-    height: 100%;
-    width: 100%;
-    padding-left: 60px;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid lightgray;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-
-  form .row input::placeholder {
-    color: #999;
-  }
 
   .wrapper form .row i {
-    position: absolute;
-    width: 47px;
-    height: 100%;
-    font-size: 18px;
     color: ${white};
-    background: ${dgreen};
     border: 1px solid ${dgreen};
-    border-radius: 5px 0 0 5px; /* only left side of the icons given radius */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .wrapper form .pass {
-    margin: -8px 0 20px 0;
   }
 
   .wrapper form .button input {
@@ -115,13 +40,7 @@ const RegisterStyle = styled.div`
     font-size: 18px;
     font-weight: 500;
   }
-  @media (min-width: 768px) { 
-    .wrapper {
-      width: 80%;
-    }
-  }
-
-
+ 
 `;
 
 export default RegisterStyle;

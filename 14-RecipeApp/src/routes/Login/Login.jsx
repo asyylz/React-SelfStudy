@@ -1,16 +1,14 @@
-import LoginStyle from "./LoginStyle";
-import { useContext, useState, useEffect } from "react";
+import LoginRegisterStyle from "./LoginRegisterStyle.jsx";
+import { useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
-import { useNavigate, useLocation } from "react-router-dom";
-import PrivateRouter from "../PrivateRouter.jsx";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
   const { activeUserCredits, setActiveUserCredits, usersData } =
     useContext(Context);
-  const { userName, userPassword, authorized } = activeUserCredits;
+  const { userName, userPassword } = activeUserCredits;
 
   const navigate = useNavigate();
-
-
 
   function handleLogin(e) {
     e.preventDefault();
@@ -32,7 +30,7 @@ export default function Login() {
   }
 
   return (
-    <LoginStyle>
+    <LoginRegisterStyle>
       <div className="container">
         <div className="wrapper">
           <div className="title">
@@ -80,6 +78,6 @@ export default function Login() {
           </form>
         </div>
       </div>
-    </LoginStyle>
+    </LoginRegisterStyle>
   );
 }

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
+import LoginRegisterStyle from "../Login/LoginRegisterStyle.jsx";
 export default function Register() {
   const { usersData, setUsersData } = useContext(Context);
   const [newUser, setNewUser] = useState({ userName: "", userPassword: "" });
@@ -41,58 +42,57 @@ export default function Register() {
     navigate("/login");
   }
 
-  console.log(newUser);
-  console.log(usersData);
-
   return (
     <RegisterStyle>
-      <div className="container">
-        <div className="wrapper">
-          <div className="title">
-            <span>Register Form</span>
+      <LoginRegisterStyle>
+        <div className="container">
+          <div className="wrapper">
+            <div className="title">
+              <span>Register Form</span>
+            </div>
+            <form action="#">
+              <div className="row">
+                <i className="fas fa-user"></i>
+                <input
+                  type="text"
+                  onFocus={() => setError({ nameError: "", passwordError: "" })}
+                  autoFocus
+                  value={newUser.userName}
+                  placeholder="User Name"
+                  required
+                  onChange={(e) => {
+                    setNewUser((prevState) => ({
+                      ...prevState,
+                      userName: e.target.value.toLowerCase(),
+                    }));
+                  }}
+                />
+                {<span className="error">{error.nameError}</span>}
+              </div>
+              <div className="row">
+                <i className="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onFocus={() => setError({ nameError: "", passwordError: "" })}
+                  value={newUser.userPassword}
+                  required
+                  onChange={(e) => {
+                    setNewUser((prevState) => ({
+                      ...prevState,
+                      userPassword: e.target.value,
+                    }));
+                  }}
+                />
+                {<span className="error">{error.passwordError}</span>}
+              </div>
+              <div className="row button">
+                <input type="submit" value="Register" onClick={handleNewUser} />
+              </div>
+            </form>
           </div>
-          <form action="#">
-            <div className="row">
-              <i className="fas fa-user"></i>
-              <input
-                type="text"
-                onFocus={() => setError({ nameError: "", passwordError: "" })}
-                autoFocus
-                value={newUser.userName}
-                placeholder="User Name"
-                required
-                onChange={(e) => {
-                  setNewUser((prevState) => ({
-                    ...prevState,
-                    userName: e.target.value.toLowerCase(),
-                  }));
-                }}
-              />
-              {<span className="error">{error.nameError}</span>}
-            </div>
-            <div className="row">
-              <i className="fas fa-lock"></i>
-              <input
-                type="password"
-                placeholder="Password"
-                onFocus={() => setError({ nameError: "", passwordError: "" })}
-                value={newUser.userPassword}
-                required
-                onChange={(e) => {
-                  setNewUser((prevState) => ({
-                    ...prevState,
-                    userPassword: e.target.value,
-                  }));
-                }}
-              />
-              {<span className="error">{error.passwordError}</span>}
-            </div>
-            <div className="row button">
-              <input type="submit" value="Register" onClick={handleNewUser} />
-            </div>
-          </form>
         </div>
-      </div>
+      </LoginRegisterStyle>
     </RegisterStyle>
   );
 }
