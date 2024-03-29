@@ -25,6 +25,9 @@ const RegisterStyle = styled.div`
   .container {
     padding: 0 20px;
     padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .wrapper {
@@ -112,6 +115,12 @@ const RegisterStyle = styled.div`
     font-size: 18px;
     font-weight: 500;
   }
+  @media (min-width: 768px) { 
+    .wrapper {
+      width: 80%;
+    }
+  }
+
 
 `;
 

@@ -27,6 +27,9 @@ const LoginStyle = styled.div`
   .container {
     padding: 0 20px;
     padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .wrapper {
@@ -125,19 +128,21 @@ const LoginStyle = styled.div`
     text-align: center;
     margin-top: 20px;
     font-size: 17px;
-    
   }
 
   .wrapper form .signup-link a {
     color: ${peach};
     text-decoration: none;
-    
   }
 
   form .signup-link a:hover {
     text-decoration: underline;
   }
-
+  @media (min-width: 768px) {
+    .wrapper {
+      width: 80%;
+    }
+  }
 `;
 
 export default LoginStyle;
