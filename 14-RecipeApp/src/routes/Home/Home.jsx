@@ -43,7 +43,13 @@ export default function Home() {
       }));
       alert("Recipe added to your fav list successfully!");
     } else {
-      alert("This recipe already exists in your fav list...");
+      setFavRecipesData((prevState) => ({
+        user: activeUserCredits.userName,
+        favRecipes: prevState.favRecipes.filter(
+          (recipe) => recipe.recipe.calories !== selectedRecipe.recipe.calories
+        ),
+      }));
+      alert("Recipe removed from your fav list...");
     }
   }
 
@@ -52,7 +58,6 @@ export default function Home() {
       (r) => rec.recipe.calories === r.recipe.calories
     )
   );
-
 
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
