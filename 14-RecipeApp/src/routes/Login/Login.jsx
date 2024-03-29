@@ -9,28 +9,8 @@ export default function Login() {
   const { userName, userPassword, authorized } = activeUserCredits;
 
   const navigate = useNavigate();
-  const location = useLocation();
-  const [previousRoute, setPreviousRoute] = useState(null);
 
-  // useEffect(() => {
-  //   if (location.state && location.state.from) {
-  //     setPreviousRoute(location.state.from);
-  //   }
-  // }, [location]);
 
-  // useEffect(() => {
-  //   if (authorized) {
-  //     // Navigate based on the previous route
-  //     if (previousRoute === "/recipe") {
-  //       navigate("/home");
-  //     } else if (previousRoute === "/recipe") {
-  //       navigate("/recipe");
-  //     } else {
-  //       // Navigate back to the previous location in the history stack
-  //       navigate(-1);
-  //     }
-  //   }
-  // }, [authorized, previousRoute, navigate]);
 
   function handleLogin(e) {
     e.preventDefault();

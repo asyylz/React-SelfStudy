@@ -1,6 +1,5 @@
 import { createContext, useState, useReducer } from "react";
 import axios from "axios";
-
 export const Context = createContext({
   getRecipe: () => {},
   recipeData: [],
@@ -19,8 +18,6 @@ export default function ContexProvider({ children }) {
     favRecipes: [],
   });
   const [selectedFav, setSelectedFav] = useState(favRecipesData.favRecipes[0]);
-  console.log(favRecipesData.favRecipes[0]);
-  console.log(selectedFav);
 
   const getRecipe = async (URL) => {
     try {
@@ -32,6 +29,7 @@ export default function ContexProvider({ children }) {
       throw error;
     }
   };
+  console.log(recipeData)
 
   const contextContent = {
     getRecipe: getRecipe,

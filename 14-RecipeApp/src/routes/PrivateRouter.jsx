@@ -8,7 +8,5 @@ export default function PrivateRouter() {
 
   !authorized && alert("You are not logged in!"); // <React.StrictMode> make this allerts come up twice
 
-  console.log("asiye");
-
   return authorized ? <Outlet /> : <Navigate to="/login" />;
 }

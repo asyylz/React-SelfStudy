@@ -7,12 +7,14 @@ import { useContext, useState } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
+import { AiFillHeart } from "react-icons/ai";
 
 export default function Home() {
   /* --------------------- Context API -------------------- */
   const {
     getRecipe,
     recipeData,
+    setRecipeData,
     activeUserCredits,
     favRecipesData,
     setFavRecipesData,
@@ -20,7 +22,6 @@ export default function Home() {
   /* ----------------------- States ----------------------- */
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
-
 
   /* --------------------- API-------------------- */
   const APP_ID = "b87d8a95";
@@ -30,22 +31,28 @@ export default function Home() {
   const navigate = useNavigate();
 
   /* --------------------- Handle Favs -------------------- */
-  function handleFavClick(e, selectedRecipe, index) {
+  function handleFavClick(e, selectedRecipe) {
     e.preventDefault();
     const isExist = favRecipesData.favRecipes.some(
       (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
     );
     if (!isExist) {
       setFavRecipesData((prevState) => ({
-        user:activeUserCredits.userName,
-        favRecipes: [...prevState.favRecipes, selectedRecipe]
+        user: activeUserCredits.userName,
+        favRecipes: [...prevState.favRecipes, selectedRecipe],
       }));
-      //alert("Recipe added to your fav list successfully!");
+      alert("Recipe added to your fav list successfully!");
     } else {
-      //alert("This recipe already exists in your fav list...");
+      alert("This recipe already exists in your fav list...");
     }
   }
-  console.log(favRecipesData)
+
+  const isFavorited = recipeData.map((rec) =>
+    favRecipesData.favRecipes.some(
+      (r) => rec.recipe.calories === r.recipe.calories
+    )
+  );
+
 
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
@@ -90,10 +97,17 @@ export default function Home() {
               <div className="minip">
                 <div className="mg">
                   <div className="clr">
-                    <MdFavoriteBorder
-                      className="icon fav"
-                      onClick={(e) => handleFavClick(e, recipe, index)}
-                    />
+                    <div
+                      className="icon"
+                      onClick={(e) => handleFavClick(e, recipe)}
+                    >
+                      {/* Toggle between the filled and outlined heart icons based on the isFavorited flag */}
+                      {isFavorited[index] ? (
+                        <AiFillHeart />
+                      ) : (
+                        <MdFavoriteBorder />
+                      )}
+                    </div>
                   </div>
                   <div className="group">
                     <span>{mealType}</span>

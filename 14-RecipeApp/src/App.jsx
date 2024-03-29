@@ -26,8 +26,10 @@ export default function App() {
             <Route path="" element={<RecipeDetails />} />
           </Route>
           <Route path="/about" element={<About />} />
-          <Route path="/fav" element={<FavRecipes />} />
-         <Route path="/privateRouter" element={<PrivateRouter />} />
+          <Route path="/privateRouter" element={<PrivateRouter />} />
+          <Route path="/fav" element={<PrivateRouter />}>
+            <Route path="" element={<FavRecipes />} />
+          </Route>
         </Routes>
       </Router>
     </ContexProvider>

@@ -14,7 +14,6 @@ const RecipeDetailsStyle = styled.div`
   background-color: ${body};
   display: flex;
   justify-content: center;
-  border:1px solid red;
 
   .container {
     margin-top: 5rem;
