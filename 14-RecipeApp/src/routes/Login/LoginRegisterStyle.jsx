@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "/public/bgLogin.avif";
+import background2 from "/public/bgRegister.avif";
 const Font =
   "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap";
 const peach = "#e5ae8a";
@@ -16,7 +17,7 @@ const LoginRegisterStyle = styled.div`
   ::selection {
     background: rgba(229, 174, 138, 0.5);
   }
-  background-image: url(${background});
+  background-image: ${({ login }) => (login ? `url(${background})` : `url(${background2})`)};
   background-size: cover;
   height: 100vh;
   background-size: cover;

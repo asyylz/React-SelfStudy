@@ -6,11 +6,9 @@ const dgreen = "#2c3834";
 const white = "#f7f1e1";
 
 const RegisterStyle = styled.div`
-
-  .wrapper .title span{ 
+  .wrapper .title span {
     color: ${white};
   }
-
 
   .wrapper form .row i {
     color: ${white};
@@ -40,7 +38,6 @@ const RegisterStyle = styled.div`
     font-size: 18px;
     font-weight: 500;
   }
- 
 `;
 
 export default RegisterStyle;

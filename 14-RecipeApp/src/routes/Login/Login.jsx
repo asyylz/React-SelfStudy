@@ -30,7 +30,7 @@ export default function Login() {
   }
 
   return (
-    <LoginRegisterStyle>
+    <LoginRegisterStyle login>
       <div className="container">
         <div className="wrapper">
           <div className="title">
