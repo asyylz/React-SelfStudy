@@ -137,6 +137,12 @@ const LoginRegisterStyle = styled.div`
   form .signup-link a:hover {
     text-decoration: underline;
   }
+
+  @media (min-width: 768px) {
+    .wrapper {
+      width: 60%;
+    }
+  }
 `;
 
 export default LoginRegisterStyle;

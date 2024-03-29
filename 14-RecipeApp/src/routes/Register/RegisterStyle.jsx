@@ -7,7 +7,7 @@ const white = "#f7f1e1";
 
 const RegisterStyle = styled.div`
 
-  .wrapper .title { 
+  .wrapper .title span{ 
     color: ${white};
   }
 
