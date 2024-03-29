@@ -28,36 +28,64 @@ export default function Home() {
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const navigate = useNavigate();
-
+  console.log(favRecipesData);
   /* --------------------- Handle Favs Add?Remove-------------------- */
   function handleFavClick(e, selectedRecipe) {
     e.preventDefault();
-    const isExist = favRecipesData.favRecipes.some(
-      (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
-    );
-    if (!isExist) {
-      setFavRecipesData((prevState) => ({
-        user: activeUserCredits.userName,
-        favRecipes: [...prevState.favRecipes, selectedRecipe],
-      }));
-      alert("Recipe added to your fav list successfully!");
-    } else {
-      setFavRecipesData((prevState) => ({
-        user: activeUserCredits.userName,
-        favRecipes: prevState.favRecipes.filter(
-          (recipe) => recipe.recipe.calories !== selectedRecipe.recipe.calories
-        ),
-      }));
-      alert("Recipe removed from your fav list...");
-    }
+    setFavRecipesData((prevState) => {
+      const userIndex = prevState.findIndex(
+        (rec) => rec.user === activeUserCredits.userName
+      );
+      if (userIndex !== -1) {
+        // User already exists, update their favRecipes array
+        const recipeExists = prevState[userIndex].favRecipes.some(
+          (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
+        );
+        if (recipeExists) {
+          const updatedFavRecipesRemove = [
+            ...prevState[userIndex].favRecipes.filter(
+              (r) => r.recipe.calories !== selectedRecipe.recipe.calories
+            ),
+          ];
+          alert("Recipe is removed from your fav list successfully!");
+          return [
+            ...prevState.slice(0, userIndex), // Previous users before the updated one
+            { ...prevState[userIndex], favRecipes: updatedFavRecipesRemove }, // Updated user
+            ...prevState.slice(userIndex + 1), // Following users after the updated one
+          ];
+        } else {
+          const updatedFavRecipesAdd = [
+            ...prevState[userIndex].favRecipes,
+            selectedRecipe,
+          ];
+          alert("Recipe added to your fav list successfully!");
+          return [
+            ...prevState.slice(0, userIndex), // Previous users before the updated one
+            { ...prevState[userIndex], favRecipes: updatedFavRecipesAdd }, // Updated user
+            ...prevState.slice(userIndex + 1), // Following users after the updated one
+          ];
+        }
+      } else {
+        // User doesn't exist, add them with the selected recipe
+        return [
+          ...prevState,
+          {
+            user: activeUserCredits.userName,
+            favRecipes: [selectedRecipe],
+          },
+        ];
+      }
+    });
   }
 
-  const isFavorited = recipeData.map((rec) =>
-    favRecipesData.favRecipes.some(
-      (r) => rec.recipe.calories === r.recipe.calories
+  const isFavorited = recipeData.map((recipe) =>
+    favRecipesData.some(
+      (rec) =>
+        rec.user === activeUserCredits.userName &&
+        rec.favRecipes.some((r) => r.recipe.calories === recipe.recipe.calories)
     )
   );
-console.log(recipeData.length)
+  console.log(isFavorited);
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();

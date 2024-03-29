@@ -13,18 +13,12 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [usersData, setUsersData] = useState([]);
-  const [favRecipesData, setFavRecipesData] = useState({
+  const [favRecipesData, setFavRecipesData] = useState([{
     user: "",
     favRecipes: [],
-  });
+  }]);
+  //const [favRecipesData, setFavRecipesData] = useState([]);
   const [selectedFav, setSelectedFav] = useState(null);
-  // const [selectedFav, setSelectedFav] = useState(
-  //   favRecipesData.favRecipes.length > 0
-  //     ? favRecipesData.favRecipes[0].recipe
-  //     : null
-  // );
-
-  //console.log(favRecipesData.favRecipes[0].recipe)
 
   const getRecipe = async (URL) => {
     try {
