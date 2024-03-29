@@ -4,17 +4,21 @@ import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 
 export default function Sidebar() {
-  const { favRecipesData, setSelectedFav } = useContext(Context);
+  const { favRecipesData, setSelectedFav, activeUserCredits } =
+    useContext(Context);
   const { favRecipes } = favRecipesData;
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    if (favRecipesData.favRecipes.length > 0) {
-      setSelectedFav(favRecipesData.favRecipes[0].recipe);
+    const userRecipe = favRecipesData.find(
+      (recipe) => recipe.user === activeUserCredits.userName
+    );
+    console.log("bura");
+    console.log(userRecipe);
+    if (userRecipe && userRecipe?.favRecipes.length > 0) {
+      setSelectedFav(userRecipe.favRecipes[0].recipe);
     }
   }, []);
-  
 
   const handleClick = (recipe, index) => {
     setSelectedFav(recipe);
@@ -26,17 +30,23 @@ export default function Sidebar() {
       <div className="sidebar-menu">
         <h4>Favorite Recipes</h4>
         <ul>
-          {favRecipes.map((recipe, index) => (
-            <li
-              key={index}
-              className={`selected-recipe ${index === activeIndex ? 'active' : ''}`}
-              onClick={() => handleClick(recipe.recipe, index)}
-            >
-              <a href="#">
-                <i>{recipe.recipe.label}</i>
-              </a>
-            </li>
-          ))}
+          {favRecipesData.map(
+            (userRecipe) =>
+              userRecipe.user === activeUserCredits.userName &&
+              userRecipe.favRecipes.map((recipe,index) => (
+                <li
+                  key={index}
+                  className={`selected-recipe ${
+                    index === activeIndex ? "active" : ""
+                  }`}
+                  onClick={() => handleClick(recipe.recipe, index)}
+                >
+                  <a href="#">
+                    <i>{recipe.recipe.label}</i>
+                  </a>
+                </li>
+              ))
+          )}
         </ul>
       </div>
     </SidebarStyle>

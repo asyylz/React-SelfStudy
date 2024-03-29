@@ -20,7 +20,7 @@ export default function FavRecipes() {
               onClick={() => navigate(-1)}
               style={{ cursor: "pointer", fontSize: "2rem" }}
             />
-        {favRecipes.length > 0 ? (
+        {favRecipesData.length > 0 ? (
           <>
             <div className="recipe-wrapper">
               <section>
