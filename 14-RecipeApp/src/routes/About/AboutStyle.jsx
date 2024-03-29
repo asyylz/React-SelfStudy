@@ -33,7 +33,7 @@ const AboutStyle = styled.div`
     width: 100%;
   }
   .media-icons .icon {
-    margin-left: 1rem;
+    margin: 1rem;
     width: 80px;
     height: 80px;
     padding: 1rem;

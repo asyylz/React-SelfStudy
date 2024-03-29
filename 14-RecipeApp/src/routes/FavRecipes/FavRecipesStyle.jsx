@@ -7,6 +7,14 @@ export const FavRecipesStyle = styled.div`
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   background-image: url(${background});
+  height: 100vh;
+
+  @media (max-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-width: 320px;
+  }
 `;
 
 export const RecipeContainerStyle = styled.div`
@@ -29,22 +37,21 @@ export const RecipeContainerStyle = styled.div`
     padding: 1rem;
     background-color: #fff;
     border-radius: 20px;
-   
   }
-  .image{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   img {
     border-radius: 20px;
     border: 2px solid red;
   }
-  h1,h2 {
+  h1,
+  h2 {
     color: ${dgreen};
     border-bottom: 1px solid red;
-    margin-top:2rem;
+    margin-top: 2rem;
   }
 
   table {
@@ -57,17 +64,14 @@ export const RecipeContainerStyle = styled.div`
     justify-content: space-between;
     border-bottom: 1px solid ${dgreen};
   }
-  @media (max-width: 802px) {
+  @media (max-width: 700px) {
     .recipe-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    img {
+      heigth: 200px;
+      width: 200px;
+    }
   }
-  @media (max-width: 802px) {
-    .recipe-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  }
-
 `;
