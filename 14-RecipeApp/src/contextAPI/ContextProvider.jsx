@@ -43,6 +43,8 @@ export default function ContexProvider({ children }) {
     setFavRecipesData,
     selectedFav,
     setSelectedFav,
+    recipeData,
+    setRecipeData,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;

@@ -6,15 +6,12 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 export default function Sidebar() {
   const { favRecipesData, setSelectedFav, activeUserCredits } =
     useContext(Context);
-  const { favRecipes } = favRecipesData;
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const userRecipe = favRecipesData.find(
       (recipe) => recipe.user === activeUserCredits.userName
     );
-    console.log("bura");
-    console.log(userRecipe);
     if (userRecipe && userRecipe?.favRecipes.length > 0) {
       setSelectedFav(userRecipe.favRecipes[0].recipe);
     }
@@ -25,6 +22,9 @@ export default function Sidebar() {
     setActiveIndex(index);
   };
 
+
+
+  /* ----------------------- Return ----------------------- */
   return (
     <SidebarStyle>
       <div className="sidebar-menu">
@@ -33,7 +33,7 @@ export default function Sidebar() {
           {favRecipesData.map(
             (userRecipe) =>
               userRecipe.user === activeUserCredits.userName &&
-              userRecipe.favRecipes.map((recipe,index) => (
+              userRecipe.favRecipes.map((recipe, index) => (
                 <li
                   key={index}
                   className={`selected-recipe ${

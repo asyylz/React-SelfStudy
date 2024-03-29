@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { AiFillHeart } from "react-icons/ai";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../contextAPI/ContextProvider";
 import { useNavigate } from "react-router-dom";
 export default function Navbar() {
-  const { setActiveUserCredits } = useContext(Context);
+  const { setActiveUserCredits, setRecipeData, recipeData, activeUserCredits } =
+    useContext(Context);
   const { userName, userPassword, authorized } =
     useContext(Context).activeUserCredits;
 
@@ -13,8 +14,11 @@ export default function Navbar() {
 
   function handleLogout() {
     setActiveUserCredits({ userName: "", userPassword: "", authorized: false });
+    setRecipeData([]);
+    console.log("Recipe data after logout:", recipeData); // Log the recipeData state
     navigate("/login");
   }
+
   return (
     <>
       <nav className="nav">
