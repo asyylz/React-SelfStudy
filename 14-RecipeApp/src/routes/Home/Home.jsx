@@ -8,14 +8,12 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { AiFillHeart } from "react-icons/ai";
-import { BsArrowBarLeft } from "react-icons/bs";
 
 export default function Home() {
   /* --------------------- Context API -------------------- */
   const {
     getRecipe,
     recipeData,
-    setRecipeData,
     activeUserCredits,
     favRecipesData,
     setFavRecipesData,
@@ -116,7 +114,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="group">
-                    <span>{mealType}</span>
+                    <span>{recipe.recipe.cuisineType}</span>
                   </div>
                 </div>
                 <div

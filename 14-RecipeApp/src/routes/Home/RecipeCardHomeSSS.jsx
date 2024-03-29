@@ -67,6 +67,7 @@ const RecipeCardHomeSSS = styled.div`
   }
   .minip .mg .group span {
     display: block;
+    font-size:14px;
     transform: rotate(180deg);
     transition: transform 0.6s linear;
   }
