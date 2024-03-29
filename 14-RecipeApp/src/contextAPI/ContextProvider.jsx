@@ -17,7 +17,14 @@ export default function ContexProvider({ children }) {
     user: "",
     favRecipes: [],
   });
-  const [selectedFav, setSelectedFav] = useState(favRecipesData.favRecipes[0]);
+  const [selectedFav, setSelectedFav] = useState(null);
+  // const [selectedFav, setSelectedFav] = useState(
+  //   favRecipesData.favRecipes.length > 0
+  //     ? favRecipesData.favRecipes[0].recipe
+  //     : null
+  // );
+
+  //console.log(favRecipesData.favRecipes[0].recipe)
 
   const getRecipe = async (URL) => {
     try {
@@ -29,7 +36,7 @@ export default function ContexProvider({ children }) {
       throw error;
     }
   };
-  console.log(recipeData)
+  console.log(recipeData);
 
   const contextContent = {
     getRecipe: getRecipe,

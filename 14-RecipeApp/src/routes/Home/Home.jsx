@@ -30,7 +30,7 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  /* --------------------- Handle Favs -------------------- */
+  /* --------------------- Handle Favs Add?Remove-------------------- */
   function handleFavClick(e, selectedRecipe) {
     e.preventDefault();
     const isExist = favRecipesData.favRecipes.some(

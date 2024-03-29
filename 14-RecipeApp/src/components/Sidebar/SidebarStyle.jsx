@@ -40,6 +40,10 @@ const SidebarStyle = styled.div`
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
     border-bottom: 1px solid yellow;
   }
+  .selected-recipe.active {
+    background-color: red;
+  }
+
   @media (max-width: 700px) {
     margin-bottom: 1rem;
   }
