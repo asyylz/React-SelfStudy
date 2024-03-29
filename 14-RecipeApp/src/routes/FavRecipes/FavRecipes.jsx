@@ -3,23 +3,26 @@ import { RecipeContainerStyle, FavRecipesStyle } from "./FavRecipesStyle.jsx";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { BsArrowBarLeft } from "react-icons/bs";
 export default function FavRecipes() {
   /* --------------------- API Context -------------------- */
   const {
-    activeUserCredits,
     favRecipesData,
-    setFavRecipesData,
-    recipeData,
     selectedFav,
-    setSelectedFav,
   } = useContext(Context);
   const { favRecipes } = favRecipesData;
-  console.log(selectedFav);
+  const navigate = useNavigate();
+
   /* ----------------------- Return ----------------------- */
   return (
     <FavRecipesStyle>
       <Sidebar />
       <RecipeContainerStyle>
+        <BsArrowBarLeft
+          className="navigate-back"
+          onClick={() => navigate(-1)}
+          style={{ cursor: "pointer", fontSize: "1.5rem" }}
+        />
         <div className="recipe-wrapper">
           <section>
             <div className="image">

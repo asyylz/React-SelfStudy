@@ -1,6 +1,7 @@
 import styled from "styled-components";
 const dgreen = "#2c3834";
 const SidebarStyle = styled.div`
+
   /* Sidebar Menu Styles */
   .sidebar-menu {
     display: flex;
@@ -23,7 +24,7 @@ const SidebarStyle = styled.div`
     padding: 14px;
     transition: all 0.3s linear;
     list-style: none;
-    border-bottom: 1px solid red;
+ 
   }
   a {
     font-size: 20px;
@@ -38,10 +39,12 @@ const SidebarStyle = styled.div`
   li:hover {
     border-left: 1px solid ${dgreen};
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-    border-bottom: 1px solid yellow;
+    border: 1px solid red;
+    border-radius:0 40px 40px 0;
   }
   .selected-recipe.active {
     background-color: red;
+    border-radius:0 40px 40px 0;
   }
 
   @media (max-width: 700px) {
