@@ -1,12 +1,11 @@
-import { Outlet, NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { AiFillHeart } from "react-icons/ai";
 import { useContext } from "react";
 import { Context } from "../contextAPI/ContextProvider";
 import { useNavigate } from "react-router-dom";
 export default function Navbar() {
-  const { activeUserCredits, setActiveUserCredits, setSelectedRecipe } =
-    useContext(Context);
+  const { setActiveUserCredits } = useContext(Context);
   const { userName, userPassword, authorized } =
     useContext(Context).activeUserCredits;
 

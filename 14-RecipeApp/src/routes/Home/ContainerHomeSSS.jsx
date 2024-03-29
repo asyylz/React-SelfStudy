@@ -4,7 +4,6 @@ const beige = "#cdad93";
 const ContainerHomeSSS = styled.div`
   height: ${({ isfilled }) => (isfilled === "true" ? "" : "100vh")};
   width: 100vw;
-  
   margin-top: 6.2rem;
   background-image: url(${background});
   background-size: cover;
@@ -17,6 +16,7 @@ const ContainerHomeSSS = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  
   }
   .wrapper h1 {
     text-align: center;
