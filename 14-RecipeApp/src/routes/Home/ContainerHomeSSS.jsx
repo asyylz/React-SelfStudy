@@ -2,9 +2,9 @@ import styled from "styled-components";
 import background from "/public/bgHome.avif";
 const beige = "#cdad93";
 const ContainerHomeSSS = styled.div`
-  ${'' /* height: ${({ isempty }) => (isempty === "true" ? "100vh" : "")}; */}
-  height: 100vh;
+  height: ${({ isfilled }) => (isfilled === "true" ? "" : "100vh")};
   width: 100vw;
+  
   margin-top: 6.2rem;
   background-image: url(${background});
   background-size: cover;

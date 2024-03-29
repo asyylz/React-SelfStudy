@@ -57,7 +57,7 @@ export default function Home() {
       (r) => rec.recipe.calories === r.recipe.calories
     )
   );
-
+console.log(recipeData.length)
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();
@@ -67,7 +67,7 @@ export default function Home() {
   /* ----------------------- RETURN ----------------------- */
 
   return (
-    <ContainerHomeSSS isempty={recipeData.length === 0 ? "true" : "false"}>
+    <ContainerHomeSSS isfilled={recipeData.length > 0 ? "true" : "false"}>
       <div className="wrapper">
         <h1>Recipe Search</h1>
         <div className="search-wrapper">
