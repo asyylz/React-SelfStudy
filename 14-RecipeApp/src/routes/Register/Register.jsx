@@ -12,7 +12,8 @@ export default function Register() {
   });
   const { userName, userPassword } = newUser;
   const navigate = useNavigate();
-  console.log();
+ 
+/* -------------- Using State Only for usersData ------------- */
   function handleNewUser(e) {
     e.preventDefault();
 
@@ -31,6 +32,7 @@ export default function Register() {
 
       return;
     }
+
     const isExist = usersData.some((user) => user.userName === userName);
     if (!isExist) {
       setUsersData((prevState) => [...prevState, newUser]);
@@ -42,6 +44,45 @@ export default function Register() {
     navigate("/login");
   }
 
+  /* ---------------- Using LocalStorage---------------- */
+  function handleNewUserAdd(e) {
+    e.preventDefault();
+    if (!userName || userName.trim() === "") {
+      setError((prevState) => ({
+        ...prevState,
+        nameError: "User Name is required",
+      }));
+      return;
+    }
+    if (!userPassword || userPassword.trim() === "") {
+      setError((prevState) => ({
+        ...prevState,
+        passwordError: "User password is required",
+      }));
+
+      return;
+    }
+    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    const isExist = storedUsers.some(
+      (user) => user.userName === newUser.userName
+    );
+    if (isExist) {
+      alert("This user already exists. Please create a new one or log in.");
+    }
+    if (!isExist) {
+      localStorage.setItem(
+        "storedUsers",
+        JSON.stringify([newUser, ...storedUsers])
+      );
+      alert("User registered successfully!");
+    }
+    setNewUser({ userName: "", userPassword: "" });
+    navigate("/login");
+  }
+
+
+
+  /* ----------------------- Return ----------------------- */
   return (
     <RegisterStyle>
       <LoginRegisterStyle>
@@ -87,7 +128,14 @@ export default function Register() {
                 {<span className="error">{error.passwordError}</span>}
               </div>
               <div className="row button">
-                <input type="submit" value="Register" onClick={handleNewUser} />
+                {/* <input type="submit" value="Register" onClick={handleNewUser} /> */}
+
+                {/* ---------------- Localstorage handler ---------------- */}
+                <input
+                  type="submit"
+                  value="Register"
+                  onClick={(e)=>handleNewUserAdd(e)}
+                />
               </div>
             </form>
           </div>

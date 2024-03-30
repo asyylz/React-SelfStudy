@@ -13,10 +13,6 @@ export default function ContexProvider({ children }) {
     authorized: false,
   });
   const [usersData, setUsersData] = useState([]);
-  // const [favRecipesData, setFavRecipesData] = useState([{
-  //   user: "",
-  //   favRecipes: [],
-  // }]);
   const [favRecipesData, setFavRecipesData] = useState([]);
   const [selectedFav, setSelectedFav] = useState(null);
 

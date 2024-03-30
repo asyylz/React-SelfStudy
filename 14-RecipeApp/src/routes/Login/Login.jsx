@@ -10,25 +10,46 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  function handleLogin(e) {
-    e.preventDefault();
-    const foundUser = usersData.find(
+  /* ---------------- Without LocalStorage ---------------- */
+  // function handleLogin(e) {
+  //   e.preventDefault();
+  //   const foundUser = usersData.find(
+  //     (user) => user.userName === userName && user.userPassword === userPassword
+  //   );
+
+  //   if (foundUser) {
+  //     setActiveUserCredits((prevCredits) => ({
+  //       ...prevCredits,
+  //       authorized: true,
+  //     }));
+  //     navigate("/home");
+  //   } else {
+  //     const message = "You haven't registered yet...Please register...";
+  //     alert(message);
+  //     navigate("/register");
+  //   }
+  // }
+
+  /* ------------------ With LocalStorage ----------------- */
+  const handleLogin = (e) => {
+    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    const foundUser = storedUsers.find(
       (user) => user.userName === userName && user.userPassword === userPassword
     );
-
     if (foundUser) {
-      setActiveUserCredits((prevCredits) => ({
-        ...prevCredits,
-        authorized: true,
-      }));
-      navigate("/home");
+      const updatedUser = { ...foundUser, authorized: true };
+
+      const updatedUsers = storedUsers.map((user) =>
+        user.userName === foundUser.userName ? updatedUser : user
+      );
+      localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
     } else {
-      const message = "You haven't registered yet...Please register...";
-      alert(message);
+      alert("You haven't registered yet...Please register...");
       navigate("/register");
     }
-  }
+  };
 
+  /* ----------------------- Return ----------------------- */
   return (
     <LoginRegisterStyle login>
       <div className="container">
@@ -70,7 +91,6 @@ export default function Login() {
             </div>
             <div className="row button">
               <button onClick={(e) => handleLogin(e)}>Login</button>
-              {/* <input type="submit" value="Login" onClick={()=>handleLogin()} /> */}
             </div>
             <div className="signup-link">
               Not a member? <a href="/register">Signup now</a>
