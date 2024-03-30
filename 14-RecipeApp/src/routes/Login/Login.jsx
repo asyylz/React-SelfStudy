@@ -61,7 +61,7 @@ export default function Login() {
 
   /* ----------------------- Return ----------------------- */
   return (
-    <LoginRegisterStyle login>
+    <LoginRegisterStyle login="true">
       <div className="container">
         <div className="wrapper">
           <div className="title">

@@ -16,8 +16,7 @@ const ContainerHomeSSS = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:100vh;
-  
+    height: 100vh;
   }
   .wrapper h1 {
     text-align: center;
@@ -40,7 +39,7 @@ const ContainerHomeSSS = styled.div`
   .icon {
     color: ${beige};
     font-size: 2.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
     cursor: pointer;
   }
   @media (min-width: 1100px) {

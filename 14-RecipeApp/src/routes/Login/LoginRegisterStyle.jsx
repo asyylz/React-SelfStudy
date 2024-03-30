@@ -17,7 +17,8 @@ const LoginRegisterStyle = styled.div`
   ::selection {
     background: rgba(229, 174, 138, 0.5);
   }
-  background-image: ${({ login }) => (login ? `url(${background})` : `url(${background2})`)};
+  background-image: ${({ login }) =>
+    login === "true" ? `url(${background})` : `url(${background2})`};
   background-size: cover;
   height: 100vh;
   background-size: cover;

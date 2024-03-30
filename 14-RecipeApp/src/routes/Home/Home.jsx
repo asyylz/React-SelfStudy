@@ -31,7 +31,7 @@ export default function Home() {
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const navigate = useNavigate();
-console.log(activeUserCredits)
+
   /* --------------------- Handle Favs Add?Remove withStates-------------------- */
   // function handleFavClick(e, selectedRecipe) {
   //   e.preventDefault();
