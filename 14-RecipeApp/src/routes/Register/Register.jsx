@@ -72,7 +72,7 @@ export default function Register() {
     if (!isExist) {
       localStorage.setItem(
         "storedUsers",
-        JSON.stringify([newUser, ...storedUsers])
+        JSON.stringify([{...newUser,favRecipes:[]}, ...storedUsers])
       );
       alert("User registered successfully!");
     }

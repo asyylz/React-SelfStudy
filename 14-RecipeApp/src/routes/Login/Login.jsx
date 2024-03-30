@@ -32,11 +32,17 @@ export default function Login() {
 
   /* ------------------ With LocalStorage ----------------- */
   const handleLogin = (e) => {
+    e.preventDefault();
     const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
     const foundUser = storedUsers.find(
       (user) => user.userName === userName && user.userPassword === userPassword
     );
     if (foundUser) {
+      setActiveUserCredits((prevCredits) => ({
+        ...prevCredits,
+        authorized: true,
+      }));
+      /* -------------------- localstorage -------------------- */
       const updatedUser = { ...foundUser, authorized: true };
 
       const updatedUsers = storedUsers.map((user) =>
@@ -47,6 +53,7 @@ export default function Login() {
       alert("You haven't registered yet...Please register...");
       navigate("/register");
     }
+
   };
 
   /* ----------------------- Return ----------------------- */
@@ -63,6 +70,7 @@ export default function Login() {
               <input
                 type="text"
                 placeholder="User Name"
+              
                 required
                 onChange={(e) =>
                   setActiveUserCredits((prevState) => ({
@@ -78,6 +86,7 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 required
+             
                 onChange={(e) =>
                   setActiveUserCredits((prevState) => ({
                     ...prevState,
