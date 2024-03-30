@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
 import LoginRegisterStyle from "../Login/LoginRegisterStyle.jsx";
 export default function Register() {
-  const { usersData, setUsersData } = useContext(Context);
+  const { usersData, setUsersData, storedUsers, activeUserDataLS } =
+    useContext(Context);
   const [newUser, setNewUser] = useState({ userName: "", userPassword: "" });
   const [error, setError] = useState({
     nameError: "",
@@ -12,37 +13,37 @@ export default function Register() {
   });
   const { userName, userPassword } = newUser;
   const navigate = useNavigate();
- 
-/* -------------- Using State Only for usersData ------------- */
-  function handleNewUser(e) {
-    e.preventDefault();
 
-    if (!userName || userName.trim() === "") {
-      setError((prevState) => ({
-        ...prevState,
-        nameError: "User Name is required",
-      }));
-      return;
-    }
-    if (!userPassword || userPassword.trim() === "") {
-      setError((prevState) => ({
-        ...prevState,
-        passwordError: "User password is required",
-      }));
+  /* -------------- without Localstorage ------------- */
+  // function handleNewUser(e) {
+  //   e.preventDefault();
 
-      return;
-    }
+  //   if (!userName || userName.trim() === "") {
+  //     setError((prevState) => ({
+  //       ...prevState,
+  //       nameError: "User Name is required",
+  //     }));
+  //     return;
+  //   }
+  //   if (!userPassword || userPassword.trim() === "") {
+  //     setError((prevState) => ({
+  //       ...prevState,
+  //       passwordError: "User password is required",
+  //     }));
 
-    const isExist = usersData.some((user) => user.userName === userName);
-    if (!isExist) {
-      setUsersData((prevState) => [...prevState, newUser]);
-      alert("User registered successfully!");
-    } else {
-      alert("This user already exists. Please create a new one or log in.");
-    }
-    setNewUser({ userName: "", userPassword: "" });
-    navigate("/login");
-  }
+  //     return;
+  //   }
+
+  //   const isExist = usersData.some((user) => user.userName === userName);
+  //   if (!isExist) {
+  //     setUsersData((prevState) => [...prevState, newUser]);
+  //     alert("User registered successfully!");
+  //   } else {
+  //     alert("This user already exists. Please create a new one or log in.");
+  //   }
+  //   setNewUser({ userName: "", userPassword: "" });
+  //   navigate("/login");
+  // }
 
   /* ---------------- Using LocalStorage---------------- */
   function handleNewUserAdd(e) {
@@ -62,7 +63,7 @@ export default function Register() {
 
       return;
     }
-    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
     const isExist = storedUsers.some(
       (user) => user.userName === newUser.userName
     );
@@ -72,15 +73,13 @@ export default function Register() {
     if (!isExist) {
       localStorage.setItem(
         "storedUsers",
-        JSON.stringify([{...newUser,favRecipes:[]}, ...storedUsers])
+        JSON.stringify([{ ...newUser, favRecipes: [] }, ...storedUsers])
       );
       alert("User registered successfully!");
     }
     setNewUser({ userName: "", userPassword: "" });
     navigate("/login");
   }
-
-
 
   /* ----------------------- Return ----------------------- */
   return (
@@ -134,7 +133,7 @@ export default function Register() {
                 <input
                   type="submit"
                   value="Register"
-                  onClick={(e)=>handleNewUserAdd(e)}
+                  onClick={(e) => handleNewUserAdd(e)}
                 />
               </div>
             </form>

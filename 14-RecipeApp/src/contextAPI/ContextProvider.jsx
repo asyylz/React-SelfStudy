@@ -15,7 +15,12 @@ export default function ContexProvider({ children }) {
   const [usersData, setUsersData] = useState([]);
   const [favRecipesData, setFavRecipesData] = useState([]);
   const [selectedFav, setSelectedFav] = useState(null);
+  const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+  const activeUserDataLS= storedUsers.find(
+    (user) => user.userName === activeUserCredits.userName
+  )
 
+  /* ------------------ fetching recipes ------------------ */
   const getRecipe = async (URL) => {
     try {
       const response = await axios.get(`${URL}`);
@@ -30,17 +35,18 @@ export default function ContexProvider({ children }) {
 
   const contextContent = {
     getRecipe: getRecipe,
-    recipeData: recipeData,
     activeUserCredits,
     setActiveUserCredits,
-    usersData,
-    setUsersData,
-    favRecipesData,
-    setFavRecipesData,
+    //usersData, // without localStorage
+   // setUsersData,
+    //favRecipesData, // without localStorage
+    //setFavRecipesData,
     selectedFav,
     setSelectedFav,
     recipeData,
     setRecipeData,
+    storedUsers,
+    activeUserDataLS
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;

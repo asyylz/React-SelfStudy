@@ -15,8 +15,10 @@ export default function Home() {
     getRecipe,
     recipeData,
     activeUserCredits,
-    favRecipesData,
-    setFavRecipesData,
+    //favRecipesData, // for without localstorage
+    //setFavRecipesData, // for without localstorage
+    storedUsers,
+    activeUserDataLS,
   } = useContext(Context);
   /* ----------------------- States ----------------------- */
   const [mealType, setMealType] = useState("");
@@ -82,7 +84,7 @@ export default function Home() {
 
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
-    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
 
     const foundUser = storedUsers.find(
       (user) => user.userName === activeUserCredits.userName
@@ -110,20 +112,23 @@ export default function Home() {
     }
   };
 
-  console.log(recipeData);
   /* --------------- Favs with LocalStorage --------------- */
-  const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+  //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+  // const favList = recipeData.map((recipe) =>
+  //   storedUsers.some(
+  //     (user) =>
+  //       user.userName === activeUserCredits.userName &&
+  //       user.favRecipes.some(
+  //         (r) => r.recipe.calories === recipe.recipe.calories
+  //       )
+  //   )
+  // );
+  
   const favList = recipeData.map((recipe) =>
-    storedUsers.some(
-      (user) =>
-        user.userName === activeUserCredits.userName &&
-        user.favRecipes.some(
-          (r) => r.recipe.calories === recipe.recipe.calories
-        )
+    activeUserDataLS.favRecipes.some(
+      (r) => r.recipe.calories === recipe.recipe.calories
     )
   );
-
-  console.log(favList);
 
   /* ----------------Favs Without localStorage ---------------- */
   // const isFavorited = recipeData.map((recipe) =>
