@@ -45,12 +45,14 @@ export default function Login() {
         authorized: true,
       }));
       /* -------------------- localstorage -------------------- */
-      const updatedUser = { ...activeUserDataLS, authorized: true };
-
+      const updatedUser = {
+        ...activeUserDataLS
+      };
       const updatedUsers = storedUsers.map((user) =>
         user.userName === activeUserDataLS.userName ? updatedUser : user
       );
       setStoredUsers(updatedUsers);
+      navigate("/home");
     } else {
       alert("You haven't registered yet...Please register...");
       navigate("/register");

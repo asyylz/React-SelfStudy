@@ -17,7 +17,6 @@ export default function Navbar() {
     setRecipeData([]); // for next user recipeData set [] for emty display
     navigate("/login");
   }
-console.log(authorized)
   return (
     <>
       <nav className="nav">
