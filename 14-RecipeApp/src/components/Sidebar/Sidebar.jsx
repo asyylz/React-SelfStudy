@@ -5,17 +5,13 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 
 export default function Sidebar() {
   const {
-    //favRecipesData,
-    activeUserCredits,
-    storedUsers,
+    //favRecipesData, // without LocalStorage
     activeUserDataLS,
-    selectedFav,
     setSelectedFav,
   } = useContext(Context);
   const [activeIndex, setActiveIndex] = useState(0);
   console.log(activeUserDataLS);
-  const {favRecipes} =useContext(Context).activeUserDataLS
-
+  const { favRecipes } = useContext(Context).activeUserDataLS;
 
   /* ---------------- without Localstroage ---------------- */
   // useEffect(() => {
@@ -29,21 +25,10 @@ export default function Sidebar() {
 
   /* ------------------ with localStorage ----------------- */
   useEffect(() => {
-    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-
-    // const userFirstFavRecipe = storedUsers.find(
-    //   (user) => user.userName === activeUserCredits.userName
-    // ).favRecipes[0];
     if (favRecipes.length > 0) {
       setSelectedFav(favRecipes[0].recipe);
     }
   }, []);
-
-  /* ------------- localStorage user fav list ------------- */
-  //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-  // const favRecipeList = storedUsers.find(
-  //   (user) => user.userName === activeUserCredits.userName
-  // ).favRecipes;
 
   /* ------------------- handlefavclick ------------------- */
   const handleClick = (recipe, index) => {

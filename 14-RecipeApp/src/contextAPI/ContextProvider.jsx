@@ -19,15 +19,13 @@ export default function ContexProvider({ children }) {
   //const [favRecipesData, setFavRecipesData] = useState([]); // without LocalStorage
 
   /* ----------------- Localstorage states ---------------- */
-  const [storedUsers, setStoredUsers] = useState(
-    JSON.parse(localStorage.getItem("storedUsers")) || []
-  );
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("storedUsers")) || [];
-    setStoredUsers(data);
-  },[storedUsers]);
+  const [storedUsers, setStoredUsers] = useState([]);
 
-  const activeUserDataLS = storedUsers.find(
+  useEffect(() => {
+    localStorage.setItem("storedUsers", JSON.stringify(storedUsers));
+  }, [storedUsers]);
+
+  const activeUserDataLS = storedUsers?.find(
     (user) => user.userName === activeUserCredits.userName
   );
 
@@ -54,6 +52,7 @@ export default function ContexProvider({ children }) {
     recipeData,
     setRecipeData,
     storedUsers,
+    setStoredUsers,
     activeUserDataLS,
     selectedFav,
     setSelectedFav,

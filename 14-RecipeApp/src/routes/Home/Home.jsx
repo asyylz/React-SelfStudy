@@ -18,7 +18,8 @@ export default function Home() {
     //favRecipesData, // for without localstorage
     //setFavRecipesData, // for without localstorage
     storedUsers,
-    activeUserDataLS
+    setStoredUsers,
+    activeUserDataLS,
   } = useContext(Context);
   /* ----------------------- States ----------------------- */
   const [mealType, setMealType] = useState("");
@@ -31,7 +32,7 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  /* --------------------- Handle Favs Add?Remove-------------------- */
+  /* --------------------- Handle Favs Add?Remove withStates-------------------- */
   // function handleFavClick(e, selectedRecipe) {
   //   e.preventDefault();
   //   setFavRecipesData((prevState) => {
@@ -84,28 +85,42 @@ export default function Home() {
 
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
-    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
 
-    const foundUser = storedUsers.find(
-      (user) => user.userName === activeUserCredits.userName
-    );
+    // const foundUser = storedUsers.find(
+    //   (user) => user.userName === activeUserCredits.userName
+    // );
 
-    if (foundUser) {
-      const existingRecipe = foundUser.favRecipes.find(
+    if (activeUserDataLS) {
+      const existingRecipe = activeUserDataLS.favRecipes.find(
         (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
       );
       if (existingRecipe) {
-        // Recipe already exists in the user's favorites
-        alert("This recipe is already in your favorite list.");
-        return;
+        // Recipe already exists in favorites, remove it
+        const updatedFavRecipesRemovedVersion = [
+          ...activeUserDataLS.favRecipes.filter(
+            (r) => r.recipe.calories !== selectedRecipe.recipe.calories
+          ),
+        ];
+        const updatedUser = {
+          ...activeUserDataLS,
+          favRecipes: updatedFavRecipesRemovedVersion,
+        };
+        const updatedUsers = storedUsers.map((user) =>
+          user.userName === activeUserDataLS.userName ? updatedUser : user
+        );
+        setStoredUsers(updatedUsers);
+        localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
+        alert("This recipe is removed from your favorite list.");
       } else {
         const updatedUser = {
-          ...foundUser,
-          favRecipes: [selectedRecipe, ...foundUser.favRecipes],
+          ...activeUserDataLS,
+          favRecipes: [...activeUserDataLS.favRecipes, selectedRecipe],
         };
         const updatedUsers = storedUsers.map((user) =>
           user.userName === foundUser.userName ? updatedUser : user
         );
+        setStoredUsers(updatedUsers);
         localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
         alert("Recipe is added to your fav list....");
       }
@@ -132,7 +147,6 @@ export default function Home() {
   //   )
   // );
 
-  
   /* -------------------- Handle Search ------------------- */
   function handleClick(recipe, e) {
     e.preventDefault();

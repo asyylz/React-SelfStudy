@@ -65,10 +65,8 @@ export default function Register() {
         ...prevState,
         passwordError: "User password is required",
       }));
-
       return;
     }
-    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
     const isExist = storedUsers.some(
       (user) => user.userName === newUser.userName
     );
@@ -76,15 +74,21 @@ export default function Register() {
       alert("This user already exists. Please create a new one or log in.");
     }
     if (!isExist) {
-      localStorage.setItem(
-        "storedUsers",
-        JSON.stringify([{ ...newUser, favRecipes: [] }, ...storedUsers])
-      );
-
+      // localStorage.setItem(
+      //   "storedUsers",
+      //   JSON.stringify([{ ...newUser, favRecipes: [] }, ...storedUsers])
+      // );
+      setStoredUsers((prevState) => [
+        ...prevState,
+        {
+          ...newUser,
+          favRecipes: [],
+        },
+      ]);
       alert("User registered successfully!");
     }
     setNewUser({ userName: "", userPassword: "" });
-    navigate("/login");
+    //navigate("/login");
   }
 
   /* ----------------------- Return ----------------------- */
