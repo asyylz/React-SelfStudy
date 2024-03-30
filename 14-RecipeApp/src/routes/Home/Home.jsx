@@ -28,7 +28,7 @@ export default function Home() {
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   const navigate = useNavigate();
-console.log(activeUserCredits)
+
   /* --------------------- Handle Favs Add?Remove-------------------- */
   // function handleFavClick(e, selectedRecipe) {
   //   e.preventDefault();
@@ -79,15 +79,15 @@ console.log(activeUserCredits)
   // }
 
   /* ------------------ with LocalStorage ----------------- */
+
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
-    console.log("clicked")
     const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-    console.log(storedUsers)
+
     const foundUser = storedUsers.find(
       (user) => user.userName === activeUserCredits.userName
     );
-    console.log(foundUser)
+
     if (foundUser) {
       const existingRecipe = foundUser.favRecipes.find(
         (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
@@ -95,28 +95,47 @@ console.log(activeUserCredits)
       if (existingRecipe) {
         // Recipe already exists in the user's favorites
         alert("This recipe is already in your favorite list.");
+        return;
       } else {
+        const updatedUser = {
+          ...foundUser,
+          favRecipes: [selectedRecipe, ...foundUser.favRecipes],
+        };
+        const updatedUsers = storedUsers.map((user) =>
+          user.userName === foundUser.userName ? updatedUser : user
+        );
+        localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
+        alert("Recipe is added to your fav list....");
       }
-      const updatedUser = {
-        ...foundUser,
-        favRecipes: [selectedRecipe,...foundUser.favRecipes]
-      };
-      const updatedUsers = storedUsers.map((user) =>
-        user.userName === foundUser.userName ? updatedUser : user
-      );
-      localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
     }
   };
 
-  const isFavorited = recipeData.map((recipe) =>
-    favRecipesData.some(
-      (rec) =>
-        rec.user === activeUserCredits.userName &&
-        rec.favRecipes.some((r) => r.recipe.calories === recipe.recipe.calories)
+  console.log(recipeData);
+  /* --------------- Favs with LocalStorage --------------- */
+  const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+  const favList = recipeData.map((recipe) =>
+    storedUsers.some(
+      (user) =>
+        user.userName === activeUserCredits.userName &&
+        user.favRecipes.some(
+          (r) => r.recipe.calories === recipe.recipe.calories
+        )
     )
   );
 
+  console.log(favList);
+
+  /* ----------------Favs Without localStorage ---------------- */
+  // const isFavorited = recipeData.map((recipe) =>
+  //   favRecipesData.some(
+  //     (rec) =>
+  //       rec.user === activeUserCredits.userName &&
+  //       rec.favRecipes.some((r) => r.recipe.calories === recipe.recipe.calories)
+  //   )
+  // );
+
   /* -------------------- Handle Search ------------------- */
+
   function handleClick(recipe, e) {
     e.preventDefault();
     navigate("/recipe", { state: { recipe } });
@@ -172,11 +191,7 @@ console.log(activeUserCredits)
                       onClick={(e) => handleFavClick(e, recipe)}
                     >
                       {/* Toggle between the filled and outlined heart icons based on the isFavorited flag */}
-                      {isFavorited[index] ? (
-                        <AiFillHeart />
-                      ) : (
-                        <MdFavoriteBorder />
-                      )}
+                      {favList[index] ? <AiFillHeart /> : <MdFavoriteBorder />}
                     </div>
                   </div>
                   <div className="group">

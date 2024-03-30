@@ -26,7 +26,7 @@ export default function ContexProvider({ children }) {
       throw error;
     }
   };
-  console.log(recipeData);
+
 
   const contextContent = {
     getRecipe: getRecipe,
