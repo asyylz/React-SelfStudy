@@ -4,9 +4,14 @@ import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const { activeUserCredits, setActiveUserCredits, usersData,  storedUsers,
- } =
-    useContext(Context);
+  const {
+    activeUserCredits,
+    setActiveUserCredits,
+    usersData,
+    setStoredUsers,
+    storedUsers,
+    activeUserDataLS,
+  } = useContext(Context);
   const { userName, userPassword } = activeUserCredits;
 
   const navigate = useNavigate();
@@ -34,26 +39,22 @@ export default function Login() {
   /* ------------------ With LocalStorage ----------------- */
   const handleLogin = (e) => {
     e.preventDefault();
-    const foundUser = storedUsers.find(
-      (user) => user.userName === userName && user.userPassword === userPassword
-    );
-    if (foundUser) {
+    if (activeUserDataLS) {
       setActiveUserCredits((prevCredits) => ({
         ...prevCredits,
         authorized: true,
       }));
       /* -------------------- localstorage -------------------- */
-      const updatedUser = { ...foundUser, authorized: true };
+      const updatedUser = { ...activeUserDataLS, authorized: true };
 
       const updatedUsers = storedUsers.map((user) =>
-        user.userName === foundUser.userName ? updatedUser : user
+        user.userName === activeUserDataLS.userName ? updatedUser : user
       );
-      localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
+      setStoredUsers(updatedUsers);
     } else {
       alert("You haven't registered yet...Please register...");
       navigate("/register");
     }
-
   };
 
   /* ----------------------- Return ----------------------- */
@@ -70,7 +71,6 @@ export default function Login() {
               <input
                 type="text"
                 placeholder="User Name"
-              
                 required
                 onChange={(e) =>
                   setActiveUserCredits((prevState) => ({
@@ -86,7 +86,6 @@ export default function Login() {
                 type="password"
                 placeholder="Password"
                 required
-             
                 onChange={(e) =>
                   setActiveUserCredits((prevState) => ({
                     ...prevState,
