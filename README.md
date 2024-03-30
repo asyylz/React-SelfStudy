@@ -187,20 +187,34 @@
         <br>
         <p> <strong>
             <h3>Description:</h3>
-          </strong>The Recipe app is a web application designed to provide users with a convenient way to discover, save, and organize their favorite recipes. With an intuitive user interface and a vast database of recipes, users can explore a variety of dishes, find inspiration for their next meal, and create a personalized collection of favorite recipes.
+          </strong>The Recipe app is a web application designed to provide users with a convenient way to discover,
+          save, and organize their favorite recipes. With an intuitive user interface and a vast database of recipes,
+          users can explore a variety of dishes, find inspiration for their next meal, and create a personalized
+          collection of favorite recipes.
           <strong>
             <h3>Features:</h3>
           </strong>
-          <em>Search Recipes:</em> Users can search for recipes based on dish name  or meal types.
+          <u><b>Search Recipes:</b></u> Users can search for recipes based on dish name or meal types.
           <br>
-          <em>Save Favorites: </em> Logged-in users can save their favorite recipes to access them later with ease. Saved recipes are associated with the user's account.
+          <u><b>Save Favorites:</b></u>Logged-in users can save their favorite recipes to access them later with ease.
+          Saved recipes are associated with the user's account.
           <br>
-          <em>User Registration: </em>New users can register for an account by providing basic information such as name, email address, and password.
+          <u><b>User Registration:</b></u>New users can register for an account by providing basic information such as
+          name, email address, and password.
           <br>
-          <em>User Login: </em>Registered users can securely log in to their accounts using their email address and password.
+          <u><b>User Login:</u>When a user interacts with the application, their data, including favorite recipes, is
+          stored in the browser's local storage.
+          This allows users to maintain their favorite recipes across different sessions without the need for
+          server-side storage.
           <br>
-          <em>Responsive Design:</em>The app is optimized for various devices, including desktops, tablets, and mobile phones, ensuring a seamless user experience across platforms.
+          <u><b>Storing User Data:</u>Registered users can securely log in to their accounts using their email address
+          and
+          password.
           <br>
+          <u><b>Responsive Design:</b></u>The app is optimized for various devices, including desktops, tablets, and
+          mobile phones, ensuring a seamless user experience across platforms.
+          <br>
+
         </p>
       </details>
       <hr>
@@ -246,24 +260,14 @@
               width="300" height="300" alt="Project 11 outcome"></td>
         </tr>
         <tr>
-        <td><strong>10</strong></td>
-        <td><img
-            src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
-            width="300" height="300" alt="Project10outcome"></td>
-        <td><strong>11</strong></td>
-        <td><img
-            src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
-            width="300" height="300" alt="Project 11 outcome"></td>
-            <td><strong>14</strong></td>
-        <td><img
-            src="https://github.com/asyylz/React-SelfStudy/blob/625bdcc1ec1fdd0df46d273b7c629a9466ee6b03/14-RecipeApp/public/outcome.jpg"
-            width="300" height="300" alt="Project14outcome"></td>
-        </tr>
-           <tr>
-        <td><strong>15</strong></td>
-        <td><img
-            src="https://github.com/asyylz/React-SelfStudy/blob/625bdcc1ec1fdd0df46d273b7c629a9466ee6b03/14-RecipeApp/public/outcome.jpg"
-            width="300" height="300" alt="Project15outcome"></td>
+          <td><strong>10</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
+              width="300" height="300" alt="Project10outcome"></td>
+          <td><strong>11</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+              width="300" height="300" alt="Project 11 outcome"></td>
         </tr>
       </tbody>
     </table>
