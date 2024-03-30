@@ -202,19 +202,17 @@
           <u><b>User Registration:</b></u>New users can register for an account by providing basic information such as
           name, email address, and password.
           <br>
-          <u><b>User Login:</u>When a user interacts with the application, their data, including favorite recipes, is
+          <u><b>User Login:</b></u>When a user interacts with the application, their data, including favorite recipes, is
           stored in the browser's local storage.
           This allows users to maintain their favorite recipes across different sessions without the need for
           server-side storage.
           <br>
-          <u><b>Storing User Data:</u>Registered users can securely log in to their accounts using their email address
-          and
-          password.
+          <u><b>Storing User Data:</b></u>Registered users can securely log in to their accounts using their email address
+          and password.
           <br>
           <u><b>Responsive Design:</b></u>The app is optimized for various devices, including desktops, tablets, and
           mobile phones, ensuring a seamless user experience across platforms.
           <br>
-
         </p>
       </details>
       <hr>
