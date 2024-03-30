@@ -3,7 +3,7 @@ import SelectHomeSSS from "./SelectHomeSSS.jsx";
 import ContainerHomeSSS from "./ContainerHomeSSS.jsx";
 import InputHomeSSS from "./InputHomeSSS.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -18,7 +18,7 @@ export default function Home() {
     //favRecipesData, // for without localstorage
     //setFavRecipesData, // for without localstorage
     storedUsers,
-    activeUserDataLS,
+    activeUserDataLS
   } = useContext(Context);
   /* ----------------------- States ----------------------- */
   const [mealType, setMealType] = useState("");
@@ -84,7 +84,7 @@ export default function Home() {
 
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
-    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
+    const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
 
     const foundUser = storedUsers.find(
       (user) => user.userName === activeUserCredits.userName
@@ -112,21 +112,14 @@ export default function Home() {
     }
   };
 
-  /* --------------- Favs with LocalStorage --------------- */
-  //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-  // const favList = recipeData.map((recipe) =>
-  //   storedUsers.some(
-  //     (user) =>
-  //       user.userName === activeUserCredits.userName &&
-  //       user.favRecipes.some(
-  //         (r) => r.recipe.calories === recipe.recipe.calories
-  //       )
-  //   )
-  // );
-  
+  /* --------------- Favs with LocalStorage Boolean Value--------------- */
   const favList = recipeData.map((recipe) =>
-    activeUserDataLS.favRecipes.some(
-      (r) => r.recipe.calories === recipe.recipe.calories
+    storedUsers.some(
+      (user) =>
+        user.userName === activeUserCredits.userName &&
+        user.favRecipes.some(
+          (r) => r.recipe.calories === recipe.recipe.calories
+        )
     )
   );
 
@@ -139,8 +132,8 @@ export default function Home() {
   //   )
   // );
 
+  
   /* -------------------- Handle Search ------------------- */
-
   function handleClick(recipe, e) {
     e.preventDefault();
     navigate("/recipe", { state: { recipe } });

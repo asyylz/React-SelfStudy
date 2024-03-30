@@ -34,6 +34,7 @@ export default function Login() {
   /* ------------------ With LocalStorage ----------------- */
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log("clickeck")
     //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
     const foundUser = storedUsers.find(
       (user) => user.userName === userName && user.userPassword === userPassword

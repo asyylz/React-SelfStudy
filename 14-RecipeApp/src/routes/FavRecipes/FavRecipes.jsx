@@ -6,8 +6,9 @@ import { useContext } from "react";
 import { BsArrowBarLeft } from "react-icons/bs";
 export default function FavRecipes() {
   /* --------------------- API Context -------------------- */
-  const { favRecipesData, selectedFav } = useContext(Context);
-  const { favRecipes } = favRecipesData;
+  const { selectedFav, setSelectedFav, activeUserDataLS } = useContext(Context);
+  const {favRecipes} =useContext(Context).activeUserDataLS
+  //const { favRecipes } = favRecipesData;
   const navigate = useNavigate();
 
   /* ----------------------- Return ----------------------- */
@@ -15,12 +16,12 @@ export default function FavRecipes() {
     <FavRecipesStyle>
       <Sidebar />
       <RecipeContainerStyle>
-      <BsArrowBarLeft
-              className="navigate-back"
-              onClick={() => navigate(-1)}
-              style={{ cursor: "pointer", fontSize: "2rem" }}
-            />
-        {favRecipesData.length > 0 ? (
+        <BsArrowBarLeft
+          className="navigate-back"
+          onClick={() => navigate(-1)}
+          style={{ cursor: "pointer", fontSize: "2rem" }}
+        />
+        {favRecipes.length > 0 ? (
           <>
             <div className="recipe-wrapper">
               <section>

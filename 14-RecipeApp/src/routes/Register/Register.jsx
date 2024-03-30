@@ -4,8 +4,13 @@ import { useNavigate } from "react-router-dom";
 import RegisterStyle from "./RegisterStyle.jsx";
 import LoginRegisterStyle from "../Login/LoginRegisterStyle.jsx";
 export default function Register() {
-  const { usersData, setUsersData, storedUsers, activeUserDataLS } =
-    useContext(Context);
+  const {
+    usersData,
+    setUsersData,
+    storedUsers,
+    setStoredUsers,
+    activeUserDataLS,
+  } = useContext(Context);
   const [newUser, setNewUser] = useState({ userName: "", userPassword: "" });
   const [error, setError] = useState({
     nameError: "",
@@ -75,6 +80,7 @@ export default function Register() {
         "storedUsers",
         JSON.stringify([{ ...newUser, favRecipes: [] }, ...storedUsers])
       );
+
       alert("User registered successfully!");
     }
     setNewUser({ userName: "", userPassword: "" });

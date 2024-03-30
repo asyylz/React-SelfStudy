@@ -1,4 +1,5 @@
 import { createContext, useState, useReducer } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 export const Context = createContext({
   getRecipe: () => {},
@@ -6,19 +7,23 @@ export const Context = createContext({
 });
 
 export default function ContexProvider({ children }) {
+  /* ----------------------- States ----------------------- */
   const [recipeData, setRecipeData] = useState([]);
   const [activeUserCredits, setActiveUserCredits] = useState({
     userName: "",
     userPassword: "",
     authorized: false,
   });
-  const [usersData, setUsersData] = useState([]);
-  const [favRecipesData, setFavRecipesData] = useState([]);
   const [selectedFav, setSelectedFav] = useState(null);
+  //const [usersData, setUsersData] = useState([]);  // without LocalStorage
+  //const [favRecipesData, setFavRecipesData] = useState([]); // without LocalStorage
+
+  /* ----------------- Localstorage states ---------------- */
   const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-  const activeUserDataLS= storedUsers.find(
+  //const [storedUsers, setStoredUsers] = useState(data);
+  const activeUserDataLS = storedUsers.find(
     (user) => user.userName === activeUserCredits.userName
-  )
+  );
 
   /* ------------------ fetching recipes ------------------ */
   const getRecipe = async (URL) => {
@@ -32,21 +37,20 @@ export default function ContexProvider({ children }) {
     }
   };
 
-
   const contextContent = {
     getRecipe: getRecipe,
     activeUserCredits,
     setActiveUserCredits,
     //usersData, // without localStorage
-   // setUsersData,
+    // setUsersData,
     //favRecipesData, // without localStorage
     //setFavRecipesData,
-    selectedFav,
-    setSelectedFav,
     recipeData,
     setRecipeData,
     storedUsers,
-    activeUserDataLS
+    activeUserDataLS,
+    selectedFav,
+    setSelectedFav,
   };
 
   return <Context.Provider value={contextContent}>{children}</Context.Provider>;
