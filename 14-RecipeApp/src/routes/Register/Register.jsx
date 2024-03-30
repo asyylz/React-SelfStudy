@@ -74,10 +74,6 @@ export default function Register() {
       alert("This user already exists. Please create a new one or log in.");
     }
     if (!isExist) {
-      // localStorage.setItem(
-      //   "storedUsers",
-      //   JSON.stringify([{ ...newUser, favRecipes: [] }, ...storedUsers])
-      // );
       setStoredUsers((prevState) => [
         ...prevState,
         {
@@ -88,7 +84,7 @@ export default function Register() {
       alert("User registered successfully!");
     }
     setNewUser({ userName: "", userPassword: "" });
-    //navigate("/login");
+    navigate("/login");
   }
 
   /* ----------------------- Return ----------------------- */

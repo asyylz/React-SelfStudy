@@ -85,12 +85,6 @@ export default function Home() {
 
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
-    //const storedUsers = JSON.parse(localStorage.getItem("storedUsers")) || [];
-
-    // const foundUser = storedUsers.find(
-    //   (user) => user.userName === activeUserCredits.userName
-    // );
-
     if (activeUserDataLS) {
       const existingRecipe = activeUserDataLS.favRecipes.find(
         (recipe) => recipe.recipe.calories === selectedRecipe.recipe.calories
@@ -110,7 +104,6 @@ export default function Home() {
           user.userName === activeUserDataLS.userName ? updatedUser : user
         );
         setStoredUsers(updatedUsers);
-        localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
         alert("This recipe is removed from your favorite list.");
       } else {
         const updatedUser = {
@@ -118,10 +111,9 @@ export default function Home() {
           favRecipes: [...activeUserDataLS.favRecipes, selectedRecipe],
         };
         const updatedUsers = storedUsers.map((user) =>
-          user.userName === foundUser.userName ? updatedUser : user
+          user.userName === activeUserDataLS.userName ? updatedUser : user
         );
         setStoredUsers(updatedUsers);
-        localStorage.setItem("storedUsers", JSON.stringify(updatedUsers));
         alert("Recipe is added to your fav list....");
       }
     }
