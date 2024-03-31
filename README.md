@@ -216,6 +216,21 @@
         </p>
       </details>
       <hr>
+      <details>
+        <summary>Project 15 : Behind The Scene (<a href="https://recipereciperecipe.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>
+            <h3>Features:</h3>
+          </strong>
+          <u><b></b></u> Users can search for recipes based on dish name or meal types.
+          <br>
+
+        </p>
+      </details>
+      <hr>
     </ul>
   </section>
   <section id="outcomes">
@@ -266,9 +281,23 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
+          <td><strong>12</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
+              width="300" height="300" alt="Project14outcome"></td>
+        </tr>
+           <tr>
+          <td><strong>13</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
+              width="300" height="300" alt="Project10outcome"></td>
           <td><strong>14</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
+              width="300" height="300" alt="Project12outcome"></td>
+          <td><strong>15</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
               width="300" height="300" alt="Project14outcome"></td>
         </tr>
       </tbody>
