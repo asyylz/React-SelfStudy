@@ -202,12 +202,14 @@
           <u><b>User Registration:</b></u>New users can register for an account by providing basic information such as
           name, email address, and password.
           <br>
-          <u><b>User Login:</b></u>When a user interacts with the application, their data, including favorite recipes, is
+          <u><b>User Login:</b></u>When a user interacts with the application, their data, including favorite recipes,
+          is
           stored in the browser's local storage.
           This allows users to maintain their favorite recipes across different sessions without the need for
           server-side storage.
           <br>
-          <u><b>Storing User Data:</b></u>Registered users can securely log in to their accounts using their email address
+          <u><b>Storing User Data:</b></u>Registered users can securely log in to their accounts using their email
+          address
           and password.
           <br>
           <u><b>Responsive Design:</b></u>The app is optimized for various devices, including desktops, tablets, and
@@ -222,12 +224,20 @@
         <br>
         <p> <strong>
             <h3>Description:</h3>
-          </strong>
-            <h3>Features:</h3>
-          </strong>
-          <u><b></b></u> Users can search for recipes based on dish name or meal types.
-          <br>
-
+          </strong>This React application features a simple counter component that allows users to increment or
+          decrement a numeric value. Additionally, it provides functionality to track the history of counter changes and
+          determine whether the initial counter value is a prime number. With a straightforward interface it tracks numeric values and analyzes their properties. By displaying the prime number status of the initial value and maintaining a history of changes, users can gain insights into the behavior of the counter over time.
+        <h3>Features:</h3>
+        </strong>
+        <u><b>Increment and Decrement:</b></u>Users can increment or decrement the counter value using the provided
+        buttons.
+        <br>
+        <u><b>Prime Number Check: </b></u>The application determines whether the initial counter value is a prime number and displays the result.
+        <br>
+        <u><b>Counter History:</b></u>The app maintains a history of counter changes, showing the value and the direction of change (increment or decrement).
+        <br>
+        <u><b>useState, useMemo, useCallback, useEffect:</b></u>React hooks are utilized for managing component state, memoization, event handling, and side effects.
+        <br>
         </p>
       </details>
       <hr>
@@ -283,10 +293,10 @@
               width="300" height="300" alt="Project12outcome"></td>
           <td><strong>12</strong></td>
           <td><img
-               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
         </tr>
-           <tr>
+        <tr>
           <td><strong>13</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
