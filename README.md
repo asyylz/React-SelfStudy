@@ -238,6 +238,11 @@
         <br>
         <u><b>useState, useMemo, useCallback, useEffect:</b></u>React hooks are utilized for managing component state, memoization, event handling, and side effects.
         <br>
+        <strong>
+          <h3>Notes:</h3>
+        </strong>
+        This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+        All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
       <hr>
