@@ -265,7 +265,11 @@
           <td><strong>11</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
-              width="300" height="300" alt="Project 11 outcome"></td>
+              width="300" height="300" alt="Project12outcome"></td>
+          <td><strong>14</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
+              width="300" height="300" alt="Project14outcome"></td>
         </tr>
       </tbody>
     </table>
