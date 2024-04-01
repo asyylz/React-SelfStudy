@@ -5,12 +5,13 @@ import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
 import logoImg from "./assets/logo.png";
 import AvailablePlaces from "./components/AvailablePlaces.jsx";
 import { updateUserPlaces } from "./http.js";
+import Error from "./components/Error.jsx";
 
 function App() {
   const selectedPlace = useRef();
 
   const [userPlaces, setUserPlaces] = useState([]);
-
+  const [errorUpdatingPlaces, setErrorUpdatingPlaces] = useState();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function handleStartRemovePlace(place) {
@@ -35,8 +36,12 @@ function App() {
     });
     try {
       await updateUserPlaces([selectedPlace, ...userPlaces]);
-    }catch (error) {  // UI update instantly but sending request take time and could fail
-      setUserPlaces(userPlaces) // we dont eant to have that state that includes the new place. So used old userPlaces
+    } catch (error) {
+      // UI update instantly but sending request take time and could fail
+      setUserPlaces(userPlaces); // we dont eant to have that state that includes the new place. So used old userPlaces
+      setErrorUpdatingPlaces({
+        message: error.message || "Failed to update places",
+      });
     }
   }
   // And often optimistic updating can provide a better user experience than showing a loading spinner or some loading text.
@@ -49,8 +54,19 @@ function App() {
     setModalIsOpen(false);
   }, []);
 
+  function handleError() {
+    setErrorUpdatingPlaces(null);
+  }
+
   return (
     <>
+      <Modal open={errorUpdatingPlaces}>
+        <Error
+          title="An error occured!"
+          message={errorUpdatingPlaces.message}
+          onConfirm={handleError}
+        />
+      </Modal>
       <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation
           onCancel={handleStopRemovePlace}
