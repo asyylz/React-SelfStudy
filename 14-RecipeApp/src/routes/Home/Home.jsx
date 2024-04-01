@@ -22,15 +22,7 @@ export default function Home() {
     setStoredUsers,
     activeUserDataLS,
   } = useContext(Context);
-  /* ----------------------- States ----------------------- */
-  const [mealType, setMealType] = useState("");
-  const [recipeSearch, setRecipeSearch] = useState("");
-
-  /* --------------------- API-------------------- */
-  const APP_ID = "b87d8a95";
-  const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
-  const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
-
+ 
   const navigate = useNavigate();
 
   /* --------------------- Handle Favs Add?Remove withStates-------------------- */
@@ -82,7 +74,7 @@ export default function Home() {
   //   });
   // }
 
-  /* ------------------ with LocalStorage ----------------- */
+  /* ------------------ Handle Favs with LocalStorage ----------------- */
 
   const handleFavClick = (e, selectedRecipe) => {
     e.preventDefault();
@@ -145,13 +137,6 @@ export default function Home() {
     e.preventDefault();
     navigate("/recipe", { state: { recipe } });
   }
-
-  /* ---------------- Handle Enter Key Pess --------------- */
-  const handleKeyPess = (e) => {
-    if (e.key === "Enter") {
-      getRecipe(baseURL);
-    }
-  };
 
   /* ----------------------- RETURN ----------------------- */
 

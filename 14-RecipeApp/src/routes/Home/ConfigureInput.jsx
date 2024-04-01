@@ -1,8 +1,7 @@
 import SelectHomeSSS from "./SelectHomeSSS";
 import InputHomeStyle from "./InputHomeStyle";
 import ButtonHomeSSS from "./ButtonHomeSSS";
-import { useState,useContext } from "react";
-import { useNavigate} from "react-router-dom";
+import { useState, useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 
 export default function ConfigureInput() {
@@ -16,10 +15,8 @@ export default function ConfigureInput() {
   const APP_KEY = "82c0d750c0fd26d9f8501630f794e019";
   const baseURL = `https://api.edamam.com/search?q=${recipeSearch}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
-  const navigate = useNavigate();
-
   /* ---------------- Handle Enter Key Pess --------------- */
-  const handleKeyPess = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       getRecipe(baseURL);
     }
@@ -48,7 +45,7 @@ export default function ConfigureInput() {
           name="text"
           className="input"
           onChange={(e) => setRecipeSearch(e.target.value)}
-          onKeyDown={handleKeyPess}
+          onKeyDown={handleKeyPress}
         />
         <ButtonHomeSSS role="button" onClick={() => getRecipe(baseURL)}>
           Search
