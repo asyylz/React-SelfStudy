@@ -11,7 +11,7 @@ export async function fetchAvailablePlaces() {
 export async function updateUserPlaces(places) {
   const response = await fetch("http://localhost:3000/user-places", {
     method: "PUT",
-    body: JSON.stringify(places),
+    body: JSON.stringify({ places: places }), // shorter notation places
     headers: {
       "Content-Type": "application/json", // you should add the Content-Type header and set this to application/json to inform the backend that the data attached to this request will be in JSON format.
     },
