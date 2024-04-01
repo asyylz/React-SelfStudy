@@ -238,6 +238,7 @@
         <br>
         <u><b>useState, useMemo, useCallback, useEffect:</b></u>React hooks are utilized for managing component state, memoization, event handling, and side effects.
         <br>
+        <u><b>Aim:</b></u>The Counter App aims to provide insights into the inner workings of React, helping developers grasp fundamental concepts and mechanisms that power React applications. By examining the codebase and observing the app's behavior, users can gain a deeper understanding of the key concepts.
         <strong>
           <h3>Notes:</h3>
         </strong>
