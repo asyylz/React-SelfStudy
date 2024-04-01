@@ -1,9 +1,6 @@
-import ButtonHomeSSS from "./ButtonHomeSSS.jsx";
-import SelectHomeSSS from "./SelectHomeSSS.jsx";
-import ContainerHomeSSS from "./ContainerHomeSSS.jsx";
-import InputHomeStyle from "./InputHomeStyle";
+import ContainerHomeStyle from "./ContainerHomeStyle.jsx";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -13,7 +10,6 @@ import ConfigureInput from "./ConfigureInput.jsx";
 export default function Home() {
   /* --------------------- Context API -------------------- */
   const {
-    getRecipe,
     recipeData,
     activeUserCredits,
     //favRecipesData, // for without localstorage
@@ -22,7 +18,7 @@ export default function Home() {
     setStoredUsers,
     activeUserDataLS,
   } = useContext(Context);
- 
+
   const navigate = useNavigate();
 
   /* --------------------- Handle Favs Add?Remove withStates-------------------- */
@@ -76,7 +72,7 @@ export default function Home() {
 
   /* ------------------ Handle Favs with LocalStorage ----------------- */
 
-  const handleFavClick = (e, selectedRecipe) => {
+  function handleFavClick(e, selectedRecipe) {
     e.preventDefault();
     if (activeUserDataLS) {
       const existingRecipe = activeUserDataLS.favRecipes.find(
@@ -110,7 +106,7 @@ export default function Home() {
         alert("Recipe is added to your fav list....");
       }
     }
-  };
+  }
 
   /* --------------- Favs with LocalStorage Boolean Value--------------- */
   const favList = recipeData.map((recipe) =>
@@ -141,7 +137,7 @@ export default function Home() {
   /* ----------------------- RETURN ----------------------- */
 
   return (
-    <ContainerHomeSSS isfilled={recipeData.length > 0 ? "true" : "false"}>
+    <ContainerHomeStyle isfilled={recipeData.length > 0 ? "true" : "false"}>
       <div className="wrapper">
         <ConfigureInput />
         <div className="result-wrapper">
@@ -184,6 +180,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </ContainerHomeSSS>
+    </ContainerHomeStyle>
   );
 }

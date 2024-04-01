@@ -1,5 +1,5 @@
 import { createContext, useState, useReducer } from "react";
-import { useEffect } from "react";
+import { useEffect, useCallback, useMemo, memo } from "react";
 import axios from "axios";
 export const Context = createContext({
   getRecipe: () => {},
@@ -30,6 +30,7 @@ export default function ContexProvider({ children }) {
   );
 
   /* ------------------ fetching recipes ------------------ */
+
   const getRecipe = async (URL) => {
     try {
       const response = await axios.get(`${URL}`);

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import background from "/public/bgHome.avif";
 const beige = "#cdad93";
-const ContainerHomeSSS = styled.div`
+const ContainerHomeStyle = styled.div`
   height: ${({ isfilled }) => (isfilled === "true" ? "" : "100vh")};
   width: 100vw;
   margin-top: 6.2rem;
@@ -54,4 +54,4 @@ const ContainerHomeSSS = styled.div`
   }
 `;
 
-export default ContainerHomeSSS;
+export default ContainerHomeStyle;

@@ -1,12 +1,13 @@
 import SelectHomeSSS from "./SelectHomeSSS";
 import InputHomeStyle from "./InputHomeStyle";
-import ButtonHomeSSS from "./ButtonHomeSSS";
+import ButtonHomeStyle from "./ButtonHomeStyle.jsx";
 import { useState, useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 
-export default function ConfigureInput() {
-  const { getRecipe } = useContext(Context);
 
+
+function ConfigureInput() {
+  const { getRecipe } = useContext(Context);
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
 
@@ -47,10 +48,12 @@ export default function ConfigureInput() {
           onChange={(e) => setRecipeSearch(e.target.value)}
           onKeyDown={handleKeyPress}
         />
-        <ButtonHomeSSS role="button" onClick={() => getRecipe(baseURL)}>
+        <ButtonHomeStyle role="button" onClick={() => getRecipe(baseURL)}>
           Search
-        </ButtonHomeSSS>
+        </ButtonHomeStyle>
       </div>
     </>
   );
-}
+};
+
+export default ConfigureInput;

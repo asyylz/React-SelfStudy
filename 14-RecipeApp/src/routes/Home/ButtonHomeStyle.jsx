@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ButtonHomeSSS = styled.button`
+const ButtonHomeStyle = styled.button`
   background-color: #ffffff;
   border: 1px solid rgb(209, 213, 219);
   border-radius: 0.5rem;
@@ -38,10 +38,9 @@ const ButtonHomeSSS = styled.button`
   }
 
   @media (max-width: 690px) {
-  width: 90%;
-  margin-bottom:1rem;
+    width: 90%;
+    margin-bottom: 1rem;
   }
 `;
 
-export default ButtonHomeSSS;
-
+export default ButtonHomeStyle;
