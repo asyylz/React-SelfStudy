@@ -4,9 +4,7 @@ import ButtonHomeStyle from "./ButtonHomeStyle.jsx";
 import { useState, useContext } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 
-
-
-function ConfigureInput() {
+const ConfigureInput = memo(function ConfigureInput() {
   const { getRecipe } = useContext(Context);
   const [mealType, setMealType] = useState("");
   const [recipeSearch, setRecipeSearch] = useState("");
@@ -54,6 +52,6 @@ function ConfigureInput() {
       </div>
     </>
   );
-};
+});
 
 export default ConfigureInput;
