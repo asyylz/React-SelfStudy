@@ -60,12 +60,14 @@ function App() {
 
   return (
     <>
-      <Modal open={errorUpdatingPlaces}>
-        <Error
-          title="An error occured!"
-          message={errorUpdatingPlaces.message}
-          onConfirm={handleError}
-        />
+      <Modal open={errorUpdatingPlaces} onClose={handleError}>
+        {errorUpdatingPlaces && (
+          <Error
+            title="An error occured!"
+            message={errorUpdatingPlaces.message}
+            onConfirm={handleError}
+          />
+        )}
       </Modal>
       <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation
