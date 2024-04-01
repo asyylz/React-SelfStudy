@@ -23,6 +23,7 @@ function App() {
   }
 
   async function handleSelectPlace(selectedPlace) {
+    // await updateUserPlaces([selectedPlace, ...userPlaces]) // alternative way
     setUserPlaces((prevPickedPlaces) => {
       if (!prevPickedPlaces) {
         prevPickedPlaces = [];
@@ -34,9 +35,11 @@ function App() {
     });
     try {
       await updateUserPlaces([selectedPlace, ...userPlaces]);
-    }catch (error) {
+    }catch (error) {  // UI update instantly but sending request take time and could fail
+      setUserPlaces(userPlaces) // we dont eant to have that state that includes the new place. So used old userPlaces
     }
   }
+  // And often optimistic updating can provide a better user experience than showing a loading spinner or some loading text.
 
   const handleRemovePlace = useCallback(async function handleRemovePlace() {
     setUserPlaces((prevPickedPlaces) =>
