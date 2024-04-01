@@ -1,13 +1,14 @@
 import ButtonHomeSSS from "./ButtonHomeSSS.jsx";
 import SelectHomeSSS from "./SelectHomeSSS.jsx";
 import ContainerHomeSSS from "./ContainerHomeSSS.jsx";
-import InputHomeSSS from "./InputHomeSSS.jsx";
+import InputHomeStyle from "./InputHomeStyle";
 import RecipeCardHomeSSS from "./RecipeCardHomeSSS.jsx";
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
 import { AiFillHeart } from "react-icons/ai";
+import ConfigureInput from "./ConfigureInput.jsx";
 
 export default function Home() {
   /* --------------------- Context API -------------------- */
@@ -157,33 +158,7 @@ export default function Home() {
   return (
     <ContainerHomeSSS isfilled={recipeData.length > 0 ? "true" : "false"}>
       <div className="wrapper">
-        <h1>Recipe Search</h1>
-        <div className="search-wrapper">
-          <SelectHomeSSS
-            name="foodType"
-            id=""
-            onChange={(e) => setMealType(e.target.value)}
-          >
-            <option value="">Food Type</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="brunch">Brunch</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="snack">Snack</option>
-            <option value="tea">Tea Time</option>
-          </SelectHomeSSS>
-          <InputHomeSSS
-            placeholder="Write here..."
-            type="text"
-            name="text"
-            className="input"
-            onChange={(e) => setRecipeSearch(e.target.value)}
-            onKeyDown={handleKeyPess}
-          />
-          <ButtonHomeSSS role="button" onClick={() => getRecipe(baseURL)}>
-            Search
-          </ButtonHomeSSS>
-        </div>
+        <ConfigureInput />
         <div className="result-wrapper">
           {recipeData.map((recipe, index) => (
             <RecipeCardHomeSSS key={index}>
