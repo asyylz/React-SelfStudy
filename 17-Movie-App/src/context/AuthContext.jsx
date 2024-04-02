@@ -1,4 +1,4 @@
-import { Children, createContext, useState } from "react";
+import { Children, createContext, useState, useContext } from "react";
 // create context
 const AuthContext = createContext();
 import { auth } from "../auth/firebase";
