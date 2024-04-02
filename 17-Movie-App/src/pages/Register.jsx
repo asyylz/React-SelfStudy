@@ -1,11 +1,16 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
   const {register} = useAuthContext();
-
-  // emerged state
+  //* ayrı stateler
+  // const [email,setEmail] = useState("")
+  // const [password,setPassword] = useState("")
+  // const [firstName,setFirstName] = useState("")
+  // const [lastName,setLastName] = useState("")
+//! inputlarla çalışıyorsak statelerin ilk değeri null veya undefined olmamalı
+  //* birleştirilmiş state
   const [info,setInfo] = useState({
     email:"",
     password:"",
@@ -14,9 +19,14 @@ const Register = () => {
   })
 
   const handleChange = (e) => {
-    //instead this:setInfo({...info, "email":e.target.value }) we used below
-    setInfo({...info, [e.target.name]:e.target.value })// setter works async
-
+    console.log(e.target.name)
+    console.log(e.target.id) //* inputdan gelen id veya name parametresini yakalayıp state deki obje ile eşleştirmemiz lazım
+    setInfo({...info, [e.target.name]:e.target.value })// setter metodu asenkron çalışır
+    //setInfo({...info, "email":e.target.value })
+    //setInfo({...info, "password":e.target.value })
+    //...
+  } 
+  console.log(info)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +49,7 @@ const Register = () => {
               name="firstName"
               id="firstName"
               value={info.firstName}
+              // onChange={(e) => setInfo({...info, firstName:e.target.value})}
               onChange={handleChange}
               className="peer"
               placeholder=" "
@@ -95,5 +106,5 @@ const Register = () => {
     </div>
   );
 };
-}
+
 export default Register;
