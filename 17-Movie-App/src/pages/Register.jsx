@@ -32,6 +32,7 @@ const Register = () => {
     e.preventDefault();
     const {email,password,firstName,lastName} = info;
     register(email,password, `${firstName} ${lastName}`)
+    console.log(password)
   }
 
   return (
