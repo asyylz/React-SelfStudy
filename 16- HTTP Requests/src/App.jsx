@@ -14,7 +14,12 @@ function App() {
   const [errorUpdatingPlaces, setErrorUpdatingPlaces] = useState();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const { isFetching, error, fetchData } = useFetch(fetchUserPlaces,[]);
+  const {
+    isFetching,
+    error,
+    fetchedData: userPlaces,
+    setFetchedData: setUserPlaces,
+  } = useFetch(fetchUserPlaces, []);
 
   function handleStartRemovePlace(place) {
     setModalIsOpen(true);
@@ -46,7 +51,7 @@ function App() {
       });
     }
   }
-  // And often optimistic updating can provide a better user experience than showing a loading spinner or some loading text.
+  //And often optimistic updating can provide a better user experience than showing a loading spinner or some loading text.
 
   const handleRemovePlace = useCallback(
     async function handleRemovePlace() {
@@ -89,7 +94,7 @@ function App() {
       <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation
           onCancel={handleStopRemovePlace}
-          onConfirm={handleRemovePlace}
+          //onConfirm={handleRemovePlace}
         />
       </Modal>
 
@@ -114,7 +119,9 @@ function App() {
           />
         )}
 
-        <AvailablePlaces onSelectPlace={handleSelectPlace} />
+        <AvailablePlaces
+        //onSelectPlace={handleSelectPlace}
+        />
       </main>
     </>
   );
