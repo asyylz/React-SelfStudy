@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon.jsx";
 
+
 const Register = () => {
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
