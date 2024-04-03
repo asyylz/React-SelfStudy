@@ -1,16 +1,24 @@
+import { useState } from 'react';
+
 export default function Signup() {
+  const [passwordsAreNotEqual, setPasswordsAreNotEqual] = useState(false);
+
   function handleSubmit(event) {
     event.preventDefault();
-    // FormData is provided by browser not react. All inputs must have name prop
-    const fd = new FormData(event.target);
-    const acquisitionChannel = fd.getAll("acquisition");
-    const data = Object.fromEntries(fd.entries()); //Object class also  provided by browser
-    data.acquisition = acquisitionChannel;
-    console.log(data);
 
-    //reseting
-    event.target.reset();
+    const fd = new FormData(event.target);
+    const acquisitionChannel = fd.getAll('acquisition');
+    const data = Object.fromEntries(fd.entries());
+    data.acquisition = acquisitionChannel;
+
+    if (data.password !== data['confirm-password']) {
+      setPasswordsAreNotEqual(true);
+      return;
+    }
+
+    console.log(data);
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Welcome on board!</h2>
@@ -41,6 +49,9 @@ export default function Signup() {
             name="confirm-password"
             required
           />
+          <div className="control-error">
+            {passwordsAreNotEqual && <p>Passwords must match.</p>}
+          </div>
         </div>
       </div>
 
@@ -49,18 +60,18 @@ export default function Signup() {
       <div className="control-row">
         <div className="control">
           <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" name="first-name" />
+          <input type="text" id="first-name" name="first-name" required />
         </div>
 
         <div className="control">
           <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" name="last-name" />
+          <input type="text" id="last-name" name="last-name" required />
         </div>
       </div>
 
       <div className="control">
         <label htmlFor="phone">What best describes your role?</label>
-        <select id="role" name="role">
+        <select id="role" name="role" required>
           <option value="student">Student</option>
           <option value="teacher">Teacher</option>
           <option value="employee">Employee</option>
