@@ -10,7 +10,7 @@ const Main = () => {
       {loading ? (
         <h2 className=" text-2xl text-red-700 dark:text-white">Loading...</h2>
       ) : (
-        movies.map((movie) => <MovieCard />)
+        movies.map((movie) => <MovieCard key={movie.id} {...movie} />)
       )}
     </div>
   );
