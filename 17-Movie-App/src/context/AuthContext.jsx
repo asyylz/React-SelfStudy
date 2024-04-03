@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  GoogleAuthProvider
 } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
@@ -49,9 +50,9 @@ const AuthContextProvider = ({ children }) => {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      navigate("/");
+      navigate("/")
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   };
 
