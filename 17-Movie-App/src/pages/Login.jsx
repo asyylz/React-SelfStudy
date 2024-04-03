@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 
 
 const Login = () => {
-  const {login} = useAuthContext();
+  const {login,singleGoogleprovider} = useAuthContext();
 
   const [info,setInfo] = useState({
     email:"",
