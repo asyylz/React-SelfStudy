@@ -16,8 +16,8 @@ export default function Login() {
   const emailIsInvalid = didEdit.email && !enteredValues.email.includes('@');
 
   function handleSubmit(event) {
+    // always a good idea to also add validation here in this handleSubmit function.
     event.preventDefault();
-
     console.log(enteredValues);
   }
 
