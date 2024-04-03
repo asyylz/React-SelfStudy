@@ -54,7 +54,7 @@ const AuthContextProvider = ({ children }) => {
 
   const logout = () => {
     //*https://firebase.google.com/docs/auth/web/password-auth#next_steps
-    signOut(auth); //! we just call signOut method
+    signOut(auth); //! just calling signOut method is efficient
     toastSuccessNotify("Loged out ");
   };
 
@@ -85,8 +85,8 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   };
-
   console.log(currentUser);
+  
   useEffect(() => {
     userObserver(); //* We trigger the userObserver to track user logins and logouts.
   }, []);
