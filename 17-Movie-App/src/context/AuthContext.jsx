@@ -45,7 +45,7 @@ const AuthContextProvider = ({ children }) => {
     signOut(auth); //! sadece signOut metodunu çağırmamız yeterli
   };
 
-  const singleGoogleprovider = async () => {
+  const signGoogleProvider = async () => {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
@@ -80,7 +80,7 @@ const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ currentUser, register, login, logout, singleGoogleprovider }}
+      value={{ currentUser, register, login, logout, signGoogleProvider }}
     >
       {children}
     </AuthContext.Provider>
