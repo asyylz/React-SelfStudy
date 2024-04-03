@@ -226,24 +226,100 @@
             <h3>Description:</h3>
           </strong>This React application features a simple counter component that allows users to increment or
           decrement a numeric value. Additionally, it provides functionality to track the history of counter changes and
-          determine whether the initial counter value is a prime number. With a straightforward interface it tracks numeric values and analyzes their properties. By displaying the prime number status of the initial value and maintaining a history of changes, users can gain insights into the behavior of the counter over time.
+          determine whether the initial counter value is a prime number. With a straightforward interface it tracks
+          numeric values and analyzes their properties. By displaying the prime number status of the initial value and
+          maintaining a history of changes, users can gain insights into the behavior of the counter over time.
         <h3>Features:</h3>
         </strong>
         <u><b>Increment and Decrement:</b></u>Users can increment or decrement the counter value using the provided
         buttons.
         <br>
-        <u><b>Prime Number Check: </b></u>The application determines whether the initial counter value is a prime number and displays the result.
+        <u><b>Prime Number Check: </b></u>The application determines whether the initial counter value is a prime number
+        and displays the result.
         <br>
-        <u><b>Counter History:</b></u>The app maintains a history of counter changes, showing the value and the direction of change (increment or decrement).
+        <u><b>Counter History:</b></u>The app maintains a history of counter changes, showing the value and the
+        direction of change (increment or decrement).
         <br>
-        <u><b>useState, useMemo, useCallback, useEffect:</b></u>React hooks are utilized for managing component state, memoization, event handling, and side effects.
+        <u><b>useState, useMemo, useCallback, useEffect:</b></u>React hooks are utilized for managing component state,
+        memoization, event handling, and side effects.
         <br>
-        <u><b>Aim:</b></u>The Counter App aims to provide insights into the inner workings of React, helping developers grasp fundamental concepts and mechanisms that power React applications. By examining the codebase and observing the app's behavior, users can gain a deeper understanding of the key concepts.
+        <u><b>Aim:</b></u>The Counter App aims to provide insights into the inner workings of React, helping developers
+        grasp fundamental concepts and mechanisms that power React applications. By examining the codebase and observing
+        the app's behavior, users can gain a deeper understanding of the key concepts.
         <strong>
           <h3>Notes:</h3>
         </strong>
         This project was created as part of an educational course on Udemy and is intended for learning purposes only.
         All credit for the project idea and implementation goes to the course instructors and authors.
+        </p>
+      </details>
+      <details>
+        <summary>Project 16:HTTP Request and Custom Hook(<a href="https://behindthescene-asy.netlify.app/">Outcome
+            Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>
+        <h3>Features:</h3>
+        </strong>
+        <u><b></b></u>
+
+        </p>
+      </details>
+      <hr>
+      <details>
+        <summary>Project 18:Forms and User Inputs(<a href="form-exprience.netlify.app">Outcome Link</a>)
+        </summary>
+        <br>
+        <p>This app demonstrates three different approaches to building login forms in React
+          <strong>
+            <h3>1. State-based Login Form</h3>
+          </strong>This part of the app utilizes React's built-in state management to handle form data and validation.
+          Here's how it works:
+          <u><b>State Management:</b></u>State variables (emailValue and passwordValue) are managed using the useState
+          hook from React.
+          <u><b>Input Handling and Validation:</b></u>Input changes and blur events are handled using custom functions
+          (handleEmailChange, handlePasswordChange, handleEmailBlur, handlePasswordBlur). Validation is performed inline
+          within the component.
+          <u><b>Form Submission: </b></u>The handleSubmit function is responsible for form submission. It checks for
+          validation errors before logging the email and password values to the console.
+          <strong>
+            <h3>2. useRef-based Login Form</h3>
+          </strong>
+          This section of the app utilizes React's useRef hook to manage input elements and their values. Here's how it
+          differs from the state-based for
+          <u><b>Input Management with useRef: </b></u> Instead of managing input values in state, useRef is used to
+          reference input elements directly. This approach avoids re-renders caused by state updates.
+          <u><b>Validation Logic:</b></u>Similar to the state-based form, validation logic is implemented within the
+          component using conditionals based on input values.
+          <u><b>Form Submission:</b></u> Form submission handling remains the same as the state-based form.
+          <strong>
+            <h3> Form submission handling remains the same as the state-based form.</h3>
+          </strong>In this part of the app, a custom input component (Input) and a custom hook (useInput) are introduced
+          to encapsulate input handling and validation logic. Here's how it's implemented:
+          <u><b>Custom Input Component:</b></u>The Input component abstracts away the repetitive code for rendering
+          input fields and error messages. It receives props for label, type, value, onBlur, onChange, and error to
+          customize its behavior and appearance.
+          <u><b>Custom Hook (useInput):</b></u>The useInput hook encapsulates the logic for handling input changes, blur
+          events, and validation. It abstracts away the repetitive logic related to input handling and validation,
+          making the component cleaner and more maintainable.
+          <u><b>Form Submission:</b></u> Form submission handling remains the same as the previous forms, where
+          validation errors are checked before logging the email and password values to the console.
+        </p>
+      </details>
+      <hr>
+      <details>
+        <summary>Project 17 :Movie App(<a href="https://behindthescene-asy.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>
+        <h3>Features:</h3>
+        </strong>
+        <u><b></b></u>
+
         </p>
       </details>
       <hr>
