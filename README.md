@@ -402,14 +402,22 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/bb1d3418d4a6807ffc00b59876d02a53a613a23d/04-Random-Quote-Generator/public/output.jpg"
               width="300" height="300" alt="Project04outcome"></td>
-        </tr>
-        <tr>
           <td><strong>05</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/05-ToDo-App-RGB/public/outcome.jpg"
               width="300" height="300" alt="Project02outcome"></td>
+        </tr>
+        <tr>
           <td><strong>06</strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
               width="300" height="300" alt="Project06outcome"></td>
+          <td><strong>07</strong></td>
+          <td><img
+              src=""
+              width="300" height="300" alt="Project 7 outcome"></td>
+          <td><strong>08</strong></td>
+          <td><img
+              src=""
+              width="300" height="300" alt="Project 8 outcome"></td>
           <td><strong>09</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/ee6ed3c8a88035533ff2ec9bde401be024f314e6/09-StopTimer/public/outcome.jpg"
@@ -428,13 +436,13 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
+           <td><strong>13</strong></td>
+          <td><img
+              src=""
+              width="300" height="300" alt="Project10outcome"></td>
         </tr>
         <tr>
-          <td><strong>13</strong></td>
-          <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
-              width="300" height="300" alt="Project10outcome"></td>
-          <td><strong>14</strong></td>
+        <td><strong>14</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
@@ -442,19 +450,23 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
               width="300" height="300" alt="Project14outcome"></td>
-        </tr>
-        <tr>
+           <td><strong>16</strong></td>
+          <td><img
+              src=""
+              width="300" height="300" alt="Project16outcome"></td>
           <td><strong>17</strong></td>
           <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
+              src=""
               width="300" height="300" alt="Project10outcome"></td>
-          <td><strong>18</strong></td>
+        </tr>
+        <tr>
+              <td><strong>18</strong></td>
           <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
+              src="https://github.com/asyylz/React-SelfStudy/blob/72dab516f7147bd2c33955288a34871e2f51313b/18-FormsAndUserInputs/public/outcome.jpeg"
               width="300" height="300" alt="Project12outcome"></td>
           <td><strong>19</strong></td>
           <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
+              src=""
               width="300" height="300" alt="Project14outcome"></td>
         </tr>
       </tbody>
