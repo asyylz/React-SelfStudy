@@ -256,7 +256,9 @@
       <hr>
       <details>
         <summary>Project 16:HTTP Request and Custom Hook
-        </summary>This project consists of both front-end and back-end components based on Place Picker App in project
+        </summary>
+        <br>
+        This project consists of both front-end and back-end components based on Place Picker App in project
         11, named Place Picker.The PlacePicker app consists of a Node.js back-end using Express for handling HTTP
         requests and a React front-end for user interaction. It allows users to manage their collection of places, with
         features for adding, removing, and updating places both locally and on the server. The project demonstrates
@@ -288,8 +290,16 @@
           <strong>
             <h3>Front-end (React):</h3>
           </strong>
-
-          <u><b></b></u>
+          <br>
+          <u><b>State Management:</b></u> React state and ref hooks (useState and useRef) are used for managing state
+          and refs within the components.
+          <br>
+          <u><b>HTTP Requests:</b></u> The fetchUserPlaces and updateUserPlaces functions are imported from "./http.js",
+          which handle HTTP requests to fetch and update user-specific places.
+          <br>
+          <u><b>Custom Hooks:</b></u>
+          The useFetch hook from "./hooks/use-fetch.js" is used to fetch data from the server and manage
+          loading and error states.
           <br>
         </p>
       </details>
