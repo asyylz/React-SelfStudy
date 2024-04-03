@@ -255,57 +255,42 @@
       </details>
       <hr>
       <details>
-        <summary>Project 16:HTTP Request and Custom Hook(<a href="https://behindthescene-asy.netlify.app/">Outcome
-            Link</a>)
-        </summary>
+        <summary>Project 16:HTTP Request and Custom Hook
+        </summary>This project consists of both front-end and back-end components based on Place Picker App in project
+        11, named Place Picker.The PlacePicker app consists of a Node.js back-end using Express for handling HTTP
+        requests and a React front-end for user interaction. It allows users to manage their collection of places, with
+        features for adding, removing, and updating places both locally and on the server. The project demonstrates
+        concepts such as server setup, HTTP communication, state management, component composition, and error handling
+        in both the back-end and front-end contexts.
         <br>
         <p> <strong>
-            <h3>Description:</h3>
+            <h3>Back-end (Node.js with Express):</h3>
           </strong>
-        <h3>Features:</h3>
-        </strong>
-        <u><b></b></u>
-        </p>
-      </details>
-      <hr>
-      <details>
-        <summary>Project 18:Forms and User Inputs(<a href="form-exprience.netlify.app">Outcome Link</a>)
-        </summary>
-        <br>
-        <p>This app demonstrates three different approaches to building login forms in React
+          <u><b>Express Server Setup:</b></u>An Express server is set up to handle HTTP requests.
+          <br>
+          <u><b>Static File Serving:</b></u> The express.static middleware serves static files from the "images"
+          directory.
+          <br>
+          <u><b>Body Parsing Middleware:</b></u>The body-parser middleware is used to parse incoming JSON requests.
+          <br>
+          <u><b>CORS Configuration:</b></u>
+          Cross-Origin Resource Sharing (CORS) is configured to allow requests from all domains.
+          <br>
+          <u><b>Endpoints:</b></u>
+          <li>/places: GET endpoint to retrieve a list of places from a JSON file.</li>
+          <li>/user-places: GET endpoint to retrieve user-specific places from a JSON file.</li>
+          <li>/user-places: PUT endpoint to update user-specific places in a JSON file.
+          </li>
+          <br>
+          <u><b>Error Handling:</b></u>
+          A 404 handler middleware is added to handle requests for undefined routes.
+          <br>
           <strong>
-            <h3>1. State-based Login Form</h3>
-          </strong>This part of the app utilizes React's built-in state management to handle form data and validation.
-          Here's how it works:
-          <u><b>State Management:</b></u>State variables (emailValue and passwordValue) are managed using the useState
-          hook from React.
-          <u><b>Input Handling and Validation:</b></u>Input changes and blur events are handled using custom functions
-          (handleEmailChange, handlePasswordChange, handleEmailBlur, handlePasswordBlur). Validation is performed inline
-          within the component.
-          <u><b>Form Submission: </b></u>The handleSubmit function is responsible for form submission. It checks for
-          validation errors before logging the email and password values to the console.
-          <strong>
-            <h3>2. useRef-based Login Form</h3>
+            <h3>Front-end (React):</h3>
           </strong>
-          This section of the app utilizes React's useRef hook to manage input elements and their values. Here's how it
-          differs from the state-based for
-          <u><b>Input Management with useRef: </b></u> Instead of managing input values in state, useRef is used to
-          reference input elements directly. This approach avoids re-renders caused by state updates.
-          <u><b>Validation Logic:</b></u>Similar to the state-based form, validation logic is implemented within the
-          component using conditionals based on input values.
-          <u><b>Form Submission:</b></u> Form submission handling remains the same as the state-based form.
-          <strong>
-            <h3> Form submission handling remains the same as the state-based form.</h3>
-          </strong>In this part of the app, a custom input component (Input) and a custom hook (useInput) are introduced
-          to encapsulate input handling and validation logic. Here's how it's implemented:
-          <u><b>Custom Input Component:</b></u>The Input component abstracts away the repetitive code for rendering
-          input fields and error messages. It receives props for label, type, value, onBlur, onChange, and error to
-          customize its behavior and appearance.
-          <u><b>Custom Hook (useInput):</b></u>The useInput hook encapsulates the logic for handling input changes, blur
-          events, and validation. It abstracts away the repetitive logic related to input handling and validation,
-          making the component cleaner and more maintainable.
-          <u><b>Form Submission:</b></u> Form submission handling remains the same as the previous forms, where
-          validation errors are checked before logging the email and password values to the console.
+
+          <u><b></b></u>
+          <br>
         </p>
       </details>
       <hr>
@@ -319,6 +304,64 @@
         <h3>Features:</h3>
         </strong>
         <u><b></b></u>
+        </p>
+      </details>
+      <hr>
+      <details>
+        <summary>Project 18:Forms and User Inputs(<a href="https://form-exprience.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p>This app demonstrates three different approaches to building login forms in React
+          <strong>
+            <h3>1. State-based Login Form</h3>
+          </strong>This part of the app utilizes React's built-in state management to handle form data and validation.
+          Here's how it works:
+          <br>
+          <u><b>State Management:</b></u>State variables (emailValue and passwordValue) are managed using the useState
+          hook from React.
+          <br>
+          <u><b>Input Handling and Validation:</b></u>Input changes and blur events are handled using custom functions
+          (handleEmailChange, handlePasswordChange, handleEmailBlur, handlePasswordBlur). Validation is performed inline
+          within the component.
+          <br>
+          <u><b>Form Submission: </b></u>The handleSubmit function is responsible for form submission. It checks for
+          validation errors before logging the email and password values to the console.
+          <br>
+          <strong>
+            <h3>2. useRef-based Login Form</h3>
+          </strong>
+          This section of the app utilizes React's useRef hook to manage input elements and their values. Here's how it
+          differs from the state-based for.
+          <br>
+          <u><b>Input Management with useRef: </b></u> Instead of managing input values in state, useRef is used to
+          reference input elements directly. This approach avoids re-renders caused by state updates.
+          <br>
+          <u><b>Validation Logic:</b></u>Similar to the state-based form, validation logic is implemented within the
+          component using conditionals based on input values.
+          <br>
+          <u><b>Form Submission:</b></u> Form submission handling remains the same as the state-based form.
+          <br>
+          <strong>
+            <h3> Form submission handling remains the same as the state-based form.</h3>
+          </strong>In this part of the app, a custom input component (Input) and a custom hook (useInput) are introduced
+          to encapsulate input handling and validation logic. Here's how it's implemented:
+          <br>
+          <u><b>Custom Input Component:</b></u>The Input component abstracts away the repetitive code for rendering
+          input fields and error messages. It receives props for label, type, value, onBlur, onChange, and error to
+          customize its behavior and appearance.
+          <br>
+          <u><b>Custom Hook (useInput):</b></u>The useInput hook encapsulates the logic for handling input changes, blur
+          events, and validation. It abstracts away the repetitive logic related to input handling and validation,
+          making the component cleaner and more maintainable.
+          <br>
+          <u><b>Form Submission:</b></u> Form submission handling remains the same as the previous forms, where
+          validation errors are checked before logging the email and password values to the console.
+          <br>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
       <hr>
