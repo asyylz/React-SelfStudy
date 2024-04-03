@@ -8,6 +8,7 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(enteredValues);
   }
 
   function handleInputChange(identifier, event) {
@@ -29,12 +30,19 @@ export default function Login() {
             type="email"
             name="email"
             onChange={(event) => handleInputChange("email", event)}
+            value={enteredValues.email}
           />
         </div>
 
         <div className="control no-margin">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            onChange={(event) => handleInputChange("password", event)}
+            value={enteredValues.password}
+          />
         </div>
       </div>
 

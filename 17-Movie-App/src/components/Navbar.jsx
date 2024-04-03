@@ -12,6 +12,7 @@ function classNames(...classes) {
 export default function Navbar() {
   const {currentUser,logout} = useAuthContext()
   return (
+    <>
     <Disclosure
       as="nav"
       className="bg-neutral-100 dark:bg-gray-800 py-3 dark:text-white fixed top-0 z-30 w-full "
@@ -98,5 +99,7 @@ export default function Navbar() {
         </div>
       </div>
     </Disclosure>
+    <div className="h-[80px]"></div>
+    </>
   );
 }
