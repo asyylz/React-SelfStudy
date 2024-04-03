@@ -253,6 +253,7 @@
         All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
+      <hr>
       <details>
         <summary>Project 16:HTTP Request and Custom Hook(<a href="https://behindthescene-asy.netlify.app/">Outcome
             Link</a>)
@@ -264,7 +265,6 @@
         <h3>Features:</h3>
         </strong>
         <u><b></b></u>
-
         </p>
       </details>
       <hr>
@@ -319,7 +319,6 @@
         <h3>Features:</h3>
         </strong>
         <u><b></b></u>
-
         </p>
       </details>
       <hr>
