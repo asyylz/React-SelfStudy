@@ -18,6 +18,7 @@ const Login = () => {
     e.preventDefault();
     const { email, password } = info;
     login(email, password);
+    
   };
 
   return (

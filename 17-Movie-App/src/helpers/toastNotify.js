@@ -11,3 +11,24 @@ export const toastSuccessNotify = (msg) =>
     progress: undefined,
     theme: "colored",
   });
+
+  export const toastWarnNotify = (msg) => {
+    toast.warn(msg, {
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+  export const toastErrorNotify = (msg) => {
+    toast.error(msg, {
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
