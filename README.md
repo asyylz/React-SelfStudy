@@ -255,7 +255,7 @@
       </details>
       <hr>
       <details>
-        <summary>Project 16:HTTP Request and Custom Hook
+        <summary>Project 16:HTTP Request and Custom Hook(Based on Place Picker App)
         </summary>
         <br>
         This project consists of both front-end and back-end components based on Place Picker App in project
@@ -290,7 +290,6 @@
           <strong>
             <h3>Front-end (React):</h3>
           </strong>
-          <br>
           <u><b>State Management:</b></u> React state and ref hooks (useState and useRef) are used for managing state
           and refs within the components.
           <br>
@@ -440,6 +439,20 @@
               src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
           <td><strong>15</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
+              width="300" height="300" alt="Project14outcome"></td>
+        </tr>
+        <tr>
+          <td><strong>17</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
+              width="300" height="300" alt="Project10outcome"></td>
+          <td><strong>18</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
+              width="300" height="300" alt="Project12outcome"></td>
+          <td><strong>19</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
               width="300" height="300" alt="Project14outcome"></td>
