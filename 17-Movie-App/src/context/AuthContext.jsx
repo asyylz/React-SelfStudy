@@ -12,16 +12,16 @@ import { auth } from "../auth/firebase";
 import { useNavigate } from "react-router-dom";
 import { toastSuccessNotify, toastErrorNotify } from "../helpers/toastNotify";
 
-//! create context
+//create context
 const AuthContext = createContext();
 
-//? context provider
+// context provider
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState("");
   const navigate = useNavigate();
 
   const register = async (email, password, displayName) => {
-    //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
+    // new user firebase method
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -36,13 +36,12 @@ const AuthContextProvider = ({ children }) => {
       toastSuccessNotify("Registered !");
       console.log(userCredential);
     } catch (error) {
-      //toastErrorNotify("Bir hata oluştuuuuuuu!");
       toastErrorNotify(error.message);
     }
   };
   //* https://console.firebase.google.com/
   //* => Authentication => sign-in-method => enable Email/password
-  //! Email/password ile girişi enable yap
+  //! Email/password login
   const login = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -55,7 +54,7 @@ const AuthContextProvider = ({ children }) => {
 
   const logout = () => {
     //*https://firebase.google.com/docs/auth/web/password-auth#next_steps
-    signOut(auth); //! sadece signOut metodunu çağırmamız yeterli
+    signOut(auth); //! we just call signOut method
     toastSuccessNotify("Loged out ");
   };
 
@@ -70,7 +69,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const userObserver = () => {
-    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
+    //? A Firebase method that tracks whether the user is signed in and returns the new user as a response when the user changes.
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -89,7 +88,7 @@ const AuthContextProvider = ({ children }) => {
 
   console.log(currentUser);
   useEffect(() => {
-    userObserver(); //* Kullanıcı giriş çıkışlarını takip ettirmesi için userObserverı tetikliyoruz
+    userObserver(); //* We trigger the userObserver to track user logins and logouts.
   }, []);
 
   return (
