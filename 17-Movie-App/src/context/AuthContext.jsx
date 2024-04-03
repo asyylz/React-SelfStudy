@@ -10,12 +10,12 @@ import {
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
 import { useNavigate } from "react-router-dom";
+import { toastSuccessNotify } from "../helpers/toastNotify";
 
 //! create context
 const AuthContext = createContext();
 
 //? context provider
-
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState("");
   const navigate = useNavigate();
@@ -33,6 +33,7 @@ const AuthContextProvider = ({ children }) => {
     });
     navigate("/");
     console.log(userCredential);
+    
   };
   //* https://console.firebase.google.com/
   //* => Authentication => sign-in-method => enable Email/password
@@ -40,10 +41,12 @@ const AuthContextProvider = ({ children }) => {
   const login = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
     navigate("/");
+    toastSuccessNotify("Loged in successfully")
   };
   const logout = () => {
     //*https://firebase.google.com/docs/auth/web/password-auth#next_steps
     signOut(auth); //! sadece signOut metodunu çağırmamız yeterli
+    toastSuccessNotify("Loged out ")
   };
 
   const signGoogleProvider = async () => {
