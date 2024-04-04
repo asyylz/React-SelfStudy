@@ -6,10 +6,7 @@ import gif404 from "../assets/404.gif";
 const UserInfo = () => {
   const { user, setUser } = useContext(UserContext);
 
-  console.log(user.message);
-
   const notFound = user.message === "Not Found";
-  console.log(notFound);
 
   return (
     <>
@@ -24,6 +21,7 @@ const UserInfo = () => {
               />
               <Card.Body>
                 <Card.Text style={{ color: "black" }}>{user.login}</Card.Text>
+                <p style={{ color: "black" }}>Followers: {user.followers}</p>
                 <Button
                   href="#"
                   target="_blank"
