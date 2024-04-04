@@ -20,9 +20,9 @@ export default function SearchBar() {
   return (
     <form>
       <div className="control no-margin">
-        {/* <label htmlFor="usersearch">
+        <label htmlFor="usersearch">
           Enter you user name you would like to search
-        </label> */}
+        </label>
         <input
           id="usersearch"
           type="text"
