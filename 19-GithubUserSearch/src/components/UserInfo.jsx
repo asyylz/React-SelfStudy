@@ -17,13 +17,17 @@ const UserInfo = () => {
         <Row xs={2} md={3} lg={3} className="mt-4 justify-content-center">
           <Col>
             <Card>
-              <Card.Img variant="top" src={user.avatar_url} />
+              <Card.Img
+                variant="top"
+                src={user.avatar_url}
+                style={{ borderRadius: "10px" }}
+              />
               <Card.Body>
                 <Card.Text style={{ color: "black" }}>{user.login}</Card.Text>
                 <Button
                   href="#"
                   target="_blank"
-                  style={{ borderRadius: "50px" }}
+                  style={{ borderRadius: "100px" }}
                   variant="primary"
                 >
                   VIEW PROFILE
