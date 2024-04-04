@@ -1,7 +1,7 @@
 import SelectHomeSSS from "./SelectHomeSSS";
 import InputHomeStyle from "./InputHomeStyle";
 import ButtonHomeStyle from "./ButtonHomeStyle.jsx";
-import { useState, useContext } from "react";
+import { useState, useContext,memo } from "react";
 import { Context } from "../../contextAPI/ContextProvider.jsx";
 
 const ConfigureInput = memo(function ConfigureInput() {
