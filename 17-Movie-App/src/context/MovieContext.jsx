@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 const MovieContext = createContext();
-const API_KEY = import.meta.env.VITE_APP__TMDB_KEY;
+const API_KEY = import.meta.env.VITE_APP_TMDB_KEY;
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 
 const MovieContextProvider = ({ children }) => {
