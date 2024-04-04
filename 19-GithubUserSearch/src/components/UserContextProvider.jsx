@@ -8,7 +8,7 @@ export default function UserContextProvider({ children }) {
   const baseUrl = "https://api.github.com/users/";
   async function fetchUser(user) {
     try {
-      const response = await fetch(`${baseUrl}+${user}`);
+      const response = await fetch(`${baseUrl}${user}`);
       console.log(baseUrl + user);
       const resData = await response.json();
       console.log(resData);

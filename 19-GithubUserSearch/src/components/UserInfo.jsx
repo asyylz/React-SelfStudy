@@ -10,9 +10,9 @@ const UserInfo = () => {
     <Row xs={2} md={3} lg={3} className="mt-4 justify-content-center">
       <Col>
         <Card>
-          <Card.Img variant="top" src="" />
+          <Card.Img variant="top" src={user.avatar_url} />
           <Card.Body>
-            <Card.Text>{user.username}</Card.Text>
+            <Card.Text style={{color:"black"}}>{user.login}</Card.Text>
             <Button
               href="#"
               target="_blank"
