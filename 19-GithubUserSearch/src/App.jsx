@@ -1,16 +1,17 @@
 import "./App.css";
-import MainSearchPage from "./components/MainSearchPage";
 import SearchBar from "./components/SearchBar";
+import UserInfo from "./components/UserInfo";
+import UserContextProvider from "./components/UserContextProvider";
 
 function App() {
   return (
-    <>
-    <header>
-      <h1>Github User Search</h1>
-    </header>
+    <UserContextProvider>
+      <header>
+        <h1>Github User Search</h1>
+      </header>
       <SearchBar />
-      <MainSearchPage />
-    </>
+      <UserInfo />
+    </UserContextProvider>
   );
 }
 

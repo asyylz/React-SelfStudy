@@ -1,22 +1,28 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { isValid } from "./validate";
+import { UserContext } from "./UserContextProvider";
+
 export default function SearchBar() {
+
+  const { fetchUser } = useContext(UserContext);
+
   const [enteredSearch, setEnteredSearch] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-
-    if (isValid(enteredSearch)) {
+    console.log(isValid(enteredSearch));
+    if (!isValid(enteredSearch)) {
       return;
     }
+    fetchUser(enteredSearch);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="control no-margin">
-        <label htmlFor="usersearch">
+        {/* <label htmlFor="usersearch">
           Enter you user name you would like to search
-        </label>
+        </label> */}
         <input
           id="usersearch"
           type="text"
@@ -25,7 +31,9 @@ export default function SearchBar() {
         />
       </div>
       <p className="form-actions">
-        <button>Search</button>
+        <button type="submit" onClick={handleSubmit}>
+          Search
+        </button>
       </p>
     </form>
   );

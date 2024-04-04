@@ -1,3 +1,4 @@
 export function isValid(value) {
-  return value.trim !== "";
+  console.log("clicked2")
+  return value.trim() !== "";
 }
