@@ -419,15 +419,15 @@
           <td><strong>08</strong></td>
           <td><img
               src=""
-              width="300" height="300" alt="Project 8 outcome"></td>
+              width="300" height="200" alt="Project 8 outcome"></td>
           <td><strong>09</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/ee6ed3c8a88035533ff2ec9bde401be024f314e6/09-StopTimer/public/outcome.jpg"
-              width="300" height="300" alt="Project 11 outcome"></td>
+              width="300" height="200" alt="Project 11 outcome"></td>
           <td><strong>10</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
-              width="300" height="300" alt="Project10outcome"></td>
+              width="300" height="200" alt="Project10outcome"></td>
           </tr>
         <tr>
           <td><strong>11</strong></td>
