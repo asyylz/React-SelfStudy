@@ -1,4 +1,5 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
+
 export const ProductsContext = createContext({
   products: [],
   toggleFav: (id) => {},
