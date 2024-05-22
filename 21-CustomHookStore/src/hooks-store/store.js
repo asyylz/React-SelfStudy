@@ -8,7 +8,13 @@ export const useStore = (shouldListen = true) => {
   const setState = useState(globalState)[1];
 
   const dispatch = (actionIdentifier, payload) => {
-    const newState = actions[actionIdentifier](globalState, payload);
+    console.log(actionIdentifier)
+    const action = actions[actionIdentifier];
+    console.log(actions)
+    if (!action) {
+      throw new Error(`Action ${actionIdentifier} not found`);
+    }
+    const newState = action(globalState, payload);
     globalState = { ...globalState, ...newState };
 
     for (const listener of listeners) {
@@ -23,7 +29,7 @@ export const useStore = (shouldListen = true) => {
 
     return () => {
       if (shouldListen) {
-        listeners = listeners.filter(li => li !== setState);
+        listeners = listeners.filter((li) => li !== setState);
       }
     };
   }, [setState, shouldListen]);
@@ -32,8 +38,10 @@ export const useStore = (shouldListen = true) => {
 };
 
 export const initStore = (userActions, initialState) => {
+  console.log(userActions)
   if (initialState) {
     globalState = { ...globalState, ...initialState };
   }
   actions = { ...actions, ...userActions };
+  console.log(actions)
 };
