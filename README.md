@@ -106,7 +106,7 @@
       <hr>
       <!-- -------------------- Project-6 -------------------- -->
       <details>
-        <summary>Project 06: Investment Figures (<a href=" https://investmentfigures.netlify.app/">Outcome Link</a>)
+        <summary>Project 06: Investment Figures (<a href="https://investmentfigures.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>
