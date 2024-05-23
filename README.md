@@ -148,7 +148,8 @@
           <em>Update Product Quantities:</em>Modify the quantity of products in the cart to adjust for changes in user
           preferences or availability.
           <br>
-          <em>Responsive Design:</em>Enjoy a seamless user experience on various devices, including desktops, tablets, and smartphones, thanks to the app's responsive design.
+          <em>Responsive Design:</em>Enjoy a seamless user experience on various devices, including desktops, tablets,
+          and smartphones, thanks to the app's responsive design.
           <br>
         </p>
       </details>
@@ -381,7 +382,7 @@
       <hr>
       <!-- -------------------- Project-17 -------------------- -->
       <details>
-        <summary>Project 17 :Movie App(<a href="https://behindthescene-asy.netlify.app/">Outcome Link</a>)
+        <summary>Project 17 :Movie App(<a href="">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>
@@ -482,33 +483,35 @@
               width="300" height="300" alt="Project04outcome"></td>
         </tr>
         <tr>
-          <td><strong>05</strong></td>
+          <td><strong><a href="https://to-do-app-rgb-style.vercel.app/">05</a></strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/05-ToDo-App-RGB/public/outcome.jpg"
               width="300" height="300" alt="Project02outcome"></td>
-          <td><strong>06</strong></td>
+          <td><strong><a href="https://investmentfigures.netlify.app/">06</a></strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/06-InvestmentFigures/public/outcome.jpg"
               width="300" height="300" alt="Project06outcome"></td>
           <td><strong>07</strong></td>
           <td><img src="" width="300" height="300" alt="Project 7 outcome"></td>
         </tr>
         <tr>
-          <td><strong>08</strong></td>
-          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/332114115b32f14cc10be3691b7626a622b7cfbb/08-Shopping-Cart/public/outcome.jpeg" width="300" height="200" alt="Project 8 outcome"></td>
-          <td><strong>09</strong></td>
+          <td><strong><a href="https://asy-shoppingcart.netlify.app/"></a>08</strong></td>
+          <td><img
+              src="https://github.com/asyylz/React-SelfStudy/blob/332114115b32f14cc10be3691b7626a622b7cfbb/08-Shopping-Cart/public/outcome.jpeg"
+              width="300" height="200" alt="Project 8 outcome"></td>
+          <td><strong><a href="https://eclectic-belekoy-7f7658.netlify.app/">09</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/ee6ed3c8a88035533ff2ec9bde401be024f314e6/09-StopTimer/public/outcome.jpg"
               width="300" height="200" alt="Project 11 outcome"></td>
-          <td><strong>10</strong></td>
+          <td><strong><a href="https://managementproject.netlify.app/">10</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/c9cca21ee3a9299e9b7fb84cd49f5b0946083b42/10-ManagementApp/public/outcome.jpg"
               width="300" height="200" alt="Project10outcome"></td>
         </tr>
         <tr>
-          <td><strong>11</strong></td>
+          <td><strong><a href="https://placechose.netlify.app/">11</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
-          <td><strong>12</strong></td>
+          <td><strong><a href="">12</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
@@ -516,21 +519,21 @@
           <td><img src="" width="300" height="300" alt="Project10outcome"></td>
         </tr>
         <tr>
-          <td><strong>14</strong></td>
+          <td><strong><a href="https://recipereciperecipe.netlify.app/">14</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/4fef44e523867ca8f335c6ae5721930d16149753/14-RecipeApp/public/outcome.jpg"
               width="300" height="300" alt="Project12outcome"></td>
-          <td><strong>15</strong></td>
+          <td><strong><a href="https://behindthescene-asy.netlify.app/">15</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/1c9a3bb121ad2fca7b515d1c4439d98ccb9fa3b7/15-BehindTheScene-App/public/outcome.jpeg"
               width="300" height="300" alt="Project14outcome"></td>
-          <td><strong>16</strong></td>
+          <td><strong><a href="https://behindthescene-asy.netlify.app/"></a>16</strong></td>
           <td><img src="" width="300" height="300" alt="Project16outcome"></td>
         </tr>
         <tr>
           <td><strong>17</strong></td>
           <td><img src="" width="300" height="300" alt="Project10outcome"></td>
-          <td><strong>18</strong></td>
+          <td><strong><a href="https://form-exprience.netlify.app/">18</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/72dab516f7147bd2c33955288a34871e2f51313b/18-FormsAndUserInputs/public/outcome.jpeg"
               width="300" height="300" alt="Project12outcome"></td>
