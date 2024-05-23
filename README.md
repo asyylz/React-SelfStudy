@@ -473,7 +473,7 @@
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/28548769f47460df1efee60746b7f4d4af1c71fa/01-starting-project/01-outcome.jpg"
               width="300" height="300" alt="Project01outcome"></td>
-          <td><strong>03</strong></td>
+          <td><strong><a href="https://glittery-tapioca-e95324.netlify.app/">03</a></strong></td>
           <td><img src="https://github.com/asyylz/React-SelfStudy/blob/main/03-TicTacToe-Game/public/outcome.jpg"
               width="300" height="300" alt="Project02outcome"></td>
           <td><strong>04</strong></td>
