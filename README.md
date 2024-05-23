@@ -46,6 +46,7 @@
     <h2>Individual Project Details</h2>
     <p><strong>You can find each project details corresponding dropdown menu.</strong></p>
     <ul>
+      <!-- -------------------- Project-3 -------------------- -->
       <details>
         <summary>Project 03: Tic Tac Toe Game (<a href="https://glittery-tapioca-e95324.netlify.app/">Outcome Link</a>)
         </summary>
@@ -73,6 +74,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-4 -------------------- -->
       <details>
         <summary>Project 04:Random Quote Generator (<a href="https://quotegenerator-asy.netlify.app/">Outcome Link</a>)
         </summary>
@@ -89,16 +91,40 @@
           <br>
         </p>
       </details>
+      <hr>
+      <!-- -------------------- Project-5 -------------------- -->
       <details>
         <summary>Project 05: ToDo-App-RGB (<a href="https://to-do-app-rgb-style.vercel.app/">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>
-            <h3>You can reach its own repo</h3>(<a href="https://github.com/asyylz/Weather-Check-App">here</a>)
+            <h3>You can reach its own repo</h3>(<a
+              href="https://github.com/asyylz/React-SelfStudy/tree/main/05-ToDo-App-RGB">here</a>)
           </strong>
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-6 -------------------- -->
+      <details>
+        <summary>Project 06: Investment Figures (<a href=" https://investmentfigures.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong> The Investment Figures App is designed to help users track and analyze their investment portfolios.
+          Whether you are an individual investor or a financial advisor, this app provides essential tools to manage
+          your investments efficiently. The app offers a user-friendly interface to input, view, and analyze investment
+          data, helping you make informed financial decisions.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
+          <em>User Input Forms:</em> Easily input your investment details such as initial investment, annual investment,
+          expected return, and duration using a user-friendly form interface.
+          <br>
+        </p>
+      </details>
+      <hr>
+      <!-- -------------------- Project-9 -------------------- -->
       <details>
         <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
         </summary>
@@ -126,6 +152,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-10 -------------------- -->
       <details>
         <summary>Project 10 : Project Management App (<a href="https://managementproject.netlify.app/">Outcome Link</a>)
         </summary>
@@ -163,6 +190,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-11 -------------------- -->
       <details>
         <summary>Project 11 : Place Picker App (<a href="https://placechose.netlify.app/">Outcome Link</a>)
         </summary>
@@ -197,6 +225,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-14-------------------- -->
       <details>
         <summary>Project 14 : Recipe App (<a href="https://recipereciperecipe.netlify.app/">Outcome Link</a>)
         </summary>
@@ -234,6 +263,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-15 -------------------- -->
       <details>
         <summary>Project 15 : Behind The Scene (<a href="https://behindthescene-asy.netlify.app/">Outcome Link</a>)
         </summary>
@@ -270,6 +300,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-16 -------------------- -->
       <details>
         <summary>Project 16:HTTP Request and Custom Hook(Based on Place Picker App)
         </summary>
@@ -319,6 +350,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-17 -------------------- -->
       <details>
         <summary>Project 17 :Movie App(<a href="https://behindthescene-asy.netlify.app/">Outcome Link</a>)
         </summary>
@@ -332,6 +364,7 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-18 -------------------- -->
       <details>
         <summary>Project 18:Forms and User Inputs(<a href="https://form-exprience.netlify.app/">Outcome Link</a>)
         </summary>
@@ -478,6 +511,7 @@
       </tbody>
     </table>
   </section>
+
   <footer>
     <h2>Contributing</h2>
     <p>Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please

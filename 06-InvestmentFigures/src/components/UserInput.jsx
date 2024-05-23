@@ -1,5 +1,5 @@
 
-
+import React from 'react'
 export default function UserInput({ onChange, figures, setFigures }) {
   return (
     <>

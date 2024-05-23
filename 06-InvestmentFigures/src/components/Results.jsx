@@ -1,4 +1,5 @@
 import { calculateInvestmentResults, formatter } from "../util/investment";
+import React from 'react'
 export default function Results({ figures }) {
   const resultData = calculateInvestmentResults(figures);
   const initialInvestment =
