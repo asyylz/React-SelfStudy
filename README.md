@@ -227,6 +227,26 @@
         <br>
         <p> <strong>
             <h3>Description:</h3>
+          </strong>The "Clothes Shopping Cart" app allows users....
+          <strong>
+            <h3>Features:</h3>
+          </strong>
+          <em>Personalized Collection:</em>
+          <br>
+          <strong>
+            <h3>Notes:</h3>
+          </strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
+        </p>
+      </details>
+      <!-- -------------------- Project-12 -------------------- -->
+      <details>
+        <summary>Project 12 : Place Picker App (<a href="https://placechose.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
           </strong>The "PlacePicker" app allows users to create and manage their personal collection of places they
           would like to visit or have visited. With a user-friendly interface, users can easily browse through available
           places, select them for their collection, and remove them if needed. The app also provides a feature to sort
