@@ -141,10 +141,13 @@
           </strong>
           <em>Add Products:</em>Easily add new products to the shopping cart by providing details such as product name,
           image, price, and quantity.
+          <br>
           <em>View Product Details:</em> Each product displayed in the cart includes essential information like name,
           image, price, and quantity.
+          <br>
           <em>Update Product Quantities:</em>Modify the quantity of products in the cart to adjust for changes in user
           preferences or availability.
+          <br>
           <em>Responsive Design:</em>Enjoy a seamless user experience on various devices, including desktops, tablets, and smartphones, thanks to the app's responsive design.
           <br>
         </p>
@@ -490,7 +493,7 @@
         </tr>
         <tr>
           <td><strong>08</strong></td>
-          <td><img src="" width="300" height="200" alt="Project 8 outcome"></td>
+          <td><img src="https://github.com/asyylz/React-SelfStudy/blob/332114115b32f14cc10be3691b7626a622b7cfbb/08-Shopping-Cart/public/outcome.jpeg" width="300" height="200" alt="Project 8 outcome"></td>
           <td><strong>09</strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/ee6ed3c8a88035533ff2ec9bde401be024f314e6/09-StopTimer/public/outcome.jpg"
