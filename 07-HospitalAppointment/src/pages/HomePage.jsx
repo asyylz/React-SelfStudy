@@ -6,8 +6,6 @@ import { useEffect } from "react";
 export default function HomePage({ data }) {
   const [storedData, setStoredData] = LocalStoragePostGet("dataInfo", data);
 
-  // Update local storage with the new week data
-  // This will happen whenever the week data changes
   useEffect(() => {
     setStoredData(storedData);
   }, [data, setStoredData]);

@@ -1,9 +1,9 @@
-import { FaRegEye, FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import "/src/styles/current-doctor-page.css";
 import "/src/styles/patient-details.css";
 import { MdDoneOutline } from "react-icons/md";
 import ModalWindow from "./ModalWindow";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { handleDeletePatient, handleIsSeenStatus } from "../util/Actions";
 export default function CurrentDoctorPage({
   currentDoctor,

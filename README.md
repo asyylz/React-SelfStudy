@@ -124,6 +124,32 @@
         </p>
       </details>
       <hr>
+      <!-- -------------------- Project-7 -------------------- -->
+      <!-- -------------------- Project-8 -------------------- -->
+      <details>
+        <summary>Project 08: Shopping Cart (<a href="https://asy-shoppingcart.netlify.app/">Outcome Link</a>)
+        </summary>
+        <br>
+        <p> <strong>
+            <h3>Description:</h3>
+          </strong>The Simple Shopping Cart App is a lightweight web application that allows users to add products to a
+          shopping cart. It provides a straightforward interface for managing products, including their names, images,
+          prices, and quantities. Whether you're building a prototype or a small-scale e-commerce platform, this app
+          offers essential functionality for handling product data and user interactions.
+          <strong>
+            <h3>Features:</h3>
+          </strong>
+          <em>Add Products:</em>Easily add new products to the shopping cart by providing details such as product name,
+          image, price, and quantity.
+          <em>View Product Details:</em> Each product displayed in the cart includes essential information like name,
+          image, price, and quantity.
+          <em>Update Product Quantities:</em>Modify the quantity of products in the cart to adjust for changes in user
+          preferences or availability.
+          <em>Responsive Design:</em>Enjoy a seamless user experience on various devices, including desktops, tablets, and smartphones, thanks to the app's responsive design.
+          <br>
+        </p>
+      </details>
+      <hr>
       <!-- -------------------- Project-9 -------------------- -->
       <details>
         <summary>Project 09 : Stop Timer App (<a href="https://eclectic-belekoy-7f7658.netlify.app/">Outcome Link</a>)
