@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
   <header>
     <h1>Welcome to the React-SelfStudy Repo!</h1>
@@ -244,18 +235,18 @@
           <strong>
             <h3>Features:</h3>
           </strong>
-          <em><u>Product Catalog:</u></em>Browse a diverse collection of clothing items with detailed descriptions and
+          <em>Product Catalog:</em>Browse a diverse collection of clothing items with detailed descriptions and
           images.
           <br>
-          <em><u>Add to Cart:</u></em>Easily add selected clothing items to the shopping cart with a single click.
+          <em>Add to Cart:</em>Easily add selected clothing items to the shopping cart with a single click.
           <br>
-          <em><u>Modal Cart:</u></em>View the contents of the shopping cart in a sleek modal that overlays the current
+          <em>Modal Cart:</em>View the contents of the shopping cart in a sleek modal that overlays the current
           page, allowing users to review their selections without navigating away from the product catalog.
           <br>
-          <em><u>Context API for State Management:</u></em>Utilize the Context API for efficient and centralized state
+          <em>Context API for State Management:</em>Utilize the Context API for efficient and centralized state
           management, ensuring consistent and reliable updates to the cart across the application.
           <br>
-          <em><u>Quantity Adjustment:</u></em>Adjust the quantity of items in the cart directly from the modal, making
+          <em>Quantity Adjustment:</em>Adjust the quantity of items in the cart directly from the modal, making
           it easy to increase or decrease the number of items.
           <br>
           <strong>
@@ -598,18 +589,3 @@
     <p>This project is licensed under the MIT License.</p>
   </footer>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html>
