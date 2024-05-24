@@ -240,6 +240,7 @@
           All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
+      <hr>
       <!-- -------------------- Project-12 -------------------- -->
       <details>
         <summary>Project 12 : Place Picker App (<a href="https://placechose.netlify.app/">Outcome Link</a>)
@@ -529,7 +530,7 @@
         <tr>
           <td><strong><a href="https://placechose.netlify.app/">11</a></strong></td>
           <td><img
-              src="https://github.com/asyylz/React-SelfStudy/blob/e9ecdf02efe9d40f0f64ef5975bf2ba6d96aef26/12-PlacePicker/public/outcome.jpg"
+              src="https://github.com/asyylz/React-SelfStudy/blob/c0450136f5e457e4edc3205e532b5c7221d8c8b7/11-Cart/public/output.jpeg"
               width="300" height="300" alt="Project12outcome"></td>
           <td><strong><a href="">12</a></strong></td>
           <td><img
