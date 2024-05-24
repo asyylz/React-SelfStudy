@@ -222,22 +222,28 @@
       <hr>
       <!-- -------------------- Project-11 -------------------- -->
       <details>
-        <summary>Project 11 : Place Picker App (<a href="https://placechose.netlify.app/">Outcome Link</a>)
+        <summary>Project 11 : Clothes Shopping Cart (<a href="https://elegantclothesshopping.netlify.app/">Outcome Link</a>)
         </summary>
         <br>
         <p> <strong>
             <h3>Description:</h3>
-          </strong>The "Clothes Shopping Cart" app allows users....
+          </strong>The Clothes Shopping Site is an interactive and user-friendly web application designed for online shopping. This site allows users to browse a variety of clothing items, add them to their cart, and view their selections in a modal cart. The application leverages the Context API to manage state efficiently, providing a seamless shopping experience.
           <strong>
             <h3>Features:</h3>
           </strong>
-          <em>Personalized Collection:</em>
+          <em>Product Catalog:</em>Browse a diverse collection of clothing items with detailed descriptions and images.
+          <br>
+          <em>Add to Cart:</em>Easily add selected clothing items to the shopping cart with a single click.
+          <br>
+          <em>Modal Cart:</em>View the contents of the shopping cart in a sleek modal that overlays the current page, allowing users to review their selections without navigating away from the product catalog.
+          <br>
+          <em>Context API for State Management:</em>Utilize the Context API for efficient and centralized state management, ensuring consistent and reliable updates to the cart across the application.
+          <br>
+          <em>Quantity Adjustment:</em>Adjust the quantity of items in the cart directly from the modal, making it easy to increase or decrease the number of items.
           <br>
           <strong>
             <h3>Notes:</h3>
           </strong>
-          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
-          All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
       <hr>
@@ -259,7 +265,7 @@
           <em>Personalized Collection:</em> Users can create their own collection of places they want to visit or have
           visited, making it easy to keep track of their travel goals and experiences.
           <br>
-          <em>Geolocation Sorting::</em>Utilizing geolocation services, the app sorts available places based on the
+          <em>Geolocation Sorting:</em>Utilizing geolocation services, the app sorts available places based on the
           user's current location, enabling users to discover nearby attractions effortlessly.
           <br>
           <em>Modal Confirmation: </em> When removing a selected place from their collection, users are presented with a
