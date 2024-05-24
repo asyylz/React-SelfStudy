@@ -222,28 +222,38 @@
       <hr>
       <!-- -------------------- Project-11 -------------------- -->
       <details>
-        <summary>Project 11 : Clothes Shopping Cart (<a href="https://elegantclothesshopping.netlify.app/">Outcome Link</a>)
+        <summary>Project 11 : Clothes Shopping Cart (<a href="https://elegantclothesshopping.netlify.app/">Outcome
+            Link</a>)
         </summary>
         <br>
         <p> <strong>
             <h3>Description:</h3>
-          </strong>The Clothes Shopping Site is an interactive and user-friendly web application designed for online shopping. This site allows users to browse a variety of clothing items, add them to their cart, and view their selections in a modal cart. The application leverages the Context API to manage state efficiently, providing a seamless shopping experience.
+          </strong>The Clothes Shopping Site is an interactive and user-friendly web application designed for online
+          shopping. This site allows users to browse a variety of clothing items, add them to their cart, and view their
+          selections in a modal cart. The application leverages the Context API to manage state efficiently, providing a
+          seamless shopping experience.
           <strong>
             <h3>Features:</h3>
           </strong>
-          <em>Product Catalog:</em>Browse a diverse collection of clothing items with detailed descriptions and images.
+          <em><u>Product Catalog:</u></em>Browse a diverse collection of clothing items with detailed descriptions and
+          images.
           <br>
-          <em>Add to Cart:</em>Easily add selected clothing items to the shopping cart with a single click.
+          <em><u>Add to Cart:</u></em>Easily add selected clothing items to the shopping cart with a single click.
           <br>
-          <em>Modal Cart:</em>View the contents of the shopping cart in a sleek modal that overlays the current page, allowing users to review their selections without navigating away from the product catalog.
+          <em><u>Modal Cart:</u></em>View the contents of the shopping cart in a sleek modal that overlays the current
+          page, allowing users to review their selections without navigating away from the product catalog.
           <br>
-          <em>Context API for State Management:</em>Utilize the Context API for efficient and centralized state management, ensuring consistent and reliable updates to the cart across the application.
+          <em><u>Context API for State Management:</u></em>Utilize the Context API for efficient and centralized state
+          management, ensuring consistent and reliable updates to the cart across the application.
           <br>
-          <em>Quantity Adjustment:</em>Adjust the quantity of items in the cart directly from the modal, making it easy to increase or decrease the number of items.
+          <em><u>Quantity Adjustment:</u></em>Adjust the quantity of items in the cart directly from the modal, making
+          it easy to increase or decrease the number of items.
           <br>
           <strong>
             <h3>Notes:</h3>
           </strong>
+          This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+          All credit for the project idea and implementation goes to the course instructors and authors.
         </p>
       </details>
       <hr>
@@ -534,7 +544,7 @@
               width="300" height="200" alt="Project10outcome"></td>
         </tr>
         <tr>
-          <td><strong><a href="https://placechose.netlify.app/">11</a></strong></td>
+          <td><strong><a href="https://elegantclothesshopping.netlify.app/">11</a></strong></td>
           <td><img
               src="https://github.com/asyylz/React-SelfStudy/blob/c0450136f5e457e4edc3205e532b5c7221d8c8b7/11-Cart/public/output.jpeg"
               width="300" height="300" alt="Project12outcome"></td>
